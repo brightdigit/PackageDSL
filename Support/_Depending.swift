@@ -1,6 +1,7 @@
 //
 // _Depending.swift
 // Copyright (c) 2023 BrightDigit.
+// Licensed under MIT License
 //
 
 protocol _Depending {

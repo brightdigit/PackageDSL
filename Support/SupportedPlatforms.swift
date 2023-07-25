@@ -1,6 +1,7 @@
 //
 // SupportedPlatforms.swift
 // Copyright (c) 2023 BrightDigit.
+// Licensed under MIT License
 //
 
 protocol SupportedPlatforms: Sequence where Element == SupportedPlatform {

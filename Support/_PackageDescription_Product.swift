@@ -1,6 +1,7 @@
 //
 // _PackageDescription_Product.swift
 // Copyright (c) 2023 BrightDigit.
+// Licensed under MIT License
 //
 
 extension _PackageDescription_Product {

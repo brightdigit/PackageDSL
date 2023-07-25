@@ -1,6 +1,7 @@
 //
 // Dependencies.swift
 // Copyright (c) 2023 BrightDigit.
+// Licensed under MIT License
 //
 
 protocol Dependencies: Sequence where Element == Dependency {

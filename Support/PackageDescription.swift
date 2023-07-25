@@ -1,6 +1,7 @@
 //
 // PackageDescription.swift
 // Copyright (c) 2023 BrightDigit.
+// Licensed under MIT License
 //
 
 // swiftlint:disable type_name
