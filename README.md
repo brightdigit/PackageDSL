@@ -1,6 +1,27 @@
 # PackageDSL
 
-I was having a difficult time managing a large `Package.swift` file:
+Simplify the management of your Package.swift file with PackageDSL:
+
+```swift
+import PackageDescription
+
+let package = Package {
+  BushelCommand()
+  BushelLibraryApp()
+  BushelMachineApp()
+  BushelSettingsApp()
+  BushelApp()
+}
+testTargets: {
+  BushelCoreTests()
+}
+.supportedPlatforms {
+  WWDC2023()
+}
+.defaultLocalization(.english)
+```
+
+I was having a difficult time managing a large `Package.swift` file. Why go with this instead:
 
 ```swift
 // swift-tools-version: 5.9
@@ -93,7 +114,44 @@ Here's the structure I use for Bushel's Swift Package:
 
 <img width="265" alt="Screenshot 2023-07-25 at 11 46 12 AM" src="https://github.com/brightdigit/PackageDSL/assets/1036388/00c64d7c-114d-49a3-a629-82dd7f436270">
 
-[comment]: <> (Text based tree structure comparing typical vs this one)
+```
+├── Package* // new folder you create
+│   ├── Sources* // all files listing your targets, dependencies, products, etc...
+|   |   ├── BushelApp.swift // definition of `BushelApp` product
+│   └── Support* // copied from this repo
+├── Package.resolved
+├── Package.swift // built by `package.sh`
+├── package.sh* // copied from this repo
+├── Sources
+│   ├── BushelApp
+│   ├── BushelArgs
+│   ├── BushelCore
+│   ├── BushelData
+│   ├── BushelDataCore
+│   ├── BushelLibrary
+│   ├── BushelLibraryApp
+│   ├── BushelLibraryData
+│   ├── BushelLibraryMacOS
+│   ├── BushelLibraryViews
+│   ├── BushelLocalization
+│   ├── BushelLogging
+│   ├── BushelMacOSCore
+│   ├── BushelMachine
+│   ├── BushelMachineApp
+│   ├── BushelMachineData
+│   ├── BushelMachineMacOS
+│   ├── BushelMachineViews
+│   ├── BushelSettingsApp
+│   ├── BushelSettingsViews
+│   ├── BushelUT
+│   ├── BushelViews
+│   ├── BushelViewsCore
+│   ├── BushelVirtualization
+│   └── bushel
+└── Tests
+    └── BushelCoreTests
+* the new stuff from PackageDSL
+```
 
 1. Create Package directory inside your Swift Package
 2. Copy `Support` folder over
@@ -101,10 +159,205 @@ Here's the structure I use for Bushel's Swift Package:
 4. Create a file at root of `Package` which will contain your package:
 
 5. Copy the `package.sh` script to concatenate all files in `Package` to your usable `Package.swift`
-6. $$$
+6. $Profit$
 
 ## How does it work?
 
+The `Support` folder contains a group of Swift source files which define an easy DSL which translates the common parts of the `PackageDescription` namespace you use.
+
+### Creating a Package 
+
+A typical Package.swift might look like this:
+
+```swift
+// swift-tools-version: 5.9
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+  name: "BushelKit",
+  ...
+  products: [
+    .library(
+      name: "BushelApp",
+      targets: ["BushelApp"]
+    ),
+    .library(
+      name: "BushelSettingsApp",
+      targets: ["BushelSettingsApp"]
+    ),
+    .library(
+      name: "BushelLibraryApp",
+      targets: ["BushelLibraryApp"]
+    ),
+    .library(
+      name: "BushelMachineApp",
+      targets: ["BushelMachineApp"]
+    ),
+    .executable(name: "bushel", targets: ["bushel"])
+  ],
+  ...
+  targets: [
+    ...
+    .testTarget(name: "BushelCoreTests", dependencies: ["BushelCore"])
+  ]
+)
+```
+
+With PackageDSL you can create a Package simply by defining the products of your package:
+
+```swift
+import PackageDescription
+
+let package = Package {
+  BushelCommand()
+  BushelLibraryApp()
+  BushelMachineApp()
+  BushelSettingsApp()
+  BushelApp()
+}
+testTargets: {
+  BushelCoreTests()
+}
+```
+
+Targets and dependencies are automatically pulled from your products and added the target section of your package. So for instance with `BushelApp`:
+
+```swift
+struct BushelApp: Product, Target {
+  var dependencies: any Dependencies {
+    BushelViews()
+    BushelVirtualization()
+    BushelMachine()
+    BushelLibrary()
+    BushelData()
+  }
+}
+```
+
+The dependencies listed such as `BushelViews` is automatically added to the `Package` as:
+
+```swift
+  .target(name: "BushelViews", dependencies: ["BushelLibraryViews", "BushelMachineViews", "BushelSettingsViews"]),
+```
+
+
+Also the dependencies from `BushelView` are added as well:
+
+```swift
+struct BushelViews: Target {
+  var dependencies: any Dependencies {
+    BushelLibraryViews()
+    BushelMachineViews()
+    BushelSettingsViews()
+  }
+}
+```
+
+It's recursive!!!
+
+### How about remote dependencies?
+
+Remote dependencies (i.e. `Package.Dependency`) are denoted by the `PackageDependency` protocol and just take a standard `Package.Dependency` property called `dependency`. Here's an example of how to add the Swift Argument Parser:
+
+```swift
+struct ArgumentParser: PackageDependency {
+  var dependency: Package.Dependency {
+    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0")
+  }
+}
+```
+
+Then just add it as a dependency to your target:
+
+```swift
+struct BushelArgs: Target {
+  var dependencies: any Dependencies {
+    ArgumentParser()
+    BushelCore()
+  }
+}
+```
+
+### How about test targets?
+
+You can create a test target with the `TestTarget` protocol:
+
+```swift
+struct BushelCoreTests: TestTarget {
+  var dependencies: any Dependencies {
+    BushelCore()
+  }
+}
+```
+
+Then add it to your list of test targets using the `testTarget` argument:
+
+```swift
+let package = Package {
+  BushelCommand()
+  BushelLibraryApp()
+  BushelMachineApp()
+  BushelSettingsApp()
+  BushelApp()
+}
+testTargets: {
+  BushelCoreTests() // right here
+}
+```
+
+### How about language and platforms?
+
+Right now there are two modifier methods to do this. `defaultLocalization` which takes in a [`LanguageTag`](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#languagetag) and `supportedPlatforms` which can take in a list of platforms or a `PlatformSet`. 
+A `PlatformSet` is useful if use a to define a set of platforms for a specific year such as:
+
+```swift
+struct WWDC2023: PlatformSet {
+  var body: any SupportedPlatforms {
+    SupportedPlatform.macOS(.v14)
+    SupportedPlatform.iOS(.v17)
+    SupportedPlatform.watchOS(.v10)
+    SupportedPlatform.tvOS(.v17)
+  }
+}
+```
+
+Rather then define your platforms as:
+
+```swift
+let package = Package {
+  ...
+}
+.supportedPlatforms {
+  SupportedPlatform.macOS(.v14)
+  SupportedPlatform.iOS(.v17)
+  SupportedPlatform.watchOS(.v10)
+  SupportedPlatform.tvOS(.v17)
+}
+```
+
+You can simplify it as:
+
+```swift
+let package = Package {
+  ...
+}
+.supportedPlatforms {
+  WWDC2023()
+}
+```
+
 ## FAQ
 
+### But it doesn't do this?!?! How about this?!?!? I don't know how to do this?!?!
+
+[Create an issue.](https://github.com/brightdigit/PackageDSL/issues/new)
+
+### Why would I do this?
+
+If your package gets big enough, it becomes difficult to manage. This is way to do that. If your package is small enough, I don't recommend it _yet_.
+
 ## Thanks
+
+* [@joshdholtz for inspiration with DeckUI](https://github.com/joshdholtz/DeckUI)
