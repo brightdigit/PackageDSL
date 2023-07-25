@@ -127,6 +127,22 @@ Setup individual targets, products, and dependencies using this DSL and create a
 
 ## How do you install it?
 
+1. [Download this repo](https://github.com/brightdigit/PackageDSL/archive/refs/heads/main.zip)
+2. Create Package directory inside your Swift Package
+3. Copy `Support` folder over
+4. Create `Package/Sources` - this will contain each file for your targets, products, test targets, dependencies, etc...
+5. Create a file at root of `Package` which will contain [your package](README.md#creating-a-package):
+```swift
+ Package {
+  // add products here
+}
+testTargets: {
+  // add test targets here
+}
+```
+6. Copy the `package.sh` script to concatenate all files in `Package` to your usable `Package.swift`
+7. $Profit$
+
 Here's the structure I use for Bushel's Swift Package:
 
 <img width="265" alt="Screenshot 2023-07-25 at 11 46 12 AM" src="https://github.com/brightdigit/PackageDSL/assets/1036388/00c64d7c-114d-49a3-a629-82dd7f436270">
@@ -139,7 +155,7 @@ Here's the structure I use for Bushel's Swift Package:
 ├── Package.resolved
 ├── Package.swift // built by `package.sh`
 ├── package.sh* // copied from this repo
-├── Sources
+├── Sources // actual source code of my package targets
 │   ├── BushelApp
 │   ├── BushelArgs
 │   ├── BushelCore
@@ -165,18 +181,10 @@ Here's the structure I use for Bushel's Swift Package:
 │   ├── BushelViewsCore
 │   ├── BushelVirtualization
 │   └── bushel
-└── Tests
+└── Tests // actual source code of my package test targets
     └── BushelCoreTests
 * the new stuff from PackageDSL
 ```
-
-1. Create Package directory inside your Swift Package
-2. Copy `Support` folder over
-3. Create `Package/Sources` - this will contain each file for your targets, products, test targets, dependencies, etc...
-4. Create a file at root of `Package` which will contain your package:
-
-5. Copy the `package.sh` script to concatenate all files in `Package` to your usable `Package.swift`
-6. $Profit$
 
 ## How does it work?
 
