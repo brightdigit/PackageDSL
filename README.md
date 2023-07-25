@@ -21,6 +21,23 @@ testTargets: {
 .defaultLocalization(.english)
 ```
 
+## Table of Contents
+
+   * [Why?](README.md#why?)
+   * [What is this?](README.md#what-is-this)
+   * [How do you install it?](README.md#how-do-you-install-it)
+   * [How does it work?](README.md#how-does-it-work)
+      * [Creating a Package](README.md#creating-a-package)
+      * [How about remote dependencies?](README.md#how-about-remote-dependencies)
+      * [How about test targets?](README.md#how-about-test-targets)
+      * [How about language and platforms?](README.md#how-about-language-and-platforms)
+   * [FAQ](README.md#faq)
+      * [But it doesn't do this?!?! How about this?!?!? I don't know how to do this?!?!](README.md#but-it-doesnt-do-this-how-about-this-i-dont-know-how-to-do-this)
+      * [Why would I do this?](README.md#why-would-i-do-this)
+   * [Thanks](README.md#thanks)
+
+## Why?
+
 I was having a difficult time managing a large `Package.swift` file. Why go with this instead:
 
 ```swift
