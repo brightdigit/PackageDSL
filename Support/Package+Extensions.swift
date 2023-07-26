@@ -31,7 +31,7 @@ extension Package {
 
     let packgeTargets = Dictionary(grouping: targets, by: { $0.name }).values.compactMap(\.first).map(_PackageDescription_Target.entry(_:))
 
-    let packageDeps = Dictionary(grouping: packageDependencies, by: { $0.productName }).values.compactMap(\.first).map(\.dependency)
+    let packageDeps = Dictionary(grouping: packageDependencies, by: { $0.packageName }).values.compactMap(\.first).map(\.dependency)
 
     self.init(name: packageName, products: products, dependencies: packageDeps, targets: packgeTargets)
   }
