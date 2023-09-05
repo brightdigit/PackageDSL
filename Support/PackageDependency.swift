@@ -35,7 +35,7 @@ extension PackageDependency {
       let packageName = name ?? location.packageName
       return .product(name: productName, package: packageName)
 
-    @unknown default:
+     default:
       return .byName(name: productName)
     }
   }

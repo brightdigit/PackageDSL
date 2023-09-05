@@ -4,16 +4,16 @@
 // Licensed under MIT License
 //
 
-protocol Target: _Depending, Dependency, _Named {
-  var targetType: TargetType { get }
+protocol Target: _Depending, Dependency, _Named, Resources {
+    var targetType: TargetType { get }
 }
 
 extension Target {
-  var targetType: TargetType {
-    .regular
-  }
+    var targetType: TargetType {
+        return .regular
+    }
 
-  var targetDepenency: _PackageDescription_TargetDependency {
-    .target(name: self.name)
-  }
+    var targetDepenency: _PackageDescription_TargetDependency {
+        .target(name: name)
+    }
 }
