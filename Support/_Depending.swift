@@ -19,8 +19,10 @@ extension _Depending {
   func allDependencies() -> [Dependency] {
     self.dependencies.compactMap {
       $0 as? _Depending
-    }.flatMap {
+    }
+    .flatMap {
       $0.allDependencies()
-    }.appending(self.dependencies)
+    }
+    .appending(self.dependencies)
   }
 }

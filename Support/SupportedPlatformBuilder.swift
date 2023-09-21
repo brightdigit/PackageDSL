@@ -20,11 +20,17 @@ enum SupportedPlatformBuilder {
     first
   }
 
-  static func buildPartialBlock(accumulated: any SupportedPlatforms, next: any SupportedPlatforms) -> any SupportedPlatforms {
+  static func buildPartialBlock(
+    accumulated: any SupportedPlatforms,
+    next: any SupportedPlatforms
+  ) -> any SupportedPlatforms {
     accumulated.appending(next)
   }
 
-  static func buildPartialBlock(accumulated: any SupportedPlatforms, next: SupportedPlatform) -> any SupportedPlatforms {
+  static func buildPartialBlock(
+    accumulated: any SupportedPlatforms,
+    next: SupportedPlatform
+  ) -> any SupportedPlatforms {
     accumulated.appending([next])
   }
 }

@@ -11,9 +11,16 @@ let package = Package {
   BushelMachineApp()
   BushelSettingsApp()
   BushelApp()
-}
-testTargets: {
+} testTargets: {
   BushelCoreTests()
+  BushelMachineTests()
+} swiftSettings: {
+  SwiftSetting.enableUpcomingFeature("BareSlashRegexLiterals")
+  SwiftSetting.enableUpcomingFeature("ConciseMagicFile")
+  SwiftSetting.enableUpcomingFeature("ExistentialAny")
+  SwiftSetting.enableUpcomingFeature("ForwardTrailingClosures")
+  SwiftSetting.enableUpcomingFeature("ImplicitOpenExistentials")
+  SwiftSetting.enableUpcomingFeature("StrictConcurrency")
 }
 .supportedPlatforms {
   WWDC2023()

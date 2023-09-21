@@ -11,9 +11,15 @@ let package = Package {
   BushelMachineApp()
   BushelSettingsApp()
   BushelApp()
-}
-testTargets: {
+} testTargets: {
   BushelCoreTests()
+  BushelMachineTests()
+} swiftSettings: {
+  SwiftSetting.enableUpcomingFeature("BareSlashRegexLiterals")
+  SwiftSetting.enableUpcomingFeature("ConciseMagicFile")
+  SwiftSetting.enableUpcomingFeature("ForwardTrailingClosures")
+  SwiftSetting.enableUpcomingFeature("ImplicitOpenExistentials")
+  SwiftSetting.enableUpcomingFeature("StrictConcurrency")
 }
 .supportedPlatforms {
   WWDC2023()
@@ -23,18 +29,19 @@ testTargets: {
 
 ## Table of Contents
 
-   * [Why?](README.md#why?)
-   * [What is this?](README.md#what-is-this)
-   * [How do you install it?](README.md#how-do-you-install-it)
-   * [How does it work?](README.md#how-does-it-work)
-      * [Creating a Package](README.md#creating-a-package)
-      * [How about remote dependencies?](README.md#how-about-remote-dependencies)
-      * [How about test targets?](README.md#how-about-test-targets)
-      * [How about language and platforms?](README.md#how-about-language-and-platforms)
-   * [FAQ](README.md#faq)
-      * [But it doesn't do this?!?! How about this?!?!? I don't know how to do this?!?!](README.md#but-it-doesnt-do-this-how-about-this-i-dont-know-how-to-do-this)
-      * [Why would I do this?](README.md#why-would-i-do-this)
-   * [Thanks](README.md#thanks)
+  * [Why?](#why-)
+  * [What is this?](#what-is-this-)
+  * [How do you install it?](#how-do-you-install-it)
+  * [How does it work?](#how-does-it-work)
+    + [Creating a Package](#creating-a-package)
+    + [How about remote dependencies?](#how-about-remote-dependencies)
+    + [How about test targets?](#how-about-test-targets)
+    + [How about language and platforms?](#how-about-language-and-platforms)
+    + [How about custom Swift settings?](#how-about-custom-swift-settings)
+    + [How about adding resources?](#how-about-adding-resources)
+  * [FAQ](#faq)
+    + [But it doesn't do this?!?! How about this?!?!? I don't know how to do this?!?!](#but-it-doesnt-do-this-how-about-this-i-dont-know-how-to-do-this)
+    + [Why would I do this?](#why-would-i-do-this)
 
 ## Why?
 
@@ -370,6 +377,43 @@ let package = Package {
 }
 .supportedPlatforms {
   WWDC2023()
+}
+```
+
+### How about custom Swift settings?
+
+Swift settings can be [added to all the targets using `swiftSettings` argument on the `Package` constructor](#packagedsl) or to a specific target by implementing using the `swiftSettings` property:
+
+```swift
+struct BushelFactory: Target {
+  var dependencies: any Dependencies {
+    BushelCore()
+    BushelMachine()
+    BushelLibrary()
+    BushelLogging()
+    BushelData()
+  }
+  
+  var swiftSettings: [SwiftSetting] {
+    SwiftSetting.enableUpcomingFeature("ExistentialAny")
+  }
+}
+```
+
+
+### How about adding resources?
+
+To add resources simply implement the `resources` property on the `Target`:
+
+```swift
+struct BushelLocalization: Target {
+  var resources : [Resource] {
+    Resource.process("Styling/Colors/Colors.xcassets")
+    Resource.process("Styling/Fonts/FontsFiles")
+    Resource.process("Images/Images.xcassets")
+    Resource.process("Images/whiteLoading.json")
+    Resource.process("Images/primaryLoading.json")
+  }
 }
 ```
 
