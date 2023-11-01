@@ -12,6 +12,7 @@ extension _PackageDescription_Target {
       return .executableTarget(
         name: entry.name,
         dependencies: dependencies,
+        path: entry.path,
         resources: entry.resources,
         swiftSettings: swiftSettings + entry.swiftSettings
       )
@@ -20,6 +21,7 @@ extension _PackageDescription_Target {
       return .target(
         name: entry.name,
         dependencies: dependencies,
+        path: entry.path,
         resources: entry.resources,
         swiftSettings: swiftSettings + entry.swiftSettings
       )
@@ -28,6 +30,7 @@ extension _PackageDescription_Target {
       return .testTarget(
         name: entry.name,
         dependencies: dependencies,
+        path: entry.path,
         resources: entry.resources,
         swiftSettings: swiftSettings + entry.swiftSettings
       )
