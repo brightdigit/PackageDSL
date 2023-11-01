@@ -12,6 +12,8 @@ protocol Target: _Depending, Dependency, _Named {
 
   @ResourcesBuilder
   var resources: [Resource] { get }
+  
+  var path: String? { get }
 }
 
 extension Target {
@@ -29,5 +31,9 @@ extension Target {
 
   var resources: [Resource] {
     []
+  }
+  
+  var path: String? {
+    return nil
   }
 }
