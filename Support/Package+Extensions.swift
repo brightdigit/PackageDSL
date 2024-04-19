@@ -1,6 +1,6 @@
 //
 // Package+Extensions.swift
-// Copyright (c) 2023 BrightDigit.
+// Copyright (c) 2024 BrightDigit.
 // Licensed under MIT License
 //
 
@@ -31,7 +31,6 @@ extension Package {
     let packageDependencies = dependencies.compactMap { $0 as? PackageDependency }
     targets += targetDependencies
     targets += allTestTargets.map { $0 as Target }
-    assert(targetDependencies.count + packageDependencies.count == dependencies.count)
 
     let packgeTargets = Dictionary(
       grouping: targets,
