@@ -130,10 +130,10 @@ function parse_content() {
 				if [ -n "$upcoming_feature" ]; then
 					# $features+=()
 # Define the feature tuple
-					feature="Upcoming $upcoming_feature"
+					feature="Upcoming:$upcoming_feature"
 					
 					# Append the feature tuple to the features array
-					features+=("Upcoming:$upcoming_feature")
+					features+=("$feature")
 					# create_feature_file "Upcoming" "$upcoming_feature" "$file_name" "$html_url"
 				fi
 		done
@@ -143,10 +143,11 @@ function parse_content() {
 		for experimental_feature in $experimental_features; do
 				if [ -n "$experimental_feature" ]; then
 					
-					feature="Experimental:$experimental_feature"
-					
-					# Append the feature tuple to the features array
-					features+=("Experimental:$experimental_feature")
+					feature="Upcoming:$experimental_feature"
+					if [[ ! " ${features[*]} " =~ [[:space:]]${feature}[[:space:]] ]]; then							
+							# Append the feature tuple to the features array
+							features+=("Experimental:$experimental_feature")
+					fi
 					# create_feature_file "Experimental" "$experimental_feature" "$file_name" "$html_url"
 				fi
 		done
