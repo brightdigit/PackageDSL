@@ -155,5 +155,6 @@ function parse_content() {
 
 # Loop through each file in the directory
 for row in $(echo "$response" | jq -r '.[] | @base64'); do
-	parse_row "$row"
+	parse_row "$row" &
 done
+wait
