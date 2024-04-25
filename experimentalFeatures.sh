@@ -79,11 +79,11 @@ if [ "$response_type" == "object" ] && [ "$(echo "$response" | jq -r '.message')
 		exit 1
 fi
 
-# Loop through each file in the directory
-for row in $(echo "$response" | jq -r '.[] | @base64'); do
+function parse_row() {
+		local row=$1
 		# Parse JSON object for each file
 		file=$(echo "$row" | base64 -d)
-
+		
 		# Extract file name and proposal number
 		file_name=$(echo "$file" | jq -r '.name')
 		html_url=$(echo "$file" | jq --compact-output -r '.html_url')
@@ -94,31 +94,66 @@ for row in $(echo "$response" | jq -r '.[] | @base64'); do
 		if [ "$proposal_number" -lt "$start_proposal" ]; then
 				continue
 		fi
-
+		
 		# Check if max_proposal is provided and skip files after the max proposal
 		if [ -n "$max_proposal" ] && [ "$proposal_number" -gt "$max_proposal" ]; then
 				break
 		fi
-
+		
 		# Echo file name
 		echo "Processing file: $file_name"
-
+		
 		# Download the content of the file
 		file_content=$(curl -s "$(echo "$file" | jq -r '.download_url')")
+		
+		features=$(parse_content "$file_content")
+		
+		for feature in $features; do
+		if [ -n "$feature" ]; then
+				local params=()
+				 local IFS=$IFS:				 
+				 read -a params <<< "$feature"
+				
+				create_feature_file "${params[0]}" "${params[1]}" "$file_name" "$html_url"	
+				#IFS="${IFS:0:3}"
+				#printf '%q' "${IFS}"
+			fi
+		done
+}
 
+function parse_content() {
+		local file_content=$1		
+		local features=()
 		# Search for upcoming features
 		upcoming_features=$(echo "$file_content" | awk -F ": +" '/Upcoming Feature Flag:/ {print $NF}' | grep -oE '`[[:alnum:]]+`' | tr -d '`')
 		for upcoming_feature in $upcoming_features; do
 				if [ -n "$upcoming_feature" ]; then
-						create_feature_file "Upcoming" "$upcoming_feature" "$file_name" "$html_url"
+					# $features+=()
+# Define the feature tuple
+					feature="Upcoming $upcoming_feature"
+					
+					# Append the feature tuple to the features array
+					features+=("Upcoming:$upcoming_feature")
+					# create_feature_file "Upcoming" "$upcoming_feature" "$file_name" "$html_url"
 				fi
 		done
-
+		
 		# Search for experimental features
 		experimental_features=$(echo "$file_content" | grep -oE '\-enable-experimental-feature\s+[[:alnum:]]{2,}' | awk '{print $2}')
 		for experimental_feature in $experimental_features; do
 				if [ -n "$experimental_feature" ]; then
-						create_feature_file "Experimental" "$experimental_feature" "$file_name" "$html_url"
+					
+					feature="Experimental:$experimental_feature"
+					
+					# Append the feature tuple to the features array
+					features+=("Experimental:$experimental_feature")
+					# create_feature_file "Experimental" "$experimental_feature" "$file_name" "$html_url"
 				fi
 		done
+		echo "${features[@]}"
+}
+
+# Loop through each file in the directory
+for row in $(echo "$response" | jq -r '.[] | @base64'); do
+	parse_row "$row"
 done
