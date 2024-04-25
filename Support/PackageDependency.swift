@@ -8,6 +8,7 @@ import Foundation
 import PackageDescription
 
 protocol PackageDependency: Dependency {
+  var productName: String { get }
   var packageName: String { get }
   var dependency: _PackageDescription_PackageDependency { get }
 }
