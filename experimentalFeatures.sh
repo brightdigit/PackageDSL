@@ -2,9 +2,10 @@
 
 # Function to display script usage
 display_usage() {
-	echo "Usage: $0 [output_directory] [start_proposal]"
+	echo "Usage: $0 [output_directory] [start_proposal] [max_proposal]"
 	echo "  output_directory: The directory to output the files"
 	echo "  start_proposal: The proposal number to start searching from (default: 363)"
+	echo "  max_proposal: The maximum proposal number to process (optional)"
 }
 
 # Check if number of arguments is less than 1
@@ -18,6 +19,9 @@ output_directory=$1
 
 # Set start_proposal to the second argument if provided, otherwise default to 363
 start_proposal=${2:-363}
+
+# Set max_proposal to the third argument if provided
+max_proposal=$3
 
 # Check if output_directory is provided
 if [ -z "$output_directory" ]; then
@@ -73,27 +77,32 @@ for row in $(echo "$response" | jq -r '.[] | @base64'); do
 		continue
 	fi
 
+	# Check if max_proposal is provided and skip files after the max proposal
+	if [ -n "$max_proposal" ] && [ "$proposal_number" -gt "$max_proposal" ]; then
+		break
+	fi
+
+	# Echo file name
+	echo "Processing file: $file_name"
+
 	# Download the content of the file
 	file_content=$(curl -s "$(echo "$file" | jq -r '.download_url')")
 
-	# Search for strings preceded by "-enable-experimental-feature" and print the matches
-	experimental_features=$(echo "$file_content" | grep -oE '\-enable-experimental-feature\s+[[:alnum:]]{2,}' | awk '{print $2}')
+	# Search for upcoming features
+	upcoming_feature=$(echo "$file_content" | awk -F ": +" '/Upcoming Feature Flag:/ {print $NF}' | grep -oE '`[[:alnum:]]+`' | tr -d '`')
+	if [ -n "$upcoming_feature" ]; then
+		# Create file with the feature template
+		echo "// from proposal $file_name" > "$output_directory/Upcoming/$upcoming_feature.swift"
+		echo "struct $upcoming_feature : SwiftSettingFeature {" >> "$output_directory/Upcoming/$upcoming_feature.swift"
+		echo "  var featureState : FeatureState {" >> "$output_directory/Upcoming/$upcoming_feature.swift"
+		echo "    return .upcoming" >> "$output_directory/Upcoming/$upcoming_feature.swift"
+		echo "  }" >> "$output_directory/Upcoming/$upcoming_feature.swift"
+		echo "}" >> "$output_directory/Upcoming/$upcoming_feature.swift"
+	fi
 
-	# If no experimental features found, search for upcoming features
-	if [ -z "$experimental_features" ]; then
-		upcoming_features=$(echo "$file_content" | awk -F ": +" '/Upcoming Feature Flag:/ && $2 ~ /^`[[:alnum:]]+`$/ {print substr($2, 2, length($2)-2)}')
-		if [ -n "$upcoming_features" ]; then
-			for feature in $upcoming_features; do
-				# Create file with the feature template
-				echo "// from proposal $file_name" > "$output_directory/Upcoming/$feature.swift"
-				echo "struct $feature : SwiftSettingFeature {" >> "$output_directory/Upcoming/$feature.swift"
-				echo "  var featureState : FeatureState {" >> "$output_directory/Upcoming/$feature.swift"
-				echo "    return .upcoming" >> "$output_directory/Upcoming/$feature.swift"
-				echo "  }" >> "$output_directory/Upcoming/$feature.swift"
-				echo "}" >> "$output_directory/Upcoming/$feature.swift"
-			done
-		fi
-	else
+	# Search for experimental features
+	experimental_features=$(echo "$file_content" | grep -oE '\-enable-experimental-feature\s+[[:alnum:]]{2,}' | awk '{print $2}')
+	if [ -n "$experimental_features" ]; then
 		for feature in $experimental_features; do
 			# Create file with the feature template
 			echo "// from proposal $file_name" > "$output_directory/Experimental/$feature.swift"
