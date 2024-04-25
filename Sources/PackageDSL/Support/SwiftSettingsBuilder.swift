@@ -4,11 +4,7 @@
 // Licensed under MIT License
 //
 
-
- 
-
-
-
+import PackageDescription
 
 @resultBuilder
 enum SwiftSettingsBuilder {

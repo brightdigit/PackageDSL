@@ -4,6 +4,8 @@
 // Licensed under MIT License
 //
 
+import PackageDescription
+
 protocol Target: _Depending, Dependency, _Named {
   var targetType: TargetType { get }
 

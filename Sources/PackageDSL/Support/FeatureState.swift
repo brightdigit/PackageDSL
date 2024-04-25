@@ -1,3 +1,6 @@
+
+import PackageDescription
+
 enum FeatureState {
   case upcoming
   case experimental

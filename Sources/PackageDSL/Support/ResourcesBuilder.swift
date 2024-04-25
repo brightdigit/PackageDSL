@@ -4,6 +4,8 @@
 // Licensed under MIT License
 //
 
+import PackageDescription
+
 @resultBuilder
 enum ResourcesBuilder {
   static func buildPartialBlock(first: Resource) -> [Resource] {

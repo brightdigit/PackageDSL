@@ -4,6 +4,8 @@
 // Licensed under MIT License
 //
 
+import PackageDescription
+
 extension Package {
   convenience init(
     name: String? = nil,

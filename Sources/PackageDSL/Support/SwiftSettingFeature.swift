@@ -1,3 +1,4 @@
+import PackageDescription
 
 protocol SwiftSettingFeature : _Named, SwiftSettingConvertible {
   var featureState : FeatureState { get }
