@@ -16,6 +16,10 @@ public enum SwiftSettingsBuilder {
     accumulated + [next]
   }
   
+  public static func buildPartialBlock(accumulated: [SwiftSetting], next: [SwiftSetting]) -> [SwiftSetting] {
+    accumulated + next
+  }
+  
   public static func buildPartialBlock(first: [SwiftSetting]) -> [SwiftSetting] {
     first
   }

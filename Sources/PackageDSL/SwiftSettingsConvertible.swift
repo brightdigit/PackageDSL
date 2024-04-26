@@ -7,6 +7,8 @@ public protocol SwiftSettingsConvertible : GroupBuildable {
 
 extension SwiftSettingsConvertible {
   public static func output(from array: [Self]) -> [SwiftSetting] {
-    array.flatMap{$0.swiftSettings()}
+    array.flatMap{
+      $0.swiftSettings()
+    }
   }
 }

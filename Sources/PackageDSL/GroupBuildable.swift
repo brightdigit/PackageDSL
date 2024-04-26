@@ -9,5 +9,5 @@ import Foundation
 
 public protocol GroupBuildable {
   associatedtype Output
-  static func output(from array: [Self]) -> [Output]
+  static func output(from array: [Self]) -> [Self.Output]
 }
