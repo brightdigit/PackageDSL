@@ -7,20 +7,24 @@
 import PackageDescription
 
 @resultBuilder
-enum SwiftSettingsBuilder {
-  static func buildPartialBlock(first: SwiftSetting) -> [SwiftSetting] {
+public enum SwiftSettingsBuilder {
+  public static func buildPartialBlock(first: SwiftSetting) -> [SwiftSetting] {
     [first]
   }
 
-  static func buildPartialBlock(accumulated: [SwiftSetting], next: SwiftSetting) -> [SwiftSetting] {
+  public static func buildPartialBlock(accumulated: [SwiftSetting], next: SwiftSetting) -> [SwiftSetting] {
     accumulated + [next]
   }
   
-  static func buildPartialBlock(first: SwiftSettingsConvertible) -> [SwiftSetting] {
+  public static func buildPartialBlock(first: [SwiftSetting]) -> [SwiftSetting] {
+    first
+  }
+  
+  public static func buildPartialBlock(first: any SwiftSettingsConvertible) -> [SwiftSetting] {
     first.swiftSettings()
   }
 
-  static func buildPartialBlock(accumulated: [SwiftSetting], next: SwiftSettingsConvertible) -> [SwiftSetting] {
+  public static func buildPartialBlock(accumulated: [SwiftSetting], next: any SwiftSettingsConvertible) -> [SwiftSetting] {
     accumulated + next.swiftSettings()
   }
 }
