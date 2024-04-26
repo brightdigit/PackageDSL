@@ -20,7 +20,12 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "PackageDSL",
-            dependencies: [.product(name: "PackageDescription", package: "swift-package-manager")]
+            dependencies: [.product(name: "PackageDescription", package: "swift-package-manager")],  
+            swiftSettings: [
+              .define("USE_IMPL_ONLY_IMPORTS"),
+              .unsafeFlags(["-package-description-version", "999.0"]),
+              .unsafeFlags(["-enable-library-evolution"]),
+          ]
         ),
         .testTarget(
             name: "PackageDSLTests",
