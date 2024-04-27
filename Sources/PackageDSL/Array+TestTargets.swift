@@ -4,8 +4,8 @@
 // Licensed under MIT License
 //
 
-extension Array: TestTargets where Element == TestTarget {
-  public func appending(_ testTargets: any TestTargets) -> [TestTarget] {
+extension Array: TestTargets where Element == any TestTarget {
+  public func appending(_ testTargets: any TestTargets) -> [any TestTarget] {
     self + testTargets
   }
 }

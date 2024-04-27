@@ -5,7 +5,7 @@
 //
 
 extension _PackageDescription_Product {
-  static func entry(_ entry: Product) -> _PackageDescription_Product {
+  static func entry(_ entry: any Product) -> _PackageDescription_Product {
     let targets = entry.productTargets.map(\.name)
 
     switch entry.productType {

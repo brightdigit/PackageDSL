@@ -1,7 +1,6 @@
 import PackageDescription
 
-public protocol SwiftSettingsConvertible : GroupBuildable {
-  typealias Output = SwiftSetting
+public protocol SwiftSettingsConvertible : GroupBuildable where Output == SwiftSetting {
   func swiftSettings () -> [SwiftSetting]
 }
 

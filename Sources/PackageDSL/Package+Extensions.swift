@@ -9,8 +9,8 @@ import PackageDescription
 extension Package {
   public convenience init(
     name: String? = nil,
-    @ProductsBuilder entries: @escaping () -> [Product],
-    @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [TestTarget]() },
+    @ProductsBuilder entries: @escaping () -> [any Product],
+    @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [any TestTarget]() },
     @SwiftSettingsBuilder swiftSettings: @escaping () -> [SwiftSetting] = { [SwiftSetting]() }
   ) {
     let packageName: String

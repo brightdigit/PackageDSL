@@ -8,6 +8,13 @@
 import Foundation
 
 public protocol GroupBuildable {
-  associatedtype Output
+  associatedtype Output = Self
   static func output(from array: [Self]) -> [Self.Output]
+}
+
+extension GroupBuildable where Output == Self {
+  static func output(from array: [Self]) -> [Self.Output] {
+    return array
+  }
+  
 }

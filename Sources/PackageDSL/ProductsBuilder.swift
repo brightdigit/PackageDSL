@@ -6,11 +6,20 @@
 
 @resultBuilder
 public enum ProductsBuilder {
-  public static func buildPartialBlock(first: Product) -> [Product] {
+  
+  public static func buildPartialBlock(first: [any Product]) -> [any Product] {
+    first
+  }
+  
+  public static func buildPartialBlock(first: any Product) -> [any Product] {
     [first]
   }
 
-  public static func buildPartialBlock(accumulated: [Product], next: Product) -> [Product] {
+  public static func buildPartialBlock(accumulated: [any Product], next: any Product) -> [any Product] {
     accumulated + [next]
+  }
+  
+  public static func buildPartialBlock(accumulated: [any Product], next: [any Product]) -> [any Product] {
+    accumulated + next
   }
 }

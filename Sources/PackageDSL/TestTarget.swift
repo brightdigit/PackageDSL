@@ -4,7 +4,7 @@
 // Licensed under MIT License
 //
 
-public protocol TestTarget: Target {}
+public protocol TestTarget: Target, GroupBuildable {}
 
 extension TestTarget {
   public var targetType: TargetType {

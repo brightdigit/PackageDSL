@@ -4,7 +4,7 @@
 // Licensed under MIT License
 //
 
-public protocol Product: _Named {
+public protocol Product: _Named, GroupBuildable {
   var productTargets: [Target] { get }
   var productType: ProductType { get }
 }
