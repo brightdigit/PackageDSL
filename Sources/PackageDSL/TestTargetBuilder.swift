@@ -1,7 +1,6 @@
 //
 // TestTargetBuilder.swift
 // Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
 //
 
 @resultBuilder
@@ -9,7 +8,7 @@ enum TestTargetBuilder {
   static func buildPartialBlock(first: [any TestTarget]) -> any TestTargets {
     first
   }
-  
+
   static func buildPartialBlock(first: any TestTarget) -> any TestTargets {
     [first]
   }

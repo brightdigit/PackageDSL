@@ -1,16 +1,20 @@
+//
+// SwiftSettingFeature.swift
+// Copyright (c) 2024 BrightDigit.
+//
+
 import PackageDescription
 
-public protocol SwiftSettingFeature : _Named, SwiftSettingConvertible {
-  var featureState : FeatureState { get }
+public protocol SwiftSettingFeature: _Named, SwiftSettingConvertible {
+  var featureState: FeatureState { get }
 }
 
-extension SwiftSettingFeature {
-  public var featureState : FeatureState {
-    return .upcoming
+public extension SwiftSettingFeature {
+  var featureState: FeatureState {
+    .upcoming
   }
-  
-  
-  public var setting : SwiftSetting {
-    return self.featureState.swiftSetting(name: name)
+
+  var setting: SwiftSetting {
+    self.featureState.swiftSetting(name: name)
   }
 }

@@ -1,3 +1,7 @@
+//
+// FeatureState.swift
+// Copyright (c) 2024 BrightDigit.
+//
 
 import PackageDescription
 
@@ -6,13 +10,14 @@ public enum FeatureState {
   case experimental
 }
 
-extension FeatureState {
-  public func swiftSetting(name: String) -> SwiftSetting {
+public extension FeatureState {
+  func swiftSetting(name: String) -> SwiftSetting {
     switch self {
     case .experimental:
-        return .enableExperimentalFeature(name)
+      .enableExperimentalFeature(name)
+
     case .upcoming:
-        return .enableUpcomingFeature(name)
+      .enableUpcomingFeature(name)
     }
   }
 }

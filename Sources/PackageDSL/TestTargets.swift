@@ -1,7 +1,6 @@
 //
 // TestTargets.swift
 // Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
 //
 
 public protocol TestTargets: Sequence where Element == any TestTarget {

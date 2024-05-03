@@ -1,7 +1,6 @@
 //
 // Target.swift
 // Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
 //
 
 import PackageDescription
@@ -14,28 +13,28 @@ public protocol Target: _Depending, Dependency, _Named {
 
   @ResourcesBuilder
   var resources: [Resource] { get }
-  
+
   var path: String? { get }
 }
 
-extension Target {
-  public var targetType: TargetType {
+public extension Target {
+  var targetType: TargetType {
     .regular
   }
 
-  public var targetDepenency: _PackageDescription_TargetDependency {
+  var targetDepenency: _PackageDescription_TargetDependency {
     .target(name: self.name)
   }
 
-  public var swiftSettings: [SwiftSetting] {
+  var swiftSettings: [SwiftSetting] {
     []
   }
 
-  public var resources: [Resource] {
+  var resources: [Resource] {
     []
   }
-  
-  public var path: String? {
-    return nil
+
+  var path: String? {
+    nil
   }
 }

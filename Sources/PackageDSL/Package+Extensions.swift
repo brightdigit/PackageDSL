@@ -1,13 +1,12 @@
 //
 // Package+Extensions.swift
 // Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
 //
 
 import PackageDescription
 
-extension Package {
-  public convenience init(
+public extension Package {
+  convenience init(
     name: String? = nil,
     @ProductsBuilder entries: @escaping () -> [any Product],
     @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [any TestTarget]() },
@@ -44,22 +43,22 @@ extension Package {
 
     let packageDeps = Dictionary(
       grouping: packageDependencies,
-      by: { $0.productName }
+      by: { $0.packageName }
     ).values.compactMap(\.first).map(\.dependency)
 
     self.init(name: packageName, products: products, dependencies: packageDeps, targets: packgeTargets)
   }
 }
 
-extension Package {
-  public func supportedPlatforms(
+public extension Package {
+  func supportedPlatforms(
     @SupportedPlatformBuilder supportedPlatforms: @escaping () -> any SupportedPlatforms
   ) -> Package {
     self.platforms = .init(supportedPlatforms())
     return self
   }
 
-  public func defaultLocalization(_ defaultLocalization: LanguageTag) -> Package {
+  func defaultLocalization(_ defaultLocalization: LanguageTag) -> Package {
     self.defaultLocalization = defaultLocalization
     return self
   }

@@ -1,7 +1,6 @@
 //
 // Product.swift
 // Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
 //
 
 public protocol Product: _Named, GroupBuildable {
@@ -9,8 +8,8 @@ public protocol Product: _Named, GroupBuildable {
   var productType: ProductType { get }
 }
 
-extension Product {
-  public var productType: ProductType {
+public extension Product {
+  var productType: ProductType {
     .library
   }
 }

@@ -1,8 +1,6 @@
 //
 // TargetDependency.swift
-// Copyright © 2024 , LLC.
 // Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
 //
 
 protocol TargetDependency: Dependency, _Named {

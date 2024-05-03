@@ -1,15 +1,20 @@
+//
+// UnsafeFlag.swift
+// Copyright (c) 2024 BrightDigit.
+//
+
 import PackageDescription
 
-public protocol UnsafeFlag : SwiftSettingConvertible, _Named {
-  var unsafeFlagArgument : String { get }
+public protocol UnsafeFlag: SwiftSettingConvertible, _Named {
+  var unsafeFlagArgument: String { get }
 }
 
-extension UnsafeFlag {
-  public var unsafeFlagArgument : String {
+public extension UnsafeFlag {
+  var unsafeFlagArgument: String {
     self.name.camelToSnakeCase()
   }
-  
-  public var setting : SwiftSetting {
+
+  var setting: SwiftSetting {
     .unsafeFlags([self.unsafeFlagArgument])
   }
 }

@@ -1,11 +1,16 @@
+//
+// SwiftSettingConvertible.swift
+// Copyright (c) 2024 BrightDigit.
+//
+
 import PackageDescription
 
-public protocol SwiftSettingConvertible : SwiftSettingsConvertible {
-  var setting : SwiftSetting { get }
+public protocol SwiftSettingConvertible: SwiftSettingsConvertible {
+  var setting: SwiftSetting { get }
 }
 
-extension SwiftSettingConvertible {
-  public func swiftSettings () -> [SwiftSetting] {
-    return [setting]
+public extension SwiftSettingConvertible {
+  func swiftSettings() -> [SwiftSetting] {
+    [setting]
   }
 }
