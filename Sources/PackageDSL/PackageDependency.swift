@@ -13,6 +13,10 @@ protocol PackageDependency : _Named {
 }
 
 extension PackageDependency where Self : TargetDependency {
+  
+  var package: any PackageDependency {
+    self
+  }
 //  var productName: String {
 //    name
 //  }

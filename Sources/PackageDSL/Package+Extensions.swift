@@ -33,7 +33,7 @@ public extension Package {
     targets += targetDependencies
     targets += allTestTargets.map { $0 as Target }
 
-    let packgeTargets = Dictionary(
+    let packageTargets = Dictionary(
       grouping: targets,
       by: { $0.name }
     )
@@ -41,12 +41,13 @@ public extension Package {
     .compactMap(\.first)
     .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings()) }
 
+    dump(packageTargets)
     let packageDeps = Dictionary(
       grouping: packageDependencies,
       by: { $0.packageName }
     ).values.compactMap(\.first).map(\.dependency)
 
-    self.init(name: packageName, products: products, dependencies: packageDeps, targets: packgeTargets)
+    self.init(name: packageName, products: products, dependencies: packageDeps, targets: packageTargets)
   }
 }
 
