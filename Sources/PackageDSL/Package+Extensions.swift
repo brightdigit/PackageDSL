@@ -41,7 +41,6 @@ public extension Package {
     .compactMap(\.first)
     .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings()) }
 
-    dump(packageTargets)
     let packageDeps = Dictionary(
       grouping: packageDependencies,
       by: { $0.packageName }
