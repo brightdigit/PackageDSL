@@ -6,7 +6,7 @@
 import PackageDescription
 
 extension Array: SupportedPlatforms where Element == SupportedPlatform {
-    public func appending(_ platforms: any SupportedPlatforms) -> Self {
-        self + .init(platforms)
-    }
+  public func appending(_ platforms: any SupportedPlatforms) -> Self {
+    self + .init(platforms)
+  }
 }

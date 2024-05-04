@@ -6,15 +6,15 @@
 import PackageDescription
 
 public protocol SwiftSettingFeature: _Named, SwiftSettingConvertible {
-    var featureState: FeatureState { get }
+  var featureState: FeatureState { get }
 }
 
-public extension SwiftSettingFeature {
-    var featureState: FeatureState {
-        .upcoming
-    }
+extension SwiftSettingFeature {
+  public var featureState: FeatureState {
+    .upcoming
+  }
 
-    var setting: SwiftSetting {
-        featureState.swiftSetting(name: name)
-    }
+  public var setting: SwiftSetting {
+    featureState.swiftSetting(name: name)
+  }
 }

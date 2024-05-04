@@ -5,8 +5,8 @@
 
 public protocol TestTarget: Target, GroupBuildable {}
 
-public extension TestTarget {
-    var targetType: TargetType {
-        .test
-    }
+extension TestTarget {
+  public var targetType: TargetType {
+    .test
+  }
 }

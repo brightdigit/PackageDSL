@@ -6,11 +6,11 @@
 import PackageDescription
 
 public protocol SwiftSettingConvertible: SwiftSettingsConvertible {
-    var setting: SwiftSetting { get }
+  var setting: SwiftSetting { get }
 }
 
-public extension SwiftSettingConvertible {
-    func swiftSettings() -> [SwiftSetting] {
-        [setting]
-    }
+extension SwiftSettingConvertible {
+  public func swiftSettings() -> [SwiftSetting] {
+    [setting]
+  }
 }
