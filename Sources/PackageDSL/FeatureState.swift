@@ -6,18 +6,18 @@
 import PackageDescription
 
 public enum FeatureState {
-  case upcoming
-  case experimental
+    case upcoming
+    case experimental
 }
 
 public extension FeatureState {
-  func swiftSetting(name: String) -> SwiftSetting {
-    switch self {
-    case .experimental:
-      .enableExperimentalFeature(name)
+    func swiftSetting(name: String) -> SwiftSetting {
+        switch self {
+        case .experimental:
+            .enableExperimentalFeature(name)
 
-    case .upcoming:
-      .enableUpcomingFeature(name)
+        case .upcoming:
+            .enableUpcomingFeature(name)
+        }
     }
-  }
 }

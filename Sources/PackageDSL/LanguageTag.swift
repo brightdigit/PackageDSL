@@ -6,5 +6,5 @@
 import PackageDescription
 
 extension LanguageTag {
-  static let english: LanguageTag = "en"
+    static let english: LanguageTag = "en"
 }

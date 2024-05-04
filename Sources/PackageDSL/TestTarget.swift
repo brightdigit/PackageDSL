@@ -6,7 +6,7 @@
 public protocol TestTarget: Target, GroupBuildable {}
 
 public extension TestTarget {
-  var targetType: TargetType {
-    .test
-  }
+    var targetType: TargetType {
+        .test
+    }
 }

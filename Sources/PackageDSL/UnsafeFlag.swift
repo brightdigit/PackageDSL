@@ -6,15 +6,15 @@
 import PackageDescription
 
 public protocol UnsafeFlag: SwiftSettingConvertible, _Named {
-  var unsafeFlagArgument: String { get }
+    var unsafeFlagArgument: String { get }
 }
 
 public extension UnsafeFlag {
-  var unsafeFlagArgument: String {
-    self.name.camelToSnakeCase()
-  }
+    var unsafeFlagArgument: String {
+        name.camelToSnakeCase()
+    }
 
-  var setting: SwiftSetting {
-    .unsafeFlags([self.unsafeFlagArgument])
-  }
+    var setting: SwiftSetting {
+        .unsafeFlags([unsafeFlagArgument])
+    }
 }
