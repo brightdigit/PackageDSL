@@ -4,7 +4,7 @@
 //
 
 public enum TargetType {
-    case regular
-    case executable
-    case test
+  case regular
+  case executable
+  case test
 }

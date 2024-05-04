@@ -4,7 +4,7 @@
 //
 
 extension Array: Dependencies where Element == Dependency {
-    public func appending(_ dependencies: any Dependencies) -> [Dependency] {
-        self + dependencies
-    }
+  public func appending(_ dependencies: any Dependencies) -> [Dependency] {
+    self + dependencies
+  }
 }

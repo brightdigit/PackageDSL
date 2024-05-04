@@ -4,12 +4,12 @@
 //
 
 public protocol Product: _Named, GroupBuildable {
-    var productTargets: [Target] { get }
-    var productType: ProductType { get }
+  var productTargets: [Target] { get }
+  var productType: ProductType { get }
 }
 
-public extension Product {
-    var productType: ProductType {
-        .library
-    }
+extension Product {
+  public var productType: ProductType {
+    .library
+  }
 }

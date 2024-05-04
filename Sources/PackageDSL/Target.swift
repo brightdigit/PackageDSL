@@ -6,35 +6,35 @@
 import PackageDescription
 
 public protocol Target: _Depending, Dependency, _Named {
-    var targetType: TargetType { get }
+  var targetType: TargetType { get }
 
-    @SwiftSettingsBuilder
-    var swiftSettings: [SwiftSetting] { get }
+  @SwiftSettingsBuilder
+  var swiftSettings: [SwiftSetting] { get }
 
-    @ResourcesBuilder
-    var resources: [Resource] { get }
+  @ResourcesBuilder
+  var resources: [Resource] { get }
 
-    var path: String? { get }
+  var path: String? { get }
 }
 
-public extension Target {
-    var targetType: TargetType {
-        .regular
-    }
+extension Target {
+  public var targetType: TargetType {
+    .regular
+  }
 
-    var targetDepenency: _PackageDescription_TargetDependency {
-        .target(name: name)
-    }
+  public var targetDepenency: _PackageDescription_TargetDependency {
+    .target(name: name)
+  }
 
-    var swiftSettings: [SwiftSetting] {
-        []
-    }
+  public var swiftSettings: [SwiftSetting] {
+    []
+  }
 
-    var resources: [Resource] {
-        []
-    }
+  public var resources: [Resource] {
+    []
+  }
 
-    var path: String? {
-        nil
-    }
+  public var path: String? {
+    nil
+  }
 }
