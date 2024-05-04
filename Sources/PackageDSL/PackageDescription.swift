@@ -4,8 +4,6 @@
 // Licensed under MIT License
 //
 
-// swiftlint:disable type_name
-
 import PackageDescription
 
 public typealias _PackageDescription_Product = PackageDescription.Product

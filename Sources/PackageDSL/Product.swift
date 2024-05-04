@@ -1,6 +1,7 @@
 //
 // Product.swift
 // Copyright (c) 2024 BrightDigit.
+// Licensed under MIT License
 //
 
 public protocol Product: _Named, GroupBuildable {
