@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-objc-header"])
-public struct EmitObjcHeader: UnsafeFlag { }
+public struct EmitObjcHeader: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-print-educational-notes"])
-public struct PrintEducationalNotes: UnsafeFlag { }
+public struct PrintEducationalNotes: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-disable-incremental-imports"])
-public struct DisableIncrementalImports: UnsafeFlag { }
+public struct DisableIncrementalImports: UnsafeFlag {}

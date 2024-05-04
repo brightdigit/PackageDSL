@@ -12,32 +12,32 @@ extension _PackageDescription_Target {
   {
     let dependencies = entry.dependencies.map(\.targetDepenency)
     switch entry.targetType {
-    case .executable:
-      return .executableTarget(
-        name: entry.name,
-        dependencies: dependencies,
-        path: entry.path,
-        resources: entry.resources,
-        swiftSettings: swiftSettings + entry.swiftSettings
-      )
+      case .executable:
+        return .executableTarget(
+          name: entry.name,
+          dependencies: dependencies,
+          path: entry.path,
+          resources: entry.resources,
+          swiftSettings: swiftSettings + entry.swiftSettings
+        )
 
-    case .regular:
-      return .target(
-        name: entry.name,
-        dependencies: dependencies,
-        path: entry.path,
-        resources: entry.resources,
-        swiftSettings: swiftSettings + entry.swiftSettings
-      )
+      case .regular:
+        return .target(
+          name: entry.name,
+          dependencies: dependencies,
+          path: entry.path,
+          resources: entry.resources,
+          swiftSettings: swiftSettings + entry.swiftSettings
+        )
 
-    case .test:
-      return .testTarget(
-        name: entry.name,
-        dependencies: dependencies,
-        path: entry.path,
-        resources: entry.resources,
-        swiftSettings: swiftSettings + entry.swiftSettings
-      )
+      case .test:
+        return .testTarget(
+          name: entry.name,
+          dependencies: dependencies,
+          path: entry.path,
+          resources: entry.resources,
+          swiftSettings: swiftSettings + entry.swiftSettings
+        )
     }
   }
 }

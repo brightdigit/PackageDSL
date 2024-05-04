@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-index-include-locals"])
-public struct IndexIncludeLocals: UnsafeFlag { }
+public struct IndexIncludeLocals: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-cache-compile-job"])
-public struct CacheCompileJob: UnsafeFlag { }
+public struct CacheCompileJob: UnsafeFlag {}

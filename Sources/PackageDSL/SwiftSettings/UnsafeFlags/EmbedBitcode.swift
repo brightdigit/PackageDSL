@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-embed-bitcode"])
-public struct EmbedBitcode: UnsafeFlag { }
+public struct EmbedBitcode: UnsafeFlag {}

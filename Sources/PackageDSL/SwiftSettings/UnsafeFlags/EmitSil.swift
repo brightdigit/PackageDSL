@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-sil"])
-public struct EmitSil: UnsafeFlag { }
+public struct EmitSil: UnsafeFlag {}

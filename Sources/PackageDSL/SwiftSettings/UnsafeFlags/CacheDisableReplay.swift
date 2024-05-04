@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-cache-disable-replay"])
-public struct CacheDisableReplay: UnsafeFlag { }
+public struct CacheDisableReplay: UnsafeFlag {}

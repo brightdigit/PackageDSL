@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-Rmacro-loading"])
-public struct RmacroLoading: UnsafeFlag { }
+public struct RmacroLoading: UnsafeFlag {}

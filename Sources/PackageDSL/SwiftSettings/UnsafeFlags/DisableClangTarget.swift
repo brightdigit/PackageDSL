@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-disable-clang-target"])
-public struct DisableClangTarget: UnsafeFlag { }
+public struct DisableClangTarget: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-sibgen"])
-public struct EmitSibgen: UnsafeFlag { }
+public struct EmitSibgen: UnsafeFlag {}

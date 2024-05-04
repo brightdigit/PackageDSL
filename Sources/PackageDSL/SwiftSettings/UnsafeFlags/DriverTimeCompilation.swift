@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-driver-time-compilation"])
-public struct DriverTimeCompilation: UnsafeFlag { }
+public struct DriverTimeCompilation: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-Rcross-import"])
-public struct RcrossImport: UnsafeFlag { }
+public struct RcrossImport: UnsafeFlag {}

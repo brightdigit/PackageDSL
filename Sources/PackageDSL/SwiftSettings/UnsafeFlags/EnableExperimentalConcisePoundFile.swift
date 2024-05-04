@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-enable-experimental-concise-pound-file"])
-public struct EnableExperimentalConcisePoundFile: UnsafeFlag { }
+public struct EnableExperimentalConcisePoundFile: UnsafeFlag {}

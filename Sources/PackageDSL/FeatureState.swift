@@ -14,11 +14,11 @@ public enum FeatureState {
 extension FeatureState {
   public func swiftSetting(name: String) -> SwiftSetting {
     switch self {
-    case .experimental:
-      .enableExperimentalFeature(name)
+      case .experimental:
+        .enableExperimentalFeature(name)
 
-    case .upcoming:
-      .enableUpcomingFeature(name)
+      case .upcoming:
+        .enableUpcomingFeature(name)
     }
   }
 }

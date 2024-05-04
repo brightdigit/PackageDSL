@@ -4,6 +4,7 @@
 // Licensed under MIT License
 //
 
+// swift-format-ignore: NoLeadingUnderscores
 public protocol _Depending {
   @DependencyBuilder
   var dependencies: any Dependencies { get }

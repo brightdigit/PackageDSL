@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-link-objc-runtime"])
-public struct LinkObjcRuntime: UnsafeFlag { }
+public struct LinkObjcRuntime: UnsafeFlag {}

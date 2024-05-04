@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-static"])
-public struct Static: UnsafeFlag { }
+public struct Static: UnsafeFlag {}

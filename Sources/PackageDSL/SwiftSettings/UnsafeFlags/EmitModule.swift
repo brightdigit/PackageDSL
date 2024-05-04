@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-module"])
-public struct EmitModule: UnsafeFlag { }
+public struct EmitModule: UnsafeFlag {}

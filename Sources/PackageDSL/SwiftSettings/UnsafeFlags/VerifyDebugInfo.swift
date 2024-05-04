@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-verify-debug-info"])
-public struct VerifyDebugInfo: UnsafeFlag { }
+public struct VerifyDebugInfo: UnsafeFlag {}

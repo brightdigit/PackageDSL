@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-resolve-imports"])
-public struct ResolveImports: UnsafeFlag { }
+public struct ResolveImports: UnsafeFlag {}

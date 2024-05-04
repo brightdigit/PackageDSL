@@ -19,6 +19,7 @@ extension Package {
     } else {
       var pathComponents = #filePath.split(separator: "/")
       pathComponents.removeLast()
+      // swift-format-ignore: NeverForceUnwrap
       packageName = String(pathComponents.last!)
     }
     let allTestTargets = testTargets()
@@ -42,9 +43,14 @@ extension Package {
     let packageDeps = Dictionary(
       grouping: packageTargetDependencies,
       by: { $0.package.packageName }
-    ).values.compactMap(\.first).map(\.package.dependency)
+    )
+    .values.compactMap(\.first).map(\.package.dependency)
     self.init(
-      name: packageName, products: products, dependencies: packageDeps, targets: packgeTargets)
+      name: packageName,
+      products: products,
+      dependencies: packageDeps,
+      targets: packgeTargets
+    )
   }
 }
 

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-disallow-use-new-driver"])
-public struct DisallowUseNewDriver: UnsafeFlag { }
+public struct DisallowUseNewDriver: UnsafeFlag {}

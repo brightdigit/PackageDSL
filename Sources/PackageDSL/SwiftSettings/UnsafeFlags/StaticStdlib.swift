@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-static-stdlib"])
-public struct StaticStdlib: UnsafeFlag { }
+public struct StaticStdlib: UnsafeFlag {}

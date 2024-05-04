@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-serialize-diagnostics"])
-public struct SerializeDiagnostics: UnsafeFlag { }
+public struct SerializeDiagnostics: UnsafeFlag {}

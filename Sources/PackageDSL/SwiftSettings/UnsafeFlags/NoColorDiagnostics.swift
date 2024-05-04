@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-no-color-diagnostics"])
-public struct NoColorDiagnostics: UnsafeFlag { }
+public struct NoColorDiagnostics: UnsafeFlag {}

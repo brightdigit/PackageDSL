@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-executable"])
-public struct EmitExecutable: UnsafeFlag { }
+public struct EmitExecutable: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-index-ignore-system-modules"])
-public struct IndexIgnoreSystemModules: UnsafeFlag { }
+public struct IndexIgnoreSystemModules: UnsafeFlag {}

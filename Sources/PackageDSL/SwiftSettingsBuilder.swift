@@ -33,7 +33,8 @@ public enum SwiftSettingsBuilder {
   }
 
   public static func buildPartialBlock(
-    accumulated: [SwiftSetting], next: any SwiftSettingsConvertible
+    accumulated: [SwiftSetting],
+    next: any SwiftSettingsConvertible
   ) -> [SwiftSetting] {
     accumulated + next.swiftSettings()
   }

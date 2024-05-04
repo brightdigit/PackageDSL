@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-static-executable"])
-public struct StaticExecutable: UnsafeFlag { }
+public struct StaticExecutable: UnsafeFlag {}

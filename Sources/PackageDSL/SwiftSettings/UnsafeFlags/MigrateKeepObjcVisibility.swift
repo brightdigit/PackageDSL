@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-migrate-keep-objc-visibility"])
-public struct MigrateKeepObjcVisibility: UnsafeFlag { }
+public struct MigrateKeepObjcVisibility: UnsafeFlag {}

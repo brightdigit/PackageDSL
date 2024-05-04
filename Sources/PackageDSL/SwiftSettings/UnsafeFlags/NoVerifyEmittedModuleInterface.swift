@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-no-verify-emitted-module-interface"])
-public struct NoVerifyEmittedModuleInterface: UnsafeFlag { }
+public struct NoVerifyEmittedModuleInterface: UnsafeFlag {}

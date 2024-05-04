@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-digester-baseline"])
-public struct EmitDigesterBaseline: UnsafeFlag { }
+public struct EmitDigesterBaseline: UnsafeFlag {}

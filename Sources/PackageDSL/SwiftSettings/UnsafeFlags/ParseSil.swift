@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-parse-sil"])
-public struct ParseSil: UnsafeFlag { }
+public struct ParseSil: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-nostdimport"])
-public struct Nostdimport: UnsafeFlag { }
+public struct Nostdimport: UnsafeFlag {}

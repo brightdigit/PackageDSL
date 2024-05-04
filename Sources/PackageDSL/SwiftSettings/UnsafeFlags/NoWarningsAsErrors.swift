@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-no-warnings-as-errors"])
-public struct NoWarningsAsErrors: UnsafeFlag { }
+public struct NoWarningsAsErrors: UnsafeFlag {}

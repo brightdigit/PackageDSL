@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-tbd"])
-public struct EmitTbd: UnsafeFlag { }
+public struct EmitTbd: UnsafeFlag {}

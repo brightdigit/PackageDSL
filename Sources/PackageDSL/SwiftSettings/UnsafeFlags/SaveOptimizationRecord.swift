@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-save-optimization-record"])
-public struct SaveOptimizationRecord: UnsafeFlag { }
+public struct SaveOptimizationRecord: UnsafeFlag {}

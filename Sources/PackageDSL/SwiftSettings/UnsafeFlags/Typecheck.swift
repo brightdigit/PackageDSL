@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-typecheck"])
-public struct Typecheck: UnsafeFlag { }
+public struct Typecheck: UnsafeFlag {}

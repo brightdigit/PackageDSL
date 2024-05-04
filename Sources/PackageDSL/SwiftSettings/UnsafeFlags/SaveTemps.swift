@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-save-temps"])
-public struct SaveTemps: UnsafeFlag { }
+public struct SaveTemps: UnsafeFlag {}

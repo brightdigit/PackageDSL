@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-dump-usr"])
-public struct DumpUsr: UnsafeFlag { }
+public struct DumpUsr: UnsafeFlag {}

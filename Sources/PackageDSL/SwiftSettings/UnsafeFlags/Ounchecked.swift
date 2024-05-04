@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-Ounchecked"])
-public struct Ounchecked: UnsafeFlag { }
+public struct Ounchecked: UnsafeFlag {}

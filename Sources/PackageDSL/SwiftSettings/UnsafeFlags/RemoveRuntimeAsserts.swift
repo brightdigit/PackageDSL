@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-remove-runtime-asserts"])
-public struct RemoveRuntimeAsserts: UnsafeFlag { }
+public struct RemoveRuntimeAsserts: UnsafeFlag {}

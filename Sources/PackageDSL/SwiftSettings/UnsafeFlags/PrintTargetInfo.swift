@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-print-target-info"])
-public struct PrintTargetInfo: UnsafeFlag { }
+public struct PrintTargetInfo: UnsafeFlag {}

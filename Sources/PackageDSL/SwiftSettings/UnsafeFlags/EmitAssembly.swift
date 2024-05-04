@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-emit-assembly"])
-public struct EmitAssembly: UnsafeFlag { }
+public struct EmitAssembly: UnsafeFlag {}

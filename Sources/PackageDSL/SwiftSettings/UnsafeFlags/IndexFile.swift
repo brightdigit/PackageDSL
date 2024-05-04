@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-index-file"])
-public struct IndexFile: UnsafeFlag { }
+public struct IndexFile: UnsafeFlag {}

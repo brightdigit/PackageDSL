@@ -11,11 +11,11 @@ extension Product where Self: Target {
 
   var targetType: TargetType {
     switch productType {
-    case .library:
-      .regular
+      case .library:
+        .regular
 
-    case .executable:
-      .executable
+      case .executable:
+        .executable
     }
   }
 }

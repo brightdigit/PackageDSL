@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-Osize"])
-public struct Osize: UnsafeFlag { }
+public struct Osize: UnsafeFlag {}

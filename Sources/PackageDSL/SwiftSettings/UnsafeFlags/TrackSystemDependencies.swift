@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-track-system-dependencies"])
-public struct TrackSystemDependencies: UnsafeFlag { }
+public struct TrackSystemDependencies: UnsafeFlag {}

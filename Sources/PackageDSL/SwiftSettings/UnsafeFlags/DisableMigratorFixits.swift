@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-disable-migrator-fixits"])
-public struct DisableMigratorFixits: UnsafeFlag { }
+public struct DisableMigratorFixits: UnsafeFlag {}

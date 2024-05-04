@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-migrator-update-sdk"])
-public struct MigratorUpdateSdk: UnsafeFlag { }
+public struct MigratorUpdateSdk: UnsafeFlag {}

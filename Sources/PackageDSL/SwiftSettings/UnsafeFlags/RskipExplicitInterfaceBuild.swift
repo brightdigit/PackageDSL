@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-Rskip-explicit-interface-build"])
-public struct RskipExplicitInterfaceBuild: UnsafeFlag { }
+public struct RskipExplicitInterfaceBuild: UnsafeFlag {}

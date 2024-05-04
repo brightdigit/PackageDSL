@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-require-explicit-sendable"])
-public struct RequireExplicitSendable: UnsafeFlag { }
+public struct RequireExplicitSendable: UnsafeFlag {}

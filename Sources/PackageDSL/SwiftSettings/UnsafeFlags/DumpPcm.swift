@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-dump-pcm"])
-public struct DumpPcm: UnsafeFlag { }
+public struct DumpPcm: UnsafeFlag {}

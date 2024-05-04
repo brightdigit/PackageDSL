@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-debug-info-store-invocation"])
-public struct DebugInfoStoreInvocation: UnsafeFlag { }
+public struct DebugInfoStoreInvocation: UnsafeFlag {}

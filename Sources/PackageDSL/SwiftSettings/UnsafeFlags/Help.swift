@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-help"])
-public struct Help: UnsafeFlag { }
+public struct Help: UnsafeFlag {}

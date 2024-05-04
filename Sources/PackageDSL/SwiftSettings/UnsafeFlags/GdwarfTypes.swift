@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-gdwarf-types"])
-public struct GdwarfTypes: UnsafeFlag { }
+public struct GdwarfTypes: UnsafeFlag {}

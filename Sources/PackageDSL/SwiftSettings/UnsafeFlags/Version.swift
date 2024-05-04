@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-version"])
-public struct Version: UnsafeFlag { }
+public struct Version: UnsafeFlag {}

@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-index-ignore-clang-modules"])
-public struct IndexIgnoreClangModules: UnsafeFlag { }
+public struct IndexIgnoreClangModules: UnsafeFlag {}

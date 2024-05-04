@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-suppress-remarks"])
-public struct SuppressRemarks: UnsafeFlag { }
+public struct SuppressRemarks: UnsafeFlag {}

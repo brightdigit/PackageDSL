@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-dump-type-info"])
-public struct DumpTypeInfo: UnsafeFlag { }
+public struct DumpTypeInfo: UnsafeFlag {}

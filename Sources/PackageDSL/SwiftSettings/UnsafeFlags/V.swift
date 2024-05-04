@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-v"])
-public struct V: UnsafeFlag { }
+public struct V: UnsafeFlag {}

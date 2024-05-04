@@ -5,4 +5,4 @@
 //
 
 // unsafeFlags(["-scan-dependencies"])
-public struct ScanDependencies: UnsafeFlag { }
+public struct ScanDependencies: UnsafeFlag {}
