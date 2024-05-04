@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitSupportedFeatures: UnsafeFlag {}
+// unsafeFlags(["-emit-supported-features"])
+public struct EmitSupportedFeatures: UnsafeFlag { }

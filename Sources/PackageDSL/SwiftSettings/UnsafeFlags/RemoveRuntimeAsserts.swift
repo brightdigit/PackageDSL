@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RemoveRuntimeAsserts: UnsafeFlag {}
+// unsafeFlags(["-remove-runtime-asserts"])
+public struct RemoveRuntimeAsserts: UnsafeFlag { }

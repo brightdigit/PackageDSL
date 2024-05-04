@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitDigesterBaseline: UnsafeFlag {}
+// unsafeFlags(["-emit-digester-baseline"])
+public struct EmitDigesterBaseline: UnsafeFlag { }

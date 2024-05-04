@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Static: UnsafeFlag {}
+// unsafeFlags(["-static"])
+public struct Static: UnsafeFlag { }

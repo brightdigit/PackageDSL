@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct WholeModuleOptimization: UnsafeFlag {}
+// unsafeFlags(["-whole-module-optimization"])
+public struct WholeModuleOptimization: UnsafeFlag { }

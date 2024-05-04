@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct GlineTablesOnly: UnsafeFlag {}
+// unsafeFlags(["-gline-tables-only"])
+public struct GlineTablesOnly: UnsafeFlag { }

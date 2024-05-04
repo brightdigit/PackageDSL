@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct MigratorUpdateSwift: UnsafeFlag {}
+// unsafeFlags(["-migrator-update-swift"])
+public struct MigratorUpdateSwift: UnsafeFlag { }

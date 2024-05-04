@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableLibraryEvolution: UnsafeFlag {}
+// unsafeFlags(["-enable-library-evolution"])
+public struct EnableLibraryEvolution: UnsafeFlag { }

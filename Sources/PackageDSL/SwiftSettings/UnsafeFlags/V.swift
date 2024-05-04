@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct V: UnsafeFlag {}
+// unsafeFlags(["-v"])
+public struct V: UnsafeFlag { }

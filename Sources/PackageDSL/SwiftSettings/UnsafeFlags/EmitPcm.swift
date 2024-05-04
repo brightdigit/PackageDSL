@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitPcm: UnsafeFlag {}
+// unsafeFlags(["-emit-pcm"])
+public struct EmitPcm: UnsafeFlag { }

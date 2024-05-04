@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct VerifyEmittedModuleInterface: UnsafeFlag {}
+// unsafeFlags(["-verify-emitted-module-interface"])
+public struct VerifyEmittedModuleInterface: UnsafeFlag { }

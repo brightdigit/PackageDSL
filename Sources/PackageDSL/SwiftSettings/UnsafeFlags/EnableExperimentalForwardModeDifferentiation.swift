@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableExperimentalForwardModeDifferentiation: UnsafeFlag {}
+// unsafeFlags(["-enable-experimental-forward-mode-differentiation"])
+public struct EnableExperimentalForwardModeDifferentiation: UnsafeFlag { }

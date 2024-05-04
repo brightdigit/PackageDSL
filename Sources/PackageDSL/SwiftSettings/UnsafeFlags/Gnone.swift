@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Gnone: UnsafeFlag {}
+// unsafeFlags(["-gnone"])
+public struct Gnone: UnsafeFlag { }

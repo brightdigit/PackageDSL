@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitClangHeaderNonmodularIncludes: UnsafeFlag {}
+// unsafeFlags(["-emit-clang-header-nonmodular-includes"])
+public struct EmitClangHeaderNonmodularIncludes: UnsafeFlag { }

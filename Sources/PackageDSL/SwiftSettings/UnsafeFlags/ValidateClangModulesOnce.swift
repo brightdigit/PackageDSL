@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ValidateClangModulesOnce: UnsafeFlag {}
+// unsafeFlags(["-validate-clang-modules-once"])
+public struct ValidateClangModulesOnce: UnsafeFlag { }

@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct MigrateKeepObjcVisibility: UnsafeFlag {}
+// unsafeFlags(["-migrate-keep-objc-visibility"])
+public struct MigrateKeepObjcVisibility: UnsafeFlag { }

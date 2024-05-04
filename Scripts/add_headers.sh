@@ -6,19 +6,32 @@ add_header() {
     local year=$(date +"%Y")
     local filename=$(basename "$file")
     
-    # Remove comments
-    sed -i '' '/^[[:space:]]*\/\/.*$/d' "$file"
-    # Remove leading whitespace only at the beginning of the file
-    sed -i '' '1s/^[[:space:]]*//' "$file"
+    if [ "$keep_content" = true ]; then
+        # Add header to the file without removing existing content
+        echo "//" > "$file.tmp"
+        echo "// $filename" >> "$file.tmp"
+        echo "// Copyright (c) $year BrightDigit." >> "$file.tmp"
+        echo "// Licensed under MIT License" >> "$file.tmp"
+        echo "//" >> "$file.tmp"  # Additional "//" at the end of the comment header
+        echo "" >> "$file.tmp"
+        cat "$file" >> "$file.tmp"
+        mv "$file.tmp" "$file"
+    else
+        # Remove comments
+        sed -i '' '/^[[:space:]]*\/\/.*$/d' "$file"
+        # Remove leading whitespace only at the beginning of the file
+        sed -i '' '1s/^[[:space:]]*//' "$file"
 
-    # Add header to the file
-    echo "//" > "$file.tmp"
-    echo "// $filename" >> "$file.tmp"
-    echo "// Copyright (c) $year BrightDigit." >> "$file.tmp"
-    echo "// Licensed under MIT License" >> "$file.tmp"
-    echo "//" >> "$file.tmp" 
-    cat "$file" >> "$file.tmp"
-    mv "$file.tmp" "$file"
+        # Add header to the file
+        echo "//" > "$file.tmp"
+        echo "// $filename" >> "$file.tmp"
+        echo "// Copyright (c) $year BrightDigit." >> "$file.tmp"
+        echo "// Licensed under MIT License" >> "$file.tmp"
+        echo "//" >> "$file.tmp"  # Additional "//" at the end of the comment header
+        echo "" >> "$file.tmp"
+        cat "$file" >> "$file.tmp"
+        mv "$file.tmp" "$file"
+    fi
 }
 
 # Main function to process files in directories and subdirectories
@@ -40,8 +53,15 @@ process_files() {
 
 # Check if directory is provided as argument
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 <directory>"
+    echo "Usage: $0 [-k] <directory>"
     exit 1
+fi
+
+# Parse command-line arguments
+keep_content=false
+if [ "$1" = "-k" ]; then
+    keep_content=true
+    shift
 fi
 
 # Check if provided directory exists
@@ -53,4 +73,3 @@ fi
 # Call the main function to process files
 process_files "$1"
 
-echo "Header added to Swift files successfully."

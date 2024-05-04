@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct GdwarfTypes: UnsafeFlag {}
+// unsafeFlags(["-gdwarf-types"])
+public struct GdwarfTypes: UnsafeFlag { }

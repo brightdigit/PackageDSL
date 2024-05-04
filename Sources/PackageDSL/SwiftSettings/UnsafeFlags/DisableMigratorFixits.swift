@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableMigratorFixits: UnsafeFlag {}
+// unsafeFlags(["-disable-migrator-fixits"])
+public struct DisableMigratorFixits: UnsafeFlag { }

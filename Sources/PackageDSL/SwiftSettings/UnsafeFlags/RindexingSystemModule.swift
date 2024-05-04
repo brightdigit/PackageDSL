@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RindexingSystemModule: UnsafeFlag {}
+// unsafeFlags(["-Rindexing-system-module"])
+public struct RindexingSystemModule: UnsafeFlag { }

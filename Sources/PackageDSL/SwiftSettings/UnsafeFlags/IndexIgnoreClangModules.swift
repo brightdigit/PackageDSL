@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct IndexIgnoreClangModules: UnsafeFlag {}
+// unsafeFlags(["-index-ignore-clang-modules"])
+public struct IndexIgnoreClangModules: UnsafeFlag { }

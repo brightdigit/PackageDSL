@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Typecheck: UnsafeFlag {}
+// unsafeFlags(["-typecheck"])
+public struct Typecheck: UnsafeFlag { }

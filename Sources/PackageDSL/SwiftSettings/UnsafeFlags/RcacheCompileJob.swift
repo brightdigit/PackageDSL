@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RcacheCompileJob: UnsafeFlag {}
+// unsafeFlags(["-Rcache-compile-job"])
+public struct RcacheCompileJob: UnsafeFlag { }

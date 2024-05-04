@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableClangTarget: UnsafeFlag {}
+// unsafeFlags(["-disable-clang-target"])
+public struct DisableClangTarget: UnsafeFlag { }

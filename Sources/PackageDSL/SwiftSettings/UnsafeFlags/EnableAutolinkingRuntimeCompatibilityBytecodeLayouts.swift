@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableAutolinkingRuntimeCompatibilityBytecodeLayouts: UnsafeFlag {}
+// unsafeFlags(["-enable-autolinking-runtime-compatibility-bytecode-layouts"])
+public struct EnableAutolinkingRuntimeCompatibilityBytecodeLayouts: UnsafeFlag { }

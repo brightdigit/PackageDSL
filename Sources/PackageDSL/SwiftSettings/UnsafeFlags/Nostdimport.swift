@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Nostdimport: UnsafeFlag {}
+// unsafeFlags(["-nostdimport"])
+public struct Nostdimport: UnsafeFlag { }

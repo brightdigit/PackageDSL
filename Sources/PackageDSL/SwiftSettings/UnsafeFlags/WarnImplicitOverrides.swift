@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct WarnImplicitOverrides: UnsafeFlag {}
+// unsafeFlags(["-warn-implicit-overrides"])
+public struct WarnImplicitOverrides: UnsafeFlag { }

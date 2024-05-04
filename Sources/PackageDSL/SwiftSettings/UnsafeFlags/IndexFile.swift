@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct IndexFile: UnsafeFlag {}
+// unsafeFlags(["-index-file"])
+public struct IndexFile: UnsafeFlag { }

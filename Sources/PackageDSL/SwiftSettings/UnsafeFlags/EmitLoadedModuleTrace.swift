@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitLoadedModuleTrace: UnsafeFlag {}
+// unsafeFlags(["-emit-loaded-module-trace"])
+public struct EmitLoadedModuleTrace: UnsafeFlag { }

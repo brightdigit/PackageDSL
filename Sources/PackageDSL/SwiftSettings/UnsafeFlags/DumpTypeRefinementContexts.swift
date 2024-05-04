@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DumpTypeRefinementContexts: UnsafeFlag {}
+// unsafeFlags(["-dump-type-refinement-contexts"])
+public struct DumpTypeRefinementContexts: UnsafeFlag { }

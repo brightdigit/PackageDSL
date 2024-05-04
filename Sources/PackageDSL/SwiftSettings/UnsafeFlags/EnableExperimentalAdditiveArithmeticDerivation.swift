@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableExperimentalAdditiveArithmeticDerivation: UnsafeFlag {}
+// unsafeFlags(["-enable-experimental-additive-arithmetic-derivation"])
+public struct EnableExperimentalAdditiveArithmeticDerivation: UnsafeFlag { }

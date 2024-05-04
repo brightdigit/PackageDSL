@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ContinueBuildingAfterErrors: UnsafeFlag {}
+// unsafeFlags(["-continue-building-after-errors"])
+public struct ContinueBuildingAfterErrors: UnsafeFlag { }

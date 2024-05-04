@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct SuppressWarnings: UnsafeFlag {}
+// unsafeFlags(["-suppress-warnings"])
+public struct SuppressWarnings: UnsafeFlag { }

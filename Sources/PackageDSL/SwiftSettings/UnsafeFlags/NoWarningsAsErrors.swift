@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct NoWarningsAsErrors: UnsafeFlag {}
+// unsafeFlags(["-no-warnings-as-errors"])
+public struct NoWarningsAsErrors: UnsafeFlag { }

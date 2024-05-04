@@ -4,8 +4,9 @@
 // Licensed under MIT License
 //
 
-public struct GlobalActorIsolatedTypesUsability: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    .experimental
+// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0434-global-actor-isolated-types-usability.md
+public struct GlobalActorIsolatedTypesUsability : SwiftSettingFeature {
+  public var featureState : FeatureState {
+    return .experimental
   }
 }

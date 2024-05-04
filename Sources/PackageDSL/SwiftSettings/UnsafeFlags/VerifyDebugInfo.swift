@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct VerifyDebugInfo: UnsafeFlag {}
+// unsafeFlags(["-verify-debug-info"])
+public struct VerifyDebugInfo: UnsafeFlag { }

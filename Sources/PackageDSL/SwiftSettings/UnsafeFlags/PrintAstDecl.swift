@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct PrintAstDecl: UnsafeFlag {}
+// unsafeFlags(["-print-ast-decl"])
+public struct PrintAstDecl: UnsafeFlag { }

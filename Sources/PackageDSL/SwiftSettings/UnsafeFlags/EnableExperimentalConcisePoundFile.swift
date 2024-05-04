@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableExperimentalConcisePoundFile: UnsafeFlag {}
+// unsafeFlags(["-enable-experimental-concise-pound-file"])
+public struct EnableExperimentalConcisePoundFile: UnsafeFlag { }

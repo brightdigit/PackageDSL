@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableSandbox: UnsafeFlag {}
+// unsafeFlags(["-disable-sandbox"])
+public struct DisableSandbox: UnsafeFlag { }

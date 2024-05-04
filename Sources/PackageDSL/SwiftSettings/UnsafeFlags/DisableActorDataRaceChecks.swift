@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableActorDataRaceChecks: UnsafeFlag {}
+// unsafeFlags(["-disable-actor-data-race-checks"])
+public struct DisableActorDataRaceChecks: UnsafeFlag { }

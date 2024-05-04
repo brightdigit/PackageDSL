@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitObjcHeader: UnsafeFlag {}
+// unsafeFlags(["-emit-objc-header"])
+public struct EmitObjcHeader: UnsafeFlag { }

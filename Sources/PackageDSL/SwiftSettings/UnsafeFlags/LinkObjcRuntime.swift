@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct LinkObjcRuntime: UnsafeFlag {}
+// unsafeFlags(["-link-objc-runtime"])
+public struct LinkObjcRuntime: UnsafeFlag { }

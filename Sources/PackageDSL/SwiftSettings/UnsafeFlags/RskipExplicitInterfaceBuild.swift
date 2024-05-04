@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RskipExplicitInterfaceBuild: UnsafeFlag {}
+// unsafeFlags(["-Rskip-explicit-interface-build"])
+public struct RskipExplicitInterfaceBuild: UnsafeFlag { }

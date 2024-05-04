@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableAutolinkingRuntimeCompatibilityDynamicReplacements: UnsafeFlag {}
+// unsafeFlags(["-disable-autolinking-runtime-compatibility-dynamic-replacements"])
+public struct DisableAutolinkingRuntimeCompatibilityDynamicReplacements: UnsafeFlag { }

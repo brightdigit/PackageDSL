@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ResolveImports: UnsafeFlag {}
+// unsafeFlags(["-resolve-imports"])
+public struct ResolveImports: UnsafeFlag { }

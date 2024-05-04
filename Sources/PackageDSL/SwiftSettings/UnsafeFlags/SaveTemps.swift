@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct SaveTemps: UnsafeFlag {}
+// unsafeFlags(["-save-temps"])
+public struct SaveTemps: UnsafeFlag { }

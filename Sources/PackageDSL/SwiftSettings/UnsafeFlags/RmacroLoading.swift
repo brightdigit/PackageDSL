@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RmacroLoading: UnsafeFlag {}
+// unsafeFlags(["-Rmacro-loading"])
+public struct RmacroLoading: UnsafeFlag { }

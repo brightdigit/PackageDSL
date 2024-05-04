@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RcrossImport: UnsafeFlag {}
+// unsafeFlags(["-Rcross-import"])
+public struct RcrossImport: UnsafeFlag { }

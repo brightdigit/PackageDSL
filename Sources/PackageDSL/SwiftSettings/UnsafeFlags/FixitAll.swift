@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct FixitAll: UnsafeFlag {}
+// unsafeFlags(["-fixit-all"])
+public struct FixitAll: UnsafeFlag { }

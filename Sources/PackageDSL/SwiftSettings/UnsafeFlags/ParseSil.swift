@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ParseSil: UnsafeFlag {}
+// unsafeFlags(["-parse-sil"])
+public struct ParseSil: UnsafeFlag { }

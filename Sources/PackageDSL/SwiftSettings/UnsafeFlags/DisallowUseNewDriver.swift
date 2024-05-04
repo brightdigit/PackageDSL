@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisallowUseNewDriver: UnsafeFlag {}
+// unsafeFlags(["-disallow-use-new-driver"])
+public struct DisallowUseNewDriver: UnsafeFlag { }

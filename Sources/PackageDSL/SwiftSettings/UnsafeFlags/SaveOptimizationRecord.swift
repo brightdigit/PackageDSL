@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct SaveOptimizationRecord: UnsafeFlag {}
+// unsafeFlags(["-save-optimization-record"])
+public struct SaveOptimizationRecord: UnsafeFlag { }

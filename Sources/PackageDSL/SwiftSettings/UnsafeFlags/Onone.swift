@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Onone: UnsafeFlag {}
+// unsafeFlags(["-Onone"])
+public struct Onone: UnsafeFlag { }

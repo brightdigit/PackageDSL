@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ScanDependencies: UnsafeFlag {}
+// unsafeFlags(["-scan-dependencies"])
+public struct ScanDependencies: UnsafeFlag { }

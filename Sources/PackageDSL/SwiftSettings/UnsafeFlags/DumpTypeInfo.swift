@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DumpTypeInfo: UnsafeFlag {}
+// unsafeFlags(["-dump-type-info"])
+public struct DumpTypeInfo: UnsafeFlag { }

@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableIncrementalImports: UnsafeFlag {}
+// unsafeFlags(["-disable-incremental-imports"])
+public struct DisableIncrementalImports: UnsafeFlag { }

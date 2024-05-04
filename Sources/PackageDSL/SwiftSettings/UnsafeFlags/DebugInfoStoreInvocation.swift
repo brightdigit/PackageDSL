@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DebugInfoStoreInvocation: UnsafeFlag {}
+// unsafeFlags(["-debug-info-store-invocation"])
+public struct DebugInfoStoreInvocation: UnsafeFlag { }

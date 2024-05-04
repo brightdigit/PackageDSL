@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ProfileGenerate: UnsafeFlag {}
+// unsafeFlags(["-profile-generate"])
+public struct ProfileGenerate: UnsafeFlag { }

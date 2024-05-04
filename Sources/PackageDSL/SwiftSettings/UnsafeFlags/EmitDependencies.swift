@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitDependencies: UnsafeFlag {}
+// unsafeFlags(["-emit-dependencies"])
+public struct EmitDependencies: UnsafeFlag { }

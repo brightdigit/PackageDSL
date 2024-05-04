@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct TrackSystemDependencies: UnsafeFlag {}
+// unsafeFlags(["-track-system-dependencies"])
+public struct TrackSystemDependencies: UnsafeFlag { }

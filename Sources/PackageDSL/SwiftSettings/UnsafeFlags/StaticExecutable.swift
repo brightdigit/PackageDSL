@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct StaticExecutable: UnsafeFlag {}
+// unsafeFlags(["-static-executable"])
+public struct StaticExecutable: UnsafeFlag { }

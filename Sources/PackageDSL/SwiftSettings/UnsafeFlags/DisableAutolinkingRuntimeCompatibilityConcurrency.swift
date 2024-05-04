@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DisableAutolinkingRuntimeCompatibilityConcurrency: UnsafeFlag {}
+// unsafeFlags(["-disable-autolinking-runtime-compatibility-concurrency"])
+public struct DisableAutolinkingRuntimeCompatibilityConcurrency: UnsafeFlag { }

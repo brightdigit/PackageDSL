@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ImportUnderlyingModule: UnsafeFlag {}
+// unsafeFlags(["-import-underlying-module"])
+public struct ImportUnderlyingModule: UnsafeFlag { }

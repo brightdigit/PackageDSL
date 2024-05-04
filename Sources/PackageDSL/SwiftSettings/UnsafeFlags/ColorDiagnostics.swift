@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ColorDiagnostics: UnsafeFlag {}
+// unsafeFlags(["-color-diagnostics"])
+public struct ColorDiagnostics: UnsafeFlag { }

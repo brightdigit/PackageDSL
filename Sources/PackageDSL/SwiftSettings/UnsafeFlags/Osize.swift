@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Osize: UnsafeFlag {}
+// unsafeFlags(["-Osize"])
+public struct Osize: UnsafeFlag { }

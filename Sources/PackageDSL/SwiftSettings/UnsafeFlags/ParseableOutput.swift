@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ParseableOutput: UnsafeFlag {}
+// unsafeFlags(["-parseable-output"])
+public struct ParseableOutput: UnsafeFlag { }

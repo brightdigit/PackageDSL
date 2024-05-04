@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RmoduleRecovery: UnsafeFlag {}
+// unsafeFlags(["-Rmodule-recovery"])
+public struct RmoduleRecovery: UnsafeFlag { }

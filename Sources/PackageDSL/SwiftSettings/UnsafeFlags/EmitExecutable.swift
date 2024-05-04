@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitExecutable: UnsafeFlag {}
+// unsafeFlags(["-emit-executable"])
+public struct EmitExecutable: UnsafeFlag { }

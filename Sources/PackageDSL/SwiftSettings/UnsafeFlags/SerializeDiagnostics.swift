@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct SerializeDiagnostics: UnsafeFlag {}
+// unsafeFlags(["-serialize-diagnostics"])
+public struct SerializeDiagnostics: UnsafeFlag { }

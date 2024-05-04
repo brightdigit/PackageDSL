@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ParseAsLibrary: UnsafeFlag {}
+// unsafeFlags(["-parse-as-library"])
+public struct ParseAsLibrary: UnsafeFlag { }

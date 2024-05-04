@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct CacheCompileJob: UnsafeFlag {}
+// unsafeFlags(["-cache-compile-job"])
+public struct CacheCompileJob: UnsafeFlag { }

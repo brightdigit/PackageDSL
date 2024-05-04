@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableBuiltinModule: UnsafeFlag {}
+// unsafeFlags(["-enable-builtin-module"])
+public struct EnableBuiltinModule: UnsafeFlag { }

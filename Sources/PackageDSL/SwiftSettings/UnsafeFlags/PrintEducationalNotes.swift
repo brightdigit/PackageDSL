@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct PrintEducationalNotes: UnsafeFlag {}
+// unsafeFlags(["-print-educational-notes"])
+public struct PrintEducationalNotes: UnsafeFlag { }

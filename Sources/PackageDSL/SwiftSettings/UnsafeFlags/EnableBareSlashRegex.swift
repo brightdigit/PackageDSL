@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableBareSlashRegex: UnsafeFlag {}
+// unsafeFlags(["-enable-bare-slash-regex"])
+public struct EnableBareSlashRegex: UnsafeFlag { }

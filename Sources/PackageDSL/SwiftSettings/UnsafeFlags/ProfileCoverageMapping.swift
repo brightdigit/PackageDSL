@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ProfileCoverageMapping: UnsafeFlag {}
+// unsafeFlags(["-profile-coverage-mapping"])
+public struct ProfileCoverageMapping: UnsafeFlag { }

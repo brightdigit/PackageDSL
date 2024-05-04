@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Ounchecked: UnsafeFlag {}
+// unsafeFlags(["-Ounchecked"])
+public struct Ounchecked: UnsafeFlag { }

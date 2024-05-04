@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitImportedModules: UnsafeFlag {}
+// unsafeFlags(["-emit-imported-modules"])
+public struct EmitImportedModules: UnsafeFlag { }

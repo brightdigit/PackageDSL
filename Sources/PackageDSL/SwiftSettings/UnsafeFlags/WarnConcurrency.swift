@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct WarnConcurrency: UnsafeFlag {}
+// unsafeFlags(["-warn-concurrency"])
+public struct WarnConcurrency: UnsafeFlag { }

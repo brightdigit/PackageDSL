@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct PrefixSerializedDebuggingOptions: UnsafeFlag {}
+// unsafeFlags(["-prefix-serialized-debugging-options"])
+public struct PrefixSerializedDebuggingOptions: UnsafeFlag { }

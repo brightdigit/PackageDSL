@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DriverTimeCompilation: UnsafeFlag {}
+// unsafeFlags(["-driver-time-compilation"])
+public struct DriverTimeCompilation: UnsafeFlag { }

@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct IndexIncludeLocals: UnsafeFlag {}
+// unsafeFlags(["-index-include-locals"])
+public struct IndexIncludeLocals: UnsafeFlag { }

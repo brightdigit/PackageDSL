@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmitIrgen: UnsafeFlag {}
+// unsafeFlags(["-emit-irgen"])
+public struct EmitIrgen: UnsafeFlag { }

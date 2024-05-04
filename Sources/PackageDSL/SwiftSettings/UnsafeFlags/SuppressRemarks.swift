@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct SuppressRemarks: UnsafeFlag {}
+// unsafeFlags(["-suppress-remarks"])
+public struct SuppressRemarks: UnsafeFlag { }

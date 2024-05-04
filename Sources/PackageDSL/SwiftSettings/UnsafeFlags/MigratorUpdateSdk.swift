@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct MigratorUpdateSdk: UnsafeFlag {}
+// unsafeFlags(["-migrator-update-sdk"])
+public struct MigratorUpdateSdk: UnsafeFlag { }

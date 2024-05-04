@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EmbedBitcode: UnsafeFlag {}
+// unsafeFlags(["-embed-bitcode"])
+public struct EmbedBitcode: UnsafeFlag { }

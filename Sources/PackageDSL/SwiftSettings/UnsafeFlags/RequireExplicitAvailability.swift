@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RequireExplicitAvailability: UnsafeFlag {}
+// unsafeFlags(["-require-explicit-availability"])
+public struct RequireExplicitAvailability: UnsafeFlag { }

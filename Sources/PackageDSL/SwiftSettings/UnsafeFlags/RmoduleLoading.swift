@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RmoduleLoading: UnsafeFlag {}
+// unsafeFlags(["-Rmodule-loading"])
+public struct RmoduleLoading: UnsafeFlag { }

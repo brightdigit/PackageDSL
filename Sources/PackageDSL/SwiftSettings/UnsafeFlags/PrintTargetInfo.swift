@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct PrintTargetInfo: UnsafeFlag {}
+// unsafeFlags(["-print-target-info"])
+public struct PrintTargetInfo: UnsafeFlag { }

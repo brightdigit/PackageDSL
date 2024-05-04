@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct ApplicationExtension: UnsafeFlag {}
+// unsafeFlags(["-application-extension"])
+public struct ApplicationExtension: UnsafeFlag { }

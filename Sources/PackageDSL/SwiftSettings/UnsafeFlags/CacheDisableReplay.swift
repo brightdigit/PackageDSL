@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct CacheDisableReplay: UnsafeFlag {}
+// unsafeFlags(["-cache-disable-replay"])
+public struct CacheDisableReplay: UnsafeFlag { }

@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct EnableOnlyOneDependencyFile: UnsafeFlag {}
+// unsafeFlags(["-enable-only-one-dependency-file"])
+public struct EnableOnlyOneDependencyFile: UnsafeFlag { }

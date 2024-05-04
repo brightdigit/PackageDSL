@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct O: UnsafeFlag {}
+// unsafeFlags(["-O"])
+public struct O: UnsafeFlag { }

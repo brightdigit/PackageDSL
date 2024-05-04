@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct Version: UnsafeFlag {}
+// unsafeFlags(["-version"])
+public struct Version: UnsafeFlag { }

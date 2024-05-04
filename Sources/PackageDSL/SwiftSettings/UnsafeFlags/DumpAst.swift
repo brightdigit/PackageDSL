@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DumpAst: UnsafeFlag {}
+// unsafeFlags(["-dump-ast"])
+public struct DumpAst: UnsafeFlag { }

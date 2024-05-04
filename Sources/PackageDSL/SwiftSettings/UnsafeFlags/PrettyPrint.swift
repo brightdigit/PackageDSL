@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct PrettyPrint: UnsafeFlag {}
+// unsafeFlags(["-pretty-print"])
+public struct PrettyPrint: UnsafeFlag { }

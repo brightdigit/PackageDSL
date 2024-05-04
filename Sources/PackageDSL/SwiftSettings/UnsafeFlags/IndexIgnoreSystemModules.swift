@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct IndexIgnoreSystemModules: UnsafeFlag {}
+// unsafeFlags(["-index-ignore-system-modules"])
+public struct IndexIgnoreSystemModules: UnsafeFlag { }

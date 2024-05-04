@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct DumpParse: UnsafeFlag {}
+// unsafeFlags(["-dump-parse"])
+public struct DumpParse: UnsafeFlag { }

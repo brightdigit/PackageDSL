@@ -4,4 +4,5 @@
 // Licensed under MIT License
 //
 
-public struct RequireExplicitSendable: UnsafeFlag {}
+// unsafeFlags(["-require-explicit-sendable"])
+public struct RequireExplicitSendable: UnsafeFlag { }
