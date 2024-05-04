@@ -10,7 +10,8 @@ enum DependencyBuilder {
     [first]
   }
 
-  static func buildPartialBlock(accumulated: any Dependencies, next: Dependency) -> any Dependencies {
+  static func buildPartialBlock(accumulated: any Dependencies, next: Dependency) -> any Dependencies
+  {
     accumulated + [next]
   }
 }

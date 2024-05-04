@@ -1,8 +1,7 @@
 //
-//  File.swift
-//  
-//
-//  Created by Leo Dion on 4/26/24.
+// GroupBuildable.swift
+// Copyright (c) 2024 BrightDigit.
+// Licensed under MIT License
 //
 
 import Foundation
@@ -14,7 +13,6 @@ public protocol GroupBuildable {
 
 extension GroupBuildable where Output == Self {
   static func output(from array: [Self]) -> [Self.Output] {
-    return array
+    array
   }
-  
 }

@@ -4,6 +4,7 @@
 // Licensed under MIT License
 //
 
+// swift-format-ignore: NoLeadingUnderscores
 public protocol _Depending {
   @DependencyBuilder
   var dependencies: any Dependencies { get }
@@ -17,12 +18,12 @@ extension _Depending {
 
 extension _Depending {
   public func allDependencies() -> [Dependency] {
-    self.dependencies.compactMap {
+    dependencies.compactMap {
       $0 as? _Depending
     }
     .flatMap {
       $0.allDependencies()
     }
-    .appending(self.dependencies)
+    .appending(dependencies)
   }
 }

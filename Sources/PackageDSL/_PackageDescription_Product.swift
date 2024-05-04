@@ -9,11 +9,11 @@ extension _PackageDescription_Product {
     let targets = entry.productTargets.map(\.name)
 
     switch entry.productType {
-    case .executable:
-      return Self.executable(name: entry.name, targets: targets)
+      case .executable:
+        return Self.executable(name: entry.name, targets: targets)
 
-    case .library:
-      return Self.library(name: entry.name, targets: targets)
+      case .library:
+        return Self.library(name: entry.name, targets: targets)
     }
   }
 }

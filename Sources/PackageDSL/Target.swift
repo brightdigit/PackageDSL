@@ -14,7 +14,7 @@ public protocol Target: _Depending, Dependency, _Named {
 
   @ResourcesBuilder
   var resources: [Resource] { get }
-  
+
   var path: String? { get }
 }
 
@@ -24,7 +24,7 @@ extension Target {
   }
 
   public var targetDepenency: _PackageDescription_TargetDependency {
-    .target(name: self.name)
+    .target(name: name)
   }
 
   public var swiftSettings: [SwiftSetting] {
@@ -34,8 +34,8 @@ extension Target {
   public var resources: [Resource] {
     []
   }
-  
+
   public var path: String? {
-    return nil
+    nil
   }
 }

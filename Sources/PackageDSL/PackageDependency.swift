@@ -7,47 +7,52 @@
 import Foundation
 import PackageDescription
 
-protocol PackageDependency: Dependency {
-  var productName: String { get }
+protocol PackageDependency: _Named {
   var packageName: String { get }
   var dependency: _PackageDescription_PackageDependency { get }
 }
 
-extension PackageDependency {
-  var productName: String {
-    "\(Self.self)"
-  }
-
-  var packageName: String {
-    switch self.dependency.kind {
-    case let .sourceControl(name: name, location: location, requirement: _):
-      return name ?? location.packageName ?? productName
-
-    case let .fileSystem(name: name, path: path):
-      return name ?? path.packageName ?? productName
-
-    case let .registry(id: id, requirement: _):
-      return id
-    @unknown default:
-      return productName
-    }
+extension PackageDependency where Self: TargetDependency {
+  var package: any PackageDependency {
+    self
   }
 
   var targetDepenency: _PackageDescription_TargetDependency {
-    switch self.dependency.kind {
-    case let .sourceControl(name: name, location: location, requirement: _):
-      let packageName = name ?? location.packageName
-      return .product(name: productName, package: packageName)
-    case let .fileSystem(name: name, path: path):
-      if let packageName = name ?? path.components(separatedBy: "/").last {
+    switch dependency.kind {
+      case .sourceControl(let name, let location, requirement: _):
+        let packageName = name ?? location.packageName
         return .product(name: productName, package: packageName)
-      } else {
+
+      case .fileSystem(let name, let path):
+        if let packageName = name ?? path.components(separatedBy: "/").last {
+          return .product(name: productName, package: packageName)
+        } else {
+          return .byName(name: productName)
+        }
+
+      case .registry:
         return .byName(name: productName)
-      }
-    case .registry:
-      return .byName(name: productName)
-    @unknown default:
-      return .byName(name: productName)
+      @unknown default:
+        return .byName(name: productName)
     }
   }
+}
+
+extension PackageDependency {
+
+  var packageName: String {
+    switch dependency.kind {
+      case .sourceControl(let name, let location, requirement: _):
+        return name ?? location.packageName ?? self.name
+
+      case .fileSystem(let name, let path):
+        return name ?? path.packageName ?? self.name
+
+      case .registry(let id, requirement: _):
+        return id
+      @unknown default:
+        return name
+    }
+  }
+
 }

@@ -6,10 +6,15 @@
 
 extension String {
   var packageName: String? {
-    self.split(separator: "/").last?.split(separator: ".").first.map(String.init)
+    split(separator: "/").last?.split(separator: ".").first.map(String.init)
   }
-  
-  func camelToSnakeCase(withSeparator separator : String = "-") -> String {
-      return separator + self.enumerated().reduce("") { $0 + ($1.offset > 0 && $1.element.isUppercase ? separator : "") + String($1.element).lowercased() }
+
+  func camelToSnakeCase(withSeparator separator: String = "-") -> String {
+    separator
+      + enumerated()
+      .reduce("") {
+        $0 + ($1.offset > 0 && $1.element.isUppercase ? separator : "")
+          + String($1.element).lowercased()
+      }
   }
 }
