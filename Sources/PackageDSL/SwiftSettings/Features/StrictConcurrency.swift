@@ -11,3 +11,4 @@ public struct StrictConcurrency: SwiftSettingFeature {
   public init (featureState: FeatureState = .experimental) {
     self.featureState = featureState
   }
+}
