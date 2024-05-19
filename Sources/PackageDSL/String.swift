@@ -9,7 +9,7 @@ extension String {
     split(separator: "/").last?.split(separator: ".").first.map(String.init)
   }
 
-  func camelToSnakeCase(withSeparator separator: String = "-") -> String {
+  func camelToSnakeCaseFlag(withSeparator separator: String = "-") -> String {
     separator
       + enumerated()
       .reduce("") {
