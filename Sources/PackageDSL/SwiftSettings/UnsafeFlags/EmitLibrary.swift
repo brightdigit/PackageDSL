@@ -1,8 +1,3 @@
-//
-// EmitLibrary.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-library"])
-public struct EmitLibrary: UnsafeFlag {}
+/// Passes the flag `-emit-library`
+/// Emit a linked library
+public struct EmitLibrary: UnsafeFlag { }

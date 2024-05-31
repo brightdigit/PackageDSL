@@ -1,8 +1,3 @@
-//
-// PrintTargetInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-print-target-info"])
-public struct PrintTargetInfo: UnsafeFlag {}
+/// Passes the flag `-print-target-info`
+/// Print target information for the given target <triple>, such as x86_64-apple-macos10.9
+public struct PrintTargetInfo: UnsafeFlag { }

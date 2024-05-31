@@ -1,8 +1,3 @@
-//
-// RequireExplicitAvailability.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-require-explicit-availability"])
-public struct RequireExplicitAvailability: UnsafeFlag {}
+/// Passes the flag `-require-explicit-availability`
+///  Warn on public declarations without an availability attribute
+public struct RequireExplicitAvailability: UnsafeFlag { }

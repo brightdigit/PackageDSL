@@ -1,8 +1,3 @@
-//
-// ApplicationExtension.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-application-extension"])
-public struct ApplicationExtension: UnsafeFlag {}
+/// Passes the flag `-application-extension`
+/// Restrict code to those available for App Extensions
+public struct ApplicationExtension: UnsafeFlag { }

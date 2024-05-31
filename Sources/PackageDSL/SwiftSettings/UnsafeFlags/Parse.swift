@@ -1,8 +1,3 @@
-//
-// Parse.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-parse"])
-public struct Parse: UnsafeFlag {}
+/// Passes the flag `-parse`
+/// Parse input file(s)
+public struct Parse: UnsafeFlag { }

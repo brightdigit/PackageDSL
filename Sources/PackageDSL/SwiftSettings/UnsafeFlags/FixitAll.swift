@@ -1,8 +1,3 @@
-//
-// FixitAll.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-fixit-all"])
-public struct FixitAll: UnsafeFlag {}
+/// Passes the flag `-fixit-all`
+/// Apply all fixits from diagnostics without any filtering
+public struct FixitAll: UnsafeFlag { }

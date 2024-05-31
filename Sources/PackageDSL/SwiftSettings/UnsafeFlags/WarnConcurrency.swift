@@ -1,8 +1,3 @@
-//
-// WarnConcurrency.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-warn-concurrency"])
-public struct WarnConcurrency: UnsafeFlag {}
+/// Passes the flag `-warn-concurrency`
+/// Warn about code that is unsafe according to the Swift Concurrency model and will become ill-formed in a future language version
+public struct WarnConcurrency: UnsafeFlag { }

@@ -1,8 +1,3 @@
-//
-// NoWholeModuleOptimization.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-no-whole-module-optimization"])
-public struct NoWholeModuleOptimization: UnsafeFlag {}
+/// Passes the flag `-no-whole-module-optimization`
+///  Disable optimizing input files together instead of individually
+public struct NoWholeModuleOptimization: UnsafeFlag { }

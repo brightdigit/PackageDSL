@@ -1,8 +1,3 @@
-//
-// EmitIrgen.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-irgen"])
-public struct EmitIrgen: UnsafeFlag {}
+/// Passes the flag `-emit-irgen`
+/// Emit LLVM IR file(s) before LLVM optimizations
+public struct EmitIrgen: UnsafeFlag { }

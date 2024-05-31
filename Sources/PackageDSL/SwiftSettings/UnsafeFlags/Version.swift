@@ -1,8 +1,3 @@
-//
-// Version.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-version"])
-public struct Version: UnsafeFlag {}
+/// Passes the flag `-version`
+/// Print version information and exit
+public struct Version: UnsafeFlag { }

@@ -1,8 +1,3 @@
-//
-// RindexingSystemModule.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rindexing-system-module"])
-public struct RindexingSystemModule: UnsafeFlag {}
+/// Passes the flag `-Rindexing-system-module`
+///  Emit a remark when indexing a system module
+public struct RindexingSystemModule: UnsafeFlag { }

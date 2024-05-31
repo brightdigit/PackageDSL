@@ -1,8 +1,3 @@
-//
-// EmitLoadedModuleTrace.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-loaded-module-trace"])
-public struct EmitLoadedModuleTrace: UnsafeFlag {}
+/// Passes the flag `-emit-loaded-module-trace`
+///  Emit a JSON file containing information about what modules were loaded
+public struct EmitLoadedModuleTrace: UnsafeFlag { }

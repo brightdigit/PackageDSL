@@ -1,8 +1,13 @@
-//
-// O.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
+/// Passes the flag `-o`
+///  Write output to <file>
+public struct O: UnsafeFlag {
+    public let file: String
 
-// unsafeFlags(["-O"])
-public struct O: UnsafeFlag {}
+    public init(_ file: String) {
+        self.file = file
+    }
+
+    public var unsafeFlagArguments: [String] {
+        ["\(name.camelToSnakeCaseFlag())", "\(file)"]
+    }
+}

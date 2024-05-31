@@ -1,8 +1,3 @@
-//
-// EmitIr.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-ir"])
-public struct EmitIr: UnsafeFlag {}
+/// Passes the flag `-emit-ir`
+/// Emit LLVM IR file(s) after LLVM optimizations
+public struct EmitIr: UnsafeFlag { }

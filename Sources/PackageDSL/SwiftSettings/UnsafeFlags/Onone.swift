@@ -1,8 +1,3 @@
-//
-// Onone.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Onone"])
-public struct Onone: UnsafeFlag {}
+/// Passes the flag `-Onone`
+/// Compile without any optimization
+public struct Onone: UnsafeFlag { }

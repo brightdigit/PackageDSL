@@ -1,8 +1,3 @@
-//
-// CacheCompileJob.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-cache-compile-job"])
-public struct CacheCompileJob: UnsafeFlag {}
+/// Passes the flag `-cache-compile-job`
+/// Enable compiler caching
+public struct CacheCompileJob: UnsafeFlag { }

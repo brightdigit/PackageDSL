@@ -1,8 +1,3 @@
-//
-// DumpParse.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-parse"])
-public struct DumpParse: UnsafeFlag {}
+/// Passes the flag `-dump-parse`
+/// Parse input file(s) and dump AST(s)
+public struct DumpParse: UnsafeFlag { }

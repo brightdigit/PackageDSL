@@ -1,8 +1,3 @@
-//
-// DisableActorDataRaceChecks.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-actor-data-race-checks"])
-public struct DisableActorDataRaceChecks: UnsafeFlag {}
+/// Passes the flag `-disable-actor-data-race-checks`
+///  Disable runtime checks for actor data races
+public struct DisableActorDataRaceChecks: UnsafeFlag { }

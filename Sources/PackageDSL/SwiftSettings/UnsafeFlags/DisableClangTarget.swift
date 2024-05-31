@@ -1,8 +1,3 @@
-//
-// DisableClangTarget.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-clang-target"])
-public struct DisableClangTarget: UnsafeFlag {}
+/// Passes the flag `-disable-clang-target`
+/// Disable a separately specified target triple for Clang instance to use
+public struct DisableClangTarget: UnsafeFlag { }

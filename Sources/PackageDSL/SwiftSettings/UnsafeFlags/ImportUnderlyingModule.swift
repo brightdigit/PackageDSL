@@ -1,8 +1,3 @@
-//
-// ImportUnderlyingModule.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-import-underlying-module"])
-public struct ImportUnderlyingModule: UnsafeFlag {}
+/// Passes the flag `-import-underlying-module`
+///  Implicitly imports the Objective-C half of a module
+public struct ImportUnderlyingModule: UnsafeFlag { }

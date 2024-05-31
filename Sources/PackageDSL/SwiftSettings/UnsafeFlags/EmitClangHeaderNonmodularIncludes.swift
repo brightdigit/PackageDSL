@@ -1,8 +1,3 @@
-//
-// EmitClangHeaderNonmodularIncludes.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-clang-header-nonmodular-includes"])
-public struct EmitClangHeaderNonmodularIncludes: UnsafeFlag {}
+/// Passes the flag `-emit-clang-header-nonmodular-includes`
+///  Augment emitted Objective-C header with textual imports for every included modular import
+public struct EmitClangHeaderNonmodularIncludes: UnsafeFlag { }

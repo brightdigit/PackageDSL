@@ -1,8 +1,3 @@
-//
-// DisableSandbox.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-sandbox"])
-public struct DisableSandbox: UnsafeFlag {}
+/// Passes the flag `-disable-sandbox`
+/// Disable using the sandbox when executing subprocesses
+public struct DisableSandbox: UnsafeFlag { }

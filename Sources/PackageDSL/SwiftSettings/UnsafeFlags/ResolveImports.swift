@@ -1,8 +1,3 @@
-//
-// ResolveImports.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-resolve-imports"])
-public struct ResolveImports: UnsafeFlag {}
+/// Passes the flag `-resolve-imports`
+/// Parse and resolve imports in input file(s)
+public struct ResolveImports: UnsafeFlag { }

@@ -1,8 +1,3 @@
-//
-// DisableIncrementalImports.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-incremental-imports"])
-public struct DisableIncrementalImports: UnsafeFlag {}
+/// Passes the flag `-disable-incremental-imports`
+///  Disable cross-module incremental build metadata and driver scheduling for Swift modules
+public struct DisableIncrementalImports: UnsafeFlag { }

@@ -1,8 +1,3 @@
-//
-// RcrossImport.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rcross-import"])
-public struct RcrossImport: UnsafeFlag {}
+/// Passes the flag `-Rcross-import`
+/// Emit a remark if a cross-import of a module is triggered.
+public struct RcrossImport: UnsafeFlag { }

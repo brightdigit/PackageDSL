@@ -1,8 +1,3 @@
-//
-// DisableMigratorFixits.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-migrator-fixits"])
-public struct DisableMigratorFixits: UnsafeFlag {}
+/// Passes the flag `-disable-migrator-fixits`
+///  Disable the Migrator phase which automatically applies fix-its
+public struct DisableMigratorFixits: UnsafeFlag { }

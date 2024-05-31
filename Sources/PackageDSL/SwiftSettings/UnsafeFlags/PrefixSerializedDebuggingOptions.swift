@@ -1,8 +1,3 @@
-//
-// PrefixSerializedDebuggingOptions.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-prefix-serialized-debugging-options"])
-public struct PrefixSerializedDebuggingOptions: UnsafeFlag {}
+/// Passes the flag `-prefix-serialized-debugging-options`
+///  Apply debug prefix mappings to serialized debug info in Swiftmodule files
+public struct PrefixSerializedDebuggingOptions: UnsafeFlag { }

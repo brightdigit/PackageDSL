@@ -1,8 +1,3 @@
-//
-// EmitTbd.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-tbd"])
-public struct EmitTbd: UnsafeFlag {}
+/// Passes the flag `-emit-tbd`
+/// Emit a TBD file
+public struct EmitTbd: UnsafeFlag { }

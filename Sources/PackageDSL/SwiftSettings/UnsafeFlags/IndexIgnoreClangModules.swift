@@ -1,8 +1,3 @@
-//
-// IndexIgnoreClangModules.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-index-ignore-clang-modules"])
-public struct IndexIgnoreClangModules: UnsafeFlag {}
+/// Passes the flag `-index-ignore-clang-modules`
+///  Avoid indexing clang modules (pcms)
+public struct IndexIgnoreClangModules: UnsafeFlag { }

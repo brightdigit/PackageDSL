@@ -1,8 +1,3 @@
-//
-// EnableLibraryEvolution.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-enable-library-evolution"])
-public struct EnableLibraryEvolution: UnsafeFlag {}
+/// Passes the flag `-enable-library-evolution`
+///  Build the module to allow binary-compatible library evolution
+public struct EnableLibraryEvolution: UnsafeFlag { }

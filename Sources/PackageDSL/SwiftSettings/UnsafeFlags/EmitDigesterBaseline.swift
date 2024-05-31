@@ -1,8 +1,3 @@
-//
-// EmitDigesterBaseline.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-digester-baseline"])
-public struct EmitDigesterBaseline: UnsafeFlag {}
+/// Passes the flag `-emit-digester-baseline`
+/// Emit a baseline file for the module using the API digester
+public struct EmitDigesterBaseline: UnsafeFlag { }

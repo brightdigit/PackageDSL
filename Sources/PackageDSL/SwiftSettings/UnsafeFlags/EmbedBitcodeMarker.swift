@@ -1,8 +1,3 @@
-//
-// EmbedBitcodeMarker.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-embed-bitcode-marker"])
-public struct EmbedBitcodeMarker: UnsafeFlag {}
+/// Passes the flag `-embed-bitcode-marker`
+/// Embed placeholder LLVM IR data as a marker
+public struct EmbedBitcodeMarker: UnsafeFlag { }

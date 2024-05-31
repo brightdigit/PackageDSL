@@ -1,8 +1,3 @@
-//
-// Nostdimport.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-nostdimport"])
-public struct Nostdimport: UnsafeFlag {}
+/// Passes the flag `-nostdimport`
+/// Don't search the standard library import path for modules
+public struct Nostdimport: UnsafeFlag { }

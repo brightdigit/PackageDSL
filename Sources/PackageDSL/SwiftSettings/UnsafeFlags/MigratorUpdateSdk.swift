@@ -1,8 +1,3 @@
-//
-// MigratorUpdateSdk.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-migrator-update-sdk"])
-public struct MigratorUpdateSdk: UnsafeFlag {}
+/// Passes the flag `-migrator-update-sdk`
+/// Does nothing. Temporary compatibility flag for Xcode.
+public struct MigratorUpdateSdk: UnsafeFlag { }

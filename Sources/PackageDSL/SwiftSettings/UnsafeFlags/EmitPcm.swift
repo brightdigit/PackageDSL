@@ -1,8 +1,3 @@
-//
-// EmitPcm.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-pcm"])
-public struct EmitPcm: UnsafeFlag {}
+/// Passes the flag `-emit-pcm`
+/// Emit a precompiled Clang module from a module map
+public struct EmitPcm: UnsafeFlag { }

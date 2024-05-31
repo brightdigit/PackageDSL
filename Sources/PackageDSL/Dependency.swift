@@ -6,6 +6,8 @@
 
 import PackageDescription
 
+/// A protocol that defines a target dependency.
 public protocol Dependency {
-  var targetDepenency: _PackageDescription_TargetDependency { get }
+  /// The target dependency for this protocol.
+  var targetDependency: _PackageDescription_TargetDependency { get }
 }

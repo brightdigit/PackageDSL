@@ -1,8 +1,3 @@
-//
-// AvoidEmitModuleSourceInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-avoid-emit-module-source-info"])
-public struct AvoidEmitModuleSourceInfo: UnsafeFlag {}
+/// Passes the flag `-avoid-emit-module-source-info`
+///  don't emit Swift source info file
+public struct AvoidEmitModuleSourceInfo: UnsafeFlag { }

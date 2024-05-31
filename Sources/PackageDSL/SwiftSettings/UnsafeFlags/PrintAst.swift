@@ -1,8 +1,3 @@
-//
-// PrintAst.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-print-ast"])
-public struct PrintAst: UnsafeFlag {}
+/// Passes the flag `-print-ast`
+/// Parse and type-check input file(s) and pretty print AST(s)
+public struct PrintAst: UnsafeFlag { }

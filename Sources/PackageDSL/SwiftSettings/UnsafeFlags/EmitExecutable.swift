@@ -1,8 +1,3 @@
-//
-// EmitExecutable.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-executable"])
-public struct EmitExecutable: UnsafeFlag {}
+/// Passes the flag `-emit-executable`
+/// Emit a linked executable
+public struct EmitExecutable: UnsafeFlag { }

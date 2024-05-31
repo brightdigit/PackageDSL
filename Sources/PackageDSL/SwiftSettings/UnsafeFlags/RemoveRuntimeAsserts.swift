@@ -1,8 +1,3 @@
-//
-// RemoveRuntimeAsserts.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-remove-runtime-asserts"])
-public struct RemoveRuntimeAsserts: UnsafeFlag {}
+/// Passes the flag `-remove-runtime-asserts`
+/// Remove runtime safety checks.
+public struct RemoveRuntimeAsserts: UnsafeFlag { }

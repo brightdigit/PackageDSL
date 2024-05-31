@@ -1,8 +1,3 @@
-//
-// ValidateClangModulesOnce.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-validate-clang-modules-once"])
-public struct ValidateClangModulesOnce: UnsafeFlag {}
+/// Passes the flag `-validate-clang-modules-once`
+///  Don't verify input files for Clang modules if the module has been successfully validated or loaded during this build session
+public struct ValidateClangModulesOnce: UnsafeFlag { }

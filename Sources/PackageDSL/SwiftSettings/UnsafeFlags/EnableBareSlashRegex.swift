@@ -1,8 +1,3 @@
-//
-// EnableBareSlashRegex.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-enable-bare-slash-regex"])
-public struct EnableBareSlashRegex: UnsafeFlag {}
+/// Passes the flag `-enable-bare-slash-regex`
+///  Enable the use of forward slash regular-expression literal syntax
+public struct EnableBareSlashRegex: UnsafeFlag { }

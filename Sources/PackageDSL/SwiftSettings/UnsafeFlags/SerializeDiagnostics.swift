@@ -1,8 +1,3 @@
-//
-// SerializeDiagnostics.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-serialize-diagnostics"])
-public struct SerializeDiagnostics: UnsafeFlag {}
+/// Passes the flag `-serialize-diagnostics`
+/// Serialize diagnostics in a binary format
+public struct SerializeDiagnostics: UnsafeFlag { }

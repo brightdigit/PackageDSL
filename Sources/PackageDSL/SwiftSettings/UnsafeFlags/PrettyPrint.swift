@@ -1,8 +1,3 @@
-//
-// PrettyPrint.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-pretty-print"])
-public struct PrettyPrint: UnsafeFlag {}
+/// Passes the flag `-pretty-print`
+/// Pretty-print the output JSON
+public struct PrettyPrint: UnsafeFlag { }

@@ -1,8 +1,3 @@
-//
-// DumpTypeInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-type-info"])
-public struct DumpTypeInfo: UnsafeFlag {}
+/// Passes the flag `-dump-type-info`
+/// Output YAML dump of fixed-size types from all imported modules
+public struct DumpTypeInfo: UnsafeFlag { }

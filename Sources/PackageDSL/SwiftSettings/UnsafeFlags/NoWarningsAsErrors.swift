@@ -1,8 +1,3 @@
-//
-// NoWarningsAsErrors.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-no-warnings-as-errors"])
-public struct NoWarningsAsErrors: UnsafeFlag {}
+/// Passes the flag `-no-warnings-as-errors`
+/// Don't treat warnings as errors
+public struct NoWarningsAsErrors: UnsafeFlag { }

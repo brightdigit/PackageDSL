@@ -1,8 +1,3 @@
-//
-// MigrateKeepObjcVisibility.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-migrate-keep-objc-visibility"])
-public struct MigrateKeepObjcVisibility: UnsafeFlag {}
+/// Passes the flag `-migrate-keep-objc-visibility`
+///  When migrating, add '@objc' to declarations that would've been implicitly visible in Swift 3
+public struct MigrateKeepObjcVisibility: UnsafeFlag { }

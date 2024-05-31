@@ -1,8 +1,3 @@
-//
-// Typecheck.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-typecheck"])
-public struct Typecheck: UnsafeFlag {}
+/// Passes the flag `-typecheck`
+/// Parse and type-check input file(s)
+public struct Typecheck: UnsafeFlag { }

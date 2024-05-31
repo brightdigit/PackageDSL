@@ -1,8 +1,3 @@
-//
-// EmbedBitcode.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-embed-bitcode"])
-public struct EmbedBitcode: UnsafeFlag {}
+/// Passes the flag `-embed-bitcode`
+/// Embed LLVM IR bitcode as data
+public struct EmbedBitcode: UnsafeFlag { }

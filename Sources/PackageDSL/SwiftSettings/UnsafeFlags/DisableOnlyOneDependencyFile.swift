@@ -1,8 +1,3 @@
-//
-// DisableOnlyOneDependencyFile.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-only-one-dependency-file"])
-public struct DisableOnlyOneDependencyFile: UnsafeFlag {}
+/// Passes the flag `-disable-only-one-dependency-file`
+///  Disables incremental build optimization that only produces one dependencies file
+public struct DisableOnlyOneDependencyFile: UnsafeFlag { }

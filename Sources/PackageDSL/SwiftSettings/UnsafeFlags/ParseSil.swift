@@ -1,8 +1,3 @@
-//
-// ParseSil.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-parse-sil"])
-public struct ParseSil: UnsafeFlag {}
+/// Passes the flag `-parse-sil`
+/// Parse the input file as SIL code, not Swift source
+public struct ParseSil: UnsafeFlag { }

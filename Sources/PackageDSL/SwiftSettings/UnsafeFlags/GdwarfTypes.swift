@@ -1,8 +1,3 @@
-//
-// GdwarfTypes.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-gdwarf-types"])
-public struct GdwarfTypes: UnsafeFlag {}
+/// Passes the flag `-gdwarf-types`
+/// Emit full DWARF type info.
+public struct GdwarfTypes: UnsafeFlag { }

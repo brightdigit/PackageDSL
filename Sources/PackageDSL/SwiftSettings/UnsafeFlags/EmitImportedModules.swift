@@ -1,8 +1,3 @@
-//
-// EmitImportedModules.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-imported-modules"])
-public struct EmitImportedModules: UnsafeFlag {}
+/// Passes the flag `-emit-imported-modules`
+/// Emit a list of the imported modules
+public struct EmitImportedModules: UnsafeFlag { }

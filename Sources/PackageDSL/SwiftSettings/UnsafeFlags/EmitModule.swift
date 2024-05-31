@@ -1,8 +1,3 @@
-//
-// EmitModule.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-module"])
-public struct EmitModule: UnsafeFlag {}
+/// Passes the flag `-emit-module`
+/// Emit an importable module
+public struct EmitModule: UnsafeFlag { }

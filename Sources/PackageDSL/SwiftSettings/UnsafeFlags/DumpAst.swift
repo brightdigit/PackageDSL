@@ -1,8 +1,3 @@
-//
-// DumpAst.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-ast"])
-public struct DumpAst: UnsafeFlag {}
+/// Passes the flag `-dump-ast`
+/// Parse and type-check input file(s) and dump AST(s)
+public struct DumpAst: UnsafeFlag { }

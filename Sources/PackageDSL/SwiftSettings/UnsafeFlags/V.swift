@@ -1,8 +1,3 @@
-//
-// V.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-v"])
-public struct V: UnsafeFlag {}
+/// Passes the flag `-v`
+/// Show commands to run and use verbose output
+public struct V: UnsafeFlag { }

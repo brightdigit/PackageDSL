@@ -1,8 +1,3 @@
-//
-// NoVerifyEmittedModuleInterface.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-no-verify-emitted-module-interface"])
-public struct NoVerifyEmittedModuleInterface: UnsafeFlag {}
+/// Passes the flag `-no-verify-emitted-module-interface`
+///  Don't check that module interfaces emitted during compilation typecheck
+public struct NoVerifyEmittedModuleInterface: UnsafeFlag { }

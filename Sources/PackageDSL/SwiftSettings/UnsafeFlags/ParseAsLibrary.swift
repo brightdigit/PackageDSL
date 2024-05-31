@@ -1,8 +1,3 @@
-//
-// ParseAsLibrary.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-parse-as-library"])
-public struct ParseAsLibrary: UnsafeFlag {}
+/// Passes the flag `-parse-as-library`
+/// Parse the input file(s) as libraries, not scripts
+public struct ParseAsLibrary: UnsafeFlag { }

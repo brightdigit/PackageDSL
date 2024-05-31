@@ -1,8 +1,3 @@
-//
-// EmitSib.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-sib"])
-public struct EmitSib: UnsafeFlag {}
+/// Passes the flag `-emit-sib`
+/// Emit serialized AST + canonical SIL file(s)
+public struct EmitSib: UnsafeFlag { }

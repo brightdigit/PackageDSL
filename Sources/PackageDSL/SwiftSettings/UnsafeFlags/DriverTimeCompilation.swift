@@ -1,8 +1,3 @@
-//
-// DriverTimeCompilation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-driver-time-compilation"])
-public struct DriverTimeCompilation: UnsafeFlag {}
+/// Passes the flag `-driver-time-compilation`
+///  Prints the total time it took to execute all compilation tasks
+public struct DriverTimeCompilation: UnsafeFlag { }

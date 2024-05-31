@@ -1,8 +1,3 @@
-//
-// WholeModuleOptimization.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-whole-module-optimization"])
-public struct WholeModuleOptimization: UnsafeFlag {}
+/// Passes the flag `-whole-module-optimization`
+///  Optimize input files together instead of individually
+public struct WholeModuleOptimization: UnsafeFlag { }

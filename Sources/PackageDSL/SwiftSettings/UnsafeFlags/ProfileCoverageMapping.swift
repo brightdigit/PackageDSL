@@ -1,8 +1,3 @@
-//
-// ProfileCoverageMapping.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-profile-coverage-mapping"])
-public struct ProfileCoverageMapping: UnsafeFlag {}
+/// Passes the flag `-profile-coverage-mapping`
+///  Generate coverage data for use with profiled execution counts
+public struct ProfileCoverageMapping: UnsafeFlag { }

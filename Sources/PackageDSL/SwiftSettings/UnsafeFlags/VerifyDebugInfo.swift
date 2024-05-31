@@ -1,8 +1,3 @@
-//
-// VerifyDebugInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-verify-debug-info"])
-public struct VerifyDebugInfo: UnsafeFlag {}
+/// Passes the flag `-verify-debug-info`
+/// Verify the binary representation of debug output.
+public struct VerifyDebugInfo: UnsafeFlag { }

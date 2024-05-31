@@ -1,8 +1,3 @@
-//
-// ParseableOutput.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-parseable-output"])
-public struct ParseableOutput: UnsafeFlag {}
+/// Passes the flag `-parseable-output`
+/// Emit textual output in a parseable format
+public struct ParseableOutput: UnsafeFlag { }

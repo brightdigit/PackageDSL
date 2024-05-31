@@ -1,8 +1,3 @@
-//
-// DumpTypeRefinementContexts.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-type-refinement-contexts"])
-public struct DumpTypeRefinementContexts: UnsafeFlag {}
+/// Passes the flag `-dump-type-refinement-contexts`
+///  Type-check input file(s) and dump type refinement contexts(s)
+public struct DumpTypeRefinementContexts: UnsafeFlag { }

@@ -1,8 +1,3 @@
-//
-// Ounchecked.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Ounchecked"])
-public struct Ounchecked: UnsafeFlag {}
+/// Passes the flag `-Ounchecked`
+/// Compile with optimizations and remove runtime safety checks
+public struct Ounchecked: UnsafeFlag { }
