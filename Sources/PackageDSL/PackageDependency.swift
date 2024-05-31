@@ -17,15 +17,15 @@ extension PackageDependency where Self: TargetDependency {
     self
   }
 
-  var targetDepenency: _PackageDescription_TargetDependency {
+  var targetDependency: _PackageDescription_TargetDependency {
     switch dependency.kind {
       case .sourceControl(let name, let location, requirement: _):
-        let packageName = name ?? location.packageName
-        return .product(name: productName, package: packageName)
+        let packageName = name ?? location.packageName ?? self.packageName
+        return .product(name: productName, package: packageName, condition: self.condition)
 
       case .fileSystem(let name, let path):
         if let packageName = name ?? path.components(separatedBy: "/").last {
-          return .product(name: productName, package: packageName)
+          return .product(name: productName, package: packageName, condition: self.condition)
         } else {
           return .byName(name: productName)
         }

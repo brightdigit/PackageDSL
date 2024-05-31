@@ -10,7 +10,7 @@ extension _PackageDescription_Target {
   static func entry(_ entry: Target, swiftSettings: [SwiftSetting] = [])
     -> _PackageDescription_Target
   {
-    let dependencies = entry.dependencies.map(\.targetDepenency)
+    let dependencies = entry.dependencies.map(\.targetDependency)
     switch entry.targetType {
       case .executable:
         return .executableTarget(

@@ -7,5 +7,5 @@
 import PackageDescription
 
 public protocol Dependency {
-  var targetDepenency: _PackageDescription_TargetDependency { get }
+  var targetDependency: _PackageDescription_TargetDependency { get }
 }

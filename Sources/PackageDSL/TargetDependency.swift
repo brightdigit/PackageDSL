@@ -7,6 +7,7 @@
 protocol TargetDependency: Dependency, _Named {
   var productName: String { get }
   var package: PackageDependency { get }
+  var condition: TargetDependencyCondition? { get }
 }
 
 extension TargetDependency {
@@ -14,7 +15,9 @@ extension TargetDependency {
     name
   }
 
-  var targetDepenency: _PackageDescription_TargetDependency {
-    .product(name: name, package: package.packageName)
+  var targetDependency: _PackageDescription_TargetDependency {
+    .product(name: name, package: package.packageName, condition: condition)
   }
+  
+  var condition: TargetDependencyCondition? { return nil }
 }

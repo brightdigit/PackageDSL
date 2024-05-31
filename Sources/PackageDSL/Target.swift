@@ -23,7 +23,7 @@ extension Target {
     .regular
   }
 
-  public var targetDepenency: _PackageDescription_TargetDependency {
+  public var targetDependency: _PackageDescription_TargetDependency {
     .target(name: name)
   }
 
