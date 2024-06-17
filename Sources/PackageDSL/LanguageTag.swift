@@ -7,5 +7,5 @@
 import PackageDescription
 
 extension LanguageTag {
-  static let english: LanguageTag = "en"
+  nonisolated(unsafe) static let english: LanguageTag = "en"
 }
