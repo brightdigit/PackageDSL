@@ -7,10 +7,15 @@
 public protocol Product: _Named, GroupBuildable {
   var productTargets: [Target] { get }
   var productType: ProductType { get }
+  var libraryType: LibraryType? { get }
 }
 
 extension Product {
   public var productType: ProductType {
     .library
+  }
+  
+  public var libraryType: LibraryType? {
+    nil
   }
 }

@@ -13,7 +13,7 @@ extension _PackageDescription_Product {
         return Self.executable(name: entry.name, targets: targets)
 
       case .library:
-        return Self.library(name: entry.name, targets: targets)
+        return Self.library(name: entry.name, type:  entry.libraryType, targets: targets)
     }
   }
 }

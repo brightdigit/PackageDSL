@@ -14,3 +14,5 @@ public typealias _PackageDescription_Target = PackageDescription.Target
 public typealias _PackageDescription_TargetDependency = PackageDescription.Target.Dependency
 // swift-format-ignore: NoLeadingUnderscores
 public typealias _PackageDescription_PackageDependency = PackageDescription.Package.Dependency
+
+public typealias LibraryType = PackageDescription.Product.Library.LibraryType
