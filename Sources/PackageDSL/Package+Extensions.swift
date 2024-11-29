@@ -7,9 +7,10 @@
 import PackageDescription
 
 extension Package {
-  public convenience init(
+  convenience init(
     name: String? = nil,
     @ProductsBuilder entries: @escaping () -> [any Product],
+    @PackageDependencyBuilder dependencies packageDependencies: @escaping () -> [any PackageDependency] = { [any PackageDependency] () },
     @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [any TestTarget]() },
     @SwiftSettingsBuilder swiftSettings: @escaping () -> [SwiftSetting] = { [SwiftSetting]() }
   ) {
@@ -31,6 +32,7 @@ extension Package {
     let dependencies = allTargetsDependencies + allTestTargetsDependencies
     let targetDependencies = dependencies.compactMap { $0 as? Target }
     let packageTargetDependencies = dependencies.compactMap { $0 as? TargetDependency }
+    let allPackageDependencies = packageTargetDependencies.map(\.package) + packageDependencies()
     targets += targetDependencies
     targets += allTestTargets.map { $0 as Target }
     let packgeTargets = Dictionary(
@@ -41,10 +43,10 @@ extension Package {
     .compactMap(\.first)
     .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings()) }
     let packageDeps = Dictionary(
-      grouping: packageTargetDependencies,
-      by: { $0.package.packageName }
+      grouping: allPackageDependencies,
+      by: { $0.packageName }
     )
-    .values.compactMap(\.first).map(\.package.dependency)
+    .values.compactMap(\.first).map(\.dependency)
     self.init(
       name: packageName,
       products: products,
