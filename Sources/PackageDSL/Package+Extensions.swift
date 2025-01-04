@@ -7,7 +7,7 @@
 import PackageDescription
 
 extension Package {
-  convenience init(
+  public convenience init(
     name: String? = nil,
     @ProductsBuilder entries: @escaping () -> [any Product],
     @PackageDependencyBuilder dependencies packageDependencies: @escaping () -> [any PackageDependency] = { [any PackageDependency] () },

@@ -7,7 +7,7 @@
 import Foundation
 import PackageDescription
 
-protocol PackageDependency: _Named {
+public protocol PackageDependency: _Named {
   var packageName: String { get }
   var dependency: _PackageDescription_PackageDependency { get }
 }

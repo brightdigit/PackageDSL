@@ -4,6 +4,8 @@
 // Licensed under MIT License
 //
 
+import PackageDescription
+
 protocol TargetDependency: Dependency, _Named {
   var productName: String { get }
   var package: PackageDependency { get }

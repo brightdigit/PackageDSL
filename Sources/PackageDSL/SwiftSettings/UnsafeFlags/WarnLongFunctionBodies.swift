@@ -1,11 +1,11 @@
 
-struct WarnLongFunctionBodies : UnsafeFlag {
-  internal init(milliseconds: Int) {
+public struct WarnLongFunctionBodies : UnsafeFlag {
+  public  init(milliseconds: Int) {
     self.milliseconds = milliseconds
   }
   
-  let milliseconds : Int
-  var unsafeFlagArguments: [String] {
+  public let milliseconds : Int
+  public var unsafeFlagArguments: [String] {
     [
       "-Xfrontend",
       "-warn-long-function-bodies=\(milliseconds)"

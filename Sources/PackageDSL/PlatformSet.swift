@@ -4,7 +4,7 @@
 // Licensed under MIT License
 //
 
-protocol PlatformSet {
+public protocol PlatformSet {
   @SupportedPlatformBuilder
   var body: any SupportedPlatforms { get }
 }

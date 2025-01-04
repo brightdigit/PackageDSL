@@ -1,11 +1,11 @@
 
-struct WarnLongExpressionTypeChecking : UnsafeFlag {
-  internal init(milliseconds: Int) {
+public struct WarnLongExpressionTypeChecking : UnsafeFlag {
+  public  init(milliseconds: Int) {
     self.milliseconds = milliseconds
   }
   
-  let milliseconds : Int
-  var unsafeFlagArguments: [String] {
+  public let milliseconds : Int
+  public var unsafeFlagArguments: [String] {
     [
       "-Xfrontend",
       "-warn-long-expression-type-checking=\(milliseconds)"

@@ -4,6 +4,8 @@
 // Licensed under MIT License
 //
 
+import PackageDescription
+
 public protocol Product: _Named, GroupBuildable {
   var productTargets: [Target] { get }
   var productType: ProductType { get }

@@ -5,12 +5,12 @@
 //
 
 @resultBuilder
-enum DependencyBuilder {
-  static func buildPartialBlock(first: Dependency) -> any Dependencies {
+public enum DependencyBuilder {
+  public static func buildPartialBlock(first: Dependency) -> any Dependencies {
     [first]
   }
 
-  static func buildPartialBlock(accumulated: any Dependencies, next: Dependency) -> any Dependencies
+  public static func buildPartialBlock(accumulated: any Dependencies, next: Dependency) -> any Dependencies
   {
     accumulated + [next]
   }
