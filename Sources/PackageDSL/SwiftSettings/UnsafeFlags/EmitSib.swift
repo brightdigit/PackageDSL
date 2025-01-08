@@ -1,8 +1,2 @@
-//
-// EmitSib.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-sib"])
+/// A struct that represents the `-emit-sib` flag for the Swift compiler.
 public struct EmitSib: UnsafeFlag {}

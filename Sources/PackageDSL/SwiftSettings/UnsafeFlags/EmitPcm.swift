@@ -1,8 +1,2 @@
-//
-// EmitPcm.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-pcm"])
+/// A flag that instructs the Swift compiler to emit a Portable C Microarchitecture (PCM) file.
 public struct EmitPcm: UnsafeFlag {}

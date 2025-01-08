@@ -1,12 +1,8 @@
-//
-// RegionBasedIsolation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0414-region-based-isolation.md
+/// Represents a feature based on region-based isolation, as proposed in Swift Evolution Proposal 0414.
 public struct RegionBasedIsolation: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .experimental
-  }
+    /// The state of the feature, which is always `.experimental`.
+    public var featureState: FeatureState {
+        return .experimental
+    }
 }

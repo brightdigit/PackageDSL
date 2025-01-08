@@ -1,8 +1,2 @@
-//
-// SuppressRemarks.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-suppress-remarks"])
+/// The `SuppressRemarks` struct represents an unsafe flag that can be used to suppress remarks in a build.
 public struct SuppressRemarks: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// NoWholeModuleOptimization.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-no-whole-module-optimization"])
+/// Represents the "-no-whole-module-optimization" flag for the Swift compiler.
 public struct NoWholeModuleOptimization: UnsafeFlag {}

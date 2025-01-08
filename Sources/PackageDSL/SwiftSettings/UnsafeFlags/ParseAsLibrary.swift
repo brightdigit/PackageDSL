@@ -4,5 +4,5 @@
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-parse-as-library"])
+/// A struct that represents the `-parse-as-library` compiler flag.
 public struct ParseAsLibrary: UnsafeFlag {}

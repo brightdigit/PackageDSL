@@ -1,8 +1,2 @@
-//
-// V.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-v"])
+/// Represents an unsafe flag with the value "-v".
 public struct V: UnsafeFlag {}

@@ -1,8 +1,3 @@
-//
-// EmitSupportedFeatures.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-emit-supported-features"])
+/// A struct representing the "-emit-supported-features" flag for the Swift compiler.
 public struct EmitSupportedFeatures: UnsafeFlag {}

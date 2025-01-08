@@ -1,8 +1,2 @@
-//
-// CacheDisableReplay.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-cache-disable-replay"])
+/// Represents the "-cache-disable-replay" flag for the Swift compiler.
 public struct CacheDisableReplay: UnsafeFlag {}

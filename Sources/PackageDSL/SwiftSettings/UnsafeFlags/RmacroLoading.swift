@@ -1,8 +1,2 @@
-//
-// RmacroLoading.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rmacro-loading"])
+/// A struct representing the "-Rmacro-loading" Clang flag.
 public struct RmacroLoading: UnsafeFlag {}

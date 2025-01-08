@@ -1,12 +1,7 @@
-//
-// FullTypedThrows.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0413-typed-throws.md
+/// `FullTypedThrows` is a `SwiftSettingFeature` that represents an upcoming feature.
 public struct FullTypedThrows: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .upcoming
-  }
+    /// The current state of the feature.
+    public var featureState: FeatureState {
+        return .upcoming
+    }
 }

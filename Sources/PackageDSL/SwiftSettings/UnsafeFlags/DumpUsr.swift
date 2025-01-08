@@ -1,8 +1,2 @@
-//
-// DumpUsr.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-usr"])
+/// A struct that represents the `-dump-usr` flag for the compiler.
 public struct DumpUsr: UnsafeFlag {}

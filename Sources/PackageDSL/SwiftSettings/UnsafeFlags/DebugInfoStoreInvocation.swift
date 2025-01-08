@@ -1,8 +1,2 @@
-//
-// DebugInfoStoreInvocation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-debug-info-store-invocation"])
+/// A struct representing the `"-debug-info-store-invocation"` compiler flag.
 public struct DebugInfoStoreInvocation: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// AvoidEmitModuleSourceInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-avoid-emit-module-source-info"])
+/// Represents a flag that instructs the compiler to avoid emitting module source information.
 public struct AvoidEmitModuleSourceInfo: UnsafeFlag {}

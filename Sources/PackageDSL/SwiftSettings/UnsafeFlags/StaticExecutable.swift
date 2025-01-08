@@ -1,8 +1,2 @@
-//
-// StaticExecutable.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-static-executable"])
+/// A static executable flag for the Swift compiler.
 public struct StaticExecutable: UnsafeFlag {}

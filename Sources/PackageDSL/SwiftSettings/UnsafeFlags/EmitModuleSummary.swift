@@ -1,8 +1,3 @@
-//
-// EmitModuleSummary.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-emit-module-summary"])
+/// A flag that enables the emission of a module summary for the current compilation.
 public struct EmitModuleSummary: UnsafeFlag {}

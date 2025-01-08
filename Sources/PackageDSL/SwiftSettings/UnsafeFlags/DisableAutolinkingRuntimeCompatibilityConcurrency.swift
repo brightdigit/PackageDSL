@@ -1,8 +1,3 @@
-//
-// DisableAutolinkingRuntimeCompatibilityConcurrency.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-disable-autolinking-runtime-compatibility-concurrency"])
+/// A struct that represents the "-disable-autolinking-runtime-compatibility-concurrency" compiler flag.
 public struct DisableAutolinkingRuntimeCompatibilityConcurrency: UnsafeFlag {}

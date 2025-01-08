@@ -1,8 +1,2 @@
-//
-// ProfileGenerate.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-profile-generate"])
+/// Represents a profile generation flag for the compiler.
 public struct ProfileGenerate: UnsafeFlag {}

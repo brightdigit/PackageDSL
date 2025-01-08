@@ -1,8 +1,2 @@
-//
-// SaveTemps.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-save-temps"])
+/// A flag that enables saving temporary files during the build process.
 public struct SaveTemps: UnsafeFlag {}

@@ -4,5 +4,5 @@
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-parse"])
+/// A struct representing an "unsafe flag" for the Parse command.
 public struct Parse: UnsafeFlag {}

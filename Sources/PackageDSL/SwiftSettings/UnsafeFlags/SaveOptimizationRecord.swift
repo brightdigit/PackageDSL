@@ -1,8 +1,2 @@
-//
-// SaveOptimizationRecord.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-save-optimization-record"])
+/// Represents a flag that saves an optimization record.
 public struct SaveOptimizationRecord: UnsafeFlag {}

@@ -4,5 +4,5 @@
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-warn-implicit-overrides"])
+/// A flag that enables warnings for implicit overrides.
 public struct WarnImplicitOverrides: UnsafeFlag {}

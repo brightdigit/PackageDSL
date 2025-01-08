@@ -1,8 +1,2 @@
-//
-// EmbedBitcodeMarker.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-embed-bitcode-marker"])
+/// A struct that represents the "-embed-bitcode-marker" unsafeFlag.
 public struct EmbedBitcodeMarker: UnsafeFlag {}

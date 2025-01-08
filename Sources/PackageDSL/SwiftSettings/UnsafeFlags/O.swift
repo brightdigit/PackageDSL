@@ -1,8 +1,2 @@
-//
-// O.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-O"])
+/// An unsafe flag that represents the `-O` optimization flag.
 public struct O: UnsafeFlag {}

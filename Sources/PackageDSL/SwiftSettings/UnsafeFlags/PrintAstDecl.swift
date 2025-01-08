@@ -1,8 +1,2 @@
-//
-// PrintAstDecl.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-print-ast-decl"])
+/// Represents a flag that prints the AST declaration.
 public struct PrintAstDecl: UnsafeFlag {}

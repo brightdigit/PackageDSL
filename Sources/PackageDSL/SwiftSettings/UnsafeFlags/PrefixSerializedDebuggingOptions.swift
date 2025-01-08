@@ -1,8 +1,3 @@
-//
-// PrefixSerializedDebuggingOptions.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-prefix-serialized-debugging-options"])
+/// A struct that represents the "-prefix-serialized-debugging-options" unsafeFlag.
 public struct PrefixSerializedDebuggingOptions: UnsafeFlag {}

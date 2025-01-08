@@ -1,8 +1,2 @@
-//
-// EmitAssembly.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-assembly"])
+/// Represents a flag that instructs the Swift compiler to emit assembly code.
 public struct EmitAssembly: UnsafeFlag {}

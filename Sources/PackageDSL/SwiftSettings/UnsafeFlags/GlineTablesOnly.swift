@@ -1,8 +1,2 @@
-//
-// GlineTablesOnly.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-gline-tables-only"])
+/// A `UnsafeFlag` that represents the `-gline-tables-only` compiler flag.
 public struct GlineTablesOnly: UnsafeFlag {}

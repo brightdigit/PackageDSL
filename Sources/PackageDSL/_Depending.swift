@@ -1,29 +1,30 @@
-//
-// _Depending.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
 // swift-format-ignore: NoLeadingUnderscores
+/// A protocol that represents an entity that has dependencies.
 public protocol _Depending {
-  @DependencyBuilder
-  var dependencies: any Dependencies { get }
+    /// The dependencies of the entity.
+    @DependencyBuilder
+    var dependencies: any Dependencies { get }
 }
 
 extension _Depending {
-  public var dependencies: any Dependencies {
-    [Dependency]()
-  }
+    /// The default implementation of the `dependencies` property.
+    public var dependencies: any Dependencies {
+        [Dependency]()
+    }
 }
 
 extension _Depending {
-  public func allDependencies() -> [Dependency] {
-    dependencies.compactMap {
-      $0 as? _Depending
+    /// Retrieves all the dependencies of the entity, including nested dependencies.
+    ///
+    /// - Returns: An array of all the dependencies of the entity.
+    public func allDependencies() -> [Dependency] {
+        dependencies.compactMap {
+            $0 as? _Depending
+        }
+        .flatMap {
+            $0.allDependencies()
+        }
+        .appending(dependencies)
     }
-    .flatMap {
-      $0.allDependencies()
-    }
-    .appending(dependencies)
-  }
 }

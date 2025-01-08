@@ -1,12 +1,7 @@
-//
-// DeprecateApplicationMain.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md
+/// A struct that represents a feature in the Swift setting.
 public struct DeprecateApplicationMain: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .upcoming
-  }
+    /// The current state of the feature.
+    public var featureState: FeatureState {
+        return .upcoming
+    }
 }

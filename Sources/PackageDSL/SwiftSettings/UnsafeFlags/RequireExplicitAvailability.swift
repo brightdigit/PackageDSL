@@ -1,8 +1,3 @@
-//
-// RequireExplicitAvailability.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-require-explicit-availability"])
+/// A struct that represents the "-require-explicit-availability" Xcode compiler flag.
 public struct RequireExplicitAvailability: UnsafeFlag {}

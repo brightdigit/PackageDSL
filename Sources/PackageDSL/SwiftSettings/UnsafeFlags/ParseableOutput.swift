@@ -1,8 +1,2 @@
-//
-// ParseableOutput.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-parseable-output"])
+/// Represents a command-line flag that enables the "parseable output" mode.
 public struct ParseableOutput: UnsafeFlag {}

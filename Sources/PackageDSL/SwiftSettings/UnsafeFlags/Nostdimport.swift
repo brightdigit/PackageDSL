@@ -1,8 +1,3 @@
-//
-// Nostdimport.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-nostdimport"])
+/// A struct representing the `-nostdimport` flag in Swift.
 public struct Nostdimport: UnsafeFlag {}

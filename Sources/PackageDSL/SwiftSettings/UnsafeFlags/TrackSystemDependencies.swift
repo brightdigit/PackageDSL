@@ -1,8 +1,2 @@
-//
-// TrackSystemDependencies.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-track-system-dependencies"])
+/// A struct representing the `--track-system-dependencies` flag for the Swift compiler.
 public struct TrackSystemDependencies: UnsafeFlag {}

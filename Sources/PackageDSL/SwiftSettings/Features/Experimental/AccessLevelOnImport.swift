@@ -1,12 +1,7 @@
-//
-// AccessLevelOnImport.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0409-access-level-on-imports.md
+/// `AccessLevelOnImport` is a `SwiftSettingFeature` that represents a feature related to access level on imports.
 public struct AccessLevelOnImport: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .experimental
-  }
+    /// The feature state of the `AccessLevelOnImport` struct, which is always `.experimental`.
+    public var featureState: FeatureState {
+        return .experimental
+    }
 }

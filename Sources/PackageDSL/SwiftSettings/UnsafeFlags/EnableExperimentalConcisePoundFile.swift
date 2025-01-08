@@ -1,8 +1,3 @@
-//
-// EnableExperimentalConcisePoundFile.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-enable-experimental-concise-pound-file"])
+/// A struct that enables the experimental concise pound file feature.
 public struct EnableExperimentalConcisePoundFile: UnsafeFlag {}

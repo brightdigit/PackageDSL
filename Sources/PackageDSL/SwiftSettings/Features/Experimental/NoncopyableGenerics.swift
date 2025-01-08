@@ -1,12 +1,8 @@
-//
-// NoncopyableGenerics.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0427-noncopyable-generics.md
+/// A struct that represents a non-copyable generic feature.
 public struct NoncopyableGenerics: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .experimental
-  }
+    /// The feature state of the `NoncopyableGenerics` struct.
+    public var featureState: FeatureState {
+        return .experimental
+    }
 }

@@ -1,8 +1,2 @@
-//
-// VerifyEmittedModuleInterface.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-verify-emitted-module-interface"])
+/// A flag that enables verification of the emitted module interface.
 public struct VerifyEmittedModuleInterface: UnsafeFlag {}

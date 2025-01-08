@@ -1,3 +1,4 @@
+
 //
 // SwiftSettingConvertible.swift
 // Copyright (c) 2024 BrightDigit.
@@ -6,12 +7,17 @@
 
 import PackageDescription
 
+/// A protocol that conforming types can use to represent a single `SwiftSetting`.
 public protocol SwiftSettingConvertible: SwiftSettingsConvertible {
-  var setting: SwiftSetting { get }
+    /// The `SwiftSetting` represented by this type.
+    var setting: SwiftSetting { get }
 }
 
 extension SwiftSettingConvertible {
-  public func swiftSettings() -> [SwiftSetting] {
-    [setting]
-  }
+    /// Returns an array containing the single `SwiftSetting` represented by this type.
+    ///
+    /// - Returns: An array containing the `SwiftSetting` represented by this type.
+    public func swiftSettings() -> [SwiftSetting] {
+        [setting]
+    }
 }

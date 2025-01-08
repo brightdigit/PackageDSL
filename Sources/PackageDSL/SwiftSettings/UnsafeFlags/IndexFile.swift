@@ -1,8 +1,2 @@
-//
-// IndexFile.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-index-file"])
+/// An `UnsafeFlag` that represents the `-index-file` command-line argument.
 public struct IndexFile: UnsafeFlag {}

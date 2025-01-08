@@ -1,11 +1,9 @@
-//
-// TargetType.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
+/// Represents the type of a target in the project.
 public enum TargetType {
-  case regular
-  case executable
-  case test
+    /// Represents a regular (non-executable) target.
+    case regular
+    /// Represents an executable target.
+    case executable
+    /// Represents a test target.
+    case test
 }

@@ -1,8 +1,2 @@
-//
-// RequireExplicitSendable.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-require-explicit-sendable"])
+/// Represents a flag that requires explicit `Sendable` conformance.
 public struct RequireExplicitSendable: UnsafeFlag {}

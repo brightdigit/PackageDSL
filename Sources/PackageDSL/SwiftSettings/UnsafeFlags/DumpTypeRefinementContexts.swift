@@ -1,8 +1,2 @@
-//
-// DumpTypeRefinementContexts.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-type-refinement-contexts"])
+/// A struct that represents the `"-dump-type-refinement-contexts"` unsafeFlag.
 public struct DumpTypeRefinementContexts: UnsafeFlag {}

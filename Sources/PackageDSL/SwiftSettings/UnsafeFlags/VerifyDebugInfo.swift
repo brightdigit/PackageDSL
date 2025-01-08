@@ -1,8 +1,3 @@
-//
-// VerifyDebugInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-verify-debug-info"])
+/// A struct that represents the `-verify-debug-info` unsafed flag.
 public struct VerifyDebugInfo: UnsafeFlag {}

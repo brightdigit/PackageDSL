@@ -1,12 +1,7 @@
-//
-// GlobalConcurrency.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0412-strict-concurrency-for-global-variables.md
+/// A struct that represents a Swift setting feature related to global concurrency.
 public struct GlobalConcurrency: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .upcoming
-  }
+    /// The current state of the feature.
+    public var featureState: FeatureState {
+        return .upcoming
+    }
 }

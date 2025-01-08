@@ -1,8 +1,2 @@
-//
-// DisableIncrementalImports.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-incremental-imports"])
+/// A struct that represents the `-disable-incremental-imports` Swift compiler flag.
 public struct DisableIncrementalImports: UnsafeFlag {}

@@ -4,5 +4,5 @@
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-whole-module-optimization"])
+/// A type-erased wrapper around the "-whole-module-optimization" compiler flag.
 public struct WholeModuleOptimization: UnsafeFlag {}

@@ -1,8 +1,3 @@
-//
-// EmitObjcHeader.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-emit-objc-header"])
+/// Emits an Objective-C header file.
 public struct EmitObjcHeader: UnsafeFlag {}

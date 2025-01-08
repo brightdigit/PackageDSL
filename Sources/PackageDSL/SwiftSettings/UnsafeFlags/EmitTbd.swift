@@ -4,5 +4,5 @@
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-emit-tbd"])
+/// A flag that instructs the compiler to emit a Textual Binary Descriptor (TBD) file.
 public struct EmitTbd: UnsafeFlag {}

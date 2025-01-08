@@ -1,3 +1,4 @@
+
 //
 // PackageDescription.swift
 // Copyright (c) 2024 BrightDigit.
@@ -6,13 +7,21 @@
 
 import PackageDescription
 
-// swift-format-ignore: NoLeadingUnderscores
+/// A type alias for `PackageDescription.Product`.
+/// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
 public typealias _PackageDescription_Product = PackageDescription.Product
-// swift-format-ignore: NoLeadingUnderscores
+
+/// A type alias for `PackageDescription.Target`.
+/// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
 public typealias _PackageDescription_Target = PackageDescription.Target
-// swift-format-ignore: NoLeadingUnderscores
+
+/// A type alias for `PackageDescription.Target.Dependency`.
+/// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
 public typealias _PackageDescription_TargetDependency = PackageDescription.Target.Dependency
-// swift-format-ignore: NoLeadingUnderscores
+
+/// A type alias for `PackageDescription.Package.Dependency`.
+/// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
 public typealias _PackageDescription_PackageDependency = PackageDescription.Package.Dependency
 
+/// A type alias for `PackageDescription.Product.Library.LibraryType`.
 public typealias LibraryType = PackageDescription.Product.Library.LibraryType

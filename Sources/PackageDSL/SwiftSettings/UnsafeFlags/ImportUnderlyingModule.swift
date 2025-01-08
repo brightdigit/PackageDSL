@@ -1,8 +1,3 @@
-//
-// ImportUnderlyingModule.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-import-underlying-module"])
+/// A struct that represents the unsafeFlag "-import-underlying-module".
 public struct ImportUnderlyingModule: UnsafeFlag {}

@@ -5,17 +5,20 @@
 //
 
 import PackageDescription
-
+/// A protocol that represents an unsafe flag for a Swift setting.
 public protocol UnsafeFlag: SwiftSettingConvertible, _Named {
-  var unsafeFlagArguments: [String] { get }
+    /// The arguments for the unsafe flag.
+    var unsafeFlagArguments: [String] { get }
 }
 
 extension UnsafeFlag {
-  public var unsafeFlagArguments: [String] {
-    [name.camelToSnakeCaseFlag()]
-  }
+    /// The arguments for the unsafe flag.
+    public var unsafeFlagArguments: [String] {
+        [name.camelToSnakeCaseFlag()]
+    }
 
-  public var setting: SwiftSetting {
-    .unsafeFlags(unsafeFlagArguments)
-  }
+    /// The Swift setting for the unsafe flag.
+    public var setting: SwiftSetting {
+        .unsafeFlags(unsafeFlagArguments)
+    }
 }

@@ -1,8 +1,2 @@
-//
-// DumpAst.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-ast"])
+/// `DumpAst` is a `UnsafeFlag` struct that represents the `-dump-ast` command-line flag.
 public struct DumpAst: UnsafeFlag {}

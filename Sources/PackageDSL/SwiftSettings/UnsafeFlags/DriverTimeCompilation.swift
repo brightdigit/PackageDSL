@@ -1,8 +1,2 @@
-//
-// DriverTimeCompilation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-driver-time-compilation"])
+/// Represents a flag to enable driver time compilation.
 public struct DriverTimeCompilation: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// EmitBc.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-bc"])
+/// Represents the "emit-bc" flag for the compiler.
 public struct EmitBc: UnsafeFlag {}

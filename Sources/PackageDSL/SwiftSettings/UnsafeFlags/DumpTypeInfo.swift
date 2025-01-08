@@ -1,8 +1,2 @@
-//
-// DumpTypeInfo.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-type-info"])
+/// Represents a flag that dumps type information.
 public struct DumpTypeInfo: UnsafeFlag {}

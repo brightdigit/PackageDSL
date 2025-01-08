@@ -1,8 +1,2 @@
-//
-// IndexIncludeLocals.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-index-include-locals"])
+/// A flag that includes local variables in the index.
 public struct IndexIncludeLocals: UnsafeFlag {}

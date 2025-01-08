@@ -1,8 +1,3 @@
-//
-// DisableSandbox.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-disable-sandbox"])
+/// A struct representing the "disable-sandbox" flag for unsafeFlags.
 public struct DisableSandbox: UnsafeFlag {}

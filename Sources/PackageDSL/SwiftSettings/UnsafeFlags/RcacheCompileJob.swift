@@ -1,8 +1,2 @@
-//
-// RcacheCompileJob.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rcache-compile-job"])
+/// Represents a compile job for the `Rcache` feature.
 public struct RcacheCompileJob: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// EmitSilgen.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-silgen"])
+/// Represents the "-emit-silgen" flag for the Swift compiler.
 public struct EmitSilgen: UnsafeFlag {}

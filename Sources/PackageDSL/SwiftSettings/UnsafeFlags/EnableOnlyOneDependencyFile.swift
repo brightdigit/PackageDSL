@@ -1,8 +1,2 @@
-//
-// EnableOnlyOneDependencyFile.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-enable-only-one-dependency-file"])
+/// A struct that represents the "-enable-only-one-dependency-file" compiler flag.
 public struct EnableOnlyOneDependencyFile: UnsafeFlag {}

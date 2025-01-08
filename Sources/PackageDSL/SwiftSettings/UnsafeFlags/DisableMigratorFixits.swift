@@ -1,8 +1,2 @@
-//
-// DisableMigratorFixits.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-migrator-fixits"])
+/// A struct that represents the `"-disable-migrator-fixits"` command-line flag.
 public struct DisableMigratorFixits: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// MigratorUpdateSwift.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-migrator-update-swift"])
+/// Represents the "migrator-update-swift" flag for the Swift compiler.
 public struct MigratorUpdateSwift: UnsafeFlag {}

@@ -1,12 +1,8 @@
-//
-// DynamicActorIsolation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0423-dynamic-actor-isolation.md
+/// A struct representing a dynamic actor isolation feature.
 public struct DynamicActorIsolation: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .upcoming
-  }
+    /// The feature state, which is set to `.upcoming`.
+    public var featureState: FeatureState {
+        return .upcoming
+    }
 }

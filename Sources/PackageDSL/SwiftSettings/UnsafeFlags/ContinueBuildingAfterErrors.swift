@@ -1,8 +1,3 @@
-//
-// ContinueBuildingAfterErrors.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-continue-building-after-errors"])
+/// A struct that represents the `"-continue-building-after-errors"` flag.
 public struct ContinueBuildingAfterErrors: UnsafeFlag {}

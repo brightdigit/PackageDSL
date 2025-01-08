@@ -1,8 +1,3 @@
-//
-// ColorDiagnostics.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-color-diagnostics"])
+/// A struct representing the "-color-diagnostics" flag.
 public struct ColorDiagnostics: UnsafeFlag {}

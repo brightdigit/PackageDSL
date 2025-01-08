@@ -1,8 +1,2 @@
-//
-// EmitSibgen.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-sibgen"])
+/// Represents a flag that instructs the Swift compiler to emit a side-by-side generation (SIBGen) file.
 public struct EmitSibgen: UnsafeFlag {}

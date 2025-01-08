@@ -1,8 +1,3 @@
-//
-// EnableExperimentalForwardModeDifferentiation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-enable-experimental-forward-mode-differentiation"])
+/// Enables the experimental forward mode differentiation feature in Swift.
 public struct EnableExperimentalForwardModeDifferentiation: UnsafeFlag {}

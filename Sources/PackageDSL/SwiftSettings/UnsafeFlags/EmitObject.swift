@@ -1,8 +1,2 @@
-//
-// EmitObject.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-object"])
+/// A struct representing the "-emit-object" flag for the Swift compiler.
 public struct EmitObject: UnsafeFlag {}

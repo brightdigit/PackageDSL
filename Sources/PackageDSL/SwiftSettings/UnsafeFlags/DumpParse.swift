@@ -1,8 +1,3 @@
-//
-// DumpParse.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-dump-parse"])
+/// A struct that represents the `--dump-parse` flag for the Swift compiler.
 public struct DumpParse: UnsafeFlag {}

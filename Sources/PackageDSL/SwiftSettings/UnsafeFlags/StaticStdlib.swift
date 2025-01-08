@@ -1,8 +1,2 @@
-//
-// StaticStdlib.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-static-stdlib"])
+/// A type that represents the "-static-stdlib" flag for the Swift compiler.
 public struct StaticStdlib: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// DisallowUseNewDriver.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disallow-use-new-driver"])
+/// Represents a flag that disallows the use of the new driver.
 public struct DisallowUseNewDriver: UnsafeFlag {}

@@ -1,8 +1,7 @@
-//
 // EmitLibrary.swift
 // Copyright (c) 2024 BrightDigit.
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-emit-library"])
+/// A flag that instructs the compiler to emit a library instead of an executable.
 public struct EmitLibrary: UnsafeFlag {}

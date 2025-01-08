@@ -1,8 +1,2 @@
-//
-// NoWarningsAsErrors.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-no-warnings-as-errors"])
+/// A struct that represents the `-no-warnings-as-errors` flag for the Swift compiler.
 public struct NoWarningsAsErrors: UnsafeFlag {}

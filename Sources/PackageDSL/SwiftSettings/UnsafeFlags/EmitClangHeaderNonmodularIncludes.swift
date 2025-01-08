@@ -1,8 +1,2 @@
-//
-// EmitClangHeaderNonmodularIncludes.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-clang-header-nonmodular-includes"])
+/// Represents a flag that emits non-modular includes in the Clang header.
 public struct EmitClangHeaderNonmodularIncludes: UnsafeFlag {}

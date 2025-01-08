@@ -1,8 +1,3 @@
-//
-// EmitExecutable.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-emit-executable"])
+/// A flag that instructs the Swift compiler to emit an executable.
 public struct EmitExecutable: UnsafeFlag {}

@@ -1,8 +1,4 @@
-//
-// RskipExplicitInterfaceBuild.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rskip-explicit-interface-build"])
+/// Represents the "-Rskip-explicit-interface-build" compiler flag.
+///
+/// This flag is used to skip the explicit interface build during the compilation process.
 public struct RskipExplicitInterfaceBuild: UnsafeFlag {}

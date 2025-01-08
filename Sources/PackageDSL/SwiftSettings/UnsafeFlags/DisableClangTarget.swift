@@ -1,8 +1,3 @@
-//
-// DisableClangTarget.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-disable-clang-target"])
+/// A struct representing the "-disable-clang-target" flag for the Swift compiler.
 public struct DisableClangTarget: UnsafeFlag {}

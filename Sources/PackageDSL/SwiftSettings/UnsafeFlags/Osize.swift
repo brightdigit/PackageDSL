@@ -1,8 +1,2 @@
-//
-// Osize.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Osize"])
+/// Represents the optimization flag `-Osize` in the Swift compiler.
 public struct Osize: UnsafeFlag {}

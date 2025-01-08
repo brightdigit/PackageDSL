@@ -1,8 +1,2 @@
-//
-// GdwarfTypes.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-gdwarf-types"])
+/// `GdwarfTypes` is a struct that conforms to the `UnsafeFlag` protocol.
 public struct GdwarfTypes: UnsafeFlag {}

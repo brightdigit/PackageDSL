@@ -1,8 +1,2 @@
-//
-// CacheCompileJob.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-cache-compile-job"])
+/// A struct that represents a cache compile job.
 public struct CacheCompileJob: UnsafeFlag {}

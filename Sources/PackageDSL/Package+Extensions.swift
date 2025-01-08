@@ -1,3 +1,4 @@
+
 //
 // Package+Extensions.swift
 // Copyright (c) 2024 BrightDigit.
@@ -7,10 +8,17 @@
 import PackageDescription
 
 extension Package {
+  /// Initializes a new `Package` instance with the provided properties.
+  /// - Parameters:
+  ///   - name: The name of the package. If `nil`, the name will be inferred from the file path.
+  ///   - entries: A closure that returns an array of `Product` instances.
+  ///   - packageDependencies: A closure that returns an array of `PackageDependency` instances.
+  ///   - testTargets: A closure that returns an array of `TestTarget` instances.
+  ///   - swiftSettings: A closure that returns an array of `SwiftSetting` instances.
   public convenience init(
     name: String? = nil,
     @ProductsBuilder entries: @escaping () -> [any Product],
-    @PackageDependencyBuilder dependencies packageDependencies: @escaping () -> [any PackageDependency] = { [any PackageDependency] () },
+    @PackageDependencyBuilder dependencies packageDependencies: @escaping () -> [any PackageDependency] = { [any PackageDependency]() },
     @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [any TestTarget]() },
     @SwiftSettingsBuilder swiftSettings: @escaping () -> [SwiftSetting] = { [SwiftSetting]() }
   ) {
@@ -57,6 +65,9 @@ extension Package {
 }
 
 extension Package {
+  /// Adds supported platforms to the package.
+  /// - Parameter supportedPlatforms: A closure that returns an array of `SupportedPlatforms` instances.
+  /// - Returns: The modified `Package` instance.
   public func supportedPlatforms(
     @SupportedPlatformBuilder supportedPlatforms: @escaping () -> any SupportedPlatforms
   ) -> Package {
@@ -64,6 +75,9 @@ extension Package {
     return self
   }
 
+  /// Sets the default localization for the package.
+  /// - Parameter defaultLocalization: The default localization for the package.
+  /// - Returns: The modified `Package` instance.
   public func defaultLocalization(_ defaultLocalization: LanguageTag) -> Package {
     self.defaultLocalization = defaultLocalization
     return self

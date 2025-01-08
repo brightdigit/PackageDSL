@@ -1,8 +1,2 @@
-//
-// ScanDependencies.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-scan-dependencies"])
+/// Represents a flag for scanning dependencies.
 public struct ScanDependencies: UnsafeFlag {}

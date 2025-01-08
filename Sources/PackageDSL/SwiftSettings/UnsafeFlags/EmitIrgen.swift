@@ -1,8 +1,2 @@
-//
-// EmitIrgen.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-irgen"])
+/// Represents the "-emit-irgen" flag for the LLVM Intermediate Representation (IR) generator.
 public struct EmitIrgen: UnsafeFlag {}

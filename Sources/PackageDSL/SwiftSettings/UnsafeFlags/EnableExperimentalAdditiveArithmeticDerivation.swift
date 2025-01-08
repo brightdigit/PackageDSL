@@ -1,8 +1,3 @@
-//
-// EnableExperimentalAdditiveArithmeticDerivation.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-enable-experimental-additive-arithmetic-derivation"])
+/// A struct that represents the "-enable-experimental-additive-arithmetic-derivation" flag.
 public struct EnableExperimentalAdditiveArithmeticDerivation: UnsafeFlag {}

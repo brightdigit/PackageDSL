@@ -1,8 +1,2 @@
-//
-// PrintAst.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-print-ast"])
+/// Represents the `print-ast` unsafeFlag.
 public struct PrintAst: UnsafeFlag {}

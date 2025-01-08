@@ -1,8 +1,2 @@
-//
-// EmbedBitcode.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-embed-bitcode"])
+/// `EmbedBitcode` is a `UnsafeFlag` struct that enables embedding bitcode in the target binary.
 public struct EmbedBitcode: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// Help.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-help"])
+/// Provides a command-line flag to display help information.
 public struct Help: UnsafeFlag {}

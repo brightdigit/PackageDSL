@@ -1,8 +1,2 @@
-//
-// DisableAutolinkingRuntimeCompatibilityDynamicReplacements.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-disable-autolinking-runtime-compatibility-dynamic-replacements"])
+/// A struct that represents the "-disable-autolinking-runtime-compatibility-dynamic-replacements" unsafeFlag.
 public struct DisableAutolinkingRuntimeCompatibilityDynamicReplacements: UnsafeFlag {}

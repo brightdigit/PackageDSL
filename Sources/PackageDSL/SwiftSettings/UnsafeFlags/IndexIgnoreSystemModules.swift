@@ -1,8 +1,2 @@
-//
-// IndexIgnoreSystemModules.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-index-ignore-system-modules"])
+/// A struct representing the "-index-ignore-system-modules" flag for the Swift compiler.
 public struct IndexIgnoreSystemModules: UnsafeFlag {}

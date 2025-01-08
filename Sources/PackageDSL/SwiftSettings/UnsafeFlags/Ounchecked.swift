@@ -1,8 +1,2 @@
-//
-// Ounchecked.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Ounchecked"])
+/// Ounchecked is a `UnsafeFlag` that represents the `-Ounchecked` compiler flag.
 public struct Ounchecked: UnsafeFlag {}

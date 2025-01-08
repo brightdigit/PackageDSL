@@ -1,8 +1,2 @@
-//
-// WarningsAsErrors.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-warnings-as-errors"])
+/// A struct that represents the "-warnings-as-errors" flag.
 public struct WarningsAsErrors: UnsafeFlag {}

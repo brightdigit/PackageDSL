@@ -1,8 +1,2 @@
-//
-// EmitModule.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-emit-module"])
+/// Represents a flag that instructs the compiler to emit a module file.
 public struct EmitModule: UnsafeFlag {}

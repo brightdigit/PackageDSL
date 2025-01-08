@@ -1,8 +1,3 @@
-//
-// MigratorUpdateSdk.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// unsafeFlags(["-migrator-update-sdk"])
+/// A struct representing an unsafe flag for updating the SDK during migration.
 public struct MigratorUpdateSdk: UnsafeFlag {}

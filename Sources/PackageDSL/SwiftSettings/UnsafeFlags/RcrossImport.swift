@@ -1,8 +1,2 @@
-//
-// RcrossImport.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rcross-import"])
+/// Represents an unsafeFlag for the "-Rcross-import" option.
 public struct RcrossImport: UnsafeFlag {}

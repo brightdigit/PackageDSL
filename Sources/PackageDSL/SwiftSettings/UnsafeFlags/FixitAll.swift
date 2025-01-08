@@ -1,8 +1,2 @@
-//
-// FixitAll.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-fixit-all"])
+/// Represents a flag that fixes all issues in the Swift code.
 public struct FixitAll: UnsafeFlag {}

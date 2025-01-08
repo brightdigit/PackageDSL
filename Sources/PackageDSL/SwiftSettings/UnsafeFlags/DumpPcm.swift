@@ -1,8 +1,2 @@
-//
-// DumpPcm.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-dump-pcm"])
+/// A struct that represents the `--dump-pcm` flag for the Swift compiler.
 public struct DumpPcm: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// G.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-g"])
+/// A struct representing the `-g` flag for the Swift compiler.
 public struct G: UnsafeFlag {}

@@ -1,8 +1,2 @@
-//
-// RmoduleRecovery.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-Rmodule-recovery"])
+/// The `RmoduleRecovery` struct represents an unsafeFlag that enables the `-Rmodule-recovery` compiler flag.
 public struct RmoduleRecovery: UnsafeFlag {}

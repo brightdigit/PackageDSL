@@ -1,8 +1,2 @@
-//
-// SuppressWarnings.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-suppress-warnings"])
+/// Represents a flag that suppresses warnings in the build process.
 public struct SuppressWarnings: UnsafeFlag {}

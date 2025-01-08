@@ -1,8 +1,2 @@
-//
-// Version.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-version"])
+/// `Version` is a struct that represents an unsafe flag with the value `-version`.
 public struct Version: UnsafeFlag {}

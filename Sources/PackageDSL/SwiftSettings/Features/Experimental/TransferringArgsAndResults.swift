@@ -1,12 +1,7 @@
-//
-// TransferringArgsAndResults.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0430-transferring-parameters-and-results.md
+/// `TransferringArgsAndResults` is a `SwiftSettingFeature` struct that represents a feature in the Swift programming language.
 public struct TransferringArgsAndResults: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .experimental
-  }
+    /// The feature state of the `TransferringArgsAndResults` struct.
+    public var featureState: FeatureState {
+        return .experimental
+    }
 }

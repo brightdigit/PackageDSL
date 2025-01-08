@@ -1,12 +1,8 @@
-//
-// IsolatedAny.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
 
-// from proposal https://github.com/apple/swift-evolution/blob/main/proposals/0431-isolated-any-functions.md
+/// A type-erased wrapper around any type that can be safely passed between isolated contexts.
 public struct IsolatedAny: SwiftSettingFeature {
-  public var featureState: FeatureState {
-    return .experimental
-  }
+    /// The current state of the feature.
+    public var featureState: FeatureState {
+        return .experimental
+    }
 }

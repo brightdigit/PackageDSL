@@ -4,5 +4,5 @@
 // Licensed under MIT License
 //
 
-// unsafeFlags(["-print-target-info"])
+/// A struct that represents the `--print-target-info` flag.
 public struct PrintTargetInfo: UnsafeFlag {}

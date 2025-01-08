@@ -1,8 +1,2 @@
-//
-// ParseSil.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-// unsafeFlags(["-parse-sil"])
+/// An `UnsafeFlag` that enables parsing SIL (Swift Intermediate Language) during compilation.
 public struct ParseSil: UnsafeFlag {}
