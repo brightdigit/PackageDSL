@@ -23,7 +23,7 @@ extension GroupBuildable where Output == Self {
   ///
   /// - Parameter array: The array of `Self` to construct the `Output` from.
   /// - Returns: An array of `Output` constructed from the given array of `Self`.
-  static func output(from array: [Self]) -> [Self.Output] {
+  public static func output(from array: [Self]) -> [Self.Output] {
     array
   }
 }
