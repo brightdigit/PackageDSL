@@ -1,13 +1,11 @@
-//
-// VariadicGenerics.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-/// A struct representing a "Variadic Generics" feature.
-public struct VariadicGenerics: SwiftSettingFeature {
-  /// The feature state of the "Variadic Generics" feature.
-  public var featureState: FeatureState {
-    .experimental
+///
+/// Building upon the **Value and Type Parameter Packs** proposal [SE-0393](https://forums.swift.org/t/se-0393-value-and-type-parameter-packs/63859), this proposal enables referencing a tuple value that contains a value pack inside a pack repetition pattern.
+///
+/// - SeeAlso: [Tuple of value pack expansion (SE-0399)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0399-tuple-of-value-pack-expansion.md)
+///
+struct VariadicGenerics : SwiftSettingFeature {
+  /// The current state of the feature.
+  var featureState : FeatureState {
+    return .experimental
   }
 }
