@@ -20,6 +20,6 @@ extension TargetDependency {
   var targetDependency: _PackageDescription_TargetDependency {
     .product(name: name, package: package.packageName, condition: condition)
   }
-  
-  var condition: TargetDependencyCondition? { return nil }
+
+  var condition: TargetDependencyCondition? { nil }
 }

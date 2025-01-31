@@ -1,4 +1,3 @@
-
 //
 // Product+Target.swift
 // Copyright (c) 2024 BrightDigit.
@@ -16,6 +15,7 @@ extension Product where Self: Target {
     switch productType {
       case .library:
         return .regular
+
       case .executable:
         return .executable
     }

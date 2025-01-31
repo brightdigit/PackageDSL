@@ -1,4 +1,3 @@
-
 //
 // Package+Extensions.swift
 // Copyright (c) 2024 BrightDigit.
@@ -18,7 +17,8 @@ extension Package {
   public convenience init(
     name: String? = nil,
     @ProductsBuilder entries: @escaping () -> [any Product],
-    @PackageDependencyBuilder dependencies packageDependencies: @escaping () -> [any PackageDependency] = { [any PackageDependency]() },
+    @PackageDependencyBuilder dependencies packageDependencies: @escaping () ->
+      [any PackageDependency] = { [any PackageDependency]() },
     @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [any TestTarget]() },
     @SwiftSettingsBuilder swiftSettings: @escaping () -> [SwiftSetting] = { [SwiftSetting]() }
   ) {
@@ -44,16 +44,14 @@ extension Package {
     targets += targetDependencies
     targets += allTestTargets.map { $0 as Target }
     let packgeTargets = Dictionary(
-      grouping: targets,
-      by: { $0.name }
-    )
+      grouping: targets
+    )      { $0.name }
     .values
     .compactMap(\.first)
     .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings()) }
     let packageDeps = Dictionary(
-      grouping: allPackageDependencies,
-      by: { $0.packageName }
-    )
+      grouping: allPackageDependencies
+    )      { $0.packageName }
     .values.compactMap(\.first).map(\.dependency)
     self.init(
       name: packageName,

@@ -2,8 +2,8 @@
 public protocol TestTarget: Target, GroupBuildable {}
 
 extension TestTarget {
-    /// The target type for this target.
-    public var targetType: TargetType {
-        .test
-    }
+  /// The target type for this target.
+  public var targetType: TargetType {
+    .test
+  }
 }

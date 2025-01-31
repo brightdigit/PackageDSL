@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "PackageDSL",
-            targets: ["PackageDSL"]),
+            targets: ["PackageDSL"])
     ],
     dependencies: [
       .package(url: "https://github.com/apple/swift-package-manager.git", branch: "swift-5.10-RELEASE"),
@@ -22,15 +22,15 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "PackageDSL",
-            dependencies: [.product(name: "PackageDescription", package: "swift-package-manager")],  
+            dependencies: [.product(name: "PackageDescription", package: "swift-package-manager")],
             swiftSettings: [
               .define("USE_IMPL_ONLY_IMPORTS"),
               .unsafeFlags(["-package-description-version", "999.0"]),
-              .unsafeFlags(["-enable-library-evolution"]),
-          ]
+              .unsafeFlags(["-enable-library-evolution"])
+            ]
         ),
         .testTarget(
             name: "PackageDSLTests",
-            dependencies: ["PackageDSL"]),
+            dependencies: ["PackageDSL"])
     ]
 )

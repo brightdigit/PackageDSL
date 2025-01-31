@@ -16,7 +16,7 @@ fi
 # More portable way to get script directory
 if [ -z "$SRCROOT" ]; then
     SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-    PACKAGE_DIR="${SCRIPT_DIR}/.."
+    PACKAGE_DIR="${SCRIPT_DIR}/../.."
 else
     PACKAGE_DIR="${SRCROOT}"     
 fi

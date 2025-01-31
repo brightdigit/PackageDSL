@@ -1,4 +1,3 @@
-
 /// Extension for `Array` where the `Element` is any `TestTarget`.
 extension Array: TestTargets where Element == any TestTarget {
   /// Appends the given `TestTargets` to the current array.
