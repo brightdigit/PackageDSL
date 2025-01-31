@@ -1,2 +1,3 @@
-/// Represents a flag that fixes all issues in the Swift code.
-public struct FixitAll: UnsafeFlag {}
+/// Passes the flag `-fixit-all`
+/// Apply all fixits from diagnostics without any filtering
+struct FixitAll: UnsafeFlag { }

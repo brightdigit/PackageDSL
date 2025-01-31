@@ -1,2 +1,3 @@
-/// A flag that enables verification of the emitted module interface.
-public struct VerifyEmittedModuleInterface: UnsafeFlag {}
+/// Passes the flag `-verify-emitted-module-interface`
+///  Check that module interfaces emitted during compilation typecheck
+struct VerifyEmittedModuleInterface: UnsafeFlag { }

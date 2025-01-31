@@ -1,2 +1,3 @@
-/// An `UnsafeFlag` that enables incremental imports.
-public struct EnableIncrementalImports: UnsafeFlag {}
+/// Passes the flag `-enable-incremental-imports`
+///  Enable cross-module incremental build metadata and driver scheduling for Swift modules
+struct EnableIncrementalImports: UnsafeFlag { }

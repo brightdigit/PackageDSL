@@ -1,2 +1,3 @@
-/// An `UnsafeFlag` that enables parsing SIL (Swift Intermediate Language) during compilation.
-public struct ParseSil: UnsafeFlag {}
+/// Passes the flag `-parse-sil`
+/// Parse the input file as SIL code, not Swift source
+struct ParseSil: UnsafeFlag { }

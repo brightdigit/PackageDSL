@@ -1,2 +1,3 @@
-/// A struct representing the "-disable-clang-target" flag for the Swift compiler.
-public struct DisableClangTarget: UnsafeFlag {}
+/// Passes the flag `-disable-clang-target`
+/// Disable a separately specified target triple for Clang instance to use
+struct DisableClangTarget: UnsafeFlag { }

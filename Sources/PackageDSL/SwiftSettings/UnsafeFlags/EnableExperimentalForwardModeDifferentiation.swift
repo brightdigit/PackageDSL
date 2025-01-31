@@ -1,2 +1,3 @@
-/// Enables the experimental forward mode differentiation feature in Swift.
-public struct EnableExperimentalForwardModeDifferentiation: UnsafeFlag {}
+/// Passes the flag `-enable-experimental-forward-mode-differentiation`
+///  Enable experimental forward mode differentiation
+struct EnableExperimentalForwardModeDifferentiation: UnsafeFlag { }

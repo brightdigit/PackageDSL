@@ -1,8 +1,3 @@
-//
-// ProfileCoverageMapping.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-/// A struct representing the `--profile-coverage-mapping` flag for the Swift compiler.
-public struct ProfileCoverageMapping: UnsafeFlag {}
+/// Passes the flag `-profile-coverage-mapping`
+///  Generate coverage data for use with profiled execution counts
+struct ProfileCoverageMapping: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// Represents the `-emit-sil` flag for the Swift compiler.
-public struct EmitSil: UnsafeFlag {}
+/// Passes the flag `-emit-sil`
+/// Emit canonical SIL file(s)
+struct EmitSil: UnsafeFlag { }

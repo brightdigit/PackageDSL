@@ -1,2 +1,3 @@
-/// `Version` is a struct that represents an unsafe flag with the value `-version`.
-public struct Version: UnsafeFlag {}
+/// Passes the flag `-version`
+/// Print version information and exit
+struct Version: UnsafeFlag { }

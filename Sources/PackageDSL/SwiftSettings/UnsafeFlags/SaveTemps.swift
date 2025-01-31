@@ -1,2 +1,3 @@
-/// A flag that enables saving temporary files during the build process.
-public struct SaveTemps: UnsafeFlag {}
+/// Passes the flag `-save-temps`
+/// Save intermediate compilation results
+struct SaveTemps: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// A struct representing the `"-debug-info-store-invocation"` compiler flag.
-public struct DebugInfoStoreInvocation: UnsafeFlag {}
+/// Passes the flag `-debug-info-store-invocation`
+///  Emit the compiler invocation in the debug info.
+struct DebugInfoStoreInvocation: UnsafeFlag { }

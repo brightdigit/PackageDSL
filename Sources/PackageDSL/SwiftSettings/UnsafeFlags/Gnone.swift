@@ -1,2 +1,3 @@
-/// A structure representing the "-gnone" unsafeFlag.
-public struct Gnone: UnsafeFlag {}
+/// Passes the flag `-gnone`
+/// Don't emit debug info
+struct Gnone: UnsafeFlag { }

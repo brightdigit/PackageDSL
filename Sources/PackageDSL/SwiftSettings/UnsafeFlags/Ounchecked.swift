@@ -1,2 +1,3 @@
-/// Ounchecked is a `UnsafeFlag` that represents the `-Ounchecked` compiler flag.
-public struct Ounchecked: UnsafeFlag {}
+/// Passes the flag `-Ounchecked`
+/// Compile with optimizations and remove runtime safety checks
+struct Ounchecked: UnsafeFlag { }

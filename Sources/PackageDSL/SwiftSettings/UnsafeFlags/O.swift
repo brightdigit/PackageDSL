@@ -1,2 +1,3 @@
-/// An unsafe flag that represents the `-O` optimization flag.
-public struct O: UnsafeFlag {}
+/// Passes the flag `-O`
+/// Compile with optimizations
+struct O: UnsafeFlag { }

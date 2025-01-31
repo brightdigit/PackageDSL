@@ -1,2 +1,3 @@
-/// A struct representing the "-color-diagnostics" flag.
-public struct ColorDiagnostics: UnsafeFlag {}
+/// Passes the flag `-color-diagnostics`
+/// Print diagnostics in color
+struct ColorDiagnostics: UnsafeFlag { }

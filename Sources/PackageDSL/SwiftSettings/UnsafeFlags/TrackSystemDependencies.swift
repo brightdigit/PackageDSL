@@ -1,2 +1,3 @@
-/// A struct representing the `--track-system-dependencies` flag for the Swift compiler.
-public struct TrackSystemDependencies: UnsafeFlag {}
+/// Passes the flag `-track-system-dependencies`
+///  Track system dependencies while emitting Make-style dependencies
+struct TrackSystemDependencies: UnsafeFlag { }

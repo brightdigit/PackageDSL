@@ -1,2 +1,3 @@
-/// A struct that represents the `--dump-parse` flag for the Swift compiler.
-public struct DumpParse: UnsafeFlag {}
+/// Passes the flag `-dump-parse`
+/// Parse input file(s) and dump AST(s)
+struct DumpParse: UnsafeFlag { }

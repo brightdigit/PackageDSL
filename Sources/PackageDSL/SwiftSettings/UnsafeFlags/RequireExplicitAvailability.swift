@@ -1,2 +1,3 @@
-/// A struct that represents the "-require-explicit-availability" Xcode compiler flag.
-public struct RequireExplicitAvailability: UnsafeFlag {}
+/// Passes the flag `-require-explicit-availability`
+///  Warn on public declarations without an availability attribute
+struct RequireExplicitAvailability: UnsafeFlag { }

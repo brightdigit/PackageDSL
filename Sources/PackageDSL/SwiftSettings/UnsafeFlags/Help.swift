@@ -1,2 +1,3 @@
-/// Provides a command-line flag to display help information.
-public struct Help: UnsafeFlag {}
+/// Passes the flag `-help`
+/// Display available options
+struct Help: UnsafeFlag { }

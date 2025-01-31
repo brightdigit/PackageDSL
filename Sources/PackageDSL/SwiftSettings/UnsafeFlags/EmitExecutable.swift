@@ -1,2 +1,3 @@
-/// A flag that instructs the Swift compiler to emit an executable.
-public struct EmitExecutable: UnsafeFlag {}
+/// Passes the flag `-emit-executable`
+/// Emit a linked executable
+struct EmitExecutable: UnsafeFlag { }

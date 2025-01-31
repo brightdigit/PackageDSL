@@ -1,2 +1,3 @@
-/// A struct that represents the "-pretty-print" flag for unsafeFlags.
-public struct PrettyPrint: UnsafeFlag {}
+/// Passes the flag `-pretty-print`
+/// Pretty-print the output JSON
+struct PrettyPrint: UnsafeFlag { }

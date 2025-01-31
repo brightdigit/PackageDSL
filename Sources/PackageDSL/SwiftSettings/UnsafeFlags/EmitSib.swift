@@ -1,2 +1,3 @@
-/// A struct that represents the `-emit-sib` flag for the Swift compiler.
-public struct EmitSib: UnsafeFlag {}
+/// Passes the flag `-emit-sib`
+/// Emit serialized AST + canonical SIL file(s)
+struct EmitSib: UnsafeFlag { }

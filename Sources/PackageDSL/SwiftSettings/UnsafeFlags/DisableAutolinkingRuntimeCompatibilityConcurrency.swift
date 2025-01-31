@@ -1,2 +1,3 @@
-/// A struct that represents the "-disable-autolinking-runtime-compatibility-concurrency" compiler flag.
-public struct DisableAutolinkingRuntimeCompatibilityConcurrency: UnsafeFlag {}
+/// Passes the flag `-disable-autolinking-runtime-compatibility-concurrency`
+///  Do not use autolinking for the concurrency runtime compatibility library
+struct DisableAutolinkingRuntimeCompatibilityConcurrency: UnsafeFlag { }

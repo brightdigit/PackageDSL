@@ -1,2 +1,3 @@
-/// The `SuppressRemarks` struct represents an unsafe flag that can be used to suppress remarks in a build.
-public struct SuppressRemarks: UnsafeFlag {}
+/// Passes the flag `-suppress-remarks`
+/// Suppress all remarks
+struct SuppressRemarks: UnsafeFlag { }

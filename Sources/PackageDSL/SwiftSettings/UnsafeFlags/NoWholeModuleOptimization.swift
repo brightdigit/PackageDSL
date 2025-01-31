@@ -1,2 +1,3 @@
-/// Represents the "-no-whole-module-optimization" flag for the Swift compiler.
-public struct NoWholeModuleOptimization: UnsafeFlag {}
+/// Passes the flag `-no-whole-module-optimization`
+///  Disable optimizing input files together instead of individually
+struct NoWholeModuleOptimization: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// A struct that enables autolinking runtime compatibility bytecode layouts.
-public struct EnableAutolinkingRuntimeCompatibilityBytecodeLayouts: UnsafeFlag {}
+/// Passes the flag `-enable-autolinking-runtime-compatibility-bytecode-layouts`
+///  Enable autolinking for the bytecode layouts runtime compatibility library
+struct EnableAutolinkingRuntimeCompatibilityBytecodeLayouts: UnsafeFlag { }

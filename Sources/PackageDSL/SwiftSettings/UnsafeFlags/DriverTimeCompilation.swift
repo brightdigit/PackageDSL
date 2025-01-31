@@ -1,2 +1,3 @@
-/// Represents a flag to enable driver time compilation.
-public struct DriverTimeCompilation: UnsafeFlag {}
+/// Passes the flag `-driver-time-compilation`
+///  Prints the total time it took to execute all compilation tasks
+struct DriverTimeCompilation: UnsafeFlag { }

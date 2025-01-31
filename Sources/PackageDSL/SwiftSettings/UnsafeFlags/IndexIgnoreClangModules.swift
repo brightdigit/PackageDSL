@@ -1,4 +1,3 @@
-/// A struct representing the `index-ignore-clang-modules` unsafeFlag.
-///
-/// This flag is used to ignore Clang modules when indexing code.
-public struct IndexIgnoreClangModules: UnsafeFlag {}
+/// Passes the flag `-index-ignore-clang-modules`
+///  Avoid indexing clang modules (pcms)
+struct IndexIgnoreClangModules: UnsafeFlag { }

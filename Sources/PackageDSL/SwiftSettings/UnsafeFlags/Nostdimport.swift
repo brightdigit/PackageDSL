@@ -1,2 +1,3 @@
-/// A struct representing the `-nostdimport` flag in Swift.
-public struct Nostdimport: UnsafeFlag {}
+/// Passes the flag `-nostdimport`
+/// Don't search the standard library import path for modules
+struct Nostdimport: UnsafeFlag { }

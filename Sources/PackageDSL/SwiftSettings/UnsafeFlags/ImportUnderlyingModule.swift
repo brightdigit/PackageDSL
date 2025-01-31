@@ -1,2 +1,3 @@
-/// A struct that represents the unsafeFlag "-import-underlying-module".
-public struct ImportUnderlyingModule: UnsafeFlag {}
+/// Passes the flag `-import-underlying-module`
+///  Implicitly imports the Objective-C half of a module
+struct ImportUnderlyingModule: UnsafeFlag { }

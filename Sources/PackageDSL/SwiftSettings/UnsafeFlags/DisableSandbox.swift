@@ -1,2 +1,3 @@
-/// A struct representing the "disable-sandbox" flag for unsafeFlags.
-public struct DisableSandbox: UnsafeFlag {}
+/// Passes the flag `-disable-sandbox`
+/// Disable using the sandbox when executing subprocesses
+struct DisableSandbox: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// An `UnsafeFlag` that represents the `-index-file` command-line argument.
-public struct IndexFile: UnsafeFlag {}
+/// Passes the flag `-index-file`
+/// Produce index data for a source file
+struct IndexFile: UnsafeFlag { }

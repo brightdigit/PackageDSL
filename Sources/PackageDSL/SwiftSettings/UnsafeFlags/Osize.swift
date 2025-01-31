@@ -1,2 +1,3 @@
-/// Represents the optimization flag `-Osize` in the Swift compiler.
-public struct Osize: UnsafeFlag {}
+/// Passes the flag `-Osize`
+/// Compile with optimizations and target small code size
+struct Osize: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// A struct representing the "-index-ignore-system-modules" flag for the Swift compiler.
-public struct IndexIgnoreSystemModules: UnsafeFlag {}
+/// Passes the flag `-index-ignore-system-modules`
+///  Avoid indexing system modules
+struct IndexIgnoreSystemModules: UnsafeFlag { }

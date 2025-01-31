@@ -1,2 +1,3 @@
-/// Represents a flag that resolves imports in the build process.
-public struct ResolveImports: UnsafeFlag {}
+/// Passes the flag `-resolve-imports`
+/// Parse and resolve imports in input file(s)
+struct ResolveImports: UnsafeFlag { }

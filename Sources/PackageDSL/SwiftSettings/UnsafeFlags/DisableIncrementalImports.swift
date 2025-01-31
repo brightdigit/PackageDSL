@@ -1,2 +1,3 @@
-/// A struct that represents the `-disable-incremental-imports` Swift compiler flag.
-public struct DisableIncrementalImports: UnsafeFlag {}
+/// Passes the flag `-disable-incremental-imports`
+///  Disable cross-module incremental build metadata and driver scheduling for Swift modules
+struct DisableIncrementalImports: UnsafeFlag { }

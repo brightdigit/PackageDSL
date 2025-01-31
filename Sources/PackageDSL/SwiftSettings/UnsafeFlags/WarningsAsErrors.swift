@@ -1,2 +1,3 @@
-/// A struct that represents the "-warnings-as-errors" flag.
-public struct WarningsAsErrors: UnsafeFlag {}
+/// Passes the flag `-warnings-as-errors`
+/// Treat warnings as errors
+struct WarningsAsErrors: UnsafeFlag { }

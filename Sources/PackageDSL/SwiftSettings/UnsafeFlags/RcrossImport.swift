@@ -1,2 +1,3 @@
-/// Represents an unsafeFlag for the "-Rcross-import" option.
-public struct RcrossImport: UnsafeFlag {}
+/// Passes the flag `-Rcross-import`
+/// Emit a remark if a cross-import of a module is triggered.
+struct RcrossImport: UnsafeFlag { }

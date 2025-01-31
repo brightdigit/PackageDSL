@@ -1,2 +1,3 @@
-/// A struct representing the `-static` flag for unsafeFlags.
-public struct Static: UnsafeFlag {}
+/// Passes the flag `-static`
+/// Make this module statically linkable and make the output of -emit-library a static library.
+struct Static: UnsafeFlag { }

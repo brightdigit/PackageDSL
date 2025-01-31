@@ -1,2 +1,3 @@
-/// A struct that represents a cache compile job.
-public struct CacheCompileJob: UnsafeFlag {}
+/// Passes the flag `-cache-compile-job`
+/// Enable compiler caching
+struct CacheCompileJob: UnsafeFlag { }

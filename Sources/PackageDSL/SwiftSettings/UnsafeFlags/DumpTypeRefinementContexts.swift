@@ -1,2 +1,3 @@
-/// A struct that represents the `"-dump-type-refinement-contexts"` unsafeFlag.
-public struct DumpTypeRefinementContexts: UnsafeFlag {}
+/// Passes the flag `-dump-type-refinement-contexts`
+///  Type-check input file(s) and dump type refinement contexts(s)
+struct DumpTypeRefinementContexts: UnsafeFlag { }

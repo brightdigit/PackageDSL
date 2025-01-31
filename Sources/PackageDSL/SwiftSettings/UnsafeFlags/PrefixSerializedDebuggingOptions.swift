@@ -1,2 +1,3 @@
-/// A struct that represents the "-prefix-serialized-debugging-options" unsafeFlag.
-public struct PrefixSerializedDebuggingOptions: UnsafeFlag {}
+/// Passes the flag `-prefix-serialized-debugging-options`
+///  Apply debug prefix mappings to serialized debug info in Swiftmodule files
+struct PrefixSerializedDebuggingOptions: UnsafeFlag { }

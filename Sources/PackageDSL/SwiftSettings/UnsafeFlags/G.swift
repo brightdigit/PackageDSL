@@ -1,2 +1,3 @@
-/// A struct representing the `-g` flag for the Swift compiler.
-public struct G: UnsafeFlag {}
+/// Passes the flag `-g`
+/// Emit debug info. This is the preferred setting for debugging with LLDB.
+struct G: UnsafeFlag { }

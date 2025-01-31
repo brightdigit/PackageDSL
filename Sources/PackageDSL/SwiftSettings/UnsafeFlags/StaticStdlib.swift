@@ -1,2 +1,3 @@
-/// A type that represents the "-static-stdlib" flag for the Swift compiler.
-public struct StaticStdlib: UnsafeFlag {}
+/// Passes the flag `-static-stdlib`
+/// Statically link the Swift standard library
+struct StaticStdlib: UnsafeFlag { }

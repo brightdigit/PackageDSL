@@ -1,2 +1,3 @@
-/// A struct that represents the `"-disable-migrator-fixits"` command-line flag.
-public struct DisableMigratorFixits: UnsafeFlag {}
+/// Passes the flag `-disable-migrator-fixits`
+///  Disable the Migrator phase which automatically applies fix-its
+struct DisableMigratorFixits: UnsafeFlag { }

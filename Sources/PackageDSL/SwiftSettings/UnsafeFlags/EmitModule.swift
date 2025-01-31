@@ -1,2 +1,3 @@
-/// Represents a flag that instructs the compiler to emit a module file.
-public struct EmitModule: UnsafeFlag {}
+/// Passes the flag `-emit-module`
+/// Emit an importable module
+struct EmitModule: UnsafeFlag { }

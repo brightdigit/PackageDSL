@@ -1,2 +1,3 @@
-/// A flag that instructs the Swift compiler to emit a Portable C Microarchitecture (PCM) file.
-public struct EmitPcm: UnsafeFlag {}
+/// Passes the flag `-emit-pcm`
+/// Emit a precompiled Clang module from a module map
+struct EmitPcm: UnsafeFlag { }

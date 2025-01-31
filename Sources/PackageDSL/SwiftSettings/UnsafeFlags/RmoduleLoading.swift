@@ -1,2 +1,3 @@
-/// A struct representing the "-Rmodule-loading" Xcode compiler flag.
-public struct RmoduleLoading: UnsafeFlag {}
+/// Passes the flag `-Rmodule-loading`
+/// Emit remarks about loaded module
+struct RmoduleLoading: UnsafeFlag { }

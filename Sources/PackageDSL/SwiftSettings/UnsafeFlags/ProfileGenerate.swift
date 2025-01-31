@@ -1,2 +1,3 @@
-/// Represents a profile generation flag for the compiler.
-public struct ProfileGenerate: UnsafeFlag {}
+/// Passes the flag `-profile-generate`
+/// Generate instrumented code to collect execution counts
+struct ProfileGenerate: UnsafeFlag { }

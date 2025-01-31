@@ -1,2 +1,3 @@
-/// Emits a trace of the modules loaded during the compilation process.
-public struct EmitLoadedModuleTrace: UnsafeFlag {}
+/// Passes the flag `-emit-loaded-module-trace`
+///  Emit a JSON file containing information about what modules were loaded
+struct EmitLoadedModuleTrace: UnsafeFlag { }

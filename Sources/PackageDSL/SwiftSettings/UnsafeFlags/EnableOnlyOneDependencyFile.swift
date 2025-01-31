@@ -1,2 +1,3 @@
-/// A struct that represents the "-enable-only-one-dependency-file" compiler flag.
-public struct EnableOnlyOneDependencyFile: UnsafeFlag {}
+/// Passes the flag `-enable-only-one-dependency-file`
+///  Enables incremental build optimization that only produces one dependencies file
+struct EnableOnlyOneDependencyFile: UnsafeFlag { }

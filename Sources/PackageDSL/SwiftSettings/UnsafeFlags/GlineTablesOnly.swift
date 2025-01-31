@@ -1,2 +1,3 @@
-/// A `UnsafeFlag` that represents the `-gline-tables-only` compiler flag.
-public struct GlineTablesOnly: UnsafeFlag {}
+/// Passes the flag `-gline-tables-only`
+/// Emit minimal debug info for backtraces only
+struct GlineTablesOnly: UnsafeFlag { }

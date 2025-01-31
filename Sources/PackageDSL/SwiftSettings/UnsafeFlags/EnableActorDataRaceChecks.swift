@@ -1,2 +1,3 @@
-/// A struct that enables actor data race checks.
-public struct EnableActorDataRaceChecks: UnsafeFlag {}
+/// Passes the flag `-enable-actor-data-race-checks`
+///  Emit runtime checks for actor data races
+struct EnableActorDataRaceChecks: UnsafeFlag { }

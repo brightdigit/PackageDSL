@@ -1,2 +1,3 @@
-/// Disables actor data race checks in the Swift compiler.
-public struct DisableActorDataRaceChecks: UnsafeFlag {}
+/// Passes the flag `-disable-actor-data-race-checks`
+///  Disable runtime checks for actor data races
+struct DisableActorDataRaceChecks: UnsafeFlag { }

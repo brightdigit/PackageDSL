@@ -1,2 +1,3 @@
-/// Represents a command-line flag that enables the "parseable output" mode.
-public struct ParseableOutput: UnsafeFlag {}
+/// Passes the flag `-parseable-output`
+/// Emit textual output in a parseable format
+struct ParseableOutput: UnsafeFlag { }

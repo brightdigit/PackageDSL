@@ -1,8 +1,3 @@
-//
-// WarnImplicitOverrides.swift
-// Copyright (c) 2024 BrightDigit.
-// Licensed under MIT License
-//
-
-/// A flag that enables warnings for implicit overrides.
-public struct WarnImplicitOverrides: UnsafeFlag {}
+/// Passes the flag `-warn-implicit-overrides`
+///  Warn about implicit overrides of protocol members
+struct WarnImplicitOverrides: UnsafeFlag { }

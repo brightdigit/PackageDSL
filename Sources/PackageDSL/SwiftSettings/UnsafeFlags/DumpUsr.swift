@@ -1,2 +1,3 @@
-/// A struct that represents the `-dump-usr` flag for the compiler.
-public struct DumpUsr: UnsafeFlag {}
+/// Passes the flag `-dump-usr`
+/// Dump USR for each declaration reference
+struct DumpUsr: UnsafeFlag { }

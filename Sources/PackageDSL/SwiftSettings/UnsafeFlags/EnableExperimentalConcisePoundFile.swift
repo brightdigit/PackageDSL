@@ -1,2 +1,3 @@
-/// A struct that enables the experimental concise pound file feature.
-public struct EnableExperimentalConcisePoundFile: UnsafeFlag {}
+/// Passes the flag `-enable-experimental-concise-pound-file`
+///  Enable experimental concise '#file' identifier
+struct EnableExperimentalConcisePoundFile: UnsafeFlag { }

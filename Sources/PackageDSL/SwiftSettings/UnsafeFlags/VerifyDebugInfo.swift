@@ -1,2 +1,3 @@
-/// A struct that represents the `-verify-debug-info` unsafed flag.
-public struct VerifyDebugInfo: UnsafeFlag {}
+/// Passes the flag `-verify-debug-info`
+/// Verify the binary representation of debug output.
+struct VerifyDebugInfo: UnsafeFlag { }

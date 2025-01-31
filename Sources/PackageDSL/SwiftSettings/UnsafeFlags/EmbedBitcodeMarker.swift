@@ -1,2 +1,3 @@
-/// A struct that represents the "-embed-bitcode-marker" unsafeFlag.
-public struct EmbedBitcodeMarker: UnsafeFlag {}
+/// Passes the flag `-embed-bitcode-marker`
+/// Embed placeholder LLVM IR data as a marker
+struct EmbedBitcodeMarker: UnsafeFlag { }

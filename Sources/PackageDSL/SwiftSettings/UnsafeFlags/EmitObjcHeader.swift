@@ -1,2 +1,3 @@
-/// Emits an Objective-C header file.
-public struct EmitObjcHeader: UnsafeFlag {}
+/// Passes the flag `-emit-objc-header`
+/// Emit an Objective-C header file
+struct EmitObjcHeader: UnsafeFlag { }

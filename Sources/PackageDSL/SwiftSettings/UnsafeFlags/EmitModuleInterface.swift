@@ -1,2 +1,3 @@
-/// `EmitModuleInterface` is a `UnsafeFlag` that instructs the compiler to emit a module interface file.
-public struct EmitModuleInterface: UnsafeFlag {}
+/// Passes the flag `-emit-module-interface`
+/// Output module interface file
+struct EmitModuleInterface: UnsafeFlag { }

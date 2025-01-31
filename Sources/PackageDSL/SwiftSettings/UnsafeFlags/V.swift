@@ -1,2 +1,3 @@
-/// Represents an unsafe flag with the value "-v".
-public struct V: UnsafeFlag {}
+/// Passes the flag `-v`
+/// Show commands to run and use verbose output
+struct V: UnsafeFlag { }

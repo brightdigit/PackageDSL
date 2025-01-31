@@ -1,2 +1,3 @@
-/// A struct that represents the `--dump-pcm` flag for the Swift compiler.
-public struct DumpPcm: UnsafeFlag {}
+/// Passes the flag `-dump-pcm`
+/// Dump debugging information about a precompiled Clang module
+struct DumpPcm: UnsafeFlag { }

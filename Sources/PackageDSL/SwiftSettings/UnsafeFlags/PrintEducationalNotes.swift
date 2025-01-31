@@ -1,2 +1,3 @@
-/// Represents a flag that enables the printing of educational notes during the build process.
-public struct PrintEducationalNotes: UnsafeFlag {}
+/// Passes the flag `-print-educational-notes`
+///  Include educational notes in printed diagnostic output, if available
+struct PrintEducationalNotes: UnsafeFlag { }

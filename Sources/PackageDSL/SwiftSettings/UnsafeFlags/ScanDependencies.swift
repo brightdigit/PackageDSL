@@ -1,2 +1,3 @@
-/// Represents a flag for scanning dependencies.
-public struct ScanDependencies: UnsafeFlag {}
+/// Passes the flag `-scan-dependencies`
+/// Scan dependencies of the given Swift sources
+struct ScanDependencies: UnsafeFlag { }

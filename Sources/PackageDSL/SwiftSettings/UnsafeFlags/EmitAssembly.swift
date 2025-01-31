@@ -1,2 +1,3 @@
-/// Represents a flag that instructs the Swift compiler to emit assembly code.
-public struct EmitAssembly: UnsafeFlag {}
+/// Passes the flag `-emit-assembly`
+/// Emit assembly file(s) (-S)
+struct EmitAssembly: UnsafeFlag { }

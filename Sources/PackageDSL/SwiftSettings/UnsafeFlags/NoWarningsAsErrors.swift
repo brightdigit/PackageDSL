@@ -1,2 +1,3 @@
-/// A struct that represents the `-no-warnings-as-errors` flag for the Swift compiler.
-public struct NoWarningsAsErrors: UnsafeFlag {}
+/// Passes the flag `-no-warnings-as-errors`
+/// Don't treat warnings as errors
+struct NoWarningsAsErrors: UnsafeFlag { }

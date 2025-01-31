@@ -1,2 +1,3 @@
-/// Represents an unsafe flag for the Rindexing System Module.
-public struct RindexingSystemModule: UnsafeFlag {}
+/// Passes the flag `-Rindexing-system-module`
+///  Emit a remark when indexing a system module
+struct RindexingSystemModule: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// Represents the "-emit-silgen" flag for the Swift compiler.
-public struct EmitSilgen: UnsafeFlag {}
+/// Passes the flag `-emit-silgen`
+/// Emit raw SIL file(s)
+struct EmitSilgen: UnsafeFlag { }

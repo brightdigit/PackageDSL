@@ -1,2 +1,3 @@
-/// Represents an unsafe flag that emits imported modules.
-public struct EmitImportedModules: UnsafeFlag {}
+/// Passes the flag `-emit-imported-modules`
+/// Emit a list of the imported modules
+struct EmitImportedModules: UnsafeFlag { }

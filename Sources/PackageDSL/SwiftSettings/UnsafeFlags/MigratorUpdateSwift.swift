@@ -1,2 +1,3 @@
-/// Represents the "migrator-update-swift" flag for the Swift compiler.
-public struct MigratorUpdateSwift: UnsafeFlag {}
+/// Passes the flag `-migrator-update-swift`
+/// Does nothing. Temporary compatibility flag for Xcode.
+struct MigratorUpdateSwift: UnsafeFlag { }

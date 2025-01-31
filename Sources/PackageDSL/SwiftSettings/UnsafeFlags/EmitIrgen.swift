@@ -1,2 +1,3 @@
-/// Represents the "-emit-irgen" flag for the LLVM Intermediate Representation (IR) generator.
-public struct EmitIrgen: UnsafeFlag {}
+/// Passes the flag `-emit-irgen`
+/// Emit LLVM IR file(s) before LLVM optimizations
+struct EmitIrgen: UnsafeFlag { }

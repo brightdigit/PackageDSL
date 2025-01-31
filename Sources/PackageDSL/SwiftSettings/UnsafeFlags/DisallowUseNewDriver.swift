@@ -1,2 +1,3 @@
-/// Represents a flag that disallows the use of the new driver.
-public struct DisallowUseNewDriver: UnsafeFlag {}
+/// Passes the flag `-disallow-use-new-driver`
+///  Disable using new swift-driver
+struct DisallowUseNewDriver: UnsafeFlag { }

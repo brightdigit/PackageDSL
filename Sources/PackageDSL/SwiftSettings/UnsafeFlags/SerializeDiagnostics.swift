@@ -1,2 +1,3 @@
-/// A struct that represents the `-serialize-diagnostics` flag for the Swift compiler.
-public struct SerializeDiagnostics: UnsafeFlag {}
+/// Passes the flag `-serialize-diagnostics`
+/// Serialize diagnostics in a binary format
+struct SerializeDiagnostics: UnsafeFlag { }

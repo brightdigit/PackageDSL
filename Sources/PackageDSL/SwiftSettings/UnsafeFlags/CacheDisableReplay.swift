@@ -1,2 +1,3 @@
-/// Represents the "-cache-disable-replay" flag for the Swift compiler.
-public struct CacheDisableReplay: UnsafeFlag {}
+/// Passes the flag `-cache-disable-replay`
+/// Skip loading the compilation result from cache
+struct CacheDisableReplay: UnsafeFlag { }

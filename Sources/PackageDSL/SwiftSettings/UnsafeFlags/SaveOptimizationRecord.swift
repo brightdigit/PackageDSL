@@ -1,2 +1,3 @@
-/// Represents a flag that saves an optimization record.
-public struct SaveOptimizationRecord: UnsafeFlag {}
+/// Passes the flag `-save-optimization-record`
+///  Generate a YAML optimization record file
+struct SaveOptimizationRecord: UnsafeFlag { }

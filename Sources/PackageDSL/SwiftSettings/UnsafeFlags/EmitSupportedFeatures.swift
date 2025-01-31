@@ -1,2 +1,3 @@
-/// A struct representing the "-emit-supported-features" flag for the Swift compiler.
-public struct EmitSupportedFeatures: UnsafeFlag {}
+/// Passes the flag `-emit-supported-features`
+///  Emit a JSON file including all supported compiler features
+struct EmitSupportedFeatures: UnsafeFlag { }

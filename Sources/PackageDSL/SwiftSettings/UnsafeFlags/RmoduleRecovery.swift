@@ -1,2 +1,3 @@
-/// The `RmoduleRecovery` struct represents an unsafeFlag that enables the `-Rmodule-recovery` compiler flag.
-public struct RmoduleRecovery: UnsafeFlag {}
+/// Passes the flag `-Rmodule-recovery`
+/// Emit remarks about contextual inconsistencies in loaded modules
+struct RmoduleRecovery: UnsafeFlag { }

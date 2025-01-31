@@ -1,2 +1,3 @@
-/// A struct that represents the "-enable-experimental-additive-arithmetic-derivation" flag.
-public struct EnableExperimentalAdditiveArithmeticDerivation: UnsafeFlag {}
+/// Passes the flag `-enable-experimental-additive-arithmetic-derivation`
+///  Enable experimental 'AdditiveArithmetic' derived conformances
+struct EnableExperimentalAdditiveArithmeticDerivation: UnsafeFlag { }

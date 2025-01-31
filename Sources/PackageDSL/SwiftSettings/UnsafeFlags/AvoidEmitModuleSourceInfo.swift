@@ -1,2 +1,3 @@
-/// Represents a flag that instructs the compiler to avoid emitting module source information.
-public struct AvoidEmitModuleSourceInfo: UnsafeFlag {}
+/// Passes the flag `-avoid-emit-module-source-info`
+///  don't emit Swift source info file
+struct AvoidEmitModuleSourceInfo: UnsafeFlag { }

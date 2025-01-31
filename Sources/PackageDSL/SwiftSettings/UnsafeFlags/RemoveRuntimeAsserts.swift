@@ -1,2 +1,3 @@
-/// A struct that removes runtime asserts from the compiled code.
-public struct RemoveRuntimeAsserts: UnsafeFlag {}
+/// Passes the flag `-remove-runtime-asserts`
+/// Remove runtime safety checks.
+struct RemoveRuntimeAsserts: UnsafeFlag { }

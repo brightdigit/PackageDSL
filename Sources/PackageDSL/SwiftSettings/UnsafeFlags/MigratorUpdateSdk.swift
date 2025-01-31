@@ -1,2 +1,3 @@
-/// A struct representing an unsafe flag for updating the SDK during migration.
-public struct MigratorUpdateSdk: UnsafeFlag {}
+/// Passes the flag `-migrator-update-sdk`
+/// Does nothing. Temporary compatibility flag for Xcode.
+struct MigratorUpdateSdk: UnsafeFlag { }

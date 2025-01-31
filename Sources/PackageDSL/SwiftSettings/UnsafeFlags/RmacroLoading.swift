@@ -1,2 +1,3 @@
-/// A struct representing the "-Rmacro-loading" Clang flag.
-public struct RmacroLoading: UnsafeFlag {}
+/// Passes the flag `-Rmacro-loading`
+/// Emit remarks about loaded macro implementations
+struct RmacroLoading: UnsafeFlag { }

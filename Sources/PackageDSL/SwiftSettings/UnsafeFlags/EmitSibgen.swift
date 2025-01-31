@@ -1,2 +1,3 @@
-/// Represents a flag that instructs the Swift compiler to emit a side-by-side generation (SIBGen) file.
-public struct EmitSibgen: UnsafeFlag {}
+/// Passes the flag `-emit-sibgen`
+/// Emit serialized AST + raw SIL file(s)
+struct EmitSibgen: UnsafeFlag { }

@@ -1,2 +1,3 @@
-/// Represents a flag that requires explicit `Sendable` conformance.
-public struct RequireExplicitSendable: UnsafeFlag {}
+/// Passes the flag `-require-explicit-sendable`
+///  Require explicit Sendable annotations on public declarations
+struct RequireExplicitSendable: UnsafeFlag { }

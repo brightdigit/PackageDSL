@@ -1,2 +1,3 @@
-/// Represents a flag that suppresses warnings in the build process.
-public struct SuppressWarnings: UnsafeFlag {}
+/// Passes the flag `-suppress-warnings`
+/// Suppress all warnings
+struct SuppressWarnings: UnsafeFlag { }

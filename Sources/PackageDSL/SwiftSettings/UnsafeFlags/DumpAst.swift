@@ -1,2 +1,3 @@
-/// `DumpAst` is a `UnsafeFlag` struct that represents the `-dump-ast` command-line flag.
-public struct DumpAst: UnsafeFlag {}
+/// Passes the flag `-dump-ast`
+/// Parse and type-check input file(s) and dump AST(s)
+struct DumpAst: UnsafeFlag { }
