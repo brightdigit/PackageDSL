@@ -12,7 +12,7 @@ output_directory="$1"
 mkdir -p "$output_directory"
 
 # Get the help output from swiftc
-help_output=$(swiftc --help)
+help_output=$(swiftc --help-hidden)
 
 # Use awk to handle both single-line and multi-line flag descriptions
 filtered_flags=$(echo "$help_output" | awk '
