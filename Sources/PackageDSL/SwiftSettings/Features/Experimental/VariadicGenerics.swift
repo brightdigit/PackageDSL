@@ -3,9 +3,9 @@
 ///
 /// - SeeAlso: [Tuple of value pack expansion (SE-0399)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0399-tuple-of-value-pack-expansion.md)
 ///
-struct VariadicGenerics : SwiftSettingFeature {
+public struct VariadicGenerics : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .experimental
   }
 }

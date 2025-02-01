@@ -3,9 +3,9 @@
 ///
 /// - SeeAlso: [Isolated default value expressions (SE-0411)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0411-isolated-default-values.md)
 ///
-struct IsolatedDefaultValues : SwiftSettingFeature {
+public struct IsolatedDefaultValues : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

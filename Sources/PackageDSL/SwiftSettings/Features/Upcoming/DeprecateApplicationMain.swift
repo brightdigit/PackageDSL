@@ -10,9 +10,9 @@
 ///
 /// - SeeAlso: [Deprecate @UIApplicationMain and @NSApplicationMain (SE-0383)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md)
 ///
-struct DeprecateApplicationMain : SwiftSettingFeature {
+public struct DeprecateApplicationMain : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

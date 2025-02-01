@@ -3,9 +3,9 @@
 ///
 /// - SeeAlso: [Usability of global-actor-isolated types (SE-0434)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0434-global-actor-isolated-types-usability.md)
 ///
-struct GlobalActorIsolatedTypesUsability : SwiftSettingFeature {
+public struct GlobalActorIsolatedTypesUsability : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

@@ -1,3 +1,3 @@
 /// Passes the flag `-Raccess-note`
 /// Unone
-struct RaccessNote: FrontendFlag { }
+public struct RaccessNote: FrontendFlag { }

@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-autolinking-runtime-compatibility-dynamic-replacements`
 ///  Do not use autolinking for the dynamic replacement runtime compatibility library
-struct DisableAutolinkingRuntimeCompatibilityDynamicReplacements: UnsafeFlag { }
+public struct DisableAutolinkingRuntimeCompatibilityDynamicReplacements: UnsafeFlag { }

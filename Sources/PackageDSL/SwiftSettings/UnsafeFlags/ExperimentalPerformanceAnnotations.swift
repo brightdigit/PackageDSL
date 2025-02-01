@@ -1,3 +1,3 @@
 /// Passes the flag `-experimental-performance-annotations`
 ///  Deprecated, has no effect
-struct ExperimentalPerformanceAnnotations: UnsafeFlag { }
+public struct ExperimentalPerformanceAnnotations: UnsafeFlag { }

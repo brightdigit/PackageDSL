@@ -7,9 +7,9 @@
 ///
 /// - SeeAlso: [Noncopyable Generics (SE-0427)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0427-noncopyable-generics.md)
 ///
-struct NoncopyableGenerics : SwiftSettingFeature {
+public struct NoncopyableGenerics : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .experimental
   }
 }

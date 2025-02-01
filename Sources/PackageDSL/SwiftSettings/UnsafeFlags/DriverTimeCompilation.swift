@@ -1,3 +1,3 @@
 /// Passes the flag `-driver-time-compilation`
 ///  Prints the total time it took to execute all compilation tasks
-struct DriverTimeCompilation: UnsafeFlag { }
+public struct DriverTimeCompilation: UnsafeFlag { }

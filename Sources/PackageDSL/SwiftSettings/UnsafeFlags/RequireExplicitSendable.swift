@@ -1,3 +1,3 @@
 /// Passes the flag `-require-explicit-sendable`
 ///  Require explicit Sendable annotations on public declarations
-struct RequireExplicitSendable: UnsafeFlag { }
+public struct RequireExplicitSendable: UnsafeFlag { }

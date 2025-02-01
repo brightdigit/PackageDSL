@@ -1,3 +1,3 @@
 /// Passes the flag `-emit-module-source-info`
 ///  Output module source info file
-struct EmitModuleSourceInfo: FrontendFlag { }
+public struct EmitModuleSourceInfo: FrontendFlag { }

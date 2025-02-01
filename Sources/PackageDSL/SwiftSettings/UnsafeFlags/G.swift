@@ -1,3 +1,3 @@
 /// Passes the flag `-g`
 /// Emit debug info. This is the preferred setting for debugging with LLDB.
-struct G: UnsafeFlag { }
+public struct G: UnsafeFlag { }

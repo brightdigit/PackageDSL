@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-actor-data-race-checks`
 ///  Disable runtime checks for actor data races
-struct DisableActorDataRaceChecks: UnsafeFlag { }
+public struct DisableActorDataRaceChecks: UnsafeFlag { }

@@ -1,3 +1,3 @@
 /// Passes the flag `-enable-objective-c-protocol-symbolic-references`
 ///  Enable objective-c protocol symbolic references
-struct EnableObjectiveCProtocolSymbolicReferences: FrontendFlag { }
+public struct EnableObjectiveCProtocolSymbolicReferences: FrontendFlag { }

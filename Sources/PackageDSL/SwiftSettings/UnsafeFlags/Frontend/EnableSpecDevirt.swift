@@ -1,3 +1,3 @@
 /// Passes the flag `-enable-spec-devirt`
 /// Enable speculative devirtualization pass.
-struct EnableSpecDevirt: FrontendFlag { }
+public struct EnableSpecDevirt: FrontendFlag { }

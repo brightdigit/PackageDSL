@@ -6,9 +6,9 @@
 ///
 /// - SeeAlso: [Access-level modifiers on import declarations (SE-0409)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0409-access-level-on-imports.md)
 ///
-struct AccessLevelOnImport : SwiftSettingFeature {
+public struct AccessLevelOnImport : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .experimental
   }
 }

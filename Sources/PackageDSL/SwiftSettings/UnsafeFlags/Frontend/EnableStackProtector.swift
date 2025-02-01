@@ -1,3 +1,3 @@
 /// Passes the flag `-enable-stack-protector`
 /// Enable the stack protector
-struct EnableStackProtector: FrontendFlag { }
+public struct EnableStackProtector: FrontendFlag { }

@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-objc-attr-requires-foundation-module`
 ///  Disable requiring uses of @objc to require importing the Foundation module
-struct DisableObjcAttrRequiresFoundationModule: FrontendFlag { }
+public struct DisableObjcAttrRequiresFoundationModule: FrontendFlag { }

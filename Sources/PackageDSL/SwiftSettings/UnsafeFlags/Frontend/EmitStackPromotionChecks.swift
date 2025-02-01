@@ -1,3 +1,3 @@
 /// Passes the flag `-emit-stack-promotion-checks`
 ///  Emit runtime checks for correct stack promotion of objects.
-struct EmitStackPromotionChecks: FrontendFlag { }
+public struct EmitStackPromotionChecks: FrontendFlag { }

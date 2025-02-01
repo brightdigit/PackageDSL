@@ -20,9 +20,9 @@
 ///
 /// - SeeAlso: [Remove Actor Isolation Inference caused by Property Wrappers (SE-0401)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0401-remove-property-wrapper-isolation.md)
 ///
-struct DisableOutwardActorInference : SwiftSettingFeature {
+public struct DisableOutwardActorInference : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

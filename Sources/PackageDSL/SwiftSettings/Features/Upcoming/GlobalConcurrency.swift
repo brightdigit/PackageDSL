@@ -3,9 +3,9 @@
 ///
 /// - SeeAlso: [Strict concurrency for global variables (SE-0412)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0412-strict-concurrency-for-global-variables.md)
 ///
-struct GlobalConcurrency : SwiftSettingFeature {
+public struct GlobalConcurrency : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

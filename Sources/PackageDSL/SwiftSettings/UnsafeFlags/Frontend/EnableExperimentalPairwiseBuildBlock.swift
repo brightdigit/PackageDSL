@@ -1,3 +1,3 @@
 /// Passes the flag `-enable-experimental-pairwise-build-block`
 ///  Enable experimental pairwise 'buildBlock' for result builders
-struct EnableExperimentalPairwiseBuildBlock: FrontendFlag { }
+public struct EnableExperimentalPairwiseBuildBlock: FrontendFlag { }

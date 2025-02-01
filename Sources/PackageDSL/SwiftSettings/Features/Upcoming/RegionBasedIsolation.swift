@@ -18,9 +18,9 @@
 ///
 /// - SeeAlso: [Region based Isolation (SE-0414)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0414-region-based-isolation.md)
 ///
-struct RegionBasedIsolation : SwiftSettingFeature {
+public struct RegionBasedIsolation : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

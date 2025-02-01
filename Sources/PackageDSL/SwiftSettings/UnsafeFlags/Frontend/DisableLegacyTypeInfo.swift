@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-legacy-type-info`
 ///  Completely disable legacy type layout
-struct DisableLegacyTypeInfo: FrontendFlag { }
+public struct DisableLegacyTypeInfo: FrontendFlag { }

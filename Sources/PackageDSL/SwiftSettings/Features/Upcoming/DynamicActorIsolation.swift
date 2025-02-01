@@ -3,9 +3,9 @@
 ///
 /// - SeeAlso: [Dynamic actor isolation enforcement from non-strict-concurrency contexts (SE-0423)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0423-dynamic-actor-isolation.md)
 ///
-struct DynamicActorIsolation : SwiftSettingFeature {
+public struct DynamicActorIsolation : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

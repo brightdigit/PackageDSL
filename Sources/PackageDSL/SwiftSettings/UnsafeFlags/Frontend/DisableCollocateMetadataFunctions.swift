@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-collocate-metadata-functions`
 ///  Disable collocate metadata functions
-struct DisableCollocateMetadataFunctions: FrontendFlag { }
+public struct DisableCollocateMetadataFunctions: FrontendFlag { }

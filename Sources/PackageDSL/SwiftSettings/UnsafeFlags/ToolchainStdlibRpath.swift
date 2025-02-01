@@ -1,3 +1,3 @@
 /// Passes the flag `-toolchain-stdlib-rpath`
 /// Add an rpath entry for the toolchain's standard library, rather than the OS's
-struct ToolchainStdlibRpath: UnsafeFlag { }
+public struct ToolchainStdlibRpath: UnsafeFlag { }

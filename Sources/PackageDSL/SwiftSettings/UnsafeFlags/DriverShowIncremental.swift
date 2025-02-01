@@ -1,3 +1,3 @@
 /// Passes the flag `-driver-show-incremental`
 ///  With -v, dump information about why files are being rebuilt
-struct DriverShowIncremental: UnsafeFlag { }
+public struct DriverShowIncremental: UnsafeFlag { }

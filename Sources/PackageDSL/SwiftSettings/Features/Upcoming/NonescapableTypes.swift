@@ -13,9 +13,9 @@
 ///
 /// - SeeAlso: [Nonescapable Types (SE-0446)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0446-non-escapable.md)
 ///
-struct NonescapableTypes : SwiftSettingFeature {
+public struct NonescapableTypes : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

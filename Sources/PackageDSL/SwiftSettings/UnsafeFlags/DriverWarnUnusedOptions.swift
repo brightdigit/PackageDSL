@@ -1,3 +1,3 @@
 /// Passes the flag `-driver-warn-unused-options`
 ///  Emit warnings for any provided options which are unused by the driver
-struct DriverWarnUnusedOptions: UnsafeFlag { }
+public struct DriverWarnUnusedOptions: UnsafeFlag { }

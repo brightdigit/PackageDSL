@@ -5,9 +5,9 @@
 ///
 /// - SeeAlso: [Importing Forward Declared Objective-C Interfaces and Protocols (SE-0384)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0384-importing-forward-declared-objc-interfaces-and-protocols.md)
 ///
-struct ImportObjcForwardDeclarations : SwiftSettingFeature {
+public struct ImportObjcForwardDeclarations : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

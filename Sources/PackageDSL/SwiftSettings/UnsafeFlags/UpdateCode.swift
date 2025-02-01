@@ -1,3 +1,3 @@
 /// Passes the flag `-update-code`
 /// Update Swift code
-struct UpdateCode: UnsafeFlag { }
+public struct UpdateCode: UnsafeFlag { }

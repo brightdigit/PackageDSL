@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-round-trip-debug-types`
 ///  Disables verification of debug info mangling
-struct DisableRoundTripDebugTypes: FrontendFlag { }
+public struct DisableRoundTripDebugTypes: FrontendFlag { }

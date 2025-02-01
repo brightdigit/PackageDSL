@@ -1,3 +1,3 @@
 /// Passes the flag `-playground-high-performance`
 ///  Omit instrumentation that has a high runtime performance impact
-struct PlaygroundHighPerformance: FrontendFlag { }
+public struct PlaygroundHighPerformance: FrontendFlag { }

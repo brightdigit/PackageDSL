@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-experimental-parser-round-trip`
 ///  Disable round trip through the new swift parser
-struct DisableExperimentalParserRoundTrip: FrontendFlag { }
+public struct DisableExperimentalParserRoundTrip: FrontendFlag { }

@@ -1,3 +1,3 @@
 /// Passes the flag `-emit-library`
 /// Emit a linked library
-struct EmitLibrary: UnsafeFlag { }
+public struct EmitLibrary: UnsafeFlag { }

@@ -78,7 +78,7 @@ while IFS= read -r line; do
 			capitalized_desc=$(echo "$description" | sed 's/^[[:lower:]]/\U&/')
 			echo "/// $capitalized_desc"
 		fi
-		echo "struct $camel_case_flag: UnsafeFlag { }"
+		echo "public struct $camel_case_flag: UnsafeFlag { }"
 	} > "$output_directory/$camel_case_flag.swift"
 
 	echo "File '$output_directory/$camel_case_flag.swift' created."
@@ -138,7 +138,7 @@ while IFS= read -r line; do
 			capitalized_desc=$(echo "$description" | sed 's/^[[:lower:]]/\U&/')
 			echo "/// $capitalized_desc"
 		fi
-		echo "struct $camel_case_flag: FrontendFlag { }"
+		echo "public struct $camel_case_flag: FrontendFlag { }"
 	} > "$output_directory/Frontend/$camel_case_flag.swift"
 
 	echo "File '$output_directory/Frontend/$camel_case_flag.swift' created."

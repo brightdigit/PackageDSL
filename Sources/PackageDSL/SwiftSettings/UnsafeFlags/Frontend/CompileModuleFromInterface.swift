@@ -1,2 +1,2 @@
 /// Passes the flag `-compile-module-from-interface`
-struct CompileModuleFromInterface: FrontendFlag { }
+public struct CompileModuleFromInterface: FrontendFlag { }

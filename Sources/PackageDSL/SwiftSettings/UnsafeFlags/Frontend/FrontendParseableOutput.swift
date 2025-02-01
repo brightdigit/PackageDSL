@@ -1,3 +1,3 @@
 /// Passes the flag `-frontend-parseable-output`
 ///  Emit textual output in a parseable format
-struct FrontendParseableOutput: FrontendFlag { }
+public struct FrontendParseableOutput: FrontendFlag { }

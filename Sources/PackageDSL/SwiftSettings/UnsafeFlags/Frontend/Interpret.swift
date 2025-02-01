@@ -1,3 +1,3 @@
 /// Passes the flag `-interpret`
 /// Immediate mode
-struct Interpret: FrontendFlag { }
+public struct Interpret: FrontendFlag { }

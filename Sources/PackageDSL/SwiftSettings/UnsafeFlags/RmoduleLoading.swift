@@ -1,3 +1,3 @@
 /// Passes the flag `-Rmodule-loading`
 /// Emit remarks about loaded module
-struct RmoduleLoading: UnsafeFlag { }
+public struct RmoduleLoading: UnsafeFlag { }

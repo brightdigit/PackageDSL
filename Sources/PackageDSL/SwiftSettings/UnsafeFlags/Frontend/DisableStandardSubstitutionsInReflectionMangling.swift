@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-standard-substitutions-in-reflection-mangling`
 ///  Disable referencing stdlib symbols via mangled names in reflection mangling
-struct DisableStandardSubstitutionsInReflectionMangling: FrontendFlag { }
+public struct DisableStandardSubstitutionsInReflectionMangling: FrontendFlag { }

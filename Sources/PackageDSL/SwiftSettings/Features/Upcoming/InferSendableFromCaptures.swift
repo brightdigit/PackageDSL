@@ -3,9 +3,9 @@
 ///
 /// - SeeAlso: [Inferring `Sendable` for methods and key path literals (SE-0418)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0418-inferring-sendable-for-methods.md)
 ///
-struct InferSendableFromCaptures : SwiftSettingFeature {
+public struct InferSendableFromCaptures : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

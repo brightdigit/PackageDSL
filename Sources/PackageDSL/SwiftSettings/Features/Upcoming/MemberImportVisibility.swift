@@ -9,9 +9,9 @@
 ///
 /// - SeeAlso: [Member import visibility (SE-0444)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0444-member-import-visibility.md)
 ///
-struct MemberImportVisibility : SwiftSettingFeature {
+public struct MemberImportVisibility : SwiftSettingFeature {
   /// The current state of the feature.
-  var featureState : FeatureState {
+  public var featureState : FeatureState {
     return .upcoming
   }
 }

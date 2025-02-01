@@ -1,3 +1,3 @@
 /// Passes the flag `-print-target-info`
 /// Print target information for the given target <triple>, such as x86_64-apple-macos10.9
-struct PrintTargetInfo: UnsafeFlag { }
+public struct PrintTargetInfo: UnsafeFlag { }
