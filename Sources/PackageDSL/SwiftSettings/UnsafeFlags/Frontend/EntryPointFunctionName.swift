@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-entry-point-function-name`
+public struct EntryPointFunctionName: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

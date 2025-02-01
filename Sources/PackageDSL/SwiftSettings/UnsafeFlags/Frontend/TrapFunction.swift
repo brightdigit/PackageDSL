@@ -1,5 +1,6 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-trap-function`
+///  Lower traps to calls to this function instead of trap instructions
+public struct TrapFunction: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

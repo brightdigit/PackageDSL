@@ -1,12 +1,13 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-vfsoverlay`
+///  Add directory to VFS overlay file
+public struct Vfsoverlay: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {
         self.value = value
     }
 
-    public var flagArguments: [String] {
+    public var unsafeFlagArguments: [String] {
         ["\(name.camelToSnakeCaseFlag())", "\(value)"]
     }
 }

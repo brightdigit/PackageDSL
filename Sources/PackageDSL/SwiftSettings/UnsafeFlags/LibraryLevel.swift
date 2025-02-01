@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-library-level`
+///  Library distribution level 'api', 'spi' or 'other' (the default)
+public struct LibraryLevel: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-Fsystem`
+///  Add directory to system framework search path
+public struct Fsystem: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-skip-import-in-public-interface`
+public struct SkipImportInPublicInterface: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

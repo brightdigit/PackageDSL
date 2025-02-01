@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-output-file-map`
+///  A file which specifies the location of outputs
+public struct OutputFileMap: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

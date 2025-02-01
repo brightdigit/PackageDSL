@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-emit-remap-file-path`
+public struct EmitRemapFilePath: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

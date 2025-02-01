@@ -1,5 +1,6 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-filelist`
+///  Specify source inputs in a file rather than on the command line
+public struct Filelist: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

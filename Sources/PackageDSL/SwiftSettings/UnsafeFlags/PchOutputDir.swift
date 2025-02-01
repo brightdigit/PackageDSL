@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-pch-output-dir`
+///  Directory to persist automatically created precompiled bridging headers
+public struct PchOutputDir: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-emit-abi-descriptor-path`
+public struct EmitAbiDescriptorPath: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

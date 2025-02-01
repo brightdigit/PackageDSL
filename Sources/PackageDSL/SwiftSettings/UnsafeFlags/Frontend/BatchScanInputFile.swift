@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-batch-scan-input-file`
+public struct BatchScanInputFile: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

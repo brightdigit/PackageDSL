@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-prebuilt-module-cache-path`
+public struct PrebuiltModuleCachePath: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

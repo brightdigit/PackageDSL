@@ -1,5 +1,6 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-input-file-key`
+///  Cache Key for input file
+public struct InputFileKey: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

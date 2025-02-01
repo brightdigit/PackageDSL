@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-gcc-toolchain`
+///  Specify a directory where the clang importer and clang linker can find headers and libraries
+public struct GccToolchain: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

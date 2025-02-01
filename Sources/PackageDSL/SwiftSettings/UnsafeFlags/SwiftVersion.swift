@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-swift-version`
+///  Interpret input according to a specific Swift language version number
+public struct SwiftVersion: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

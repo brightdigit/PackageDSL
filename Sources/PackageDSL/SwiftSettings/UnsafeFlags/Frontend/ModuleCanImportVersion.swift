@@ -1,5 +1,6 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-module-can-import-version`
+///  <version> <underlyingVersion>
+public struct ModuleCanImportVersion: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

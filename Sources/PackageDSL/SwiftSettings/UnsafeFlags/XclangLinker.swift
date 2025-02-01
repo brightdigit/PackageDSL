@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-Xclang-linker`
+///  Pass <arg> to Clang when it is use for linking.
+public struct XclangLinker: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

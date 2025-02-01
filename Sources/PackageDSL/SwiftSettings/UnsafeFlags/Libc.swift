@@ -1,12 +1,13 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-libc`
+///  libc runtime library to use
+public struct Libc: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {
         self.value = value
     }
 
-    public var flagArguments: [String] {
+    public var unsafeFlagArguments: [String] {
         ["\(name.camelToSnakeCaseFlag())", "\(value)"]
     }
 }

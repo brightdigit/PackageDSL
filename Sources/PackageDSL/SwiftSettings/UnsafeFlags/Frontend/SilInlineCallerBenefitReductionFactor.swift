@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-sil-inline-caller-benefit-reduction-factor`
+public struct SilInlineCallerBenefitReductionFactor: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

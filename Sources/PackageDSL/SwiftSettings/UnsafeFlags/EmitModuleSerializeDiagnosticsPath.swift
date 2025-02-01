@@ -1,6 +1,5 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-emit-module-serialize-diagnostics-path`
+public struct EmitModuleSerializeDiagnosticsPath: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

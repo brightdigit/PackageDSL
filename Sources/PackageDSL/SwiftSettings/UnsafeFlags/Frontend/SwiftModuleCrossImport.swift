@@ -1,5 +1,6 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-swift-module-cross-import`
+///  <crossImport.swiftoverlay>
+public struct SwiftModuleCrossImport: FrontendFlag {
     public let value: String
 
     public init(_ value: String) {

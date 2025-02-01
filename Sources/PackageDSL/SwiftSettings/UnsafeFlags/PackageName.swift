@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-package-name`
+///  Name of the package the module belongs to
+public struct PackageName: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

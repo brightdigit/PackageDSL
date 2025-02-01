@@ -1,6 +1,6 @@
-/// Passes the flag `-o`
-///  Write output to <file>
-public struct O: UnsafeFlag {
+/// Passes the flag `-plugin-path`
+///  Add directory to the plugin search path
+public struct PluginPath: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {

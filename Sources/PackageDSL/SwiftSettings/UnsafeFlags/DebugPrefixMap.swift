@@ -1,12 +1,12 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-debug-prefix-map`
+public struct DebugPrefixMap: UnsafeFlag {
     public let value: String
 
     public init(_ value: String) {
         self.value = value
     }
 
-    public var flagArguments: [String] {
+    public var unsafeFlagArguments: [String] {
         ["\(name.camelToSnakeCaseFlag())", "\(value)"]
     }
 }
