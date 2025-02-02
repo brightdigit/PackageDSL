@@ -104,9 +104,14 @@ process_flags() {
         if [[ "$original_flag" == *"="* ]]; then
             flag_for_camel=$(echo "$original_flag" | cut -d'=' -f1)
         else
-            flag_for_camel="$original_flag"
+            flag_for_camel="$flag_name"
         fi
         camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub("-", " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
+        
+        # Handle single-letter flags
+        if [ ${#camel_case_flag} -eq 1 ]; then
+            camel_case_flag="$(tr '[:lower:]' '[:upper:]' <<< ${camel_case_flag})"
+        fi
         
         # Add "Flag" suffix if the name is "Target"
         if [ "$camel_case_flag" = "Target" ]; then
