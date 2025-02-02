@@ -28,7 +28,9 @@ filter_help_output() {
             param = ""
             # Check for parameter in angle brackets or square brackets
             if ($2 ~ /^[<\[]/) {
+                # Strip angle brackets and square brackets from parameter
                 param = $2
+                gsub(/[<>\[\]]/, "", param)
                 $1 = ""
                 $2 = ""
             } else {
@@ -86,10 +88,10 @@ process_flags() {
             flag_name=${original_flag#-}
         fi
 
-        # Clean parameter name - remove angle/square brackets and any whitespace
-        clean_param_name=""
+        # Clean parameter name but preserve original name for Swift code
+        param_for_type=""
         if [ ! -z "$parameter" ]; then
-            clean_param_name=$(echo "$parameter" | sed -E 's/[<>\[\]]//g' | xargs)
+            param_for_type=$(echo "$parameter" | sed -E 's/[<>\[\]]//g' | xargs)
         fi
 
         # Skip frontend flags that already exist as unsafe flags
@@ -116,10 +118,23 @@ process_flags() {
             unsafe_flags["$flag_name"]=1
         fi
 
-        # Process parameter type
+        # Process parameter type and property name
         param_type=""
-        if [ ! -z "$clean_param_name" ]; then
-            case "$clean_param_name" in
+        value_property_name=""
+        if [ ! -z "$param_for_type" ]; then
+            # Check if parameter contains slashes, is a number, or is a boolean keyword
+            if [[ "$param_for_type" == *"/"* ]] || [[ "$param_for_type" =~ ^[0-9]+$ ]] || \
+               [[ "$param_for_type" == "true" ]] || [[ "$param_for_type" == "false" ]]; then
+                value_property_name="value"
+            else
+                # Use parameter name for the value property, taking only the first part if it contains punctuation
+                # Convert to camelCase and remove dashes
+                value_property_name=$(echo "$param_for_type" | cut -d'=' -f1 | cut -d',' -f1 | cut -d':' -f1 | cut -d'#' -f1 | \
+                    awk '{gsub("-", " "); print $0}' | \
+                    awk '{for(i=1;i<=NF;i++)if(i==1){$i=tolower($i)}else{$i=toupper(substr($i,1,1)) tolower(substr($i,2))};}1' | \
+                    sed 's/ //g' | tr '[:upper:]' '[:lower:]')
+            fi
+            case "$param_for_type" in
                 "value") param_type="String";;
                 "n") param_type="Int";;
                 "path") param_type="String";;
@@ -133,6 +148,8 @@ process_flags() {
                 "enforcement") param_type="String";;
                 *) param_type="String";;
             esac
+        else
+            value_property_name="value"
         fi
 
         # Generate Swift file
@@ -143,19 +160,19 @@ process_flags() {
                 echo "/// $capitalized_desc"
             fi
             
-            if [ ! -z "$clean_param_name" ]; then
+            if [ ! -z "$parameter" ]; then
                 echo "public struct $camel_case_flag: $protocol_name {"
-                echo "    public let value: $param_type"
+                echo "    public let $value_property_name: $param_type"
                 echo ""
-                echo "    public init(_ value: $param_type) {"
-                echo "        self.value = value"
+                echo "    public init(_ $value_property_name: $param_type) {"
+                echo "        self.$value_property_name = $value_property_name"
                 echo "    }"
                 echo ""
                 echo "    public var $property_name: [String] {"
                 if [[ "$original_flag" == *"="* ]]; then
-                    echo "        [\"\(name.camelToSnakeCaseFlag())=\(value)\"]"
+                    echo "        [\"\(name.camelToSnakeCaseFlag())=\($value_property_name)\"]"
                 else
-                    echo "        [\"\(name.camelToSnakeCaseFlag())\", \"\(value)\"]"
+                    echo "        [\"\(name.camelToSnakeCaseFlag())\", \"\($value_property_name)\"]"
                 fi
                 echo "    }"
                 echo "}"

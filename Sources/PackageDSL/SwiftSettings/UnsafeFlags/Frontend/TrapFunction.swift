@@ -1,13 +1,13 @@
 /// Passes the flag `-trap-function`
 ///  Lower traps to calls to this function instead of trap instructions
 public struct TrapFunction: FrontendFlag {
-    public let value: String
+    public let name: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ name: String) {
+        self.name = name
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(name)"]
     }
 }

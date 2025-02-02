@@ -1,12 +1,12 @@
 /// Passes the flag `-require-explicit-availability-target`
 public struct RequireExplicitAvailabilityTarget: UnsafeFlag {
-    public let value: String
+    public let target: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ target: String) {
+        self.target = target
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(target)"]
     }
 }

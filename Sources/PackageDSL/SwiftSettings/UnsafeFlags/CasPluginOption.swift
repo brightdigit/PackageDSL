@@ -1,12 +1,12 @@
 /// Passes the flag `-cas-plugin-option`
 public struct CasPluginOption: UnsafeFlag {
-    public let value: String
+    public let name: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ name: String) {
+        self.name = name
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(name)"]
     }
 }

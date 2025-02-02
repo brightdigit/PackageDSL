@@ -1,12 +1,12 @@
 /// Passes the flag `-symbol-graph-minimum-access-level`
 public struct SymbolGraphMinimumAccessLevel: UnsafeFlag {
-    public let value: String
+    public let level: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ level: String) {
+        self.level = level
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(level)"]
     }
 }

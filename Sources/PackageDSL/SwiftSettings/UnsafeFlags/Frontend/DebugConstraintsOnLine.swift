@@ -1,12 +1,12 @@
 /// Passes the flag `-debug-constraints-on-line`
 public struct DebugConstraintsOnLine: FrontendFlag {
-    public let value: String
+    public let line: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ line: String) {
+        self.line = line
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(line)"]
     }
 }

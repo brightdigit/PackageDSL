@@ -1,12 +1,12 @@
 /// Passes the flag `-verify-type-layout`
 public struct VerifyTypeLayout: FrontendFlag {
-    public let value: String
+    public let type: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ type: String) {
+        self.type = type
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(type)"]
     }
 }

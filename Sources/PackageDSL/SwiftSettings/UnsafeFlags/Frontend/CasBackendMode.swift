@@ -1,13 +1,13 @@
 /// Passes the flag `-cas-backend-mode=native`
 /// Uverify
 public struct CasBackendMode: FrontendFlag {
-    public let value: String
+    public let casid: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ casid: String) {
+        self.casid = casid
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())=\(value)"]
+        ["\(name.camelToSnakeCaseFlag())=\(casid)"]
     }
 }

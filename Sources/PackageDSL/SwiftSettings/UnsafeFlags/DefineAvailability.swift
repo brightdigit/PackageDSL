@@ -1,12 +1,12 @@
 /// Passes the flag `-define-availability`
 public struct DefineAvailability: UnsafeFlag {
-    public let value: String
+    public let macro: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ macro: String) {
+        self.macro = macro
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(macro)"]
     }
 }

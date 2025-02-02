@@ -1,12 +1,12 @@
 /// Passes the flag `-emit-symbol-graph-dir`
 public struct EmitSymbolGraphDir: UnsafeFlag {
-    public let value: String
+    public let dir: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ dir: String) {
+        self.dir = dir
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(dir)"]
     }
 }

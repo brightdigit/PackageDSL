@@ -1,13 +1,13 @@
 /// Passes the flag `-sdk`
 ///  Compile against <sdk>
 public struct Sdk: UnsafeFlag {
-    public let value: String
+    public let sdk: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ sdk: String) {
+        self.sdk = sdk
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(sdk)"]
     }
 }

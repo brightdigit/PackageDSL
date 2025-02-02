@@ -1,12 +1,12 @@
 /// Passes the flag `-typo-correction-limit`
 public struct TypoCorrectionLimit: UnsafeFlag {
-    public let value: String
+    public let n: Int
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ n: Int) {
+        self.n = n
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(n)"]
     }
 }

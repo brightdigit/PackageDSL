@@ -1,12 +1,12 @@
 /// Passes the flag `-visualc-tools-version`
 public struct VisualcToolsVersion: UnsafeFlag {
-    public let value: String
+    public let version: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ version: String) {
+        self.version = version
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(version)"]
     }
 }

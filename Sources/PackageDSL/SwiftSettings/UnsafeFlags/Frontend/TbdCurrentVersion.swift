@@ -1,12 +1,12 @@
 /// Passes the flag `-tbd-current-version`
 public struct TbdCurrentVersion: FrontendFlag {
-    public let value: String
+    public let version: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ version: String) {
+        self.version = version
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(version)"]
     }
 }

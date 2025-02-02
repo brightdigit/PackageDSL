@@ -1,13 +1,13 @@
 /// Passes the flag `-blocklist-file`
 ///  The path to a blocklist configuration file
 public struct BlocklistFile: FrontendFlag {
-    public let value: String
+    public let path: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ path: String) {
+        self.path = path
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(path)"]
     }
 }

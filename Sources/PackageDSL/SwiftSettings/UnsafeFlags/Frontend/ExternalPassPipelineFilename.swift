@@ -1,12 +1,12 @@
 /// Passes the flag `-external-pass-pipeline-filename`
 public struct ExternalPassPipelineFilename: FrontendFlag {
-    public let value: String
+    public let pass_pipeline_file: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ pass_pipeline_file: String) {
+        self.pass_pipeline_file = pass_pipeline_file
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(pass_pipeline_file)"]
     }
 }

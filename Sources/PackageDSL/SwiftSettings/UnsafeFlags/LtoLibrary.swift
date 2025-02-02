@@ -1,12 +1,12 @@
 /// Passes the flag `-lto-library`
 public struct LtoLibrary: UnsafeFlag {
-    public let value: String
+    public let ltolibrary: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ ltolibrary: String) {
+        self.ltolibrary = ltolibrary
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(ltolibrary)"]
     }
 }

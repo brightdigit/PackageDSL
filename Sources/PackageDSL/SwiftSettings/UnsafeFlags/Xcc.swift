@@ -1,13 +1,13 @@
 /// Passes the flag `-Xcc`
 ///  Pass <arg> to the C/C++/Objective-C compiler
 public struct Xcc: UnsafeFlag {
-    public let value: String
+    public let arg: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ arg: String) {
+        self.arg = arg
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(arg)"]
     }
 }

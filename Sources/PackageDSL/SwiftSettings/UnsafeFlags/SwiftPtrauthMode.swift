@@ -1,12 +1,12 @@
 /// Passes the flag `-swift-ptrauth-mode`
 public struct SwiftPtrauthMode: UnsafeFlag {
-    public let value: String
+    public let mode: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ mode: String) {
+        self.mode = mode
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(mode)"]
     }
 }

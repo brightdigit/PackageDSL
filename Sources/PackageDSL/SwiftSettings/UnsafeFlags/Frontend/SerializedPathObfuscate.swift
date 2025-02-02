@@ -1,12 +1,12 @@
 /// Passes the flag `-serialized-path-obfuscate`
 public struct SerializedPathObfuscate: FrontendFlag {
-    public let value: String
+    public let prefix: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ prefix: String) {
+        self.prefix = prefix
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(prefix)"]
     }
 }

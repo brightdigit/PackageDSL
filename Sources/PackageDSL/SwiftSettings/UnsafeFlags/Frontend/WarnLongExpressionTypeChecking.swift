@@ -1,12 +1,12 @@
 /// Passes the flag `-warn-long-expression-type-checking`
 public struct WarnLongExpressionTypeChecking: FrontendFlag {
-    public let value: String
+    public let n: Int
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ n: Int) {
+        self.n = n
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(n)"]
     }
 }

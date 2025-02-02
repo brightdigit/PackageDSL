@@ -1,12 +1,12 @@
 /// Passes the flag `-debug-prefix-map`
 public struct DebugPrefixMap: UnsafeFlag {
-    public let value: String
+    public let prefix: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ prefix: String) {
+        self.prefix = prefix
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(prefix)"]
     }
 }

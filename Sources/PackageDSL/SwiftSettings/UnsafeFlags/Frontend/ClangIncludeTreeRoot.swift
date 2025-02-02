@@ -1,12 +1,12 @@
 /// Passes the flag `-clang-include-tree-root`
 public struct ClangIncludeTreeRoot: FrontendFlag {
-    public let value: String
+    public let casid: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ casid: String) {
+        self.casid = casid
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(casid)"]
     }
 }

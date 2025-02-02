@@ -1,12 +1,12 @@
 /// Passes the flag `-emit-module-semantic-info-path`
 public struct EmitModuleSemanticInfoPath: FrontendFlag {
-    public let value: String
+    public let path: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ path: String) {
+        self.path = path
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(path)"]
     }
 }

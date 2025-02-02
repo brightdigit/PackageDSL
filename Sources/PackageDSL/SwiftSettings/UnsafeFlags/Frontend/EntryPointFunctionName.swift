@@ -1,12 +1,12 @@
 /// Passes the flag `-entry-point-function-name`
 public struct EntryPointFunctionName: FrontendFlag {
-    public let value: String
+    public let string: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ string: String) {
+        self.string = string
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(string)"]
     }
 }

@@ -1,12 +1,12 @@
 /// Passes the flag `-clang-header-expose-decls=all-public`
 public struct ClangHeaderExposeDecls: FrontendFlag {
-    public let value: String
+    public let hasexposeattr: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ hasexposeattr: String) {
+        self.hasexposeattr = hasexposeattr
     }
 
     public var flagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())=\(value)"]
+        ["\(name.camelToSnakeCaseFlag())=\(hasexposeattr)"]
     }
 }

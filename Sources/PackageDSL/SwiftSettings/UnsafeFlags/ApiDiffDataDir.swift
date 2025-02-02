@@ -1,12 +1,12 @@
 /// Passes the flag `-api-diff-data-dir`
 public struct ApiDiffDataDir: UnsafeFlag {
-    public let value: String
+    public let path: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ path: String) {
+        self.path = path
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(path)"]
     }
 }

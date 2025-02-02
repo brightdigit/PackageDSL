@@ -1,12 +1,12 @@
 /// Passes the flag `-tools-directory`
 public struct ToolsDirectory: UnsafeFlag {
-    public let value: String
+    public let directory: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ directory: String) {
+        self.directory = directory
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(directory)"]
     }
 }

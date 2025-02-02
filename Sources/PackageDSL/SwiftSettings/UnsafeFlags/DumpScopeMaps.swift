@@ -1,12 +1,12 @@
 /// Passes the flag `-dump-scope-maps`
 public struct DumpScopeMaps: UnsafeFlag {
-    public let value: String
+    public let expandedorlistofline: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ expandedorlistofline: String) {
+        self.expandedorlistofline = expandedorlistofline
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(expandedorlistofline)"]
     }
 }

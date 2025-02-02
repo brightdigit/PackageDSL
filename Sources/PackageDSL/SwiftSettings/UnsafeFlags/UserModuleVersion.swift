@@ -1,12 +1,12 @@
 /// Passes the flag `-user-module-version`
 public struct UserModuleVersion: UnsafeFlag {
-    public let value: String
+    public let vers: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ vers: String) {
+        self.vers = vers
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(vers)"]
     }
 }

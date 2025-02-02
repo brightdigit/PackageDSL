@@ -1,13 +1,13 @@
 /// Passes the flag `-cas-plugin-path`
 ///  Path to CAS Plugin
 public struct CasPluginPath: UnsafeFlag {
-    public let value: String
+    public let path: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ path: String) {
+        self.path = path
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(path)"]
     }
 }

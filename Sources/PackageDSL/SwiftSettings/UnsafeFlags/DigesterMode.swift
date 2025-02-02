@@ -1,13 +1,13 @@
 /// Passes the flag `-digester-mode`
-/// Uabi>
+/// Uabi
 public struct DigesterMode: UnsafeFlag {
-    public let value: String
+    public let api: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ api: String) {
+        self.api = api
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(api)"]
     }
 }

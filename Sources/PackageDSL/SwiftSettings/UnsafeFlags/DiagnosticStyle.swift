@@ -1,12 +1,12 @@
 /// Passes the flag `-diagnostic-style`
 public struct DiagnosticStyle: UnsafeFlag {
-    public let value: String
+    public let style: String
 
-    public init(_ value: String) {
-        self.value = value
+    public init(_ style: String) {
+        self.style = style
     }
 
     public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+        ["\(name.camelToSnakeCaseFlag())", "\(style)"]
     }
 }
