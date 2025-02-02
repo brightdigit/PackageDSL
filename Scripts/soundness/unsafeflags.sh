@@ -97,6 +97,11 @@ while IFS= read -r line; do
 		flag_for_camel="$original_flag"
 	fi
 	camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub("-", " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
+	
+	# Add "Flag" suffix if the name is "Target"
+	if [ "$camel_case_flag" = "Target" ]; then
+		camel_case_flag="${camel_case_flag}Flag"
+	fi
 
 	# Extract parameter name without angle brackets/square brackets and convert to CamelCase if it exists
 	param_type=""
@@ -225,6 +230,11 @@ while IFS= read -r line; do
 		flag_for_camel="$original_flag"
 	fi
 	camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub("-", " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
+	
+	# Add "Flag" suffix if the name is "Target"
+	if [ "$camel_case_flag" = "Target" ]; then
+		camel_case_flag="${camel_case_flag}Flag"
+	fi
 
 	# Extract parameter name without angle brackets/square brackets and convert to CamelCase if it exists
 	param_type=""
