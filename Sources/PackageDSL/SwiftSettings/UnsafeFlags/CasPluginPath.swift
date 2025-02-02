@@ -1,12 +1,13 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-cas-plugin-path`
+///  Path to CAS Plugin
+public struct CasPluginPath: UnsafeFlag {
     public let path: String
 
     public init(_ path: String) {
         self.path = path
     }
 
-    public var flagArguments: [String] {
+    public var unsafeFlagArguments: [String] {
         ["\(name.camelToSnakeCaseFlag())", "\(path)"]
     }
 }

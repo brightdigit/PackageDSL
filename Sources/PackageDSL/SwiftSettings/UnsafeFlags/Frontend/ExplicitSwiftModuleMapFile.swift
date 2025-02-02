@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-explicit-swift-module-map-file`
+public struct ExplicitSwiftModuleMapFile: FrontendFlag {
     public let path: String
 
     public init(_ path: String) {

@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-bridging-header-directory-for-print`
+public struct BridgingHeaderDirectoryForPrint: FrontendFlag {
     public let path: String
 
     public init(_ path: String) {

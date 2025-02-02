@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-candidate-module-file`
+public struct CandidateModuleFile: FrontendFlag {
     public let path: String
 
     public init(_ path: String) {

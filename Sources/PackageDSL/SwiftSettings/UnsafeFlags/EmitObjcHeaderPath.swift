@@ -1,12 +1,12 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-emit-objc-header-path`
+public struct EmitObjcHeaderPath: UnsafeFlag {
     public let path: String
 
     public init(_ path: String) {
         self.path = path
     }
 
-    public var flagArguments: [String] {
+    public var unsafeFlagArguments: [String] {
         ["\(name.camelToSnakeCaseFlag())", "\(path)"]
     }
 }

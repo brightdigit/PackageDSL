@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-placeholder-dependency-module-map-file`
+public struct PlaceholderDependencyModuleMapFile: FrontendFlag {
     public let path: String
 
     public init(_ path: String) {

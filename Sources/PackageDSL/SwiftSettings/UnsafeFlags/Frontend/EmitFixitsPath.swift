@@ -1,5 +1,5 @@
-/// Passes the flag `-tbd-install_name`
-public struct TbdInstall_name: FrontendFlag {
+/// Passes the flag `-emit-fixits-path`
+public struct EmitFixitsPath: FrontendFlag {
     public let path: String
 
     public init(_ path: String) {
