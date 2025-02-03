@@ -1,0 +1,22 @@
+@Tutorial(time: 30) {
+    @Intro(title: "Understanding PackageDSL") {
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        
+    }
+    
+    @Section(title: "Text") {
+        @Steps {
+            @Step {
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                
+                @Code(name: "console", file: client.Package.0.swift, reset: true)
+            }
+            
+            @Step {
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                
+                @Code(name: "console", file: client.Package.0.swift, reset: true)
+            }
+        }
+    }
+}
