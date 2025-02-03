@@ -1,3 +1,4 @@
+// swiftlint:disable line_length
 ///
 /// `@UIApplicationMain` and `@NSApplicationMain` used to be the standard way for
 /// iOS and macOS apps respectively to declare a synthesized platform-specific
@@ -10,9 +11,10 @@
 ///
 /// - SeeAlso: [Deprecate @UIApplicationMain and @NSApplicationMain (SE-0383)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0383-deprecate-uiapplicationmain-and-nsapplicationmain.md)
 ///
-public struct DeprecateApplicationMain : SwiftSettingFeature {
+public struct DeprecateApplicationMain: SwiftSettingFeature {
+  // swiftlint:enable line_length
   /// The current state of the feature.
-  public var featureState : FeatureState {
-    return .upcoming
+  public var featureState: FeatureState {
+    .upcoming
   }
 }

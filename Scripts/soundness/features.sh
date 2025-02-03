@@ -39,7 +39,8 @@ create_feature_file() {
 		')
 
 		# Create the Swift file with documentation
-		echo "///" > "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "// swiftlint:disable line_length" > "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		# Format each line of documentation with ///
 		echo "$documentation" | sed '/^$/d' | while IFS= read -r line; do
 				echo "/// $line" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
@@ -48,6 +49,7 @@ create_feature_file() {
 		echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "public struct $feature_name : SwiftSettingFeature {" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "  // swiftlint:enable line_length" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "  /// The current state of the feature." >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "  public var featureState : FeatureState {" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "    return .$feature_state" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
