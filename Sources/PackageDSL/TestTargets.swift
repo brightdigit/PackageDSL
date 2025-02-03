@@ -1,7 +1,7 @@
 /// A protocol that represents a sequence of `TestTarget` elements.
 public protocol TestTargets: Sequence where Element == any TestTarget {
   /// Initializes a `TestTargets` instance from a sequence of `TestTarget` elements.
-  /// - Parameter s: A sequence of `TestTarget` elements.
+  /// - Parameter sequence: A sequence of `TestTarget` elements.
   init<S>(_ sequence: S) where S.Element == any TestTarget, S: Sequence
 
   /// Appends a sequence of `TestTarget` elements to the current `TestTargets` instance.

@@ -2,11 +2,11 @@
 public struct ClangHeaderExposeModule: FrontendFlag {
   public let importedmodulename: String
 
-  public init(_ importedmodulename: String) {
-    self.importedmodulename = importedmodulename
-  }
-
   public var flagArguments: [String] {
     ["\(name.camelToSnakeCaseFlag())", "\(importedmodulename)"]
+  }
+
+  public init(_ importedmodulename: String) {
+    self.importedmodulename = importedmodulename
   }
 }

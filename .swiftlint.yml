@@ -19,9 +19,6 @@ opt_in_rules:
   - empty_xctest_method
   - enum_case_associated_values_count
   - expiring_todo
-  - explicit_acl
-  - explicit_init
-  - explicit_top_level_acl
   - fallthrough
   - fatal_error_message
   - file_name
@@ -58,7 +55,6 @@ opt_in_rules:
   - optional_enum_case_matching
   - overridden_super_call
   - override_in_extension
-  - pattern_matching_keywords
   - prefer_self_type_over_type_of_self
   - prefer_zero_over_explicit_init
   - private_action
@@ -78,7 +74,6 @@ opt_in_rules:
   - static_operator
   - strict_fileprivate
   - strong_iboutlet
-  - switch_case_on_newline
   - toggle_bool
   - trailing_closure
   - type_contents_order
@@ -99,8 +94,8 @@ file_length:
   - 200
   - 550
 function_body_length:
-  - 20
   - 30
+  - 40
 function_parameter_count: 8
 line_length:
   - 90
@@ -116,3 +111,10 @@ excluded:
   - Mint
 indentation_width:
   indentation_width: 2
+type_name:
+  min_length: 1
+  max_length: 100
+file_name: 
+  excluded: ["PackageDescription.swift"]  
+disabled_rules:
+  - switch_case_alignment

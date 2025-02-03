@@ -3,8 +3,7 @@
 /// A protocol that represents an entity that has dependencies.
 public protocol _Depending {
   /// The dependencies of the entity.
-  @DependencyBuilder
-  var dependencies: any Dependencies { get }
+  @DependencyBuilder var dependencies: any Dependencies { get }
 }
 
 extension _Depending {

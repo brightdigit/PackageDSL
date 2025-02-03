@@ -1,7 +1,8 @@
 import PackageDescription
 
 /// A builder for `SupportedPlatforms`.
-@resultBuilder public enum SupportedPlatformBuilder {
+@resultBuilder
+public enum SupportedPlatformBuilder {
   /// Builds a partial block of `SupportedPlatforms` from a single `SupportedPlatform`.
   ///
   /// - Parameter first: A `SupportedPlatform` to include in the partial block.

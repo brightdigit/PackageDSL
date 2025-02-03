@@ -172,17 +172,13 @@ process_flags() {
                 echo "public struct $camel_case_flag: $protocol_name {"
                 echo "    public let $value_property_name: $param_type"
                 echo ""
+                echo "    public var $property_name: [String] {"
+                echo "        [\"\(name.camelToSnakeCaseFlag())\", \"\($value_property_name)\"]"
+                echo "    }"
+                echo ""                
                 echo "    public init(_ $value_property_name: $param_type) {"
                 echo "        self.$value_property_name = $value_property_name"
-                echo "    }"
-                echo ""
-                echo "    public var $property_name: [String] {"
-                if [[ "$original_flag" == *"="* ]]; then
-                    echo "        [\"\(name.camelToSnakeCaseFlag())=\($value_property_name)\"]"
-                else
-                    echo "        [\"\(name.camelToSnakeCaseFlag())\", \"\($value_property_name)\"]"
-                fi
-                echo "    }"
+                echo "    }"                
                 echo "}"
             else
                 echo "public struct $camel_case_flag: $protocol_name { }"

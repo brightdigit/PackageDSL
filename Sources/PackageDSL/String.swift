@@ -9,7 +9,7 @@ extension String {
 
   /// Converts a camel-case string to a snake-case string with a custom separator.
   ///
-  /// - Parameter withSeparator: The separator to use
+  /// - Parameter separator: The separator to use
   /// between words in the snake-case string.
   /// Defaults to "-".
   /// - Returns: The string converted to snake-case using the specified separator.

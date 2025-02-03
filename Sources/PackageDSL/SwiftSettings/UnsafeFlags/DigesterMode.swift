@@ -3,11 +3,11 @@
 public struct DigesterMode: UnsafeFlag {
   public let api: String
 
-  public init(_ api: String) {
-    self.api = api
-  }
-
   public var unsafeFlagArguments: [String] {
     ["\(name.camelToSnakeCaseFlag())", "\(api)"]
+  }
+
+  public init(_ api: String) {
+    self.api = api
   }
 }

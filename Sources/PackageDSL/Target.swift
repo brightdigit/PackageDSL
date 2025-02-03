@@ -14,14 +14,12 @@ public protocol Target: _Depending, Dependency, _Named {
   /// The Swift settings for the target.
   ///
   /// - Returns: An array of `SwiftSetting` objects.
-  @SwiftSettingsBuilder
-  var swiftSettings: [SwiftSetting] { get }
+  @SwiftSettingsBuilder var swiftSettings: [SwiftSetting] { get }
 
   /// The resources for the target.
   ///
   /// - Returns: An array of `Resource` objects.
-  @ResourcesBuilder
-  var resources: [Resource] { get }
+  @ResourcesBuilder var resources: [Resource] { get }
 
   /// The path of the target.
   var path: String? { get }

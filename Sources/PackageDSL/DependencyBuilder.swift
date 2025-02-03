@@ -14,8 +14,10 @@ public enum DependencyBuilder {
   /// - Parameter next: The new `Dependency` to add to the collection.
   /// - Returns: A new collection of dependencies,
   /// containing the accumulated dependencies and the `next` dependency.
-  public static func buildPartialBlock(accumulated: any Dependencies, next: Dependency)
-    -> any Dependencies {
+  public static func buildPartialBlock(
+    accumulated: any Dependencies,
+    next: Dependency
+  ) -> any Dependencies {
     accumulated + [next]
   }
 }

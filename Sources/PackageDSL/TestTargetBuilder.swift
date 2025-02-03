@@ -14,16 +14,17 @@ public enum TestTargetBuilder {
     [first]
   }
 
-  public static func buildPartialBlock(accumulated: any TestTargets, next: any TestTarget)
-    -> any TestTargets {
+  public static func buildPartialBlock(
+    accumulated: any TestTargets,
+    next: any TestTarget
+  ) -> any TestTargets {
     accumulated + [next]
   }
 
   public static func buildPartialBlock(
     accumulated: any TestTargets,
     next: any TestTargets
-  )
-    -> any TestTargets {
+  ) -> any TestTargets {
     accumulated.appending(next)
   }
 }

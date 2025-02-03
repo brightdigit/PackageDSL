@@ -43,11 +43,9 @@ extension PackageDependency where Self: TargetDependency {
           return .byName(name: productName)
         }
 
-      case .registry:
-        return .byName(name: productName)
+      case .registry: return .byName(name: productName)
 
-      @unknown default:
-        return .byName(name: productName)
+      @unknown default: return .byName(name: productName)
     }
   }
 }

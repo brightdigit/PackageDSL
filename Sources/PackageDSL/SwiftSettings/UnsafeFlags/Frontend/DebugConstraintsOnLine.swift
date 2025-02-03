@@ -2,11 +2,11 @@
 public struct DebugConstraintsOnLine: FrontendFlag {
   public let line: String
 
-  public init(_ line: String) {
-    self.line = line
-  }
-
   public var flagArguments: [String] {
     ["\(name.camelToSnakeCaseFlag())", "\(line)"]
+  }
+
+  public init(_ line: String) {
+    self.line = line
   }
 }

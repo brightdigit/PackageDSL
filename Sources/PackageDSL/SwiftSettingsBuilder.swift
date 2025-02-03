@@ -25,8 +25,10 @@ public enum SwiftSettingsBuilder {
   /// - Returns: An array containing
   /// the accumulated `SwiftSetting` instances
   /// and the next instance.
-  public static func buildPartialBlock(accumulated: [SwiftSetting], next: SwiftSetting)
-    -> [SwiftSetting] {
+  public static func buildPartialBlock(
+    accumulated: [SwiftSetting],
+    next: SwiftSetting
+  ) -> [SwiftSetting] {
     accumulated + [next]
   }
 
@@ -39,8 +41,10 @@ public enum SwiftSettingsBuilder {
   /// - Returns: An array
   /// containing the accumulated `SwiftSetting`
   /// instances and the next instances.
-  public static func buildPartialBlock(accumulated: [SwiftSetting], next: [SwiftSetting])
-    -> [SwiftSetting] {
+  public static func buildPartialBlock(
+    accumulated: [SwiftSetting],
+    next: [SwiftSetting]
+  ) -> [SwiftSetting] {
     accumulated + next
   }
 

@@ -4,11 +4,11 @@
 public struct Rpass: UnsafeFlag {
   public let value: String
 
-  public init(_ value: String) {
-    self.value = value
+  public var unsafeFlagArguments: [String] {
+    ["\(name.camelToSnakeCaseFlag())", "\(value)"]
   }
 
-  public var unsafeFlagArguments: [String] {
-    ["\(name.camelToSnakeCaseFlag())=\(value)"]
+  public init(_ value: String) {
+    self.value = value
   }
 }

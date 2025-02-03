@@ -14,43 +14,6 @@ extension Package {
     return String(pathComponents.last!)
   }
 
-  static func dependencies(
-    _ packageDependencies: [any PackageDependency],
-    _ targetSets: [_Depending & _Named]...,
-    swiftSettings: [SwiftSetting] = []
-  ) -> [Package.Dependency] {
-    let dependencies = targetSets.flatMap {
-      $0.flatMap {
-        $0.allDependencies()
-      }
-    }
-    let targetDependencies = dependencies.compactMap { $0 as? Target }
-    let packageTargetDependencies = dependencies.compactMap { $0 as? TargetDependency }
-    let allPackageDependencies =
-      packageTargetDependencies.map(\.package) + packageDependencies
-    let packageDeps = Dictionary(
-      grouping: allPackageDependencies
-    ) { $0.packageName }
-    .values.compactMap(\.first).map(\.dependency)
-    return packageDeps
-  }
-
-  static func targets(_ targetSets: [any Target]..., swiftSettings: [SwiftSetting] = [])
-    -> [_PackageDescription_Target] {
-    // var targets = entries.flatMap(\.productTargets)
-    let targets = targetSets.flatMap {
-      $0.flatMap {
-        [$0] + $0.allDependencies().compactMap { $0 as? Target }
-      }
-    }
-    return Dictionary(
-      grouping: targets
-    ) { $0.name }
-    .values
-    .compactMap(\.first)
-    .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings) }
-  }
-
   /// Initializes a new `Package` instance with the provided properties.
   /// - Parameters:
   ///   - name: The name of the package.
@@ -93,6 +56,45 @@ extension Package {
       dependencies: packageDeps,
       targets: packgeTargets
     )
+  }
+
+  static func dependencies(
+    _ packageDependencies: [any PackageDependency],
+    _ targetSets: [_Depending & _Named]...,
+    swiftSettings: [SwiftSetting] = []
+  ) -> [Package.Dependency] {
+    let dependencies = targetSets.flatMap {
+      $0.flatMap {
+        $0.allDependencies()
+      }
+    }
+    let targetDependencies = dependencies.compactMap { $0 as? Target }
+    let packageTargetDependencies = dependencies.compactMap { $0 as? TargetDependency }
+    let allPackageDependencies =
+      packageTargetDependencies.map(\.package) + packageDependencies
+    let packageDeps = Dictionary(
+      grouping: allPackageDependencies
+    ) { $0.packageName }
+    .values.compactMap(\.first).map(\.dependency)
+    return packageDeps
+  }
+
+  static func targets(
+    _ targetSets: [any Target]...,
+    swiftSettings: [SwiftSetting] = []
+  ) -> [_PackageDescription_Target] {
+    // var targets = entries.flatMap(\.productTargets)
+    let targets = targetSets.flatMap {
+      $0.flatMap {
+        [$0] + $0.allDependencies().compactMap { $0 as? Target }
+      }
+    }
+    return Dictionary(
+      grouping: targets
+    ) { $0.name }
+    .values
+    .compactMap(\.first)
+    .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings) }
   }
 }
 
