@@ -1,12 +1,12 @@
 /// Passes the flag `-module-alias`
 public struct ModuleAlias: UnsafeFlag {
-  public let alias_name: String
+  public let aliasname: String
 
-  public init(_ alias_name: String) {
-    self.alias_name = alias_name
+  public init(_ aliasname: String) {
+    self.aliasname = aliasname
   }
 
   public var unsafeFlagArguments: [String] {
-    ["\(name.camelToSnakeCaseFlag())", "\(alias_name)"]
+    ["\(name.camelToSnakeCaseFlag())", "\(aliasname)"]
   }
 }

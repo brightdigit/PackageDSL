@@ -61,7 +61,9 @@ public enum SwiftSettingsBuilder {
   /// to extract `SwiftSetting` instances from.
   /// - Returns: An array of `SwiftSetting` instances
   /// extracted from the provided `SwiftSettingsConvertible` instance.
-  public static func buildPartialBlock(first: any SwiftSettingsConvertible) -> [SwiftSetting] {
+  public static func buildPartialBlock(
+    first: any SwiftSettingsConvertible
+  ) -> [SwiftSetting] {
     first.swiftSettings()
   }
 

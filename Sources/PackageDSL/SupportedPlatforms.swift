@@ -7,6 +7,6 @@
 import PackageDescription
 
 public protocol SupportedPlatforms: Sequence where Element == SupportedPlatform {
-  init<S>(_ s: S) where S.Element == SupportedPlatform, S: Sequence
+  init<S>(_ sequence: S) where S.Element == SupportedPlatform, S: Sequence
   func appending(_ platforms: any SupportedPlatforms) -> Self
 }

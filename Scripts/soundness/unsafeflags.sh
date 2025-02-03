@@ -106,7 +106,7 @@ process_flags() {
         else
             flag_for_camel="$flag_name"
         fi
-        camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub("-", " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
+        camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub(/[-_]/, " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
         
         # Handle single-letter flags
         if [ ${#camel_case_flag} -eq 1 ]; then
@@ -135,7 +135,7 @@ process_flags() {
                 # Use parameter name for the value property, taking only the first part if it contains punctuation
                 # Convert to camelCase and remove dashes
                 value_property_name=$(echo "$param_for_type" | cut -d'=' -f1 | cut -d',' -f1 | cut -d':' -f1 | cut -d'#' -f1 | \
-                    awk '{gsub("-", " "); print $0}' | \
+                    awk '{gsub(/[-_]/, " "); print $0}' | \
                     awk '{for(i=1;i<=NF;i++)if(i==1){$i=tolower($i)}else{$i=toupper(substr($i,1,1)) tolower(substr($i,2))};}1' | \
                     sed 's/ //g' | tr '[:upper:]' '[:lower:]')
             fi
