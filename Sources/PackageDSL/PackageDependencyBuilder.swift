@@ -5,11 +5,15 @@ public enum PackageDependencyBuilder {
   ///
   /// - Parameter first: The first `PackageDependency` value.
   /// - Returns: An array containing the first `PackageDependency` value.
-  public static func buildPartialBlock(first: PackageDependency) -> [any PackageDependency] {
+  public static func buildPartialBlock(
+    first: PackageDependency
+  ) -> [any PackageDependency] {
     [first]
   }
 
-  /// Builds a partial result block from an accumulated array of `PackageDependency` values and a new `PackageDependency` value.
+  /// Builds a partial result block
+  /// from an accumulated array of `PackageDependency` values
+  /// and a new `PackageDependency` value.
   ///
   /// - Parameters:
   ///   - accumulated: The accumulated array of `PackageDependency` values.

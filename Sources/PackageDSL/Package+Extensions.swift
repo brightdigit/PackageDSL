@@ -9,9 +9,11 @@ import PackageDescription
 extension Package {
   /// Initializes a new `Package` instance with the provided properties.
   /// - Parameters:
-  ///   - name: The name of the package. If `nil`, the name will be inferred from the file path.
+  ///   - name: The name of the package.
+  ///   If `nil`, the name will be inferred from the file path.
   ///   - entries: A closure that returns an array of `Product` instances.
-  ///   - packageDependencies: A closure that returns an array of `PackageDependency` instances.
+  ///   - packageDependencies: A closure that returns an array
+  ///   of `PackageDependency` instances.
   ///   - testTargets: A closure that returns an array of `TestTarget` instances.
   ///   - swiftSettings: A closure that returns an array of `SwiftSetting` instances.
   public convenience init(
@@ -19,8 +21,10 @@ extension Package {
     @ProductsBuilder entries: @escaping () -> [any Product],
     @PackageDependencyBuilder dependencies packageDependencies: @escaping () ->
       [any PackageDependency] = { [any PackageDependency]() },
-    @TestTargetBuilder testTargets: @escaping () -> any TestTargets = { [any TestTarget]() },
-    @SwiftSettingsBuilder swiftSettings: @escaping () -> [SwiftSetting] = { [SwiftSetting]() }
+    @TestTargetBuilder testTargets:
+      @escaping () -> any TestTargets = { [any TestTarget]() },
+    @SwiftSettingsBuilder swiftSettings:
+      @escaping () -> [SwiftSetting] = { [SwiftSetting]() }
   ) {
     let packageName: String
     if let name {
@@ -40,18 +44,19 @@ extension Package {
     let dependencies = allTargetsDependencies + allTestTargetsDependencies
     let targetDependencies = dependencies.compactMap { $0 as? Target }
     let packageTargetDependencies = dependencies.compactMap { $0 as? TargetDependency }
-    let allPackageDependencies = packageTargetDependencies.map(\.package) + packageDependencies()
+    let allPackageDependencies =
+      packageTargetDependencies.map(\.package) + packageDependencies()
     targets += targetDependencies
     targets += allTestTargets.map { $0 as Target }
     let packgeTargets = Dictionary(
       grouping: targets
-    )      { $0.name }
+    ) { $0.name }
     .values
     .compactMap(\.first)
     .map { _PackageDescription_Target.entry($0, swiftSettings: swiftSettings()) }
     let packageDeps = Dictionary(
       grouping: allPackageDependencies
-    )      { $0.packageName }
+    ) { $0.packageName }
     .values.compactMap(\.first).map(\.dependency)
     self.init(
       name: packageName,
@@ -64,7 +69,8 @@ extension Package {
 
 extension Package {
   /// Adds supported platforms to the package.
-  /// - Parameter supportedPlatforms: A closure that returns an array of `SupportedPlatforms` instances.
+  /// - Parameter supportedPlatforms: A closure that returns
+  /// an array of `SupportedPlatforms` instances.
   /// - Returns: The modified `Package` instance.
   public func supportedPlatforms(
     @SupportedPlatformBuilder supportedPlatforms: @escaping () -> any SupportedPlatforms

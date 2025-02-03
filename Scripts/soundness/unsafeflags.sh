@@ -161,8 +161,11 @@ process_flags() {
         {
             echo "/// Passes the flag \`$original_flag\`"
             if [ ! -z "$description" ]; then
+                # Split description into lines of max 80 characters (accounting for "/// " prefix)
                 capitalized_desc=$(echo "$description" | sed 's/^[[:lower:]]/\U&/')
-                echo "/// $capitalized_desc"
+                echo "$capitalized_desc" | fold -s -w 80 | while read -r line; do
+                    echo "/// $line"
+                done
             fi
             
             if [ ! -z "$parameter" ]; then

@@ -1,13 +1,13 @@
 /// Passes the flag `-target-cpu`
-///  Generate code for a particular CPU variant
+/// Generate code for a particular CPU variant
 public struct TargetCpu: UnsafeFlag {
-    public let value: String
+  public let value: String
 
-    public init(_ value: String) {
-        self.value = value
-    }
+  public init(_ value: String) {
+    self.value = value
+  }
 
-    public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(value)"]
-    }
+  public var unsafeFlagArguments: [String] {
+    ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+  }
 }

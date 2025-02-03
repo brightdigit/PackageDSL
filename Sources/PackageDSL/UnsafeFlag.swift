@@ -24,29 +24,31 @@ extension UnsafeFlag {
   }
 }
 
-
-public protocol FrontendFlag : GroupBuildable, _Named {
+public protocol FrontendFlag: GroupBuildable, _Named {
   var flagArguments: [String] { get }
 }
 
 extension FrontendFlag {
   public var flagArguments: [String] {
-      [name.camelToSnakeCaseFlag()]
+    [name.camelToSnakeCaseFlag()]
   }
 }
 
-public struct FrontendFlags : UnsafeFlag {
-  public init(@GroupBuilder<any FrontendFlag> frontendFlags: @escaping () -> [any FrontendFlag] ) {
+public struct FrontendFlags: UnsafeFlag {
+  public init(
+    @GroupBuilder<any FrontendFlag> frontendFlags:
+      @escaping () -> [any FrontendFlag]
+  ) {
     self.init(frontendFlags: frontendFlags())
   }
   private init(frontendFlags: [any FrontendFlag]) {
     self.frontendFlags = frontendFlags
   }
-  
+
   static let argument = "-Xfrontend"
-  
+
   public let frontendFlags: [any FrontendFlag]
-  
+
   public var unsafeFlagArguments: [String] {
     let arguments = frontendFlags.flatMap(\.flagArguments)
     if arguments.isEmpty {
@@ -55,4 +57,3 @@ public struct FrontendFlags : UnsafeFlag {
     return [Self.argument] + arguments
   }
 }
-

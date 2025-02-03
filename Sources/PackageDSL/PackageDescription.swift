@@ -16,11 +16,13 @@ public typealias _PackageDescription_Target = PackageDescription.Target
 
 /// A type alias for `PackageDescription.Target.Dependency`.
 /// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
-public typealias _PackageDescription_TargetDependency = PackageDescription.Target.Dependency
+public typealias _PackageDescription_TargetDependency =
+  PackageDescription.Target.Dependency
 
 /// A type alias for `PackageDescription.Package.Dependency`.
 /// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
-public typealias _PackageDescription_PackageDependency = PackageDescription.Package.Dependency
+public typealias _PackageDescription_PackageDependency =
+  PackageDescription.Package.Dependency
 
 /// A type alias for `PackageDescription.Product.Library.LibraryType`.
 public typealias LibraryType = PackageDescription.Product.Library.LibraryType

@@ -1,13 +1,13 @@
 /// Passes the flag `-o`
-///  Write output to <file>
+/// Write output to <file>
 public struct O: UnsafeFlag {
-    public let file: String
+  public let file: String
 
-    public init(_ file: String) {
-        self.file = file
-    }
+  public init(_ file: String) {
+    self.file = file
+  }
 
-    public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())", "\(file)"]
-    }
+  public var unsafeFlagArguments: [String] {
+    ["\(name.camelToSnakeCaseFlag())", "\(file)"]
+  }
 }

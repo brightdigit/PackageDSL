@@ -1,13 +1,13 @@
 /// Passes the flag `-sanitize=<check>`
 /// Turn on runtime checks for erroneous behavior.
 public struct Sanitize: UnsafeFlag {
-    public let value: String
+  public let value: String
 
-    public init(_ value: String) {
-        self.value = value
-    }
+  public init(_ value: String) {
+    self.value = value
+  }
 
-    public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())=\(value)"]
-    }
+  public var unsafeFlagArguments: [String] {
+    ["\(name.camelToSnakeCaseFlag())=\(value)"]
+  }
 }

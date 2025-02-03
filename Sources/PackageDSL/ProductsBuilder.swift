@@ -21,7 +21,9 @@ public enum ProductsBuilder {
     [first]
   }
 
-  /// Builds a partial block by accumulating the previous array of `Product` elements and adding the next `Product` element.
+  /// Builds a partial block by accumulating
+  /// the previous array of `Product` elements
+  /// and adding the next `Product` element.
   /// - Parameter accumulated: The previous array of `Product` elements.
   /// - Parameter next: The next `Product` element to add.
   /// - Returns: The updated array of `Product` elements.
@@ -30,7 +32,9 @@ public enum ProductsBuilder {
     accumulated + [next]
   }
 
-  /// Builds a partial block by accumulating the previous array of `Product` elements and adding the next array of `Product` elements.
+  /// Builds a partial block by accumulating
+  ///  the previous array of `Product` elements
+  ///  and adding the next array of `Product` elements.
   /// - Parameter accumulated: The previous array of `Product` elements.
   /// - Parameter next: The next array of `Product` elements to add.
   /// - Returns: The updated array of `Product` elements.

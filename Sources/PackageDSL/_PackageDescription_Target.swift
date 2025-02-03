@@ -11,9 +11,11 @@ extension _PackageDescription_Target {
   ///
   /// - Parameters:
   ///   - entry: The `Target` to be used as the basis for the new target.
-  ///   - swiftSettings: An optional array of `SwiftSetting` values to be applied to the new target.
-  /// - Returns: A new `_PackageDescription_Target` instance based on the provided `entry` and `swiftSettings`.
-  static func entry(_ entry: Target, swiftSettings: [SwiftSetting] = [])
+  ///   - swiftSettings: An  array of `SwiftSetting` values
+  ///   to be applied to the new target.
+  /// - Returns: A new `_PackageDescription_Target` instance
+  /// based on the provided `entry` and `swiftSettings`.
+  internal static func entry(_ entry: Target, swiftSettings: [SwiftSetting] = [])
     -> _PackageDescription_Target {
     let dependencies = entry.dependencies.map(\.targetDependency)
     switch entry.targetType {
