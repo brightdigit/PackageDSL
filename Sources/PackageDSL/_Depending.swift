@@ -1,4 +1,5 @@
 // swift-format-ignore: NoLeadingUnderscores
+// swiftlint:disable type_name
 /// A protocol that represents an entity that has dependencies.
 public protocol _Depending {
   /// The dependencies of the entity.
@@ -27,3 +28,4 @@ extension _Depending {
     .appending(dependencies)
   }
 }
+// swiftlint:enable type_name

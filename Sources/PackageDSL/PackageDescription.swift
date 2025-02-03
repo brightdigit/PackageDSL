@@ -6,6 +6,8 @@
 
 import PackageDescription
 
+// swiftlint:disable type_name
+
 /// A type alias for `PackageDescription.Product`.
 /// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
 public typealias _PackageDescription_Product = PackageDescription.Product
@@ -23,6 +25,8 @@ public typealias _PackageDescription_TargetDependency =
 /// - Note: This alias is exempt from the "NoLeadingUnderscores" swift-format rule.
 public typealias _PackageDescription_PackageDependency =
   PackageDescription.Package.Dependency
+
+// swiftlint:enable type_name
 
 /// A type alias for `PackageDescription.Product.Library.LibraryType`.
 public typealias LibraryType = PackageDescription.Product.Library.LibraryType
