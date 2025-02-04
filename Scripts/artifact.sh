@@ -1,5 +1,19 @@
 #!/bin/sh
 
+# Default output location for the generated script
+output_script="package.sh"
+
+# Parse command line argument for output script name if provided
+if [ "$#" -gt 0 ]; then
+    output_script="$1"
+fi
+
+echo "📝 Generating package script..."
+
+# Create the new script
+cat << 'EOF' > "$output_script"
+#!/bin/sh
+
 # Default values
 swift_tools_version="6.0"
 MINIMIZE=false
@@ -28,8 +42,18 @@ input_file=.package.source
 output_file=Package.swift
 
 cd $PACKAGE_DIR
-echo "// swift-tools-version: $swift_tools_version" > $input_file
-find ../PackageDSL/Sources/PackageDSL -name '*.swift' -type f -exec cat {} + >> $input_file
+
+# Hardcoded PackageDSL content
+cat << 'PACKAGEDSL' > $input_file
+EOF
+
+# Add the PackageDSL content
+find ../PackageDSL/Sources/PackageDSL -name '*.swift' -type f -exec cat {} + | awk '!/^[[:space:]]*(\/\/.*)?$|^import /' | sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//' >> "$output_script"
+
+# Continue with the rest of the script template
+cat << 'EOF' >> "$output_script"
+PACKAGEDSL
+
 find Package/Sources -mindepth 2 -type f -name '*.swift' -not -path '*/\.*' -exec cat {} + >> $input_file
 cat Package/Sources/*.swift >> $input_file
 
@@ -59,3 +83,9 @@ else
   
   cat "$input_file" >> "$output_file"
 fi
+EOF
+
+# Make the generated script executable
+chmod +x "$output_script"
+
+echo "✅ Generated package script at $output_script" 

@@ -1,0 +1,26 @@
+name: Create Package Script Artifact
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest  # Using macOS since the script uses macOS-specific sed
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Generate package script
+      run: |
+        chmod +x Scripts/artifact.sh
+        ./Scripts/artifact.sh package.sh
+      
+    - name: Upload package script
+      uses: actions/upload-artifact@v4
+      with:
+        name: package.sh
+        path: package.sh
+        retention-days: 180  # Artifacts will be kept for 30 days 
