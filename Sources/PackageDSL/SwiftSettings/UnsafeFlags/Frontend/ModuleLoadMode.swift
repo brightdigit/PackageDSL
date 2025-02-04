@@ -1,4 +1,4 @@
 /// Passes the flag `-module-load-mode`
 ///
-/// Uonly-interface
+/// Only-interface
 public struct ModuleLoadMode: FrontendFlag {}
