@@ -1,4 +1,5 @@
 /// Passes the flag `-lto-library`
+///
 public struct LtoLibrary: UnsafeFlag {
   public let ltolibrary: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-compare-to-baseline-path`
+///
 public struct CompareToBaselinePath: UnsafeFlag {
   public let path: String
 

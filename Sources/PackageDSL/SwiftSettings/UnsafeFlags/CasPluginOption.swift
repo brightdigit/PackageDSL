@@ -1,4 +1,5 @@
 /// Passes the flag `-cas-plugin-option`
+///
 public struct CasPluginOption: UnsafeFlag {
   public let name: String
 

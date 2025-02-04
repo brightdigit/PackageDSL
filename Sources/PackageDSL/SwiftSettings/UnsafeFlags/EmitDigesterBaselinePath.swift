@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-digester-baseline-path`
+///
 public struct EmitDigesterBaselinePath: UnsafeFlag {
   public let path: String
 

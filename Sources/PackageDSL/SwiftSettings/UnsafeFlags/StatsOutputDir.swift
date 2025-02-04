@@ -1,4 +1,5 @@
 /// Passes the flag `-stats-output-dir`
+///
 public struct StatsOutputDir: UnsafeFlag {
   public let value: String
 

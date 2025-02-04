@@ -1,4 +1,5 @@
 /// Passes the flag `-allowable-client`
+///
 public struct AllowableClient: UnsafeFlag {
   public let vers: String
 

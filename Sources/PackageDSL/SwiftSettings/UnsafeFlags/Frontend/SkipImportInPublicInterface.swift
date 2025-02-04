@@ -1,4 +1,5 @@
 /// Passes the flag `-skip-import-in-public-interface`
+///
 public struct SkipImportInPublicInterface: FrontendFlag {
   public let value: String
 

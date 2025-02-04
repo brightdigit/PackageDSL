@@ -1,4 +1,5 @@
 /// Passes the flag `-target-variant`
+///
 /// Generate 'zippered' code for macCatalyst that can run on the specified variant
 /// target triple in addition to the main -target triple
 public struct TargetVariant: UnsafeFlag {

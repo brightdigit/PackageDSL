@@ -1,4 +1,5 @@
 /// Passes the flag `-const-gather-protocols-file`
+///
 public struct ConstGatherProtocolsFile: FrontendFlag {
   public let path: String
 

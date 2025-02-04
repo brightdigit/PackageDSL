@@ -1,4 +1,5 @@
 /// Passes the flag `-clang-build-session-file`
+///
 public struct ClangBuildSessionFile: UnsafeFlag {
   public let value: String
 

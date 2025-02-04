@@ -1,4 +1,5 @@
 /// Passes the flag `-output-file-map`
+///
 /// A file which specifies the location of outputs
 public struct OutputFileMap: UnsafeFlag {
   public let path: String

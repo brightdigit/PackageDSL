@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-reference-dependencies-path`
+///
 public struct EmitReferenceDependenciesPath: FrontendFlag {
   public let path: String
 

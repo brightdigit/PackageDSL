@@ -1,4 +1,5 @@
 /// Passes the flag `-serialize-diagnostics-path`
+///
 public struct SerializeDiagnosticsPath: FrontendFlag {
   public let path: String
 

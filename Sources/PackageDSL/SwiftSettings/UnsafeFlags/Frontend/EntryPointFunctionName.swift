@@ -1,4 +1,5 @@
 /// Passes the flag `-entry-point-function-name`
+///
 public struct EntryPointFunctionName: FrontendFlag {
   public let string: String
 

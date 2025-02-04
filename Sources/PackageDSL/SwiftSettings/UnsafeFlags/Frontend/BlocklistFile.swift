@@ -1,4 +1,5 @@
 /// Passes the flag `-blocklist-file`
+///
 /// The path to a blocklist configuration file
 public struct BlocklistFile: FrontendFlag {
   public let path: String

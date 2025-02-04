@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-dependencies-path`
+///
 public struct EmitDependenciesPath: FrontendFlag {
   public let path: String
 

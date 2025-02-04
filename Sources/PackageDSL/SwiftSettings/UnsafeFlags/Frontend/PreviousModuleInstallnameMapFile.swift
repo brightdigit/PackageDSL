@@ -1,4 +1,5 @@
 /// Passes the flag `-previous-module-installname-map-file`
+///
 public struct PreviousModuleInstallnameMapFile: FrontendFlag {
   public let path: String
 

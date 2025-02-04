@@ -1,4 +1,5 @@
 /// Passes the flag `-file-prefix-map`
+///
 public struct FilePrefixMap: UnsafeFlag {
   public let prefix: String
 

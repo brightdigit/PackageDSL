@@ -1,4 +1,5 @@
 /// Passes the flag `-clang-header-expose-decls=all-public`
+///
 public struct ClangHeaderExposeDecls: FrontendFlag {
   public let hasexposeattr: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-stack-promotion-limit`
+///
 public struct StackPromotionLimit: FrontendFlag {
   public let value: String
 

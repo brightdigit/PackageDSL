@@ -1,4 +1,5 @@
 /// Passes the flag `-swift-version`
+///
 /// Interpret input according to a specific Swift language version number
 public struct SwiftVersion: UnsafeFlag {
   public let vers: String

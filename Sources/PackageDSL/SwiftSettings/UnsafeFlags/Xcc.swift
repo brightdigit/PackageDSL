@@ -1,4 +1,5 @@
 /// Passes the flag `-Xcc`
+///
 /// Pass <arg> to the C/C++/Objective-C compiler
 public struct Xcc: UnsafeFlag {
   public let arg: String

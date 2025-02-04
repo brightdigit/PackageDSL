@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-private-module-interface-path`
+///
 public struct EmitPrivateModuleInterfacePath: UnsafeFlag {
   public let path: String
 

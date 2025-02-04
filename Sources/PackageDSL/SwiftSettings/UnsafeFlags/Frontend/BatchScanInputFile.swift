@@ -1,4 +1,5 @@
 /// Passes the flag `-batch-scan-input-file`
+///
 public struct BatchScanInputFile: FrontendFlag {
   public let path: String
 

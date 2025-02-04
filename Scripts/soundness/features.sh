@@ -42,9 +42,43 @@ create_feature_file() {
 		echo "// swiftlint:disable line_length" > "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		# Format each line of documentation with ///
-		echo "$documentation" | sed '/^$/d' | while IFS= read -r line; do
-				echo "/// $line" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		done
+		echo "$documentation" | sed '/^$/d' | awk '
+				BEGIN { first_printed = 0 }
+				{
+						if (!first_printed) {
+								line = $0
+								pos = 1
+								in_parentheses = 0
+								period_pos = 0
+								
+								# Scan through the line character by character
+								while (pos <= length(line)) {
+										char = substr(line, pos, 1)
+										if (char == "(") in_parentheses = 1
+										else if (char == ")") in_parentheses = 0
+										else if (char == "." && !in_parentheses) {
+												period_pos = pos
+												break
+										}
+										pos++
+								}
+								
+								if (period_pos > 0) {
+										# Print everything up to and including the period
+										print "/// " substr(line, 1, period_pos)
+										print "///"
+										# Print the rest of the line if anything remains
+										rest = substr(line, period_pos + 1)
+										if (length(rest) > 0) {
+												print "/// " rest
+										}
+										first_printed = 1
+										next
+								}
+						}
+						print "/// " $0
+				}
+		' >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"

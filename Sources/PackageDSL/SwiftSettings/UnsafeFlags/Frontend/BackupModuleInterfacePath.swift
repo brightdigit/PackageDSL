@@ -1,4 +1,5 @@
 /// Passes the flag `-backup-module-interface-path`
+///
 public struct BackupModuleInterfacePath: FrontendFlag {
   public let value: String
 

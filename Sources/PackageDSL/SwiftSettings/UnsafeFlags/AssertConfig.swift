@@ -1,4 +1,5 @@
 /// Passes the flag `-assert-config`
+///
 /// Specify the assert_configuration replacement. Possible values are Debug,
 /// Release, Unchecked, DisableReplacement.
 public struct AssertConfig: UnsafeFlag {

@@ -1,4 +1,5 @@
 /// Passes the flag `-resource-dir`
+///
 public struct ResourceDir: UnsafeFlag {
   public let value: String
 

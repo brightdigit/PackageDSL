@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-objc-header-path`
+///
 public struct EmitObjcHeaderPath: UnsafeFlag {
   public let path: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-require-explicit-availability-target`
+///
 public struct RequireExplicitAvailabilityTarget: UnsafeFlag {
   public let target: String
 

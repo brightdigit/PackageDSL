@@ -1,7 +1,9 @@
 // swiftlint:disable line_length
 ///
 /// Swift Concurrency assigns values to *isolation domains* determined by actor and
-/// task boundaries. Code running in distinct isolation domains can execute
+/// task boundaries.
+///
+///  Code running in distinct isolation domains can execute
 /// concurrently, and `Sendable` checking defines away concurrent access to
 /// shared mutable state by preventing non-`Sendable` values from being passed
 /// across isolation boundaries full stop. In practice, this is a significant

@@ -1,4 +1,5 @@
 /// Passes the flag `-trap-function`
+///
 /// Lower traps to calls to this function instead of trap instructions
 public struct TrapFunction: FrontendFlag {
   public let name: String

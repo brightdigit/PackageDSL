@@ -1,4 +1,5 @@
 /// Passes the flag `-typo-correction-limit`
+///
 public struct TypoCorrectionLimit: UnsafeFlag {
   public let n: Int
 

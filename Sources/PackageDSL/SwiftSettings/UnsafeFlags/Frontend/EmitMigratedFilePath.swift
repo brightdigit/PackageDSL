@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-migrated-file-path`
+///
 public struct EmitMigratedFilePath: FrontendFlag {
   public let path: String
 

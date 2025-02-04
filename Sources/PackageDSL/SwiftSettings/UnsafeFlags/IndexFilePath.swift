@@ -1,4 +1,5 @@
 /// Passes the flag `-index-file-path`
+///
 /// Produce index data for file <path>
 public struct IndexFilePath: UnsafeFlag {
   public let path: String

@@ -1,4 +1,5 @@
 /// Passes the flag `-profile-use=<profdata>`
+///
 /// Supply a profdata file to enable profile-guided optimization
 public struct ProfileUse: UnsafeFlag {
   public let value: String

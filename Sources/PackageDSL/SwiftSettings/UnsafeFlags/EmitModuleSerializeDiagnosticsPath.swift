@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-module-serialize-diagnostics-path`
+///
 public struct EmitModuleSerializeDiagnosticsPath: UnsafeFlag {
   public let path: String
 

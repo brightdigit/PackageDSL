@@ -1,4 +1,5 @@
 /// Passes the flag `-disable-ast-verifier`
+///
 /// Do not run the AST verifier during compilation. NOTE: This lets the user
 /// override the default behavior on whether or not the ASTVerifier is run. The
 /// default behavior is to run the verifier when asserts are enabled and not run it

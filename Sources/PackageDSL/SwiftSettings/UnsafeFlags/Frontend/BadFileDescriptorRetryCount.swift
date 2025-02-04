@@ -1,4 +1,5 @@
 /// Passes the flag `-bad-file-descriptor-retry-count`
+///
 public struct BadFileDescriptorRetryCount: FrontendFlag {
   public let value: String
 

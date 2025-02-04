@@ -1,4 +1,5 @@
 /// Passes the flag `-unavailable-decl-optimization=<complete,none>`
+///
 /// Specify the optimization mode for unavailable declarations. The value may be
 /// 'none' (no optimization) or 'complete' (code is not generated at all
 /// unavailable declarations)

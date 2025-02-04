@@ -1,4 +1,5 @@
 /// Passes the flag `-candidate-module-file`
+///
 public struct CandidateModuleFile: FrontendFlag {
   public let path: String
 

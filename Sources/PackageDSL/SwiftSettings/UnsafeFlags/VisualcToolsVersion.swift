@@ -1,4 +1,5 @@
 /// Passes the flag `-visualc-tools-version`
+///
 public struct VisualcToolsVersion: UnsafeFlag {
   public let version: String
 

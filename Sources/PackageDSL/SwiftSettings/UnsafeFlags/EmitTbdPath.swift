@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-tbd-path`
+///
 /// Emit the TBD file to <path>
 public struct EmitTbdPath: UnsafeFlag {
   public let path: String

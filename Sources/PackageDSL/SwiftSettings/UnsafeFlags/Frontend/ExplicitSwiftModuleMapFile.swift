@@ -1,4 +1,5 @@
 /// Passes the flag `-explicit-swift-module-map-file`
+///
 public struct ExplicitSwiftModuleMapFile: FrontendFlag {
   public let path: String
 

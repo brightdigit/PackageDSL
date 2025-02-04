@@ -1,4 +1,5 @@
 /// Passes the flag `-debug-prefix-map`
+///
 public struct DebugPrefixMap: UnsafeFlag {
   public let prefix: String
 

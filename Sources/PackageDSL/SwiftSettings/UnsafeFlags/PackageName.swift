@@ -1,4 +1,5 @@
 /// Passes the flag `-package-name`
+///
 /// Name of the package the module belongs to
 public struct PackageName: UnsafeFlag {
   public let value: String

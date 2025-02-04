@@ -1,4 +1,5 @@
 /// Passes the flag `-debug-constraints-on-line`
+///
 public struct DebugConstraintsOnLine: FrontendFlag {
   public let line: String
 

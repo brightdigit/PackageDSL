@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-clang-header-path`
+///
 public struct EmitClangHeaderPath: FrontendFlag {
   public let value: String
 

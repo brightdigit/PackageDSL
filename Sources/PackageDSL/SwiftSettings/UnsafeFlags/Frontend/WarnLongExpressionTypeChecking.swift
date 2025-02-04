@@ -1,4 +1,5 @@
 /// Passes the flag `-warn-long-expression-type-checking`
+///
 public struct WarnLongExpressionTypeChecking: FrontendFlag {
   public let n: Int
 

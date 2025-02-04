@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-fixits-path`
+///
 public struct EmitFixitsPath: FrontendFlag {
   public let path: String
 

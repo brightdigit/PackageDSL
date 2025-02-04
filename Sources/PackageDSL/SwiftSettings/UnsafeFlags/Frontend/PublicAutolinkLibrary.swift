@@ -1,4 +1,5 @@
 /// Passes the flag `-public-autolink-library`
+///
 public struct PublicAutolinkLibrary: FrontendFlag {
   public let value: String
 

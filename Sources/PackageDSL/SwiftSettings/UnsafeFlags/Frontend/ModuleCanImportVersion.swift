@@ -1,4 +1,5 @@
 /// Passes the flag `-module-can-import-version`
+///
 /// <version> <underlyingVersion>
 public struct ModuleCanImportVersion: FrontendFlag {
   public let modulename: String

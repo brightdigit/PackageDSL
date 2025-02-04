@@ -1,4 +1,5 @@
 /// Passes the flag `-dependency-scan-cache-path`
+///
 public struct DependencyScanCachePath: FrontendFlag {
   public let value: String
 
