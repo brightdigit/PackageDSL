@@ -66,10 +66,10 @@ jobs:
         mkdir -p Sources/PackageDSL/SwiftSettings/UnsafeFlags
         mkdir -p Sources/PackageDSL/SwiftSettings/FeatureFlags
 
-    - name: Save Help Output
+    - name: Save help output to files
       run: |
-        echo '${{ needs.get-swift-help.outputs.help-hidden }}' > help-hidden.txt
-        echo '${{ needs.get-swift-help.outputs.frontend-help-hidden }}' > frontend-help-hidden.txt
+        echo "${{ needs.get-swift-help.outputs.help-hidden }}" > help-hidden.txt
+        echo "${{ needs.get-swift-help.outputs.frontend-help-hidden }}" > frontend-help-hidden.txt
 
     - name: Update Unsafe Flags
       run: |
