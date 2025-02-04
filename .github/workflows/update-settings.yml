@@ -85,7 +85,7 @@ jobs:
       run: bash Scripts/soundness/docc.sh
 
     - name: Run Linter
-      run: bash Scripts/soundness/lint.sh
+      run: FORMAT_ONLY=true bash Scripts/soundness/lint.sh
 
     - name: Check for changes
       id: check_changes
