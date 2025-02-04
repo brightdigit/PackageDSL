@@ -38,6 +38,29 @@ let package = Package(
 - **Reduced Complexity**: Simplified syntax for defining products, targets, and dependencies
 - **Easy Maintenance**: Update individual components without touching the entire Package.swift file
 
+Table of Contents
+=================
+
+   * [Real World Example](#real-world-example)
+   * [Getting Started](#getting-started)
+      * [1. Basic Setup](#1-basic-setup)
+      * [2. Define Your Components](#2-define-your-components)
+      * [3. Generate Package.swift](#3-generate-packageswift)
+   * [Installation](#installation)
+   * [Usage](#usage)
+      * [Arguments](#arguments)
+      * [Options](#options)
+      * [Examples](#examples)
+   * [FAQ](#faq)
+      * [How about test targets?](#how-about-test-targets)
+      * [How about custom Swift settings?](#how-about-custom-swift-settings)
+      * [How about adding resources?](#how-about-adding-resources)
+      * [How do I specify target-specific platforms?](#how-do-i-specify-target-specific-platforms)
+      * [What's the performance impact?](#whats-the-performance-impact)
+      * [How do I migrate an existing package?](#how-do-i-migrate-an-existing-package)
+   * [Thanks](#thanks)
+   * [Contributing](#contributing)
+
 ## Real World Example
 
 Check out [BushelKit](https://github.com/brightdigit/BushelKit), which uses PackageDSL to manage its complex package structure with multiple products and dependencies. Its `Package/Sources` directory demonstrates how to organize:
@@ -125,6 +148,7 @@ let package = Package(
 ```
 
 ### 3. Generate Package.swift
+
 ```bash
 ./package_generated.sh . --version 5.9
 ```
