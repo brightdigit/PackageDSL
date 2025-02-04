@@ -83,12 +83,12 @@ Create a minimal package structure:
 ```
 MyPackage/
 ├── Package/
-│   └── Sources/
-│       ├── Products/
-│       │   └── AppTarget.swift
-│       ├── Dependencies/
-│       │   └── Alamofire.swift
-│       └── Index.swift
+    └── Sources/
+        ├── Products/
+        │   └── AppTarget.swift
+        ├── Dependencies/
+        │   └── Alamofire.swift
+        └── Index.swift
 ```
 
 ### 2. Define Your Components
