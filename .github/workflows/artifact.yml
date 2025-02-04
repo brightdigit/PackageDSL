@@ -29,5 +29,4 @@ jobs:
         fail_on_unmatched_files: true
         body: |
           This is an automatically generated release containing the latest package.sh script.
-        
-        The previous 'latest' tag will be automatically moved to this release.
+          The previous 'latest' tag will be automatically moved to this release.
