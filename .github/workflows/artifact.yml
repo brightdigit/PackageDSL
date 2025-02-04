@@ -23,4 +23,4 @@ jobs:
       with:
         name: package.sh
         path: package.sh
-        retention-days: 30  # Artifacts will be kept for 30 days 
+        retention-days: 180  # Artifacts will be kept for 30 days 
