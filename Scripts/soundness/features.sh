@@ -22,8 +22,11 @@ create_feature_file() {
 		# Extract the proposal number from the filename
 		local proposal_number="SE-$(echo "$file_name" | cut -d'-' -f1)"
 
+		# Create a temporary file for the documentation processing
+		local temp_file=$(mktemp)
+		
 		# Extract documentation between first and second level 2 headers
-		local documentation=$(echo "$file_content" | awk '
+		echo "$file_content" | awk '
 				BEGIN { in_section=0; doc="" }
 				/^## / { 
 						if (in_section == 0) {
@@ -36,59 +39,63 @@ create_feature_file() {
 				}
 				in_section == 1 { doc = doc $0 "\n" }
 				END { print doc }
-		')
+		' > "$temp_file"
 
 		# Create the Swift file with documentation
-		echo "// swiftlint:disable line_length" > "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		# Format each line of documentation with ///
-		echo "$documentation" | sed '/^$/d' | awk '
-				BEGIN { first_printed = 0 }
-				{
-						if (!first_printed) {
-								line = $0
-								pos = 1
-								in_parentheses = 0
-								period_pos = 0
-								
-								# Scan through the line character by character
-								while (pos <= length(line)) {
-										char = substr(line, pos, 1)
-										if (char == "(") in_parentheses = 1
-										else if (char == ")") in_parentheses = 0
-										else if (char == "." && !in_parentheses) {
-												period_pos = pos
-												break
+		{
+				echo "// swiftlint:disable line_length"
+				echo "///"
+				# Format each line of documentation with ///
+				sed '/^$/d' "$temp_file" | awk '
+						BEGIN { first_printed = 0 }
+						{
+								if (!first_printed) {
+										line = $0
+										pos = 1
+										in_parentheses = 0
+										period_pos = 0
+										
+										# Scan through the line character by character
+										while (pos <= length(line)) {
+												char = substr(line, pos, 1)
+												if (char == "(") in_parentheses = 1
+												else if (char == ")") in_parentheses = 0
+												else if (char == "." && !in_parentheses) {
+														period_pos = pos
+														break
+												}
+												pos++
 										}
-										pos++
-								}
-								
-								if (period_pos > 0) {
-										# Print everything up to and including the period
-										print "/// " substr(line, 1, period_pos)
-										print "///"
-										# Print the rest of the line if anything remains
-										rest = substr(line, period_pos + 1)
-										if (length(rest) > 0) {
-												print "/// " rest
+										
+										if (period_pos > 0) {
+												# Print everything up to and including the period
+												print "/// " substr(line, 1, period_pos)
+												print "///"
+												# Print the rest of the line if anything remains
+												rest = substr(line, period_pos + 1)
+												if (length(rest) > 0) {
+														print "/// " rest
+												}
+												first_printed = 1
+												next
 										}
-										first_printed = 1
-										next
-								}
 						}
 						print "/// " $0
-				}
-		' >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "public struct $feature_name : SwiftSettingFeature {" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "  // swiftlint:enable line_length" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "  /// The current state of the feature." >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "  public var featureState : FeatureState {" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "    return .$feature_state" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "  }" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
-		echo "}" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+				}'
+				echo "///"
+				echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)"
+				echo "///"
+				echo "public struct $feature_name : SwiftSettingFeature {"
+				echo "  // swiftlint:enable line_length"
+				echo "  /// The current state of the feature."
+				echo "  public var featureState : FeatureState {"
+				echo "    return .$feature_state"
+				echo "  }"
+				echo "}"
+		} > "$output_directory/$feature_state_dir/${feature_name}.swift"
+
+		# Clean up
+		rm -f "$temp_file"
 }
 
 # Check if number of arguments is less than 1
