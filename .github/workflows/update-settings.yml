@@ -111,5 +111,5 @@ jobs:
           
           This is an automated PR created by the update-settings workflow.
         branch: update-swift-settings-${{ github.run_number }}-${{ github.run_attempt }}
-        base: main
+        base: ${{ github.ref_name }}
         delete-branch: true 
