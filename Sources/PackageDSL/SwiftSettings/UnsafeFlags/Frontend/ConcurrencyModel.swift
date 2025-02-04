@@ -1,4 +1,4 @@
 /// Passes the flag `-concurrency-model`
 ///
-/// Ustandard
+/// Standard
 public struct ConcurrencyModel: FrontendFlag {}

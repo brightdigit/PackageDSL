@@ -1,8 +1,6 @@
 // swiftlint:disable line_length
 ///
-/// In Swift, there are rules dictating whether the name of a declaration in another module is considered in scope.
-///
-///  For example, if you have a program that uses the `swift-algorithms` package and you want to use the global function [chain()](https://github.com/apple/swift-algorithms/blob/33abb694280321a84aa7dc9806de284afb8ca226/Sources/Algorithms/Chain.swift#L287) then you must write `import Algorithms` in the file that references that function or the compiler will consider it out of scope:
+/// In Swift, there are rules dictating whether the name of a declaration in another module is considered in scope. For example, if you have a program that uses the `swift-algorithms` package and you want to use the global function [chain()](https://github.com/apple/swift-algorithms/blob/33abb694280321a84aa7dc9806de284afb8ca226/Sources/Algorithms/Chain.swift#L287) then you must write `import Algorithms` in the file that references that function or the compiler will consider it out of scope:
 /// ``` swift
 /// // Missing 'import Algorithms'
 /// let chained = chain([1], [2]) // error: Cannot find 'chain' in scope

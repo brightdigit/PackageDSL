@@ -1,7 +1,6 @@
 // swiftlint:disable line_length
 ///
 /// We propose adding a new type constraint `~Escapable` for types that can be locally copied but cannot be assigned or transferred outside of the immediate context.
-///
 /// This complements the `~Copyable` types added with SE-0390 by introducing another set of compile-time-enforced lifetime controls that can be used for safe, highly-performant APIs.
 /// In addition, these types will support lifetime-dependency constraints (being tracked in a future proposal), that allow them to safely hold pointers referring to data stored in other types.
 /// This feature is a key requirement for the proposed `Span` family of types.

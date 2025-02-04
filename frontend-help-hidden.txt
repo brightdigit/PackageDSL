@@ -1,0 +1,1060 @@
+OVERVIEW: Swift frontend
+
+USAGE: swift-frontend -frontend
+
+MODES:
+  -compile-module-from-interface
+                         Treat the (single) input as a swiftinterface and produce a module
+  -dump-ast              Parse and type-check input file(s) and dump AST(s)
+  -dump-interface-hash   Parse input file(s) and dump interface token hash(es)
+  -dump-parse            Parse input file(s) and dump AST(s)
+  -dump-pcm              Dump debugging information about a precompiled Clang module
+  -dump-scope-maps <expanded-or-list-of-line:column>
+                         Parse and type-check input file(s) and dump the scope map(s)
+  -dump-type-info        Output YAML dump of fixed-size types from all imported modules
+  -dump-type-refinement-contexts
+                         Type-check input file(s) and dump type refinement contexts(s)
+  -emit-assembly         Emit assembly file(s) (-S)
+  -emit-bc               Emit LLVM BC file(s)
+  -emit-imported-modules Emit a list of the imported modules
+  -emit-irgen            Emit LLVM IR file(s) before LLVM optimizations
+  -emit-ir               Emit LLVM IR file(s) after LLVM optimizations
+  -emit-object           Emit object file(s) (-c)
+  -emit-pch              Emit PCH for imported Objective-C header file
+  -emit-pcm              Emit a precompiled Clang module from a module map
+  -emit-sibgen           Emit serialized AST + raw SIL file(s)
+  -emit-sib              Emit serialized AST + canonical SIL file(s)
+  -emit-silgen           Emit raw SIL file(s)
+  -emit-sil              Emit canonical SIL file(s)
+  -emit-supported-features
+                         Emit a JSON file including all supported compiler features
+  -interpret             Immediate mode
+  -merge-modules         Merge the input modules without otherwise processing them
+  -parse                 Parse input file(s)
+  -print-ast-decl        Parse and type-check input file(s) and pretty print declarations from AST(s)
+  -print-ast             Parse and type-check input file(s) and pretty print AST(s)
+  -repl                  REPL mode (the default if there is no input file)
+  -resolve-imports       Parse and resolve imports in input file(s)
+  -scan-dependencies     Scan dependencies of the given Swift sources
+  -typecheck-module-from-interface
+                         Treat the (single) input as a swiftinterface and typecheck it
+  -typecheck             Parse and type-check input file(s)
+
+OPTIONS:
+  -access-notes-path <value>
+                          Specify YAML file to override attributes on Swift declarations in this module
+  -alias-module-names-in-module-interface
+                          When emitting a module interface, disambiguate modules using distinct alias names
+  -allowable-client <vers>
+                          Module names that are allowed to import this module
+  -always-compile-output-files
+                          Always compile output files even it might not change the results
+  -analyze-requirement-machine
+                          Print out requirement machine statistics at the end of the compilation job
+  -api-diff-data-dir <path>
+                          Load platform and version specific API migration data files from <path>. Ignored if -api-diff-data-file is specified.
+  -api-diff-data-file <path>
+                          API migration data is from <path>
+  -application-extension-library
+                          Restrict code to those available for App Extension Libraries
+  -application-extension  Restrict code to those available for App Extensions
+  -assert-config <value>  Specify the assert_configuration replacement. Possible values are Debug, Release, Unchecked, DisableReplacement.
+  -assume-single-threaded Assume that code will be executed in a single-threaded environment
+  -autolink-force-load    Force ld to link against this module even if no symbols are used
+  -autolink-library <value>
+                          Add dependent library
+  -backup-module-interface-path <value>
+                          Directory of module interfaces as backups to those from SDKs
+  -bad-file-descriptor-retry-count <value>
+                          Number of retrying opening a file if previous open returns a bad file descriptor error.
+  -batch-scan-input-file <path>
+                          Specify a JSON file containing modules to perform batch dependencies scanning
+  -blocklist-file <path>  The path to a blocklist configuration file
+  -bridging-header-directory-for-print <path>
+                          Directory for bridging header to be printed in compatibility header
+  -bridging-header-pch-key <value>
+                          Cache Key for bridging header pch
+  -bypass-batch-mode-checks
+                          Bypass checks for batch-mode errors.
+  -bypass-resilience-checks
+                          Ignore all checks for module resilience.
+  -cache-compile-job      Enable compiler caching
+  -cache-disable-replay   Skip loading the compilation result from cache
+  -cache-replay-prefix-map <prefix=replacement>
+                          Remap paths when replaying outputs from cache
+  -candidate-module-file <path>
+                          Specify Swift module may be ready to use for an interface
+  -cas-backend-mode=native|casid|verify
+                          CASBackendMode for output kind
+  -cas-backend            Enable using CASBackend for object file output
+  -cas-emit-casid-file    Emit .casid file next to object file when CAS Backend is enabled
+  -cas-fs <cas-id>        Root CASID for CAS FileSystem
+  -cas-path <path>        Path to CAS
+  -cas-plugin-option <name>=<option>
+                          Option pass to CAS Plugin
+  -cas-plugin-path <path> Path to CAS Plugin
+  -check-api-availability-only
+                          Deprecated, has no effect
+  -check-onone-completeness
+                          Print errors if the compile OnoneSupport module is missing symbols
+  -checked-async-objc-bridging=<value>
+                          Control whether checked continuations are used when bridging async calls from Swift to ObjC: 'on', 'off' 
+  -clang-build-session-file <value>
+                          Use the last modification time of <file> as the underlying Clang build session timestamp
+  -clang-header-expose-decls=all-public|has-expose-attr
+                          Which declarations should be exposed in the generated clang header.
+  -clang-header-expose-module <imported-module-name>=<generated-header-name>
+                          Allow the compiler to assume that APIs from the specified module are exposed to C/C++/Objective-C in another generated header, so that APIs in the current module that depend on declarations from the specified module can be exposed in the generated header.
+  -clang-include-tree-root <cas-id>
+                          Clang Include Tree CASID
+  -clang-scanner-module-cache-path <value>
+                          Specifies the Clang dependency scanner module cache path
+  -clang-target <value>   Separately set the target we should use for internal Clang instance
+  -code-complete-call-pattern-heuristics
+                          Use heuristics to guess whether we want call pattern completions
+  -code-complete-inits-in-postfix-expr
+                          Include initializers when completing a postfix expression
+  -color-diagnostics      Print diagnostics in color
+  -concurrency-model standard|task-to-thread
+                          Which concurrency model is used.  Defaults to standard.
+  -conditional-runtime-records
+                          Allow removal of runtime metadata records (public types, protocol conformances) based on whether they're used or unused
+  -const-gather-protocols-file <path>
+                          Specify a list of protocols for extraction of conformances' const values'
+  -continue-building-after-errors
+                          Continue building, even after errors are encountered
+  -coverage-prefix-map <prefix=replacement>
+                          Remap source paths in coverage info
+  -cross-module-optimization
+                          Perform cross-module optimization
+  -crosscheck-unqualified-lookup
+                          Compare legacy DeclContext- to ASTScope-based unqualified name lookup (for debugging)
+  -cxx-interop-getters-setters-as-properties
+                          Import getters and setters as computed properties in Swift
+  -cxx-interop-use-opaque-pointer-for-moveonly
+                          Testing flag that will be eliminated soon. Do not use.
+  -cxx-interoperability-mode=<value>
+                          Enables C++ interoperability; pass 'default' to enable or 'off' to disable
+  -debug-assert-after-parse
+                          Force an assertion failure after parsing
+  -debug-assert-immediately
+                          Force an assertion failure immediately
+  -debug-constraints-attempt <value>
+                          Debug the constraint solver at a given attempt
+  -debug-constraints-on-line <line>
+                          Debug the constraint solver for expressions on <line>
+  -debug-constraints      Debug the constraint-based type checker
+  -debug-crash-after-parse
+                          Force a crash after parsing
+  -debug-crash-immediately
+                          Force a crash immediately
+  -debug-cycles           Print out debug dumps when cycles are detected in evaluation
+  -debug-diagnostic-names Include diagnostic names when printing
+  -debug-emit-invalid-swiftinterface-syntax
+                          Write an invalid declaration into swiftinterface files
+  -debug-forbid-typecheck-prefix <value>
+                          Triggers llvm fatal_error if typechecker tries to typecheck a decl with the provided prefix name
+  -debug-generic-signatures
+                          Debug generic signatures
+  -debug-info-format=<value>
+                          Specify the debug info format type to either 'dwarf' or 'codeview'
+  -debug-info-store-invocation
+                          Emit the compiler invocation in the debug info.
+  -debug-inverse-requirements
+                          Print real requirements in -debug_generic_signatures output
+  -debug-prefix-map <prefix=replacement>
+                          Remap source paths in debug info
+  -debug-requirement-machine=<value>
+                          Fine-grained debug output from the generics implementation
+  -debug-time-expression-type-checking
+                          Dumps the time it takes to type-check each expression
+  -debug-time-function-bodies
+                          Dumps the time it takes to type-check each function body
+  -debugger-support       Process swift code as if running in the debugger
+  -debugger-testing-transform
+                          Instrument the code with calls to an intrinsic that record the expected values of local variables so they can be compared against the results from the debugger.
+  -define-availability <macro>
+                          Define an availability macro in the format 'macroName : iOS 13.0, macOS 10.15'
+  -dependency-scan-cache-path <value>
+                          The path to output the dependency scanner's internal state.
+  -diagnostic-documentation-path <path>
+                          Path to diagnostic documentation resources
+  -diagnostic-style <style>
+                          The formatting style used when printing diagnostics ('swift' or 'llvm')
+  -diagnostics-editor-mode
+                          Diagnostics will be used in editor
+  -direct-clang-cc1-module-build
+                          Use the specified -Xcc options to build a PCM by using Clang frontend directly, bypassing the Clang driver
+  -disable-access-control Don't respect access control restrictions
+  -disable-actor-data-race-checks
+                          Disable runtime checks for actor data races
+  -disable-alias-module-names-in-module-interface
+                          When emitting a module interface, disable disambiguating modules using distinct alias names
+  -disable-all-autolinking
+                          Disable all Swift autolink directives
+  -disable-arc-opts       Don't run SIL ARC optimization passes.
+  -disable-ast-verifier   Do not run the AST verifier during compilation. NOTE: This lets the user override the default behavior on whether or not the ASTVerifier is run. The default behavior is to run the verifier when asserts are enabled and not run it when asserts are disabled. NOTE: Can not be used if enable-ast-verifier is used as well
+  -disable-autolink-frameworks
+                          Disable autolinking against all frameworks
+  -disable-autolink-framework <value>
+                          Disable autolinking against the provided framework
+  -disable-autolink-library <value>
+                          Disable autolinking against the provided library
+  -disable-autolinking-runtime-compatibility-concurrency
+                          Do not use autolinking for the concurrency runtime compatibility library
+  -disable-autolinking-runtime-compatibility-dynamic-replacements
+                          Do not use autolinking for the dynamic replacement runtime compatibility library
+  -disable-autolinking-runtime-compatibility
+                          Do not use autolinking for runtime compatibility libraries
+  -disable-availability-checking
+                          Disable checking for potentially unavailable APIs
+  -disable-batch-mode     Disable combining frontend jobs into batches
+  -disable-building-interface
+                          Disallow building binary module from textual interface
+  -disable-clang-spi      Don't import Clang SPIs as Swift SPIs
+  -disable-clangimporter-source-import
+                          Disable ClangImporter and forward all requests straight the DWARF importer.
+  -disable-cmo            Disable cross-module optimization
+  -disable-collocate-metadata-functions
+                          Disable collocate metadata functions
+  -disable-colocate-type-descriptors
+                          Disable colocate type descriptors
+  -disable-concrete-type-metadata-mangled-name-accessors
+                          Disable concrete type metadata access by mangled name
+  -disable-constraint-solver-performance-hacks
+                          Disable all the hacks in the constraint solver
+  -disable-cross-import-overlay-search
+                          Disable searching for cross import overlay file
+  -disable-cross-import-overlays
+                          Do not automatically import declared cross-import overlays.
+  -disable-cxx-interop-requirement-at-import
+                          Do not require C++ interoperability to be enabled when importing a Swift module that enables C++ interoperability
+  -disable-debugger-shadow-copies
+                          Disable debugger shadow copies of local variables.This option is only useful for testing the compiler.
+  -disable-deserialization-recovery
+                          Don't attempt to recover from missing xrefs (etc) in swiftmodules
+  -disable-deserialization-safety
+                          Don't avoid reading potentially unsafe decls in swiftmodules
+  -disable-diagnostic-passes
+                          Don't run diagnostic passes
+  -disable-dynamic-actor-isolation
+                          Disable dynamic actor isolation checks
+  -disable-emit-generic-class-ro_t-list
+                          Disable emission of a section with references to class_ro_t of generic class patterns
+  -disable-experimental-clang-importer-diagnostics
+                          Disable experimental diagnostics when importing C, C++, and Objective-C libraries
+  -disable-experimental-lifetime-dependence-inference
+                          Disable experimental lifetime dependence inference
+  -disable-experimental-opened-existential-types
+                          Disable experimental support for implicitly opened existentials
+  -disable-experimental-parser-round-trip
+                          Disable round trip through the new swift parser
+  -disable-experimental-string-processing
+                          Disable experimental string processing
+  -disable-fragile-relative-protocol-tables
+                          Disable relative protocol witness tables
+  -disable-generic-metadata-prespecialization
+                          Do not statically specialize metadata for generic types at types that are known to be used in source.
+  -disable-implicit-backtracing-module-import
+                          Disable the implicit import of the _Backtracing module.
+  -disable-implicit-concurrency-module-import
+                          Disable the implicit import of the _Concurrency module.
+  -disable-implicit-cxx-module-import
+                          Disable the implicit import of the C++ Standard Library module.
+  -disable-implicit-string-processing-module-import
+                          Disable the implicit import of the _StringProcessing module.
+  -disable-implicit-swift-modules
+                          Disable building Swift modules implicitly by the compiler
+  -disable-import-ptrauth-field-function-pointers
+                          Disable import of custom ptrauth qualified field function pointers
+  -disable-incremental-imports
+                          Disable cross-module incremental build metadata and driver scheduling for Swift modules
+  -disable-incremental-llvm-codegen
+                          Disable incremental llvm code generation.
+  -disable-infer-public-sendable
+                          Disable inference of Sendable conformances for public structs and enums
+  -disable-interface-lock Don't lock interface file when building module
+  -disable-invalid-ephemeralness-as-error
+                          Diagnose invalid ephemeral to non-ephemeral conversions as warnings
+  -disable-large-loadable-types-reg2mem
+                          Disable large loadable types register to memory pass
+  -disable-layout-string-value-witnesses-instantiation
+                          Disable runtime instantiation of layout string value witnesses for generic types
+  -disable-layout-string-value-witnesses
+                          Disable layout string based value witnesses
+  -disable-legacy-type-info
+                          Completely disable legacy type layout
+  -disable-lifetime-dependence-diagnostics
+                          Disable lifetime dependence diagnostics for Nonescapable types.
+  -disable-llvm-optzns    Don't run LLVM optimization passes
+  -disable-llvm-value-names
+                          Don't add names to local values in LLVM IR
+  -disable-llvm-verify    Don't run the LLVM IR verifier.
+  -disable-migrator-fixits
+                          Disable the Migrator phase which automatically applies fix-its
+  -disable-modules-validate-system-headers
+                          Disable validating system headers in the Clang importer
+  -disable-named-lazy-import-as-member-loading
+                          Import all of a type's import-as-member globals together, as Swift 5.10 and earlier did; temporary workaround for modules that are sensitive to this change
+  -disable-named-lazy-member-loading
+                          Disable per-name lazy member loading (obsolete)
+  -disable-new-llvm-pass-manager
+                          Disable the new llvm pass manager
+  -disable-new-operator-lookup
+                          Disable the new operator decl and precedencegroup lookup behavior
+  -disable-nonfrozen-enum-exhaustivity-diagnostics
+                          Allow switches over non-frozen enums without catch-all cases
+  -disable-nskeyedarchiver-diagnostics
+                          Allow classes with unstable mangled names to adopt NSCoding
+  -disable-objc-attr-requires-foundation-module
+                          Disable requiring uses of @objc to require importing the Foundation module
+  -disable-objc-interop   Disable Objective-C interop code generation and config directives
+  -disable-objective-c-protocol-symbolic-references
+                          Disable objective-c protocol symbolic references
+  -disable-ossa-opts      Don't run SIL OSSA optimization passes.
+  -disable-playground-transform
+                          Disable playground transformation
+  -disable-preallocated-instantiation-caches
+                          Avoid preallocating metadata instantiation caches in globals
+  -disable-previous-implementation-calls-in-dynamic-replacements
+                          Disable calling the previous implementation in dynamic replacements
+  -disable-print-missing-imports-in-module-interface
+                          Disable adding to the module interface imports used from API and missing from the sources
+  -disable-print-package-name-for-non-package-interface
+                          Disable adding package name to public or private interface
+  -disable-readonly-static-objects
+                          Avoid allocating static objects in a read-only data section
+  -disable-reflection-metadata
+                          Disable emission of reflection metadata for nominal types
+  -disable-reflection-names
+                          Disable emission of names of stored properties and enum cases inreflection metadata
+  -disable-relative-protocol-witness-tables
+                          Disable relative protocol witness tables
+  -disable-requirement-machine-concrete-contraction
+                          Disable preprocessing pass to eliminate conformance requirements on generic parameters which are made concrete
+  -disable-requirement-machine-loop-normalization
+                          Disable stronger minimization algorithm, for debugging only
+  -disable-requirement-machine-reuse
+                          Disable re-use of requirement machines for minimization, for debugging only
+  -disable-round-trip-debug-types
+                          Disables verification of debug info mangling
+  -disable-sandbox        Disable using the sandbox when executing subprocesses
+  -disable-sending-args-and-results-with-region-based-isolation
+                          Disable sending args and results when region based isolation is enabled. Only enabled with asserts
+  -disable-sil-opaque-values
+                          Disable SIL Opaque Values
+  -disable-sil-ownership-verifier
+                          Do not verify ownership invariants during SIL Verification 
+  -disable-sil-partial-apply
+                          Disable use of partial_apply in SIL generation
+  -disable-sil-perf-optzns
+                          Don't run SIL performance optimization passes
+  -disable-stack-protector
+                          Disable the stack-protector
+  -disable-standard-substitutions-in-reflection-mangling
+                          Disable referencing stdlib symbols via mangled names in reflection mangling
+  -disable-subst-sil-function-types
+                          Disable substituted function types for SIL type lowering of function values
+  -disable-swift-bridge-attr
+                          Disable using the swift bridge attribute
+  -disable-swift-specific-llvm-optzns
+                          Don't run Swift specific LLVM optimization passes.
+  -disable-swift3-objc-inference
+                          Deprecated, has no effect
+  -disable-target-os-checking
+                          Disable checking the target OS of serialized modules
+  -disable-testable-attr-requires-testable-module
+                          Disable checking of @testable
+  -disable-type-layout    Disable type layout based lowering
+  -disable-typo-correction
+                          Disable typo correction
+  -disable-verify-exclusivity
+                          Disable verification of access markers used to enforce exclusivity.
+  -downgrade-typecheck-interface-error
+                          Downgrade error to warning when typechecking emitted module interfaces
+  -dump-api-path <value>  The path to output swift interface files for the compiled source files
+  -dump-clang-diagnostics Dump Clang diagnostics to stderr
+  -dump-clang-lookup-tables
+                          Dump the importer's Swift-name-to-Clang-name lookup tables to stderr
+  -dump-jit <value>       Dump JIT contents
+  -dump-macro-expansions  Dumps the results of each macro expansion
+  -dump-migration-states-dir <path>
+                          Dump the input text, output text, and states for migration to <path>
+  -dump-requirement-machine
+                          Enables dumping rewrite systems from the generics implementation
+  -dump-type-witness-systems
+                          Enables dumping type witness systems from associated type inference
+  -dump-usr               Dump USR for each declaration reference
+  -dwarf-version=<version>
+                          DWARF debug info version to produce if requested
+  -D <value>              Marks a conditional compilation flag as true
+  -embed-bitcode-marker   Embed placeholder LLVM IR data as a marker
+  -embed-bitcode          Embed LLVM IR bitcode as data
+  -embed-tbd-for-module <value>
+                          Embed symbols from the module in the emitted tbd file
+  -emit-abi-descriptor-path <path>
+                          Output the ABI descriptor of current module to <path>
+  -emit-api-descriptor-path <path>
+                          Output a JSON file describing the module's API to <path>
+  -emit-clang-header-nonmodular-includes
+                          Augment emitted Objective-C header with textual imports for every included modular import
+  -emit-clang-header-path <value>
+                          Emit an Objective-C and C++ header file to <path>
+  -emit-const-values-path <path>
+                          Emit the extracted compile-time known values to <path>
+  -emit-dependencies-path <path>
+                          Output basic Make-compatible dependencies file to <path>
+  -emit-dependencies      Emit basic Make-compatible dependencies files
+  -emit-extension-block-symbols
+                          Emit 'swift.extension' symbols for extensions to external types instead of directly associating members and conformances with the extended nominal when generating symbol graphs
+  -emit-fine-grained-dependency-sourcefile-dot-files
+                          Emit dot files for every source file.
+  -emit-fixits-path <path>
+                          Output compiler fixits as source edits to <path>
+  -emit-loaded-module-trace-path <path>
+                          Emit the loaded module trace JSON to <path>
+  -emit-loaded-module-trace
+                          Emit a JSON file containing information about what modules were loaded
+  -emit-macro-expansion-files <value>
+                          Specify when to emit macro expansion file: 'none', 'debug', or 'diagnostics'
+  -emit-migrated-file-path <path>
+                          Emit the migrated source file to <path>
+  -emit-module-doc-path <path>
+                          Output module documentation file <path>
+  -emit-module-doc        Emit a module documentation file based on documentation comments
+  -emit-module-interface-path <path>
+                          Output module interface file to <path>
+  -emit-module-path <path>
+                          Emit an importable module to <path>
+  -emit-module-semantic-info-path <path>
+                          Output semantic info of current module to <path>
+  -emit-module-source-info-path <path>
+                          Output module source info file to <path>
+  -emit-module-source-info
+                          Output module source info file
+  -emit-module-summary-path <path>
+                          Output module summary file to <path>
+  -emit-module            Emit an importable module
+  -emit-objc-header-path <path>
+                          Emit an Objective-C header file to <path>
+  -emit-objc-header       Emit an Objective-C header file
+  -emit-package-module-interface-path <path>
+                          Output package module interface file to <path>
+  -emit-private-module-interface-path <path>
+                          Output private module interface file to <path>
+  -emit-reference-dependencies-path <path>
+                          Output Swift-style dependencies file to <path>
+  -emit-reference-dependencies
+                          Emit a Swift-style dependencies file
+  -emit-remap-file-path <path>
+                          Emit the replacement map describing Swift Migrator changes to <path>
+  -emit-sorted-sil        When printing SIL, print out all sil entities sorted by name to ease diffing
+  -emit-stack-promotion-checks
+                          Emit runtime checks for correct stack promotion of objects.
+  -emit-symbol-graph-dir <dir>
+                          Emit a symbol graph to directory <dir>
+  -emit-symbol-graph      Emit a symbol graph
+  -emit-tbd-path <path>   Emit the TBD file to <path>
+  -emit-tbd               Emit a TBD file
+  -emit-verbose-sil       Emit locations during SIL emission
+  -empty-abi-descriptor   Avoid printing actual module content into ABI descriptor file
+  -enable-access-control  Respect access control restrictions
+  -enable-actor-data-race-checks
+                          Emit runtime checks for actor data races
+  -enable-anonymous-context-mangled-names
+                          Enable emission of mangled names in anonymous context descriptors
+  -enable-ast-verifier    Run the AST verifier during compilation. NOTE: This lets the user override the default behavior on whether or not the ASTVerifier is run. The default behavior is to run the verifier when asserts are enabled and not run it when asserts are disabled. NOTE: Can not be used if disable-ast-verifier is used as well
+  -enable-autolinking-runtime-compatibility-bytecode-layouts
+                          Enable autolinking for the bytecode layouts runtime compatibility library
+  -enable-bare-slash-regex
+                          Enable the use of forward slash regular-expression literal syntax
+  -enable-batch-mode      Enable combining frontend jobs into batches
+  -enable-builtin-module  Enables the explicit import of the Builtin module
+  -enable-cmo-everything  Perform cross-module optimization on everything (all APIs). This is the same level of serialization as Embedded Swift.
+  -enable-collocate-metadata-functions
+                          Enable collocate metadata functions
+  -enable-colocate-type-descriptors
+                          Enable colocate type descriptors
+  -enable-copy-propagation=true|requested-passes-only|false
+                          Whether to enable copy propagation
+  -enable-copy-propagation
+                          Run SIL copy propagation with lexical lifetimes to shorten object lifetimes while preserving variable lifetimes.
+  -enable-cross-import-overlays
+                          Automatically import declared cross-import overlays.
+  -enable-default-cmo     Perform conservative cross-module optimization
+  -enable-deserialization-recovery
+                          Attempt to recover from missing xrefs (etc) in swiftmodules
+  -enable-deserialization-safety
+                          Avoid reading potentially unsafe decls in swiftmodules
+  -enable-destroy-hoisting=true|false
+                          Whether to enable destroy hoisting
+  -enable-deterministic-check
+                          Check compiler output determinisim by running it twice
+  -enable-dynamic-replacement-chaining
+                          Enable chaining of dynamic replacements
+  -enable-emit-generic-class-ro_t-list
+                          Enable emission of a section with references to class_ro_t of generic class patterns
+  -enable-experimental-additive-arithmetic-derivation
+                          Enable experimental 'AdditiveArithmetic' derived conformances
+  -enable-experimental-async-demotion
+                          Enables an optimization pass to demote async functions.
+  -enable-experimental-async-top-level
+                          Enable experimental concurrency in top-level code
+  -enable-experimental-concise-pound-file
+                          Enable experimental concise '#file' identifier
+  -enable-experimental-concurrency
+                          Enable experimental concurrency model
+  -enable-experimental-cxx-interop
+                          Enable experimental C++ interop code generation and config directives
+  -enable-experimental-distributed
+                          Enable experimental 'distributed' actors and functions
+  -enable-experimental-eager-clang-module-diagnostics
+                          Enable experimental eager diagnostics reporting on the importability of all referenced C, C++, and Objective-C libraries
+  -enable-experimental-feature <value>
+                          Enable an experimental feature
+  -enable-experimental-flow-sensitive-concurrent-captures
+                          Enable flow-sensitive concurrent captures
+  -enable-experimental-forward-mode-differentiation
+                          Enable experimental forward mode differentiation
+  -enable-experimental-lifetime-dependence-inference
+                          Enable experimental lifetime dependence inference
+  -enable-experimental-move-only
+                          Enable experimental move only
+  -enable-experimental-named-opaque-types
+                          Enable experimental support for named opaque result types
+  -enable-experimental-opaque-type-erasure
+                          Type-erases opaque types that conform to @_typeEraser protocols
+  -enable-experimental-opened-existential-types
+                          Enable experimental support for implicitly opened existentials
+  -enable-experimental-pairwise-build-block
+                          Enable experimental pairwise 'buildBlock' for result builders
+  -enable-experimental-static-assert
+                          Enable experimental #assert
+  -enable-experimental-string-processing
+                          Enable experimental string processing
+  -enable-explicit-existential-types
+                          Enable experimental support for explicit existential types
+  -enable-fragile-relative-protocol-tables
+                          Enable relative protocol witness tables
+  -enable-implicit-backtracing-module-import
+                          Enable the implicit import of the _Backtracing module.
+  -enable-implicit-dynamic
+                          Add 'dynamic' to all declarations
+  -enable-import-ptrauth-field-function-pointers
+                          Enable import of custom ptrauth qualified field function pointers
+  -enable-incremental-imports
+                          Enable cross-module incremental build metadata and driver scheduling for Swift modules
+  -enable-infer-public-sendable
+                          Enable inference of Sendable conformances for public structs and enums
+  -enable-invalid-ephemeralness-as-error
+                          Diagnose invalid ephemeral to non-ephemeral conversions as errors
+  -enable-large-loadable-types-reg2mem
+                          Enable large loadable types register to memory pass
+  -enable-layout-string-value-witnesses-instantiation
+                          Enable runtime instantiation of layout string value witnesses for generic types
+  -enable-layout-string-value-witnesses
+                          Enable layout string based value witnesses
+  -enable-lexical-lifetimes=true|false
+                          Whether to enable lexical lifetimes
+  -enable-lexical-lifetimes
+                          Enable lexical lifetimes
+  -enable-library-evolution
+                          Build the module to allow binary-compatible library evolution
+  -enable-lifetime-dependence-diagnostics
+                          Enable lifetime dependence diagnostics for Nonescapable types.
+  -enable-llvm-value-names
+                          Add names to local values in LLVM IR
+  -enable-llvm-vfe        Use LLVM IR Virtual Function Elimination on Swift class virtual tables
+  -enable-llvm-wme        Use LLVM IR Witness Method Elimination on Swift protocol witness tables
+  -enable-move-inout-stack-protector
+                          Enable the stack protector by moving values to temporaries
+  -enable-new-llvm-pass-manager
+                          Enable the new llvm pass manager
+  -enable-new-operator-lookup
+                          Enable the new operator decl and precedencegroup lookup behavior
+  -enable-nonfrozen-enum-exhaustivity-diagnostics
+                          Diagnose switches over non-frozen enums without catch-all cases
+  -enable-nskeyedarchiver-diagnostics
+                          Diagnose classes with unstable mangled names adopting NSCoding
+  -enable-objc-attr-requires-foundation-module
+                          Enable requiring uses of @objc to require importing the Foundation module
+  -enable-objc-interop    Enable Objective-C interop code generation and config directives
+  -enable-objective-c-protocol-symbolic-references
+                          Enable objective-c protocol symbolic references
+  -enable-operator-designated-types
+                          Enable operator designated types
+  -enable-ossa-complete-lifetimes
+                          Require linear OSSA lifetimes after SILGen
+  -enable-ossa-modules    Always serialize SIL in ossa form. If this flag is not passed in, when optimizing ownership will be lowered before serializing SIL
+  -enable-pack-metadata-stack-promotion=true|false
+                          Whether to skip heapifying stack metadata packs when possible.
+  -enable-pack-metadata-stack-promotion
+                          Skip heapifying stack metadata packs when possible.
+  -enable-private-imports Allows this module's internal and private API to be accessed
+  -enable-relative-protocol-witness-tables
+                          Enable relative protocol witness tables
+  -enable-requirement-machine-opaque-archetypes
+                          Enable more correct opaque archetype support, which is off by default because it might fail to produce a convergent rewrite system
+  -enable-resilience      Deprecated, use -enable-library-evolution instead
+  -enable-round-trip-debug-types
+                          Enables verification of debug info mangling
+  -enable-sil-opaque-values
+                          Enable SIL Opaque Values
+  -enable-single-module-llvm-emission
+                          Emit LLVM IR into a single LLVM module in multithreaded mode.
+  -enable-source-import   Enable importing of Swift source files
+  -enable-spec-devirt     Enable speculative devirtualization pass.
+  -enable-stack-protector Enable the stack protector
+  -enable-swift3-objc-inference
+                          Deprecated, has no effect
+  -enable-target-os-checking
+                          Enable checking the target OS of serialized modules
+  -enable-testable-attr-requires-testable-module
+                          Enable checking of @testable
+  -enable-testing         Allows this module's internal API to be accessed for testing
+  -enable-throw-without-try
+                          Allow throwing function calls without 'try'
+  -enable-type-layout     Enable type layout based lowering
+  -enable-upcoming-feature <value>
+                          Enable a feature that will be introduced in an upcoming language version
+  -enable-verify-exclusivity
+                          Enable verification of access markers used to enforce exclusivity.
+  -enable-volatile-modules
+                          Load Swift modules in memory
+  -enforce-exclusivity=<enforcement>
+                          Enforce law of exclusivity
+  -entry-point-function-name <string>
+                          Name of the entry point function
+  -experimental-allow-module-with-compiler-errors
+                          Attempt to output .swiftmodule, regardless of compilation errors
+  -experimental-allow-non-resilient-access
+                          Allow non-resilient access by generating all contents besides exportable decls
+  -experimental-c-foreign-reference-types
+                          Enable experimental C foreign references types (with reference coutning).
+  -experimental-clang-importer-direct-cc1-scan
+                          Enables swift driver to construct swift-frontend invocations using -direct-clang-cc1-module-build
+  -experimental-force-workaround-broken-modules
+                          Attempt unsafe recovery for imported modules with broken modularization
+  -experimental-hermetic-seal-at-link
+                          Library code can assume that all clients are visible at linktime, and aggressively strip unused code
+  -experimental-lazy-typecheck
+                          Type-check lazily as needed to produce requested outputs
+  -experimental-one-way-closure-params
+                          Enable experimental support for one-way closure parameters
+  -experimental-package-bypass-resilience
+                          Enable optimization to bypass resilience within a package
+  -experimental-package-cmo
+                          Enable optimization to perform defalut CMO within a package boundary
+  -experimental-package-interface-load
+                          Enables loading a package interface if in the same package specified with package-name
+  -experimental-performance-annotations
+                          Deprecated, has no effect
+  -experimental-platform-c-calling-convention <value>
+                          Which calling convention is used to perform non-swift calls. Defaults to llvm's standard C calling convention.
+  -experimental-print-full-convention
+                          When emitting a module interface or SIL, emit additional @convention arguments, regardless of whether they were written in the source. Also requires -use-clang-function-types to be enabled.
+  -experimental-skip-all-function-bodies
+                          Skip type-checking function bodies and all SIL generation
+  -experimental-skip-non-exportable-decls
+                          Skip decls that are not exported to clients
+  -experimental-skip-non-inlinable-function-bodies-without-types
+                          Skip work on non-inlinable function bodies that do not declare nested types
+  -experimental-skip-non-inlinable-function-bodies
+                          Skip type-checking and SIL generation for non-inlinable function bodies
+  -experimental-spi-imports
+                          Enable experimental support for SPI imports
+  -experimental-spi-only-imports
+                          Enable use of @_spiOnly imports
+  -explicit-interface-module-build
+                          Use the specified command-line to build the module from interface, instead of flags specified in the interface
+  -explicit-swift-module-map-file <path>
+                          Specify a JSON file containing information of explicit Swift modules
+  -export-as <value>      Module name to use when referenced in clients module interfaces
+  -external-pass-pipeline-filename <pass_pipeline_file>
+                          Use the pass pipeline defined by <pass_pipeline_file>
+  -external-plugin-path <path>#<plugin-server-path>
+                          Add directory to the plugin search path with a plugin server executable
+  -file-compilation-dir <path>
+                          The compilation directory to embed in the debug info. Coverage mapping is not supported yet.
+  -file-prefix-map <prefix=replacement>
+                          Remap source paths in debug, coverage, and index info
+  -filelist <value>       Specify source inputs in a file rather than on the command line
+  -fixit-all              Apply all fixits from diagnostics without any filtering
+  -force-public-linkage   Force public linkage for private symbols. Used by LLDB.
+  -force-struct-type-layouts
+                          Force type layout based lowering for structs
+  -framework <value>      Specifies a framework which should be linked against
+  -frontend-parseable-output
+                          Emit textual output in a parseable format
+  -Fsystem <value>        Add directory to system framework search path
+  -function-sections      Emit functions to separate sections.
+  -F <value>              Add directory to framework search path
+  -gdwarf-types           Emit full DWARF type info.
+  -gline-tables-only      Emit minimal debug info for backtraces only
+  -gnone                  Don't emit debug info
+  -group-info-path <value>
+                          The path to collect the group information of the compiled module
+  -gsil                   Deprecated, use '-sil-based-debuginfo' instead
+  -g                      Emit debug info. This is the preferred setting for debugging with LLDB.
+  -help-hidden            Display available options, including hidden options
+  -help                   Display available options
+  -ignore-always-inline   Ignore @inline(__always) attributes.
+  -ignore-module-source-info
+                          Avoid getting source location from .swiftsourceinfo files
+  -import-cf-types        Recognize and import CF types as class types
+  -import-module <value>  Implicitly import the specified module
+  -import-objc-header <value>
+                          Implicitly imports an Objective-C header file
+  -import-prescan         When performing a dependency scan, only identify all imports of the main Swift module sources
+  -import-underlying-module
+                          Implicitly imports the Objective-C half of a module
+  -include-spi-symbols    Add symbols with SPI information to the symbol graph
+  -index-ignore-clang-modules
+                          Avoid indexing clang modules (pcms)
+  -index-ignore-stdlib    Avoid emitting index data for the standard library.
+  -index-include-locals   Include local definitions/references in the produced index data.
+  -index-store-path <path>
+                          Store indexing data to <path>
+  -index-system-modules   Emit index data for imported serialized swift system modules
+  -index-unit-output-path-filelist <value>
+                          Specify index unit output paths in a file rather than on the command line
+  -index-unit-output-path <path>
+                          Use <path> as the output path in the produced index data.
+  -input-file-key <value> Cache Key for input file
+  -internalize-at-link    Allow internalizing public symbols and vtables at link time (assume all client code of public types is part of the same link unit, or that external symbols are explicitly requested via -exported_symbols_list)
+  -I <value>              Add directory to the import search path
+  -library-level <level>  Library distribution level 'api', 'spi' or 'other' (the default)
+  -load-dependency-scan-cache
+                          After performing a dependency scan, serialize the scanner's internal state.
+  -load-plugin-executable <path>#<module-names>
+                          Path to a compiler plugin executable and a comma-separated list of module names where the macro types are declared
+  -load-plugin-library <path>
+                          Path to a dynamic library containing compiler plugins such as macros
+  -locale <locale-code>   Choose a language for diagnostic messages
+  -localization-path <path>
+                          Path to localized diagnostic messages directory
+  -lto-library <lto-library>
+                          Perform LTO with <lto-library>
+  -lto=<value>            Specify the LTO type to either 'llvm-thin' or 'llvm-full'
+  -L <value>              Add directory to library link search path
+  -l <value>              Specifies a library which should be linked against
+  -migrate-keep-objc-visibility
+                          When migrating, add '@objc' to declarations that would've been implicitly visible in Swift 3
+  -migrator-update-sdk    Does nothing. Temporary compatibility flag for Xcode.
+  -migrator-update-swift  Does nothing. Temporary compatibility flag for Xcode.
+  -min-runtime-version <value>
+                          Specify the minimum runtime version to build force on non-Darwin systems
+  -module-abi-name <value>
+                          ABI name to use for the contents of this module
+  -module-alias <alias_name=real_name>
+                          If a source file imports or references module <alias_name>, the <real_name> is used for the contents of the file
+  -module-cache-path <value>
+                          Specifies the module cache path
+  -module-can-import-version <moduleName> <version> <underlyingVersion>
+                          Specify canImport module and versions
+  -module-can-import <moduleName>
+                          Specify canImport module name
+  -module-interface-preserve-types-as-written
+                          When emitting a module interface, preserve types as they were written in the source
+  -module-link-name <value>
+                          Library to link against when using this module
+  -module-load-mode only-interface|prefer-interface|prefer-serialized|only-serialized
+                          Module loading mode
+  -module-name <value>    Name of the module to build
+  -new-driver-path <path> Path of the new driver to be used
+  -no-allocations         Diagnose any code that needs to heap allocate (classes, closures, etc.)
+  -no-clang-include-tree  Do not use clang include tree, fallback to use CAS filesystem to build clang modules
+  -no-clang-module-breadcrumbs
+                          Don't emit DWARF skeleton CUs for imported Clang modules. Use this when building a redistributable static archive.
+  -no-color-diagnostics   Do not print diagnostics in color
+  -no-scanner-module-validation
+                          Do not validate binary modules in scanner and delegate the validation to swift-frontend
+  -no-serialize-debugging-options
+                          Never serialize options for debugging (default: only for apps)
+  -no-strict-implicit-module-context
+                          Disable the strict forwarding of compilation context to downstream implicit module dependencies
+  -no-verify-emitted-module-interface
+                          Don't check that module interfaces emitted during compilation typecheck
+  -no-warnings-as-errors  Don't treat warnings as errors
+  -no-whole-module-optimization
+                          Disable optimizing input files together instead of individually
+  -nostartfiles           Do not link in the Swift language startup routines
+  -nostdimport            Don't search the standard library import path for modules
+  -num-threads <n>        Enable multi-threading and specify number of threads
+  -omit-extension-block-symbols
+                          Directly associate members and conformances with the extended nominal when generating symbol graphs instead of emitting 'swift.extension' symbols for extensions to external types
+  -Onone                  Compile without any optimization
+  -Oplayground            Compile with optimizations appropriate for a playground
+  -Osize                  Compile with optimizations and target small code size
+  -Ounchecked             Compile with optimizations and remove runtime safety checks
+  -output-filelist <value>
+                          Specify outputs in a file rather than on the command line
+  -O                      Compile with optimizations
+  -o <file>               Write output to <file>
+  -package-description-version <vers>
+                          The version number to be applied on the input for the PackageDescription availability kind
+  -package-name <value>   Name of the package the module belongs to
+  -parallel-scan          Perform dependency scanning in-parallel.
+  -parse-as-library       Parse the input file(s) as libraries, not scripts
+  -parse-sil              Parse the input file as SIL code, not Swift source
+  -parse-stdlib           Parse the input file(s) as the Swift standard library
+  -pc-macro               Apply the 'program counter simulation' macro
+  -pch-disable-validation Disable validating the persistent PCH
+  -pch-output-dir <value> Directory to persist automatically created precompiled bridging headers
+  -placeholder-dependency-module-map-file <path>
+                          Specify a JSON file containing information of external Swift module dependencies
+  -platform-availability-inheritance-map-path <path>
+                          Path of the platform inheritance platform map
+  -playground-high-performance
+                          Omit instrumentation that has a high runtime performance impact
+  -playground-option <value>
+                          Provide an option to the playground transform (if enabled)
+  -playground             Apply the playground semantics and transformation
+  -plugin-path <value>    Add directory to the plugin search path
+  -prebuilt-module-cache-path <value>
+                          Directory of prebuilt modules for loading module interfaces
+  -prefix-serialized-debugging-options
+                          Apply debug prefix mappings to serialized debug info in Swiftmodule files
+  -prespecialize-generic-metadata
+                          Statically specialize metadata for generic types at types that are known to be used in source.
+  -previous-module-installname-map-file <path>
+                          Path to a Json file indicating module name to installname map for @_originallyDefinedIn
+  -primary-filelist <value>
+                          Specify primary inputs in a file rather than on the command line
+  -primary-file <value>   Produce output for this file, not the whole module
+  -print-clang-stats      Print Clang importer statistics
+  -print-educational-notes
+                          Include educational notes in printed diagnostic output, if available
+  -print-inst-counts      Before IRGen, count all the various SIL instructions. Must be used in conjunction with -print-stats.
+  -print-llvm-inline-tree Print the LLVM inline tree.
+  -print-stats            Print various statistics
+  -print-target-info      Print target information for the given target <triple>, such as x86_64-apple-macos10.9
+  -profile-coverage-mapping
+                          Generate coverage data for use with profiled execution counts
+  -profile-generate       Generate instrumented code to collect execution counts
+  -profile-stats-entities Profile changes to stats in -stats-output-dir, subdivided by source entity
+  -profile-stats-events   Profile changes to stats in -stats-output-dir
+  -profile-use=<profdata> Supply a profdata file to enable profile-guided optimization
+  -project-name <value>   Name of the project this module to build belongs to
+  -public-autolink-library <value>
+                          Add public dependent library
+  -Raccess-note none|failures|all|all-validate
+                          Control access note remarks (default: all)
+  -Rcache-compile-job     Show remarks for compiler caching
+  -Rcross-import          Emit a remark if a cross-import of a module is triggered.
+  -Rdependency-scan-cache Emit remarks indicating use of the serialized module dependency scanning cache.
+  -read-legacy-type-info-path=<value>
+                          Read legacy type layout from the given path instead of default path
+  -reflection-metadata-for-debugger-only
+                          Emit reflection metadata for debugger only, don't make them available at runtime
+  -remove-runtime-asserts Remove runtime safety checks.
+  -report-errors-to-debugger
+                          Deprecated, will be removed in future versions.
+  -require-explicit-availability-target <target>
+                          Suggest fix-its adding @available(<target>, *) to public declarations without availability
+  -require-explicit-availability=<error,warn,ignore>
+                          Set diagnostic level to report public declarations without an availability attribute
+  -require-explicit-availability
+                          Warn on public declarations without an availability attribute
+  -require-explicit-sendable
+                          Require explicit Sendable annotations on public declarations
+  -requirement-machine-max-concrete-nesting=<value>
+                          Set the maximum concrete type nesting depth before giving up
+  -requirement-machine-max-rule-count=<value>
+                          Set the maximum number of rules before giving up
+  -requirement-machine-max-rule-length=<value>
+                          Set the maximum rule length before giving up
+  -requirement-machine-max-split-concrete-equiv-class-attempts=<value>
+                          Set the maximum concrete number of attempts at splitting concrete equivalence classes before giving up. There should never be a reason to change this
+  -resource-dir </usr/lib/swift>
+                          The directory that holds the compiler resource files
+  -Rindexing-system-module
+                          Emit a remark when indexing a system module
+  -Rmacro-loading         Emit remarks about loaded macro implementations
+  -Rmodule-api-import     Emit remarks about the import briging in each element composing the API
+  -Rmodule-interface-rebuild
+                          Emits a remark if an imported module needs to be re-compiled from its module interface
+  -Rmodule-loading        Emit remarks about loaded module
+  -Rmodule-recovery       Emit remarks about contextual inconsistencies in loaded modules
+  -Rmodule-serialization  Emit remarks about module serialization
+  -Rpass-missed=<value>   Report missed transformations by optimization passes whose name matches the given POSIX regular expression
+  -Rpass=<value>          Report performed transformations by optimization passes whose name matches the given POSIX regular expression
+  -Rskip-explicit-interface-build
+                          Emit a remark if an explicit module interface invocation has an early exit because the expected output is up-to-date
+  -runtime-compatibility-version <value>
+                          Link compatibility library for Swift runtime version, or 'none'
+  -sanitize-address-use-odr-indicator
+                          When using AddressSanitizer enable ODR indicator globals to avoid false ODR violation reports in partially sanitized programs at the cost of an increase in binary size
+  -sanitize-coverage=<type>
+                          Specify the type of coverage instrumentation for Sanitizers and additional options separated by commas
+  -sanitize-recover=<check>
+                          Specify which sanitizer runtime checks (see -sanitize=) will generate instrumentation that allows error recovery. Listed checks should be comma separated. Default behavior is to not allow error recovery.
+  -sanitize-stable-abi    Link against the Sanitizers stable ABI.
+  -sanitize=<check>       Turn on runtime checks for erroneous behavior.
+  -save-optimization-record-passes <regex>
+                          Only include passes which match a specified regular expression in the generated optimization record (by default, include all passes)
+  -save-optimization-record-path <value>
+                          Specify the file name of any generated optimization record
+  -save-optimization-record=<format>
+                          Generate an optimization record file in a specific format (default: YAML)
+  -save-optimization-record
+                          Generate a YAML optimization record file
+  -scanner-module-validation
+                          Validate binary modules in the dependency scanner
+  -scanner-prefix-map <prefix=replacement>
+                          Remap paths reported by dependency scanner
+  -sdk <sdk>              Compile against <sdk>
+  -serialize-debugging-options
+                          Always serialize options for debugging (default: only for apps)
+  -serialize-dependency-scan-cache
+                          After performing a dependency scan, serialize the scanner's internal state.
+  -serialize-diagnostics-path <path>
+                          Emit a serialized diagnostics file to <path>
+  -serialize-diagnostics  Serialize diagnostics in a binary format
+  -serialized-path-obfuscate <prefix=replacement>
+                          Remap source paths in debug info
+  -show-diagnostics-after-fatal
+                          Keep emitting subsequent diagnostics after a fatal error
+  -sil-based-debuginfo    Write the SIL into a file and generate debug-info to debug on SIL  level.
+  -sil-debug-serialization
+                          Do not eliminate functions in Mandatory Inlining/SILCombine dead functions. (for debugging only)
+  -sil-inline-caller-benefit-reduction-factor <2>
+                          Controls the aggressiveness of performance inlining in -Osize mode by reducing the base benefits of a caller (lower value permits more inlining!)
+  -sil-inline-threshold <50>
+                          Controls the aggressiveness of performance inlining
+  -sil-stop-optzns-before-lowering-ownership
+                          Stop optimizing at SIL time before we lower ownership from SIL. Intended only for SIL ossa tests
+  -sil-unroll-threshold <250>
+                          Controls the aggressiveness of loop unrolling
+  -sil-verify-all         Verify SIL after each transform
+  -sil-verify-none        Completely disable SIL verification
+  -skip-import-in-public-interface <value>
+                          Skip the import statement corresponding to a module name when printing the public interface.
+  -skip-inherited-docs    Skip emitting doc comments for members inherited through classes or default implementations
+  -skip-protocol-implementations
+                          Skip emitting symbols that are implementations of protocol requirements or inherited from protocl extensions
+  -solver-disable-shrink  Disable the shrink phase of expression type checking
+  -solver-memory-threshold <value>
+                          Set the upper bound for memory consumption, in bytes, by the constraint solver
+  -solver-shrink-unsolved-threshold <value>
+                          Set The upper bound to number of sub-expressions unsolved before termination of the shrink phrase
+  -stack-promotion-limit <value>
+                          Limit the size of stack promoted objects to the provided number of bytes.
+  -static                 Make this module statically linkable and make the output of -emit-library a static library.
+  -stats-output-dir <value>
+                          Directory to write unified compilation-statistics files to
+  -strict-concurrency=<value>
+                          Specify the how strict concurrency checking will be. The value may be 'minimal' (most 'Sendable' checking is disabled), 'targeted' ('Sendable' checking is enabled in code that uses the concurrency model, or 'complete' ('Sendable' and other checking is enabled for all code in the module)
+  -strict-implicit-module-context
+                          Enable the strict forwarding of compilation context to downstream implicit module dependencies
+  -supplementary-output-file-map <value>
+                          Specify supplementary outputs in a file rather than on the command line
+  -suppress-remarks       Suppress all remarks
+  -suppress-static-exclusivity-swap
+                          Suppress static violations of exclusive access with swap()
+  -suppress-warnings      Suppress all warnings
+  -swift-async-frame-pointer=<value>
+                          One of 'auto', 'always' or 'never'
+  -swift-module-cross-import <moduleName> <crossImport.swiftoverlay>
+                          Specify the cross import module
+  -swift-module-file=<name>=<path>
+                          Specify Swift module input explicitly built from textual interface
+  -swift-version <vers>   Interpret input according to a specific Swift language version number
+  -symbol-graph-minimum-access-level <level>
+                          Include symbols with this access level or more when emitting a symbol graph
+  -target-cpu <value>     Generate code for a particular CPU variant
+  -target-min-inlining-version <value>
+                          Require inlinable code with no '@available' attribute to back-deploy to this version of the '-target' OS
+  -target-sdk-name <value>
+                          Canonical name of the target SDK used for compilation
+  -target-sdk-version <value>
+                          The version of target SDK used for compilation
+  -target-variant-sdk-version <value>
+                          The version of target variant SDK used for compilation
+  -target-variant <value> Generate 'zippered' code for macCatalyst that can run on the specified variant target triple in addition to the main -target triple
+  -target <triple>        Generate code for the given target <triple>, such as x86_64-apple-macos10.9
+  -tbd-compatibility-version <version>
+                          The compatibility_version to use in an emitted TBD file
+  -tbd-current-version <version>
+                          The current_version to use in an emitted TBD file
+  -tbd-install_name <path>
+                          The install_name to use in an emitted TBD file
+  -tbd-is-installapi      If the TBD file should indicate it's being generated during InstallAPI
+  -test-dependency-scan-cache-serialization
+                          After performing a dependency scan, serialize and then deserialize the scanner's internal state.
+  -testable-import-module <value>
+                          Implicitly import the specified module with @testable
+  -throws-as-traps        Turn all throw sites into immediate traps
+  -tools-directory <directory>
+                          Look for external executables (ld, clang, binutils) in <directory>
+  -trace-stats-events     Trace changes to stats in -stats-output-dir
+  -track-system-dependencies
+                          Track system dependencies while emitting Make-style dependencies
+  -trap-function <name>   Lower traps to calls to this function instead of trap instructions
+  -type-info-dump-filter=<value>
+                          One of 'all', 'resilient' or 'fragile'
+  -typo-correction-limit <n>
+                          Limit the number of times the compiler will attempt typo correction to <n>
+  -unavailable-decl-optimization=<complete,none>
+                          Specify the optimization mode for unavailable declarations. The value may be 'none' (no optimization) or 'complete' (code is not generated at all unavailable declarations)
+  -update-code            Update Swift code
+  -use-clang-function-types
+                          Use stored Clang function types for computing canonical types.
+  -use-jit                Register Objective-C classes as if the JIT were in use
+  -use-malloc             Allocate internal data structures using malloc (for memory debugging)
+  -use-static-resource-dir
+                          Use resources in the static resource directory
+  -user-module-version <vers>
+                          Module version specified from Swift module authors
+  -validate-clang-modules-once
+                          Don't verify input files for Clang modules if the module has been successfully validated or loaded during this build session
+  -validate-tbd-against-ir=<level>
+                          Compare the symbols in the IR against the TBD file that would be generated.
+  -value-recursion-threshold <value>
+                          Set the maximum depth for direct recursion in value types
+  -verify-additional-file <value>
+                          Verify diagnostics in this file in addition to source files
+  -verify-additional-prefix <value>
+                          Check for diagnostics with the prefix expected-<PREFIX> as well as expected-
+  -verify-all-substitution-maps
+                          Verify all SubstitutionMaps on construction
+  -verify-apply-fixes     Like -verify, but updates the original source file
+  -verify-generic-signatures <module-name>
+                          Verify the generic signatures in the given module
+  -verify-ignore-unknown  Allow diagnostics for '<unknown>' location in verify mode
+  -verify-incremental-dependencies
+                          Enable the dependency verifier for each frontend job
+  -verify-type-layout <type>
+                          Verify compile-time and runtime type layout information for type
+  -verify                 Verify diagnostics against expected-{error|warning|note} annotations
+  -version                Print version information and exit
+  -vfsoverlay <value>     Add directory to VFS overlay file
+  -visualc-tools-root <root>
+                          VisualC++ Tools Root
+  -visualc-tools-version <version>
+                          VisualC++ ToolSet Version
+  -warn-concurrency       Warn about code that is unsafe according to the Swift Concurrency model and will become ill-formed in a future language version
+  -warn-implicit-overrides
+                          Warn about implicit overrides of protocol members
+  -warn-long-expression-type-checking <n>
+                          Warns when type-checking a function takes longer than <n> ms
+  -warn-long-function-bodies <n>
+                          Warns when type-checking a function takes longer than <n> ms
+  -warn-on-editor-placeholder
+                          Downgrade the editor placeholder error to a warning
+  -warn-on-potentially-unavailable-enum-case
+                          Deprecated, will be removed in future versions
+  -warn-swift3-objc-inference-complete
+                          Deprecated, has no effect
+  -warn-swift3-objc-inference-minimal
+                          Deprecated, has no effect
+  -warnings-as-errors     Treat warnings as errors
+  -weak-link-at-target    Weakly link symbols for declarations that were introduced at the deployment target. Symbols introduced before the deployment target are still strongly linked.
+  -whole-module-optimization
+                          Optimize input files together instead of individually
+  -windows-sdk-root <root>
+                          Windows SDK Root
+  -windows-sdk-version <version>
+                          Windows SDK Version
+  -Xcc <arg>              Pass <arg> to the C/C++/Objective-C compiler
+  -Xllvm <arg>            Pass <arg> to LLVM.
