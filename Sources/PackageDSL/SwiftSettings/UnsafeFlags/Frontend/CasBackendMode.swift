@@ -1,6 +1,6 @@
 /// Passes the flag `-cas-backend-mode=native`
 ///
-/// Uverify
+/// Verify
 public struct CasBackendMode: FrontendFlag {
   public let casid: String
 

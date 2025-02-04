@@ -2,9 +2,7 @@
 ///
 /// `@UIApplicationMain` and `@NSApplicationMain` used to be the standard way for
 /// iOS and macOS apps respectively to declare a synthesized platform-specific
-/// entrypoint for an app.
-///
-///  These functions have since been obsoleted by
+/// entrypoint for an app. These functions have since been obsoleted by
 /// [SE-0281](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0281-main-attribute.md)'s
 /// introduction of the `@main` attribute, and they now represent a confusing bit of
 /// duplication in the language. This proposal seeks to deprecate these alternative
