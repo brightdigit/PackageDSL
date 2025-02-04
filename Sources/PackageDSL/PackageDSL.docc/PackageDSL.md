@@ -1,52 +1,41 @@
 # ``PackageDSL``
 
-Defining Swift Packages using Result Builders.
+Simplify the management of your Package.swift file with a type-safe, modular DSL.
 
 ## Overview
 
-Swift Packages are a great way to deliver the bulk of your app as well as share a piece of functionality or code. However there are times when your code base and therefore your Swift Package could grow especially if your targets are small pieces of functionality.
+Swift Packages are a great way to deliver functionality and share code. However, as your codebase grows, managing a large Package.swift file can become challenging.
 
-**PackageDSL** creates an easy to use DSL for dividing, organizing, and creating new Swift Packages.
+**PackageDSL** creates an easy-to-use DSL for organizing and maintaining Swift Packages by:
 
-* Only refer to targets and dependencies once.
-* Easily apply Swift Settings and Unsafe Flags throughout a Swift Package.
-* Keep your targets organized and easy to reference.
+- **Modular Organization**: Split your package definition across multiple files for better maintainability
+- **Type Safety**: Leverage Swift's type system to catch configuration errors at compile time
+- **Better Discoverability**: Clear directory structure makes it easy to find and modify package components
+- **Reduced Complexity**: Simplified syntax for defining products, targets, and dependencies
+- **Easy Maintenance**: Update individual components without touching the entire Package.swift file
 
-```
+Here's an example of how you can define your package:
+
+```swift
 import PackageDescription
 
 let package = Package(
+  name: "MyApp",
   entries: {
-    BushelUITests()
-    BushelLibraryApp()
-    BushelMachineApp()
-    BushelSettingsApp()
-    BushelApp()
-    BushelService()
+    AppTarget()
+    NetworkingModule()
+    DatabaseModule()
+  },
+  dependencies: {
+    Alamofire()
+    SQLite()
   },
   testTargets: {
-    BushelServiceTests()
-    BushelSessionTests()
+    AppTests()
+    NetworkingTests()
   },
   swiftSettings: {
-    Group("Experimental") {
-      AccessLevelOnImport()
-      BitwiseCopyable()
-      GlobalActorIsolatedTypesUsability()
-      IsolatedAny()
-      MoveOnlyPartialConsumption()
-      NestedProtocols()
-      NoncopyableGenerics()
-      RegionBasedIsolation()
-      TransferringArgsAndResults()
-      VariadicGenerics()
-    }
-    Group("Upcoming") {
-      FullTypedThrows()
-      InternalImportsByDefault()
-    }
-    WarnLongFunctionBodies(milliseconds: 100)
-    WarnLongExpressionTypeChecking(milliseconds: 100)
+    InternalImportsByDefault()
   }
 )
 .supportedPlatforms {
@@ -54,6 +43,8 @@ let package = Package(
 }
 .defaultLocalization(.english)
 ```
+
+For a real-world example, check out [BushelKit](https://github.com/brightdigit/BushelKit), which uses PackageDSL to manage its complex package structure with multiple products and dependencies.
 
 ## Topics
 

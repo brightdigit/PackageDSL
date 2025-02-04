@@ -1,316 +1,172 @@
 # PackageDSL
 
-Simplify the management of your Package.swift file with PackageDSL:
+Simplify the management of your Package.swift file with a type-safe, modular DSL:
 
 ```swift
 import PackageDescription
 
-let package = Package {
-  BushelCommand()
-  BushelLibraryApp()
-  BushelMachineApp()
-  BushelSettingsApp()
-  BushelApp()
-} testTargets: {
-  BushelCoreTests()
-  BushelMachineTests()
-} swiftSettings: {
-  SwiftSetting.enableUpcomingFeature("BareSlashRegexLiterals")
-  SwiftSetting.enableUpcomingFeature("ConciseMagicFile")
-  SwiftSetting.enableUpcomingFeature("ForwardTrailingClosures")
-  SwiftSetting.enableUpcomingFeature("ImplicitOpenExistentials")
-  SwiftSetting.enableUpcomingFeature("StrictConcurrency")
-}
+let package = Package(
+  name: "MyApp",
+  entries: {
+    AppTarget()
+    NetworkingModule()
+    DatabaseModule()
+  },
+  dependencies: {
+    Alamofire()
+    SQLite()
+  },
+  testTargets: {
+    AppTests()
+    NetworkingTests()
+  },
+  swiftSettings: {
+    InternalImportsByDefault()
+  }
+)
 .supportedPlatforms {
   WWDC2023()
 }
 .defaultLocalization(.english)
 ```
 
-## Table of Contents
+## Why PackageDSL?
 
-  * [Why?](#why-)
-  * [What is this?](#what-is-this-)
-  * [How do you install it?](#how-do-you-install-it)
-  * [How does it work?](#how-does-it-work)
-    + [Creating a Package](#creating-a-package)
-    + [How about remote dependencies?](#how-about-remote-dependencies)
-    + [How about test targets?](#how-about-test-targets)
-    + [How about language and platforms?](#how-about-language-and-platforms)
-    + [How about custom Swift settings?](#how-about-custom-swift-settings)
-    + [How about adding resources?](#how-about-adding-resources)
-  * [FAQ](#faq)
-    + [But it doesn't do this?!?! How about this?!?!? I don't know how to do this?!?!](#but-it-doesnt-do-this-how-about-this-i-dont-know-how-to-do-this)
-    + [Why would I do this?](#why-would-i-do-this)
+- **Modular Organization**: Split your package definition across multiple files for better maintainability
+- **Type Safety**: Leverage Swift's type system to catch configuration errors at compile time
+- **Better Discoverability**: Clear directory structure makes it easy to find and modify package components
+- **Reduced Complexity**: Simplified syntax for defining products, targets, and dependencies
+- **Easy Maintenance**: Update individual components without touching the entire Package.swift file
 
-## Why?
+## Real World Example
 
-I was having a difficult time managing a large `Package.swift` file. Why go with this instead:
+Check out [BushelKit](https://github.com/brightdigit/BushelKit), which uses PackageDSL to manage its complex package structure with multiple products and dependencies. Its `Package/Sources` directory demonstrates how to organize:
 
+- Multiple product targets
+- Nested dependencies
+- Platform-specific code
+- Test targets
+- Documentation targets
+
+```
+Package
+└── Sources
+    ├── Dependencies
+    │   ├── ArgumentParser.swift
+    │   ├── DocC.swift
+    │   ├── RadiantKit
+    │   │   ├── RadiantDocs.swift
+    │   │   ├── RadiantPaging.swift
+    │   │   └── RadiantProgress.swift
+    │   └── RadiantKit.swift
+    ├── Index.swift
+    ├── Platforms
+    │   └── WWDC2023.swift
+    ├── Products
+    │   ├── BushelCommand.swift
+    │   ├── BushelDocs.swift
+    │   └── ... more products ...
+    ├── Targets
+    │   ├── BushelArgs.swift
+    │   └── ... more targets ...
+    └── Tests
+        ├── BushelFactoryTests.swift
+        └── ... more tests ...
+```
+
+## Getting Started
+
+### 1. Basic Setup
+
+Create a minimal package structure:
+
+```
+MyPackage/
+├── Package/
+│   └── Sources/
+│       ├── Products/
+│       │   └── AppTarget.swift
+│       ├── Dependencies/
+│       │   └── Alamofire.swift
+│       └── Index.swift
+```
+
+### 2. Define Your Components
+
+`Package/Sources/Products/AppTarget.swift`:
 ```swift
-// swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
-import PackageDescription
-
-let package = Package(
-  name: "BushelKit",
-  defaultLocalization: "en",
-  platforms: [.macOS(.v14), .iOS(.v17), .watchOS(.v10), .tvOS(.v17)],
-  products: [
-    // Products define the executables and libraries a package produces, making them visible to other packages.
-    .library(
-      name: "BushelApp",
-      targets: ["BushelApp"]
-    ),
-    .library(
-      name: "BushelSettingsApp",
-      targets: ["BushelSettingsApp"]
-    ),
-    .library(
-      name: "BushelLibraryApp",
-      targets: ["BushelLibraryApp"]
-    ),
-    .library(
-      name: "BushelMachineApp",
-      targets: ["BushelMachineApp"]
-    ),
-    .executable(name: "bushel", targets: ["bushel"])
-  ],
-  dependencies: [
-    .package(url: "https://github.com/brightdigit/FelinePine.git", from: "0.1.0-alpha.3"),
-    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0")
-  ],
-  targets: [
-    .target(name: "BushelCore"),
-    .target(name: "BushelLocalization"),
-    .target(name: "BushelUT", dependencies: ["BushelCore"]),
-    .target(name: "BushelLogging", dependencies: ["FelinePine"]),
-    .target(name: "BushelArgs", dependencies: [
-      .product(name: "ArgumentParser", package: "swift-argument-parser")
-    ]),
-
-    .target(name: "BushelDataCore", dependencies: ["BushelLogging"]),
-    .target(name: "BushelViewsCore", dependencies: ["BushelUT", "BushelLogging"]),
-
-    .executableTarget(name: "bushel", dependencies: ["BushelArgs"]),
-    .target(name: "BushelApp", dependencies: ["BushelViews", "BushelVirtualization", "BushelLibrary", "BushelData", "BushelMachine"]),
-    .target(name: "BushelViews", dependencies: ["BushelLibraryViews", "BushelMachineViews", "BushelSettingsViews"]),
-    .target(name: "BushelData", dependencies: ["BushelLibraryData", "BushelMachineData"]),
-
-    .target(name: "BushelSettingsApp", dependencies: ["BushelSettingsViews"]),
-    .target(name: "BushelSettingsViews", dependencies: ["BushelData", "BushelLocalization"]),
-
-    .target(name: "BushelLibrary", dependencies: ["BushelLogging", "BushelCore"]),
-    .target(name: "BushelLibraryData", dependencies: ["BushelLibrary", "BushelLogging", "BushelDataCore"]),
-    .target(name: "BushelLibraryViews", dependencies: ["BushelLibrary", "BushelLibraryData", "BushelLogging", "BushelUT", "BushelViewsCore"]),
-    .target(name: "BushelLibraryApp", dependencies: ["BushelLibraryViews", "BushelLibraryMacOS"]),
-
-    .target(name: "BushelMachine", dependencies: ["BushelLogging", "BushelCore"]),
-    .target(name: "BushelMachineData", dependencies: ["BushelMachine", "BushelLogging", "BushelDataCore"]),
-    .target(name: "BushelMachineViews", dependencies: ["BushelMachine", "BushelMachineData", "BushelLogging", "BushelUT", "BushelLocalization", "BushelViewsCore"]),
-    .target(name: "BushelMachineApp", dependencies: ["BushelMachineViews", "BushelMachineMacOS"]),
-
-    .target(name: "BushelVirtualization", dependencies: ["BushelLibraryMacOS", "BushelMachineMacOS"]),
-
-    .target(
-      name: "BushelLibraryMacOS",
-      dependencies: ["BushelLibrary"]
-    ),
-    .target(name: "BushelMachineMacOS", dependencies: ["BushelMachine"])
-  ]
-)
-```
-
-There has to be a better way that takes advantage of the DSL capabilities of Swift.
-
-## What is this?
-
-If you have a large enough Swift Package this is ideal for you.
-
-<img width="1258" alt="Screenshot 2023-07-25 at 11 43 38 AM" src="https://github.com/brightdigit/PackageDSL/assets/1036388/a298f6d9-b28f-429c-9835-d5ed5f133a02">
-
-Setup individual targets, products, and dependencies using this DSL and create an easily organized, simplified, and easy to maintain Package for your Swift project.
-
-## How do you install it?
-
-1. [Download this repo](https://github.com/brightdigit/PackageDSL/archive/refs/heads/main.zip)
-2. Create Package directory inside your Swift Package
-3. Copy `Support` folder over
-4. Create `Package/Sources` - this will contain each file for your targets, products, test targets, dependencies, etc...
-5. Create a file at root of `Package` which will contain [your package](README.md#creating-a-package):
-```swift
- Package {
-  // add products here
-}
-testTargets: {
-  // add test targets here
-}
-```
-6. Copy the `package.sh` script to concatenate all files in `Package` to your usable `Package.swift`
-7. $Profit$
-
-Here's the structure I use for Bushel's Swift Package:
-
-<img width="265" alt="Screenshot 2023-07-25 at 11 46 12 AM" src="https://github.com/brightdigit/PackageDSL/assets/1036388/00c64d7c-114d-49a3-a629-82dd7f436270">
-
-```
-├── Package* // new folder you create
-│   ├── Sources* // all files listing your targets, dependencies, products, etc...
-|   |   ├── BushelApp.swift // definition of `BushelApp` product
-│   └── Support* // copied from this repo
-├── Package.resolved
-├── Package.swift // built by `package.sh`
-├── package.sh* // copied from this repo
-├── Sources // actual source code of my package targets
-│   ├── BushelApp
-│   ├── BushelArgs
-│   ├── BushelCore
-│   ├── BushelData
-│   ├── BushelDataCore
-│   ├── BushelLibrary
-│   ├── BushelLibraryApp
-│   ├── BushelLibraryData
-│   ├── BushelLibraryMacOS
-│   ├── BushelLibraryViews
-│   ├── BushelLocalization
-│   ├── BushelLogging
-│   ├── BushelMacOSCore
-│   ├── BushelMachine
-│   ├── BushelMachineApp
-│   ├── BushelMachineData
-│   ├── BushelMachineMacOS
-│   ├── BushelMachineViews
-│   ├── BushelSettingsApp
-│   ├── BushelSettingsViews
-│   ├── BushelUT
-│   ├── BushelViews
-│   ├── BushelViewsCore
-│   ├── BushelVirtualization
-│   └── bushel
-└── Tests // actual source code of my package test targets
-    └── BushelCoreTests
-* the new stuff from PackageDSL
-```
-
-## How does it work?
-
-The `Support` folder contains a group of Swift source files which define an easy DSL which translates the common parts of the `PackageDescription` namespace you use.
-
-### Creating a Package 
-
-A typical Package.swift might look like this:
-
-```swift
-// swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
-import PackageDescription
-
-let package = Package(
-  name: "BushelKit",
-  ...
-  products: [
-    .library(
-      name: "BushelApp",
-      targets: ["BushelApp"]
-    ),
-    .library(
-      name: "BushelSettingsApp",
-      targets: ["BushelSettingsApp"]
-    ),
-    .library(
-      name: "BushelLibraryApp",
-      targets: ["BushelLibraryApp"]
-    ),
-    .library(
-      name: "BushelMachineApp",
-      targets: ["BushelMachineApp"]
-    ),
-    .executable(name: "bushel", targets: ["bushel"])
-  ],
-  ...
-  targets: [
-    ...
-    .testTarget(name: "BushelCoreTests", dependencies: ["BushelCore"])
-  ]
-)
-```
-
-With PackageDSL you can create a Package simply by defining the products of your package:
-
-```swift
-import PackageDescription
-
-let package = Package {
-  BushelCommand()
-  BushelLibraryApp()
-  BushelMachineApp()
-  BushelSettingsApp()
-  BushelApp()
-}
-testTargets: {
-  BushelCoreTests()
-}
-```
-
-Targets and dependencies are automatically pulled from your products and added the target section of your package. So for instance with `BushelApp`:
-
-```swift
-struct BushelApp: Product, Target {
+struct AppTarget: Product, Target {
   var dependencies: any Dependencies {
-    BushelViews()
-    BushelVirtualization()
-    BushelMachine()
-    BushelLibrary()
-    BushelData()
+    Alamofire()
+    CoreModule()
   }
 }
 ```
 
-The dependencies listed such as `BushelViews` is automatically added to the `Package` as:
-
+`Package/Sources/Dependencies/Alamofire.swift`:
 ```swift
-  .target(name: "BushelViews", dependencies: ["BushelLibraryViews", "BushelMachineViews", "BushelSettingsViews"]),
-```
-
-
-Also the dependencies from `BushelView` are added as well:
-
-```swift
-struct BushelViews: Target {
-  var dependencies: any Dependencies {
-    BushelLibraryViews()
-    BushelMachineViews()
-    BushelSettingsViews()
-  }
-}
-```
-
-It's recursive!!!
-
-### How about remote dependencies?
-
-Remote dependencies (i.e. `Package.Dependency`) are denoted by the `PackageDependency` protocol and just take a standard `Package.Dependency` property called `dependency`. Here's an example of how to add the Swift Argument Parser:
-
-```swift
-struct ArgumentParser: PackageDependency {
+struct Alamofire: PackageDependency {
   var dependency: Package.Dependency {
-    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0")
+    .package(
+      url: "https://github.com/Alamofire/Alamofire.git", 
+      from: "5.8.0"
+    )
   }
 }
 ```
 
-Then just add it as a dependency to your target:
-
+`Package/Sources/Index.swift`:
 ```swift
-struct BushelArgs: Target {
-  var dependencies: any Dependencies {
-    ArgumentParser()
-    BushelCore()
+let package = Package(
+  entries: {
+    AppTarget()
   }
-}
+)
 ```
+
+### 3. Generate Package.swift
+```bash
+./package_generated.sh . --version 5.9
+```
+
+## Installation
+
+1. Download the `package_generated.sh` script from the [latest GitHub release](https://github.com/brightdigit/PackageDSL/releases/latest)
+2. Make the script executable:
+```bash
+chmod +x package_generated.sh
+```
+
+## Usage
+
+The script accepts the following arguments:
+
+```bash
+./package_generated.sh [PACKAGE_DIR] [OPTIONS]
+```
+
+### Arguments
+
+- `PACKAGE_DIR`: Path to your package directory (required)
+
+### Options
+
+- `--version <version>`: Specify Swift tools version (default: 6.0)
+- `--minimize`: Minimize the output by removing comments and extra whitespace
+
+### Examples
+
+Generate Package.swift for the current directory using Swift 5.9:
+```bash
+./package_generated.sh . --version 5.9
+```
+
+Generate a minimized Package.swift for a specific package:
+```bash
+./package_generated.sh ~/Projects/MyPackage --version 5.9 --minimize
+```
+
+## FAQ
 
 ### How about test targets?
 
@@ -338,48 +194,6 @@ testTargets: {
   BushelCoreTests() // right here
 }
 ```
-
-### How about language and platforms?
-
-Right now there are two modifier methods to do this. `defaultLocalization` which takes in a [`LanguageTag`](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#languagetag) and `supportedPlatforms` which can take in a list of platforms or a `PlatformSet`. 
-A `PlatformSet` is useful if use a to define a set of platforms for a specific year such as:
-
-```swift
-struct WWDC2023: PlatformSet {
-  var body: any SupportedPlatforms {
-    SupportedPlatform.macOS(.v14)
-    SupportedPlatform.iOS(.v17)
-    SupportedPlatform.watchOS(.v10)
-    SupportedPlatform.tvOS(.v17)
-  }
-}
-```
-
-Rather then define your platforms as:
-
-```swift
-let package = Package {
-  ...
-}
-.supportedPlatforms {
-  SupportedPlatform.macOS(.v14)
-  SupportedPlatform.iOS(.v17)
-  SupportedPlatform.watchOS(.v10)
-  SupportedPlatform.tvOS(.v17)
-}
-```
-
-You can simplify it as:
-
-```swift
-let package = Package {
-  ...
-}
-.supportedPlatforms {
-  WWDC2023()
-}
-```
-
 ### How about custom Swift settings?
 
 Swift settings can be [added to all the targets using `swiftSettings` argument on the `Package` constructor](#packagedsl) or to a specific target by implementing using the `swiftSettings` property:
@@ -395,7 +209,7 @@ struct BushelFactory: Target {
   }
   
   var swiftSettings: [SwiftSetting] {
-    SwiftSetting.enableUpcomingFeature("ExistentialAny")
+    InternalImportsByDefault()
   }
 }
 ```
@@ -408,25 +222,78 @@ To add resources simply implement the `resources` property on the `Target`:
 ```swift
 struct BushelLocalization: Target {
   var resources : [Resource] {
-    Resource.process("Styling/Colors/Colors.xcassets")
-    Resource.process("Styling/Fonts/FontsFiles")
-    Resource.process("Images/Images.xcassets")
-    Resource.process("Images/whiteLoading.json")
-    Resource.process("Images/primaryLoading.json")
+    .process("Styling/Colors/Colors.xcassets")
+    .process("Styling/Fonts/FontsFiles")
+    .process("Images/Images.xcassets")
+    .process("Images/whiteLoading.json")
+    .process("Images/primaryLoading.json")
   }
 }
 ```
 
-## FAQ
 
-### But it doesn't do this?!?! How about this?!?!? I don't know how to do this?!?!
+Right now there are two modifier methods to do this. `defaultLocalization` which takes in a [`LanguageTag`](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#languagetag) and `supportedPlatforms` which can take in a list of platforms or a `PlatformSet`. 
+A `PlatformSet` is useful if use a to define a set of platforms for a specific year such as:
 
-[Create an issue.](https://github.com/brightdigit/PackageDSL/issues/new)
+```swift
+struct WWDC2023: PlatformSet {
+  var body: any SupportedPlatforms {
+    .macOS(.v14)
+    .iOS(.v17)
+    .watchOS(.v10)
+    .tvOS(.v17)
+  }
+}
+```
 
-### Why would I do this?
+Rather then define your platforms as:
 
-If your package gets big enough, it becomes difficult to manage. This is way to do that. If your package is small enough, I don't recommend it _yet_.
+```swift
+let package = Package {
+  ...
+}
+.supportedPlatforms {
+  .macOS(.v14)
+  .iOS(.v17)
+  .watchOS(.v10)
+  .tvOS(.v17)
+}
+```
+
+### How do I specify target-specific platforms?
+
+Each target can implement the `platforms` property:
+
+```swift
+struct MacOnlyTarget: Target {
+  var platforms: [SupportedPlatform] {
+    SupportedPlatform.macOS(.v13)
+  }
+}
+```
+
+### What's the performance impact?
+
+The DSL is used only at development time to generate your `Package.swift`. There's no runtime impact on your package or its users.
+
+### How do I migrate an existing package?
+
+1. Create the `Package` directory structure
+2. Move each product, target, and dependency into separate files
+3. Run the generator script to create your new `Package.swift`
+4. Compare the generated file with your original to ensure everything transferred correctly
 
 ## Thanks
 
 * [@joshdholtz for inspiration with DeckUI](https://github.com/joshdholtz/DeckUI)
+
+## Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. File issues for bugs or feature requests
+2. Submit pull requests with improvements
+3. Help improve the documentation
+4. Share your experience using PackageDSL
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
