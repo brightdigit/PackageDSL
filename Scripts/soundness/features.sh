@@ -11,23 +11,30 @@ display_usage() {
 # Function to echo feature into a new file
 create_feature_file() {
 		local feature_state_dir=$1
-		local feature_state=$(echo "$1" | awk '{print tolower($0)}')
+		local feature_state=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 		local feature_name=$2
 		local file_name=$3
 		local html_url=$4
 		local file_content=$5
 
+		# Create temporary files
+		local temp_file=$(mktemp)
+		local doc_file=$(mktemp)
+		local title_file=$(mktemp)
+
+		# Write content to temp file to avoid pipe issues
+		echo "$file_content" > "$temp_file"
+
 		# Extract the proposal title (first # header)
-		local proposal_title=$(echo "$file_content" | awk '/^# / { print substr($0, 3); exit }')
+		awk '/^# / { print substr($0, 3); exit }' "$temp_file" > "$title_file"
+		local proposal_title=$(cat "$title_file")
+		
 		# Extract the proposal number from the filename
 		local proposal_number="SE-$(echo "$file_name" | cut -d'-' -f1)"
-
-		# Create a temporary file for the documentation processing
-		local temp_file=$(mktemp)
 		
 		# Extract documentation between first and second level 2 headers
-		echo "$file_content" | awk '
-				BEGIN { in_section=0; doc="" }
+		awk '
+				BEGIN { in_section=0; }
 				/^## / { 
 						if (in_section == 0) {
 								in_section=1
@@ -37,51 +44,49 @@ create_feature_file() {
 								exit
 						}
 				}
-				in_section == 1 { doc = doc $0 "\n" }
-				END { print doc }
-		' > "$temp_file"
+				in_section == 1 { print $0 }
+		' "$temp_file" > "$doc_file"
 
 		# Create the Swift file with documentation
 		{
 				echo "// swiftlint:disable line_length"
 				echo "///"
-				# Format each line of documentation with ///
-				sed '/^$/d' "$temp_file" | awk '
-						BEGIN { first_printed = 0 }
-						{
-								if (!first_printed) {
-										line = $0
-										pos = 1
-										in_parentheses = 0
-										period_pos = 0
-										
-										# Scan through the line character by character
-										while (pos <= length(line)) {
-												char = substr(line, pos, 1)
-												if (char == "(") in_parentheses = 1
-												else if (char == ")") in_parentheses = 0
-												else if (char == "." && !in_parentheses) {
-														period_pos = pos
-														break
+				
+				# Process the documentation
+				sed '/^$/d' "$doc_file" | while IFS= read -r line; do
+						if [ -z "$first_printed" ]; then
+								# Process first line to find first sentence
+								period_pos=$(echo "$line" | awk '
+										BEGIN { pos=0; in_parentheses=0 }
+										{
+												for(i=1; i<=length($0); i++) {
+														c=substr($0,i,1)
+														if(c=="(") in_parentheses++
+														else if(c==")") in_parentheses--
+														else if(c=="." && in_parentheses<=0) {
+																pos=i
+																exit
+														}
 												}
-												pos++
+												print pos
 										}
-										
-										if (period_pos > 0) {
-												# Print everything up to and including the period
-												print "/// " substr(line, 1, period_pos)
-												print "///"
-												# Print the rest of the line if anything remains
-												rest = substr(line, period_pos + 1)
-												if (length(rest) > 0) {
-														print "/// " rest
-												}
-												first_printed = 1
-												next
-										}
-						}
-						print "/// " $0
-				}'
+								')
+								
+								if [ "$period_pos" -gt 0 ]; then
+										echo "/// ${line:0:period_pos}"
+										echo "///"
+										if [ "${#line}" -gt "$period_pos" ]; then
+												echo "/// ${line:period_pos+1}"
+										fi
+										first_printed=1
+								else
+										echo "/// $line"
+								fi
+						else
+								echo "/// $line"
+						fi
+				done
+				
 				echo "///"
 				echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)"
 				echo "///"
@@ -94,8 +99,8 @@ create_feature_file() {
 				echo "}"
 		} > "$output_directory/$feature_state_dir/${feature_name}.swift"
 
-		# Clean up
-		rm -f "$temp_file"
+		# Clean up temporary files
+		rm -f "$temp_file" "$doc_file" "$title_file"
 }
 
 # Check if number of arguments is less than 1
