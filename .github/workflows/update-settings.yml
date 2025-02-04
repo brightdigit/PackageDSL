@@ -35,8 +35,7 @@ jobs:
           path: .mint
           key: ${{ runner.os }}-mint-${{ hashFiles('**/Mintfile') }}
           restore-keys: |
-          ${{ runner.os }}-mint-        
-      
+            ${{ runner.os }}-mint-        
     
     - name: Clean SwiftSettings directory
       run: |
