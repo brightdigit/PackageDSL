@@ -6,7 +6,7 @@ on:
 
 jobs:
   create-artifact:
-    runs-on: ubuntu-latest  # Using macOS since the script uses macOS-specific sed
+    runs-on: macos-latest  # Using macOS since the script uses macOS-specific sed
     
     steps:
     - name: Checkout repository
@@ -20,6 +20,6 @@ jobs:
     - name: Upload package script
       uses: actions/upload-artifact@v4
       with:
-        name: package-script
+        name: package.sh
         path: package.sh
         retention-days: 30  # Artifacts will be kept for 30 days 
