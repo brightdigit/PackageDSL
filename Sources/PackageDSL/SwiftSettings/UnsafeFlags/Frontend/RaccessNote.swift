@@ -1,4 +1,4 @@
 /// Passes the flag `-Raccess-note`
 ///
-/// Unone
+/// None
 public struct RaccessNote: FrontendFlag {}
