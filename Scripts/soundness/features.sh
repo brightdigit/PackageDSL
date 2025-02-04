@@ -131,22 +131,19 @@ response=$(curl -L -s "https://api.github.com/repos/$repo_owner/$repo_name/git/t
           jq -r '.tree[] | select(.path | startswith("proposals/") and endswith(".md")) | .path' | \
           awk -F'/' '{print $NF}' | \
           while read file_name; do
-              echo "{\"name\": \"$file_name\"}" | base64
+              printf '{"name":"%s"}\n' "$file_name"
           done)
 
 # Debug output
 echo "Found files:"
-echo "$response" | while read line; do
-    echo "$line" | base64 -d
+echo "$response" | while read -r line; do
+    echo "$line"
 done
 
 function parse_row() {
 		local row=$1
 		# Parse JSON object for each file
-		file=$(echo "$row" | base64 -d)
-		
-		# Extract file name
-		file_name=$(echo "$file" | jq -r '.name')
+		file_name=$(echo "$row" | jq -r '.name' 2>/dev/null || echo "$row")
 		html_url="$html_base_url/$file_name"
 		
 		# Skip if file_name is empty
