@@ -1,0 +1,33 @@
+name: Create Package Script Release
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Generate package script
+      run: |
+        chmod +x Scripts/artifact.sh
+        ./Scripts/artifact.sh package.sh
+      
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Latest Package Script
+        tag_name: latest
+        files: package.sh
+        draft: false
+        prerelease: false
+        make_latest: true
+        fail_on_unmatched_files: true
+        body: |
+          This is an automatically generated release containing the latest package.sh script.
+          The previous 'latest' tag will be automatically moved to this release.
