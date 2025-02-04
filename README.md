@@ -105,7 +105,7 @@ Create a minimal package structure:
 
 ```
 MyPackage/
-├── Package/
+└── Package/
     └── Sources/
         ├── Products/
         │   └── AppTarget.swift
