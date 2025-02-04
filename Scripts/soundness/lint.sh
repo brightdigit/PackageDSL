@@ -41,7 +41,7 @@ fi
 pushd "$PACKAGE_DIR" || exit 1
 $MINT_CMD bootstrap -m Mintfile || exit 1
 
-if [ -z "$CI" ] && [ -z "$FORMAT_ONLY" ]; then
+if [ -z "$CI" ] || [ -n "$FORMAT_ONLY" ]; then
     $MINT_RUN swift-format format --configuration .swift-format  --recursive --parallel --in-place Sources Tests || exit 1
     $MINT_RUN swiftlint --autocorrect || exit 1
 fi
