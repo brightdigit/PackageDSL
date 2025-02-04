@@ -1,3 +1,3 @@
 /// Passes the flag `-suppress-remarks`
 /// Suppress all remarks
-public struct SuppressRemarks: UnsafeFlag { }
+public struct SuppressRemarks: UnsafeFlag {}

@@ -17,13 +17,17 @@ public enum ResourcesBuilder {
     [first]
   }
 
-  /// Builds a partial block by appending a `Resource` object to an existing array of `Resource` objects.
+  /// Builds a partial block by appending a `Resource` object
+  /// to an existing array of `Resource` objects.
   ///
   /// - Parameters:
   ///   - accumulated: The existing array of `Resource` objects.
   ///   - next: The `Resource` object to be appended.
   /// - Returns: The updated array of `Resource` objects.
-  public static func buildPartialBlock(accumulated: [Resource], next: Resource) -> [Resource] {
+  public static func buildPartialBlock(
+    accumulated: [Resource],
+    next: Resource
+  ) -> [Resource] {
     accumulated + [next]
   }
 }

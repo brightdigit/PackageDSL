@@ -4,6 +4,8 @@
 // Licensed under MIT License
 //
 
+// swiftlint:disable type_name
+
 // swift-format-ignore: NoLeadingUnderscores
 public protocol _Named {
   var name: String { get }
@@ -14,3 +16,4 @@ extension _Named {
     "\(Self.self)"
   }
 }
+// swiftlint:enable type_name

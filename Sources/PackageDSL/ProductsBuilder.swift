@@ -21,21 +21,31 @@ public enum ProductsBuilder {
     [first]
   }
 
-  /// Builds a partial block by accumulating the previous array of `Product` elements and adding the next `Product` element.
-  /// - Parameter accumulated: The previous array of `Product` elements.
-  /// - Parameter next: The next `Product` element to add.
+  /// Builds a partial block by accumulating
+  /// the previous array of `Product` elements
+  /// and adding the next `Product` element.
+  /// - Parameters
+  ///   - accumulated: The previous array of `Product` elements.
+  ///   - next: The next `Product` element to add.
   /// - Returns: The updated array of `Product` elements.
-  public static func buildPartialBlock(accumulated: [any Product], next: any Product)
-    -> [any Product] {
+  public static func buildPartialBlock(
+    accumulated: [any Product],
+    next: any Product
+  ) -> [any Product] {
     accumulated + [next]
   }
 
-  /// Builds a partial block by accumulating the previous array of `Product` elements and adding the next array of `Product` elements.
-  /// - Parameter accumulated: The previous array of `Product` elements.
-  /// - Parameter next: The next array of `Product` elements to add.
+  /// Builds a partial block by accumulating
+  ///  the previous array of `Product` elements
+  ///  and adding the next array of `Product` elements.
+  /// - Parameters
+  ///   - accumulated: The previous array of `Product` elements.
+  ///   - next: The next `Product` element to add.
   /// - Returns: The updated array of `Product` elements.
-  public static func buildPartialBlock(accumulated: [any Product], next: [any Product])
-    -> [any Product] {
+  public static func buildPartialBlock(
+    accumulated: [any Product],
+    next: [any Product]
+  ) -> [any Product] {
     accumulated + next
   }
 }

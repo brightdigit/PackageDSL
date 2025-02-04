@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-typo-correction`
-///  Disable typo correction
-public struct DisableTypoCorrection: FrontendFlag { }
+/// Disable typo correction
+public struct DisableTypoCorrection: FrontendFlag {}

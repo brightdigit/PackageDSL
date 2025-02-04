@@ -1,3 +1,3 @@
 /// Passes the flag `-verify`
 /// Verify diagnostics against expected-{error
-public struct Verify: FrontendFlag { }
+public struct Verify: FrontendFlag {}

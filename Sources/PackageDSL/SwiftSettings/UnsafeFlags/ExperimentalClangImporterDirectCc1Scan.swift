@@ -1,3 +1,4 @@
 /// Passes the flag `-experimental-clang-importer-direct-cc1-scan`
-///  Enables swift driver to construct swift-frontend invocations using -direct-clang-cc1-module-build
-public struct ExperimentalClangImporterDirectCc1Scan: UnsafeFlag { }
+/// Enables swift driver to construct swift-frontend invocations using
+/// -direct-clang-cc1-module-build
+public struct ExperimentalClangImporterDirectCc1Scan: UnsafeFlag {}
