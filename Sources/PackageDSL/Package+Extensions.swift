@@ -11,6 +11,7 @@ extension Package {
     var pathComponents = #filePath.split(separator: "/")
     pathComponents.removeLast()
     // swift-format-ignore: NeverForceUnwrap
+    // swiftlint:disable:next force_unwrapping
     return String(pathComponents.last!)
   }
 

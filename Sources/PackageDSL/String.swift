@@ -16,8 +16,9 @@ extension String {
   func camelToSnakeCaseFlag(withSeparator separator: String = "-") -> String {
     separator
       + enumerated()
-      .reduce("") {
-        $0 + ($1.offset > 0 && $1.element.isUppercase ? separator : "")
+      .reduce(into: "") {
+        $0 +=
+          ($1.offset > 0 && $1.element.isUppercase ? separator : "")
           + String($1.element).lowercased()
       }
   }

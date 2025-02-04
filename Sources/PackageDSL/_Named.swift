@@ -4,7 +4,7 @@
 // Licensed under MIT License
 //
 
-// swiftlint:disable type_name
+// swiftlint:disable type_name missing_docs
 
 // swift-format-ignore: NoLeadingUnderscores
 public protocol _Named {
@@ -16,4 +16,4 @@ extension _Named {
     "\(Self.self)"
   }
 }
-// swiftlint:enable type_name
+// swiftlint:enable type_name missing_docs
