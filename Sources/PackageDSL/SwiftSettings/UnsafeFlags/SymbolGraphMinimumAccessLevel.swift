@@ -1,4 +1,5 @@
 /// Passes the flag `-symbol-graph-minimum-access-level`
+///
 public struct SymbolGraphMinimumAccessLevel: UnsafeFlag {
   public let level: String
 

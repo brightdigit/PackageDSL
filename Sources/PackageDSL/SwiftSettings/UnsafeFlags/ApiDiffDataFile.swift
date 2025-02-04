@@ -1,4 +1,5 @@
 /// Passes the flag `-api-diff-data-file`
+///
 public struct ApiDiffDataFile: UnsafeFlag {
   public let path: String
 

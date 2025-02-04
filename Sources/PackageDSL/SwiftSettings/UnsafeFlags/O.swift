@@ -1,4 +1,5 @@
 /// Passes the flag `-o`
+///
 /// Write output to <file>
 public struct O: UnsafeFlag {
   public let file: String

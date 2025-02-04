@@ -1,4 +1,5 @@
 /// Passes the flag `-localization-path`
+///
 public struct LocalizationPath: UnsafeFlag {
   public let path: String
 

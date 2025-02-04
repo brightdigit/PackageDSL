@@ -1,4 +1,5 @@
 /// Passes the flag `-disable-autolink-library`
+///
 public struct DisableAutolinkLibrary: FrontendFlag {
   public let value: String
 

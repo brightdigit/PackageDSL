@@ -1,4 +1,5 @@
 /// Passes the flag `-sil-inline-caller-benefit-reduction-factor`
+///
 public struct SilInlineCallerBenefitReductionFactor: FrontendFlag {
   public let value: String
 

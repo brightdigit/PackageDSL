@@ -1,4 +1,5 @@
 /// Passes the flag `-verify-additional-file`
+///
 public struct VerifyAdditionalFile: FrontendFlag {
   public let value: String
 

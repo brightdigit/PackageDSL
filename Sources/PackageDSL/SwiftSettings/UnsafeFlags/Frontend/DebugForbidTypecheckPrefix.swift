@@ -1,4 +1,5 @@
 /// Passes the flag `-debug-forbid-typecheck-prefix`
+///
 public struct DebugForbidTypecheckPrefix: FrontendFlag {
   public let value: String
 

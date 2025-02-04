@@ -1,4 +1,5 @@
 /// Passes the flag `-enable-destroy-hoisting=true`
+///
 public struct EnableDestroyHoisting: FrontendFlag {
   public let value: String
 

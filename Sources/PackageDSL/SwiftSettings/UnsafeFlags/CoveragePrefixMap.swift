@@ -1,4 +1,5 @@
 /// Passes the flag `-coverage-prefix-map`
+///
 public struct CoveragePrefixMap: UnsafeFlag {
   public let prefix: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-diagnostic-documentation-path`
+///
 public struct DiagnosticDocumentationPath: FrontendFlag {
   public let path: String
 

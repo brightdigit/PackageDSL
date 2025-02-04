@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-module-dependencies-path`
+///
 public struct EmitModuleDependenciesPath: UnsafeFlag {
   public let path: String
 

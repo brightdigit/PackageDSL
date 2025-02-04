@@ -1,4 +1,5 @@
 /// Passes the flag `-Xfrontend`
+///
 /// Pass <arg> to the Swift frontend
 public struct Xfrontend: UnsafeFlag {
   public let arg: String

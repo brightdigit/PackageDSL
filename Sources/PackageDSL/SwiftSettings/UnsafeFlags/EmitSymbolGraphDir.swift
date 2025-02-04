@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-symbol-graph-dir`
+///
 public struct EmitSymbolGraphDir: UnsafeFlag {
   public let dir: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-playground-option`
+///
 public struct PlaygroundOption: FrontendFlag {
   public let value: String
 

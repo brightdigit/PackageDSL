@@ -1,4 +1,5 @@
 /// Passes the flag `-serialized-path-obfuscate`
+///
 public struct SerializedPathObfuscate: FrontendFlag {
   public let prefix: String
 

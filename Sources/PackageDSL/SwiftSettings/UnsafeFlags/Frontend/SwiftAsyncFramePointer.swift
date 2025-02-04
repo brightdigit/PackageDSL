@@ -1,4 +1,5 @@
 /// Passes the flag `-swift-async-frame-pointer=<value>`
+///
 /// One of 'auto', 'always' or 'never'
 public struct SwiftAsyncFramePointer: FrontendFlag {
   public let value: String

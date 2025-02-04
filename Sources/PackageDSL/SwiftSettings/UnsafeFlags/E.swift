@@ -1,4 +1,5 @@
 /// Passes the flag `-e`
+///
 /// Executes a line of code provided on the command line
 public struct E: UnsafeFlag {
   public let value: String

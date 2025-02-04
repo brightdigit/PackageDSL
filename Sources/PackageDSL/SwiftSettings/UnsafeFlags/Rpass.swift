@@ -1,4 +1,5 @@
 /// Passes the flag `-Rpass=<value>`
+///
 /// Report performed transformations by optimization passes whose name matches the
 /// given POSIX regular expression
 public struct Rpass: UnsafeFlag {

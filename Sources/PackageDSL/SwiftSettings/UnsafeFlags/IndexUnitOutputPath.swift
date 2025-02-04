@@ -1,4 +1,5 @@
 /// Passes the flag `-index-unit-output-path`
+///
 public struct IndexUnitOutputPath: UnsafeFlag {
   public let path: String
 

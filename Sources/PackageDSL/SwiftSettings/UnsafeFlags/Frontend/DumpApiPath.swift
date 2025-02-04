@@ -1,4 +1,5 @@
 /// Passes the flag `-dump-api-path`
+///
 /// The path to output swift interface files for the compiled source files
 public struct DumpApiPath: FrontendFlag {
   public let value: String

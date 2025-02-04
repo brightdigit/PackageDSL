@@ -1,4 +1,5 @@
 /// Passes the flag `-verify-type-layout`
+///
 public struct VerifyTypeLayout: FrontendFlag {
   public let type: String
 

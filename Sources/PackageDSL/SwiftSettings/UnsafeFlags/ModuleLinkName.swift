@@ -1,4 +1,5 @@
 /// Passes the flag `-module-link-name`
+///
 public struct ModuleLinkName: UnsafeFlag {
   public let value: String
 

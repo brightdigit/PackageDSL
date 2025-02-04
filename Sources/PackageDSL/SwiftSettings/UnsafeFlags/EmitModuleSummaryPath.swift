@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-module-summary-path`
+///
 public struct EmitModuleSummaryPath: UnsafeFlag {
   public let path: String
 

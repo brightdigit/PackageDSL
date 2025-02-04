@@ -1,4 +1,5 @@
 /// Passes the flag `-scanner-prefix-map-toolchain`
+///
 public struct ScannerPrefixMapToolchain: UnsafeFlag {
   public let path: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-digester-breakage-allowlist-path`
+///
 public struct DigesterBreakageAllowlistPath: UnsafeFlag {
   public let path: String
 

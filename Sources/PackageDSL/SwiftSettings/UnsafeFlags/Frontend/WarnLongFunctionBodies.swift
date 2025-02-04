@@ -1,4 +1,5 @@
 /// Passes the flag `-warn-long-function-bodies`
+///
 public struct WarnLongFunctionBodies: FrontendFlag {
   public let n: Int
 

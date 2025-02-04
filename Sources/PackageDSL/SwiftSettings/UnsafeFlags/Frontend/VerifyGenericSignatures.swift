@@ -1,4 +1,5 @@
 /// Passes the flag `-verify-generic-signatures`
+///
 public struct VerifyGenericSignatures: FrontendFlag {
   public let modulename: String
 

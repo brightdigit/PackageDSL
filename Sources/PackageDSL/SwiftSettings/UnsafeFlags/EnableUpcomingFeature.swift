@@ -1,4 +1,5 @@
 /// Passes the flag `-enable-upcoming-feature`
+///
 public struct EnableUpcomingFeature: UnsafeFlag {
   public let value: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-macro-expansion-files`
+///
 public struct EmitMacroExpansionFiles: FrontendFlag {
   public let value: String
 

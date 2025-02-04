@@ -1,4 +1,5 @@
 /// Passes the flag `-export-as`
+///
 /// Module name to use when referenced in clients module interfaces
 public struct ExportAs: UnsafeFlag {
   public let value: String

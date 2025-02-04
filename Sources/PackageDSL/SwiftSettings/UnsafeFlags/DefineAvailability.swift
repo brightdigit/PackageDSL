@@ -1,4 +1,5 @@
 /// Passes the flag `-define-availability`
+///
 public struct DefineAvailability: UnsafeFlag {
   public let macro: String
 

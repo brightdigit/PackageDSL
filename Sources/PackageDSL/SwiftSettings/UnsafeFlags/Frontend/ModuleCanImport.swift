@@ -1,4 +1,5 @@
 /// Passes the flag `-module-can-import`
+///
 public struct ModuleCanImport: FrontendFlag {
   public let modulename: String
 

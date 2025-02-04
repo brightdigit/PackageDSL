@@ -1,4 +1,5 @@
 /// Passes the flag `-access-notes-path`
+///
 public struct AccessNotesPath: UnsafeFlag {
   public let value: String
 

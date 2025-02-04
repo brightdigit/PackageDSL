@@ -1,4 +1,5 @@
 /// Passes the flag `-disable-autolink-framework`
+///
 public struct DisableAutolinkFramework: FrontendFlag {
   public let value: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-swift-module-file=<name>=<path>`
+///
 /// Specify Swift module input explicitly built from textual interface
 public struct SwiftModuleFile: FrontendFlag {
   public let value: String

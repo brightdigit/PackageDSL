@@ -1,4 +1,5 @@
 /// Passes the flag `-module-alias`
+///
 public struct ModuleAlias: UnsafeFlag {
   public let aliasname: String
 

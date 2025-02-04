@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-module-semantic-info-path`
+///
 public struct EmitModuleSemanticInfoPath: FrontendFlag {
   public let path: String
 

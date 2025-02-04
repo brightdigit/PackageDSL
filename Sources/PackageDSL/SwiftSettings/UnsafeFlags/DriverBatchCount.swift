@@ -1,4 +1,5 @@
 /// Passes the flag `-driver-batch-count`
+///
 public struct DriverBatchCount: UnsafeFlag {
   public let value: String
 

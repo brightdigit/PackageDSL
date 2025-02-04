@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-module-doc-path`
+///
 public struct EmitModuleDocPath: FrontendFlag {
   public let path: String
 

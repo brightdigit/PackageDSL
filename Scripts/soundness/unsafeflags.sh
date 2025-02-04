@@ -160,6 +160,7 @@ process_flags() {
         # Generate Swift file
         {
             echo "/// Passes the flag \`$original_flag\`"
+            echo "///"
             if [ ! -z "$description" ]; then
                 # Split description into lines of max 80 characters (accounting for "/// " prefix)
                 capitalized_desc=$(echo "$description" | sed 's/^[[:lower:]]/\U&/')

@@ -1,4 +1,5 @@
 /// Passes the flag `-dump-migration-states-dir`
+///
 public struct DumpMigrationStatesDir: UnsafeFlag {
   public let path: String
 

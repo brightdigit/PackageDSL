@@ -1,4 +1,5 @@
 /// Passes the flag `-scanner-prefix-map`
+///
 public struct ScannerPrefixMap: UnsafeFlag {
   public let prefix: String
 

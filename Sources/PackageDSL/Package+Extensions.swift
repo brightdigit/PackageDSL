@@ -68,7 +68,6 @@ extension Package {
         $0.allDependencies()
       }
     }
-    let targetDependencies = dependencies.compactMap { $0 as? Target }
     let packageTargetDependencies = dependencies.compactMap { $0 as? TargetDependency }
     let allPackageDependencies =
       packageTargetDependencies.map(\.package) + packageDependencies

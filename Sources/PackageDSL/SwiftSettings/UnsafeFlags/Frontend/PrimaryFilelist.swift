@@ -1,4 +1,5 @@
 /// Passes the flag `-primary-filelist`
+///
 public struct PrimaryFilelist: FrontendFlag {
   public let value: String
 

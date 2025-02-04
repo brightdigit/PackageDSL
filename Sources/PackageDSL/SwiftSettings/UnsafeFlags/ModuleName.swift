@@ -1,4 +1,5 @@
 /// Passes the flag `-module-name`
+///
 /// Name of the module to build
 public struct ModuleName: UnsafeFlag {
   public let value: String

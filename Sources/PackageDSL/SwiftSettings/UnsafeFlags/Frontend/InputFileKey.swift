@@ -1,4 +1,5 @@
 /// Passes the flag `-input-file-key`
+///
 /// Cache Key for input file
 public struct InputFileKey: FrontendFlag {
   public let value: String

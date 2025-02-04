@@ -1,4 +1,5 @@
 /// Passes the flag `-swift-ptrauth-mode`
+///
 public struct SwiftPtrauthMode: UnsafeFlag {
   public let mode: String
 

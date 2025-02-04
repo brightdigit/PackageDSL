@@ -1,4 +1,5 @@
 /// Passes the flag `-supplementary-output-file-map`
+///
 public struct SupplementaryOutputFileMap: FrontendFlag {
   public let value: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-target-variant-sdk-version`
+///
 public struct TargetVariantSdkVersion: FrontendFlag {
   public let value: String
 

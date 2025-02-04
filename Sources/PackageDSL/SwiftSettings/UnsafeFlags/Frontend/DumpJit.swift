@@ -1,4 +1,5 @@
 /// Passes the flag `-dump-jit`
+///
 /// Dump JIT contents
 public struct DumpJit: FrontendFlag {
   public let value: String

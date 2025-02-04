@@ -1,4 +1,5 @@
 /// Passes the flag `-emit-loaded-module-trace-path`
+///
 public struct EmitLoadedModuleTracePath: UnsafeFlag {
   public let path: String
 

@@ -1,4 +1,5 @@
 /// Passes the flag `-sil-inline-threshold`
+///
 public struct SilInlineThreshold: FrontendFlag {
   public let value: String
 

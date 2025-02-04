@@ -1,4 +1,5 @@
 /// Passes the flag `-target-cpu`
+///
 /// Generate code for a particular CPU variant
 public struct TargetCpu: UnsafeFlag {
   public let value: String

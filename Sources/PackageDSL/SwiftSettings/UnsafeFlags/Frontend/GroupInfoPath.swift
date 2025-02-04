@@ -1,4 +1,5 @@
 /// Passes the flag `-group-info-path`
+///
 public struct GroupInfoPath: FrontendFlag {
   public let value: String
 

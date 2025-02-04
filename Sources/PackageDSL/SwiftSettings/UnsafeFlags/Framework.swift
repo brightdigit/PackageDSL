@@ -1,4 +1,5 @@
 /// Passes the flag `-framework`
+///
 /// Specifies a framework which should be linked against
 public struct Framework: UnsafeFlag {
   public let value: String

@@ -1,4 +1,5 @@
 /// Passes the flag `-diagnostic-style`
+///
 public struct DiagnosticStyle: UnsafeFlag {
   public let style: String
 

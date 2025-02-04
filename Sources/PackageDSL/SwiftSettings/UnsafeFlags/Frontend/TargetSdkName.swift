@@ -1,4 +1,5 @@
 /// Passes the flag `-target-sdk-name`
+///
 public struct TargetSdkName: FrontendFlag {
   public let value: String
 

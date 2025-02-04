@@ -1,4 +1,5 @@
 /// Passes the flag `-digester-mode`
+///
 /// Uabi
 public struct DigesterMode: UnsafeFlag {
   public let api: String
