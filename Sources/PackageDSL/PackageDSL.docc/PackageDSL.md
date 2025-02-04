@@ -127,12 +127,9 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 ### Feature Flags
 
 - ``AccessLevelOnImport``
-- ``DeprecateApplicationMain``
 - ``DisableOutwardActorInference``
 - ``DynamicActorIsolation``
 - ``GlobalActorIsolatedTypesUsability``
-- ``GlobalConcurrency``
-- ``ImportObjcForwardDeclarations``
 - ``InferSendableFromCaptures``
 - ``InternalImportsByDefault``
 - ``IsolatedDefaultValues``
@@ -283,7 +280,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableInferPublicSendable``
 - ``DisableInterfaceLock``
 - ``DisableInvalidEphemeralnessAsError``
-- ``DisableIosInheritanceForPoundIfOsOnVisionos``
 - ``DisableLargeLoadableTypesReg2mem``
 - ``DisableLayoutStringValueWitnessesInstantiation``
 - ``DisableLayoutStringValueWitnesses``
@@ -402,8 +398,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EmitLibrary``
 - ``EmitLoadedModuleTracePath``
 - ``EmitLoadedModuleTrace``
-- ``EmitLocalizedStringsPath``
-- ``EmitLocalizedStrings``
 - ``EmitMacroExpansionFiles``
 - ``EmitMigratedFilePath``
 - ``EmitModuleDependenciesPath``
@@ -607,9 +601,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``InputFileKey``
 - ``InternalizeAtLink``
 - ``Interpret``
-- ``IrgenAlwaysUseIndirectRelativeReferences``
 - ``J``
-- ``JitBuild``
 - ``L``
 - ``LdPath``
 - ``Libc``
@@ -646,8 +638,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``NoLinkObjcRuntime``
 - ``NoScannerModuleValidation``
 - ``NoSerializeDebuggingOptions``
-- ``NoSignClassRo``
-- ``NoStackCheck``
 - ``NoStaticExecutable``
 - ``NoStaticStdlib``
 - ``NoStdlibRpath``
@@ -760,7 +750,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``SerializeDiagnostics``
 - ``SerializedPathObfuscate``
 - ``ShowDiagnosticsAfterFatal``
-- ``SignClassRo``
 - ``SilBasedDebuginfo``
 - ``SilDebugSerialization``
 - ``SilInlineCallerBenefitReductionFactor``
@@ -775,7 +764,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``SolverDisableShrink``
 - ``SolverMemoryThreshold``
 - ``SolverShrinkUnsolvedThreshold``
-- ``StackCheck``
 - ``StackPromotionLimit``
 - ``StaticExecutable``
 - ``StaticStdlib``
@@ -783,16 +771,13 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``StatsOutputDir``
 - ``StrictConcurrency``
 - ``StrictImplicitModuleContext``
-- ``StringLiteralsMustBeAsciiOnly``
 - ``SupplementaryOutputFileMap``
 - ``SuppressRemarks``
 - ``SuppressStaticExclusivitySwap``
 - ``SuppressWarnings``
 - ``SwiftAsyncFramePointer``
-- ``SwiftIsaPtrauthMode``
 - ``SwiftModuleCrossImport``
 - ``SwiftModuleFile``
-- ``SwiftPtrauthMode``
 - ``SwiftVersion``
 - ``SymbolGraphMinimumAccessLevel``
 - ``TargetCpu``
@@ -806,7 +791,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``TbdCurrentVersion``
 - ``TbdInstallName``
 - ``TbdIsInstallapi``
-- ``TemporaryForceLlvmFullLto``
 - ``TestDependencyScanCacheSerialization``
 - ``TestableImportModule``
 - ``ThrowsAsTraps``
@@ -963,7 +947,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableInferPublicSendable``
 - ``DisableInterfaceLock``
 - ``DisableInvalidEphemeralnessAsError``
-- ``DisableIosInheritanceForPoundIfOsOnVisionos``
 - ``DisableLargeLoadableTypesReg2mem``
 - ``DisableLayoutStringValueWitnessesInstantiation``
 - ``DisableLayoutStringValueWitnesses``
@@ -1140,7 +1123,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``InputFileKey``
 - ``InternalizeAtLink``
 - ``Interpret``
-- ``IrgenAlwaysUseIndirectRelativeReferences``
 - ``LoadDependencyScanCache``
 - ``MergeModules``
 - ``ModuleCanImportVersion``
@@ -1199,7 +1181,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``SkipImportInPublicInterface``
 - ``SolverDisableShrink``
 - ``StackPromotionLimit``
-- ``StringLiteralsMustBeAsciiOnly``
 - ``SupplementaryOutputFileMap``
 - ``SuppressStaticExclusivitySwap``
 - ``SwiftAsyncFramePointer``
@@ -1212,7 +1193,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``TbdCurrentVersion``
 - ``TbdInstallName``
 - ``TbdIsInstallapi``
-- ``TemporaryForceLlvmFullLto``
 - ``TestDependencyScanCacheSerialization``
 - ``TestableImportModule``
 - ``ThrowsAsTraps``
