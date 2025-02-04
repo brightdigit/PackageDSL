@@ -11,7 +11,7 @@ extract_struct_names() {
     local dir=$1
     local recursive=$2
     local maxdepth_arg=${recursive:+""} ${recursive:-"-maxdepth 1"}
-    find "$dir" $maxdepth_arg -name "*.swift" -exec grep -h "^public struct" {} \; | sed 's/public struct \([^:]*\).*/- ``\1``/' | sort
+    find "$dir" $maxdepth_arg -name "*.swift" -exec basename {} .swift \; | sed 's/\(.*\)/- ``\1``/' | sort
 }
 
 # Create temporary file

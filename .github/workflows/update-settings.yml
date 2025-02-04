@@ -1,0 +1,125 @@
+name: Update Swift Settings
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:  # Allow manual triggering
+
+# Add a condition to only run on main branch
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # Add a check for main branch
+  check-branch:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - run: echo "Running on main branch"
+
+  get-swift-help:
+    needs: check-branch  # Make this job dependent on check-branch
+    runs-on: ubuntu-latest
+    container:
+      image: swift:latest
+    outputs:
+      help-hidden: ${{ steps.get-help.outputs.help-hidden }}
+      frontend-help-hidden: ${{ steps.get-help.outputs.frontend-help-hidden }}
+    
+    steps:
+    - name: Get Swift Help Output
+      id: get-help
+      run: |
+        echo "help-hidden<<EOF" >> $GITHUB_OUTPUT
+        swiftc --help-hidden >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        
+        echo "frontend-help-hidden<<EOF" >> $GITHUB_OUTPUT
+        swiftc -frontend -help-hidden >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
+  update-settings:
+    needs: get-swift-help
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq
+
+    - name: Install Mint
+      run: |
+        git clone https://github.com/yonaskolb/Mint.git
+        cd Mint
+        swift build -c release
+        mkdir -p .mint/bin
+        cp .build/release/mint .mint/bin/
+        echo "MINT_CMD=$GITHUB_WORKSPACE/Mint/.mint/bin/mint" >> $GITHUB_ENV
+
+    - name: Cache Mint packages
+      uses: actions/cache@v4
+      with:
+          path: .mint
+          key: ${{ runner.os }}-mint-${{ hashFiles('**/Mintfile') }}
+          restore-keys: |
+            ${{ runner.os }}-mint-        
+    
+    - name: Clean SwiftSettings directory
+      run: |
+        rm -rf Sources/PackageDSL/SwiftSettings/*
+        mkdir -p Sources/PackageDSL/SwiftSettings/UnsafeFlags
+        mkdir -p Sources/PackageDSL/SwiftSettings/FeatureFlags
+
+    - name: Save help output to files
+      run: |
+        echo "${{ needs.get-swift-help.outputs.help-hidden }}" > help-hidden.txt
+        echo "${{ needs.get-swift-help.outputs.frontend-help-hidden }}" > frontend-help-hidden.txt
+
+    - name: Update Unsafe Flags
+      run: |
+        export SWIFT_HELP="$(cat help-hidden.txt)"
+        export SWIFT_FRONTEND_HELP="$(cat frontend-help-hidden.txt)"
+        bash Scripts/soundness/unsafeflags.sh Sources/PackageDSL/SwiftSettings/UnsafeFlags
+
+    - name: Update Feature Flags
+      run: |
+        bash Scripts/soundness/features.sh Sources/PackageDSL/SwiftSettings/FeatureFlags
+
+    - name: Update Documentation
+      run: bash Scripts/soundness/docc.sh
+
+    - name: Run Linter
+      run: FORMAT_ONLY=true bash Scripts/soundness/lint.sh
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        # Delete temporary help files
+        rm help-hidden.txt frontend-help-hidden.txt
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Create Pull Request
+      if: steps.check_changes.outputs.changes == 'true'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: 'chore: Update Swift Settings'
+        title: 'Update Swift Settings'
+        body: |
+          This PR updates the Swift settings including:
+          - Unsafe flags
+          - Feature flags
+          - Documentation
+          
+          This is an automated PR created by the update-settings workflow.
+        branch: update-swift-settings-${{ github.run_number }}-${{ github.run_attempt }}
+        base: ${{ github.ref_name }}
+        delete-branch: true 

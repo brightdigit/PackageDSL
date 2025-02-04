@@ -18,6 +18,19 @@ output_directory="$1"
 mkdir -p "$output_directory"
 mkdir -p "$output_directory/Frontend"
 
+# Use environment variables if they exist, otherwise run commands
+if [ -n "$SWIFT_HELP" ]; then
+	help_output="$SWIFT_HELP"
+else
+	help_output=$(swiftc --help-hidden)
+fi
+
+if [ -n "$SWIFT_FRONTEND_HELP" ]; then
+	frontend_help="$SWIFT_FRONTEND_HELP"
+else
+	frontend_help=$(swiftc -frontend -help-hidden)
+fi
+
 # Function to filter and format help output
 filter_help_output() {
     echo "$1" | awk '
@@ -189,10 +202,6 @@ process_flags() {
         echo "File '$output_directory/$output_subdir/$camel_case_flag.swift' created."
     done <<< "$filtered_flags"
 }
-
-# Get the help outputs
-help_output=$(swiftc --help-hidden)
-frontend_help=$(swiftc -frontend -help-hidden)
 
 # Create array for unsafe flags
 declare -A unsafe_flags
