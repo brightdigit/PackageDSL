@@ -1,0 +1,13 @@
+name: PackageDSL
+settings:
+  LINT_MODE: ${LINT_MODE}
+packages:
+  OSVer:
+    path: .
+aggregateTargets:
+  Lint:
+    buildScripts:
+      - path: Scripts/soundness/lint.sh
+        name: Lint
+        basedOnDependencyAnalysis: false
+    schemes: {}
