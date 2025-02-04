@@ -150,15 +150,21 @@ let package = Package(
 ### 3. Generate Package.swift
 
 ```bash
-./package_generated.sh . --version 5.9
+./package.sh . --version 5.9
 ```
 
 ## Installation
 
-1. Download the `package_generated.sh` script from the [latest GitHub release](https://github.com/brightdigit/PackageDSL/releases/latest)
+1. Download the `package.sh` script from our [latest release](https://github.com/brightdigit/PackageDSL/releases/latest/download/package.sh)
+
+   Or using curl:
+   ```bash
+   curl -LO https://github.com/brightdigit/PackageDSL/releases/latest/download/package.sh
+   ```
+
 2. Make the script executable:
 ```bash
-chmod +x package_generated.sh
+chmod +x package.sh
 ```
 
 ## Usage
@@ -166,7 +172,7 @@ chmod +x package_generated.sh
 The script accepts the following arguments:
 
 ```bash
-./package_generated.sh [PACKAGE_DIR] [OPTIONS]
+./package.sh [PACKAGE_DIR] [OPTIONS]
 ```
 
 ### Arguments
@@ -182,12 +188,12 @@ The script accepts the following arguments:
 
 Generate Package.swift for the current directory using Swift 5.9:
 ```bash
-./package_generated.sh . --version 5.9
+./package.sh . --version 5.9
 ```
 
 Generate a minimized Package.swift for a specific package:
 ```bash
-./package_generated.sh ~/Projects/MyPackage --version 5.9 --minimize
+./package.sh ~/Projects/MyPackage --version 5.9 --minimize
 ```
 
 ## FAQ
@@ -309,7 +315,7 @@ The DSL is used only at development time to generate your `Package.swift`. There
 
 ## Thanks
 
-* [@joshdholtz for inspiration with DeckUI](https://github.com/joshdholtz/DeckUI)
+* [joshdholtz](https://github.com/joshdholtz) for inspiration with [DeckUI](https://github.com/joshdholtz/DeckUI)
 
 ## Contributing
 

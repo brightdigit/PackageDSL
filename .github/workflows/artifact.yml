@@ -1,13 +1,12 @@
-name: Create Package Script Artifact
+name: Create Package Script Release
 
 on:
   push:
-    branches: [ main ]
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  create-artifact:
-    runs-on: ubuntu-latest  # Using macOS since the script uses macOS-specific sed
+  create-release:
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
@@ -18,9 +17,17 @@ jobs:
         chmod +x Scripts/artifact.sh
         ./Scripts/artifact.sh package.sh
       
-    - name: Upload package script
-      uses: actions/upload-artifact@v4
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
       with:
-        name: package.sh
-        path: package.sh
-        retention-days: 180  # Artifacts will be kept for 30 days 
+        name: Latest Package Script
+        tag_name: latest
+        files: package.sh
+        draft: false
+        prerelease: false
+        make_latest: true
+        fail_on_unmatched_files: true
+        body: |
+          This is an automatically generated release containing the latest package.sh script.
+        
+        The previous 'latest' tag will be automatically moved to this release.

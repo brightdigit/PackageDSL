@@ -14,6 +14,47 @@ Swift Packages are a great way to deliver functionality and share code. However,
 - **Reduced Complexity**: Simplified syntax for defining products, targets, and dependencies
 - **Easy Maintenance**: Update individual components without touching the entire Package.swift file
 
+## Installation
+
+1. Download the `package.sh` script from our [latest release](https://github.com/brightdigit/PackageDSL/releases/latest/download/package.sh)
+
+   Or using curl:
+   ```bash
+   curl -LO https://github.com/brightdigit/PackageDSL/releases/latest/download/package.sh
+   ```
+
+2. Make the script executable:
+   ```bash
+   chmod +x package.sh
+   ```
+
+## Usage
+
+The script accepts the following arguments:
+
+```bash
+./package.sh [PACKAGE_DIR] [OPTIONS]
+```
+
+### Arguments
+- `PACKAGE_DIR`: Path to your package directory (required)
+
+### Options
+- `--version <version>`: Specify Swift tools version (default: 6.0)
+- `--minimize`: Minimize the output by removing comments and extra whitespace
+
+### Examples
+
+Generate Package.swift for the current directory using Swift 5.9:
+```bash
+./package.sh . --version 5.9
+```
+
+Generate a minimized Package.swift for a specific package:
+```bash
+./package.sh ~/Projects/MyPackage --version 5.9 --minimize
+```
+
 Here's an example of how you can define your package:
 
 ```swift
