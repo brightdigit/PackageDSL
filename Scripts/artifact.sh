@@ -1,7 +1,12 @@
 #!/bin/sh
 
 # Default output location for the generated script
-output_script="package_generated.sh"
+output_script="package.sh"
+
+# Parse command line argument for output script name if provided
+if [ "$#" -gt 0 ]; then
+    output_script="$1"
+fi
 
 echo "📝 Generating package script..."
 
