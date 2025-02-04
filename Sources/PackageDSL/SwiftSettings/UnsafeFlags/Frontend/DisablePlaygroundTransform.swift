@@ -1,3 +1,3 @@
 /// Passes the flag `-disable-playground-transform`
-///  Disable playground transformation
-public struct DisablePlaygroundTransform: FrontendFlag { }
+/// Disable playground transformation
+public struct DisablePlaygroundTransform: FrontendFlag {}

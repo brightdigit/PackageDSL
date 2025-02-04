@@ -1,3 +1,4 @@
+// swiftlint:disable line_length
 ///
 /// We propose adding a new type constraint `~Escapable` for types that can be locally copied but cannot be assigned or transferred outside of the immediate context.
 /// This complements the `~Copyable` types added with SE-0390 by introducing another set of compile-time-enforced lifetime controls that can be used for safe, highly-performant APIs.
@@ -13,9 +14,10 @@
 ///
 /// - SeeAlso: [Nonescapable Types (SE-0446)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0446-non-escapable.md)
 ///
-public struct NonescapableTypes : SwiftSettingFeature {
+public struct NonescapableTypes: SwiftSettingFeature {
+  // swiftlint:enable line_length
   /// The current state of the feature.
-  public var featureState : FeatureState {
-    return .upcoming
+  public var featureState: FeatureState {
+    .upcoming
   }
 }

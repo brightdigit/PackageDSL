@@ -1,3 +1,4 @@
+// swiftlint:disable line_length
 ///
 /// Swift Concurrency assigns values to *isolation domains* determined by actor and
 /// task boundaries. Code running in distinct isolation domains can execute
@@ -18,9 +19,10 @@
 ///
 /// - SeeAlso: [Region based Isolation (SE-0414)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0414-region-based-isolation.md)
 ///
-public struct RegionBasedIsolation : SwiftSettingFeature {
+public struct RegionBasedIsolation: SwiftSettingFeature {
+  // swiftlint:enable line_length
   /// The current state of the feature.
-  public var featureState : FeatureState {
-    return .upcoming
+  public var featureState: FeatureState {
+    .upcoming
   }
 }

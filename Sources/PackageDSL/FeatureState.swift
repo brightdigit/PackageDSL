@@ -15,11 +15,8 @@ extension FeatureState {
   /// - Returns: A `SwiftSetting` that enables the feature based on its state.
   public func swiftSetting(name: String) -> SwiftSetting {
     switch self {
-      case .experimental:
-        return .enableExperimentalFeature(name)
-
-      case .upcoming:
-        return .enableUpcomingFeature(name)
+      case .experimental: .enableExperimentalFeature(name)
+      case .upcoming: .enableUpcomingFeature(name)
     }
   }
 }

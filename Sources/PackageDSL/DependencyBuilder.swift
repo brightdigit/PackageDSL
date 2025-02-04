@@ -8,12 +8,16 @@ public enum DependencyBuilder {
     [first]
   }
 
-  /// Builds a partial block of dependencies, adding a new `Dependency` to an existing collection.
+  /// Builds a partial block of dependencies,
+  /// adding a new `Dependency` to an existing collection.
   /// - Parameter accumulated: The existing collection of dependencies.
   /// - Parameter next: The new `Dependency` to add to the collection.
-  /// - Returns: A new collection of dependencies, containing the accumulated dependencies and the `next` dependency.
-  public static func buildPartialBlock(accumulated: any Dependencies, next: Dependency)
-    -> any Dependencies {
+  /// - Returns: A new collection of dependencies,
+  /// containing the accumulated dependencies and the `next` dependency.
+  public static func buildPartialBlock(
+    accumulated: any Dependencies,
+    next: Dependency
+  ) -> any Dependencies {
     accumulated + [next]
   }
 }

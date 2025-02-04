@@ -1,13 +1,13 @@
 /// Passes the flag `-cxx-interoperability-mode=<value>`
-///  Enables C++ interoperability; pass 'default' to enable or 'off' to disable
+/// Enables C++ interoperability; pass 'default' to enable or 'off' to disable
 public struct CxxInteroperabilityMode: UnsafeFlag {
-    public let value: String
+  public let value: String
 
-    public init(_ value: String) {
-        self.value = value
-    }
+  public var unsafeFlagArguments: [String] {
+    ["\(name.camelToSnakeCaseFlag())", "\(value)"]
+  }
 
-    public var unsafeFlagArguments: [String] {
-        ["\(name.camelToSnakeCaseFlag())=\(value)"]
-    }
+  public init(_ value: String) {
+    self.value = value
+  }
 }

@@ -106,7 +106,7 @@ process_flags() {
         else
             flag_for_camel="$flag_name"
         fi
-        camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub("-", " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
+        camel_case_flag=$(echo "$flag_for_camel" | awk '{gsub(/[-_]/, " "); print $0}' | awk '{for (i=1; i<=NF; i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); print}' | sed 's/ //g')
         
         # Handle single-letter flags
         if [ ${#camel_case_flag} -eq 1 ]; then
@@ -135,7 +135,7 @@ process_flags() {
                 # Use parameter name for the value property, taking only the first part if it contains punctuation
                 # Convert to camelCase and remove dashes
                 value_property_name=$(echo "$param_for_type" | cut -d'=' -f1 | cut -d',' -f1 | cut -d':' -f1 | cut -d'#' -f1 | \
-                    awk '{gsub("-", " "); print $0}' | \
+                    awk '{gsub(/[-_]/, " "); print $0}' | \
                     awk '{for(i=1;i<=NF;i++)if(i==1){$i=tolower($i)}else{$i=toupper(substr($i,1,1)) tolower(substr($i,2))};}1' | \
                     sed 's/ //g' | tr '[:upper:]' '[:lower:]')
             fi
@@ -161,25 +161,24 @@ process_flags() {
         {
             echo "/// Passes the flag \`$original_flag\`"
             if [ ! -z "$description" ]; then
+                # Split description into lines of max 80 characters (accounting for "/// " prefix)
                 capitalized_desc=$(echo "$description" | sed 's/^[[:lower:]]/\U&/')
-                echo "/// $capitalized_desc"
+                echo "$capitalized_desc" | fold -s -w 80 | while read -r line; do
+                    echo "/// $line"
+                done
             fi
             
             if [ ! -z "$parameter" ]; then
                 echo "public struct $camel_case_flag: $protocol_name {"
                 echo "    public let $value_property_name: $param_type"
                 echo ""
+                echo "    public var $property_name: [String] {"
+                echo "        [\"\(name.camelToSnakeCaseFlag())\", \"\($value_property_name)\"]"
+                echo "    }"
+                echo ""                
                 echo "    public init(_ $value_property_name: $param_type) {"
                 echo "        self.$value_property_name = $value_property_name"
-                echo "    }"
-                echo ""
-                echo "    public var $property_name: [String] {"
-                if [[ "$original_flag" == *"="* ]]; then
-                    echo "        [\"\(name.camelToSnakeCaseFlag())=\($value_property_name)\"]"
-                else
-                    echo "        [\"\(name.camelToSnakeCaseFlag())\", \"\($value_property_name)\"]"
-                fi
-                echo "    }"
+                echo "    }"                
                 echo "}"
             else
                 echo "public struct $camel_case_flag: $protocol_name { }"

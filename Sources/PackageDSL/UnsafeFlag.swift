@@ -23,36 +23,3 @@ extension UnsafeFlag {
     .unsafeFlags(unsafeFlagArguments)
   }
 }
-
-
-public protocol FrontendFlag : GroupBuildable, _Named {
-  var flagArguments: [String] { get }
-}
-
-extension FrontendFlag {
-  public var flagArguments: [String] {
-      [name.camelToSnakeCaseFlag()]
-  }
-}
-
-public struct FrontendFlags : UnsafeFlag {
-  public init(@GroupBuilder<any FrontendFlag> frontendFlags: @escaping () -> [any FrontendFlag] ) {
-    self.init(frontendFlags: frontendFlags())
-  }
-  private init(frontendFlags: [any FrontendFlag]) {
-    self.frontendFlags = frontendFlags
-  }
-  
-  static let argument = "-Xfrontend"
-  
-  public let frontendFlags: [any FrontendFlag]
-  
-  public var unsafeFlagArguments: [String] {
-    let arguments = frontendFlags.flatMap(\.flagArguments)
-    if arguments.isEmpty {
-      return []
-    }
-    return [Self.argument] + arguments
-  }
-}
-
