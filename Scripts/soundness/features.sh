@@ -74,7 +74,8 @@ create_feature_file() {
 								
 								# Ensure period_pos is a valid number
 								if [[ "$period_pos" =~ ^[0-9]+$ ]] && [ "$period_pos" -gt 0 ]; then
-										echo "/// ${line:0:period_pos}"
+										echo "/// ${line:0:period_pos}."
+										echo "///"
 										echo "///"
 										if [ "${#line}" -gt "$period_pos" ]; then
 												echo "/// ${line:period_pos+1}"

@@ -90,6 +90,8 @@ jobs:
     - name: Check for changes
       id: check_changes
       run: |
+        # Delete temporary help files
+        rm help-hidden.txt frontend-help-hidden.txt
         if [ -n "$(git status --porcelain)" ]; then
           echo "changes=true" >> $GITHUB_OUTPUT
         else
