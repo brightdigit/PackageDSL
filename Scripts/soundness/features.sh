@@ -11,30 +11,20 @@ display_usage() {
 # Function to echo feature into a new file
 create_feature_file() {
 		local feature_state_dir=$1
-		local feature_state=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+		local feature_state=$(echo "$1" | awk '{print tolower($0)}')
 		local feature_name=$2
 		local file_name=$3
 		local html_url=$4
 		local file_content=$5
 
-		# Create temporary files
-		local temp_file=$(mktemp)
-		local doc_file=$(mktemp)
-		local title_file=$(mktemp)
-
-		# Write content to temp file to avoid pipe issues
-		echo "$file_content" > "$temp_file"
-
 		# Extract the proposal title (first # header)
-		awk '/^# / { print substr($0, 3); exit }' "$temp_file" > "$title_file"
-		local proposal_title=$(cat "$title_file")
-		
+		local proposal_title=$(echo "$file_content" | awk '/^# / { print substr($0, 3); exit }')
 		# Extract the proposal number from the filename
 		local proposal_number="SE-$(echo "$file_name" | cut -d'-' -f1)"
-		
+
 		# Extract documentation between first and second level 2 headers
-		awk '
-				BEGIN { in_section=0; }
+		local documentation=$(echo "$file_content" | awk '
+				BEGIN { in_section=0; doc="" }
 				/^## / { 
 						if (in_section == 0) {
 								in_section=1
@@ -44,65 +34,61 @@ create_feature_file() {
 								exit
 						}
 				}
-				in_section == 1 { print $0 }
-		' "$temp_file" > "$doc_file"
+				in_section == 1 { doc = doc $0 "\n" }
+				END { print doc }
+		')
 
 		# Create the Swift file with documentation
-		{
-				echo "// swiftlint:disable line_length"
-				echo "///"
-				
-				# Process the documentation
-				sed '/^$/d' "$doc_file" | while IFS= read -r line; do
-						if [ -z "$first_printed" ]; then
-								# Process first line to find first sentence
-								period_pos=$(echo "$line" | awk '
-										BEGIN { pos=0; in_parentheses=0 }
-										{
-												for(i=1; i<=length($0); i++) {
-														c=substr($0,i,1)
-														if(c=="(") in_parentheses++
-														else if(c==")") in_parentheses--
-														else if(c=="." && in_parentheses<=0) {
-																pos=i
-																exit
-														}
-												}
-												print pos
-										}
-								')
+		echo "// swiftlint:disable line_length" > "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		# Format each line of documentation with ///
+		echo "$documentation" | sed '/^$/d' | awk '
+				BEGIN { first_printed = 0 }
+				{
+						if (!first_printed) {
+								line = $0
+								pos = 1
+								in_parentheses = 0
+								period_pos = 0
 								
-								# Ensure period_pos is a valid number
-								if [[ "$period_pos" =~ ^[0-9]+$ ]] && [ "$period_pos" -gt 0 ]; then
-										echo "/// ${line:0:period_pos}."
-										echo "///"
-										echo "///"
-										if [ "${#line}" -gt "$period_pos" ]; then
-												echo "/// ${line:period_pos+1}"
-										fi
-										first_printed=1
-								else
-										echo "/// $line"
-								fi
-						else
-								echo "/// $line"
-						fi
-				done
-				
-				echo "///"
-				echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)"
-				echo "///"
-				echo "public struct $feature_name : SwiftSettingFeature {"
-				echo "  // swiftlint:enable line_length"
-				echo "  /// The current state of the feature."
-				echo "  public var featureState : FeatureState {"
-				echo "    return .$feature_state"
-				echo "  }"
-				echo "}"
-		} > "$output_directory/$feature_state_dir/${feature_name}.swift"
-
-		# Clean up temporary files
-		rm -f "$temp_file" "$doc_file" "$title_file"
+								# Scan through the line character by character
+								while (pos <= length(line)) {
+										char = substr(line, pos, 1)
+										if (char == "(") in_parentheses = 1
+										else if (char == ")") in_parentheses = 0
+										else if (char == "." && !in_parentheses) {
+												period_pos = pos
+												break
+										}
+										pos++
+								}
+								
+								if (period_pos > 0) {
+										# Print everything up to and including the period
+										print "/// " substr(line, 1, period_pos)
+										print "///"
+										# Print the rest of the line if anything remains
+										rest = substr(line, period_pos + 1)
+										if (length(rest) > 0) {
+												print "/// " rest
+										}
+										first_printed = 1
+										next
+								}
+						}
+						print "/// " $0
+				}
+		' >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "/// - SeeAlso: [$proposal_title ($proposal_number)]($html_url)" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "///" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "public struct $feature_name : SwiftSettingFeature {" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "  // swiftlint:enable line_length" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "  /// The current state of the feature." >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "  public var featureState : FeatureState {" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "    return .$feature_state" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "  }" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
+		echo "}" >> "$output_directory/$feature_state_dir/${feature_name}.swift"
 }
 
 # Check if number of arguments is less than 1
@@ -145,19 +131,22 @@ response=$(curl -L -s "https://api.github.com/repos/$repo_owner/$repo_name/git/t
           jq -r '.tree[] | select(.path | startswith("proposals/") and endswith(".md")) | .path' | \
           awk -F'/' '{print $NF}' | \
           while read file_name; do
-              printf '{"name":"%s"}\n' "$file_name"
+              echo "{\"name\": \"$file_name\"}" | base64
           done)
 
 # Debug output
 echo "Found files:"
-echo "$response" | while read -r line; do
-    echo "$line"
+echo "$response" | while read line; do
+    echo "$line" | base64 -d
 done
 
 function parse_row() {
 		local row=$1
 		# Parse JSON object for each file
-		file_name=$(echo "$row" | jq -r '.name' 2>/dev/null || echo "$row")
+		file=$(echo "$row" | base64 -d)
+		
+		# Extract file name
+		file_name=$(echo "$file" | jq -r '.name')
 		html_url="$html_base_url/$file_name"
 		
 		# Skip if file_name is empty
