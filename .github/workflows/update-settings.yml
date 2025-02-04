@@ -1,17 +1,25 @@
 name: Update Swift Settings
 
 on:
-  push:
   schedule:
     - cron: '0 0 * * *'  # Run daily at midnight UTC
   workflow_dispatch:  # Allow manual triggering
 
+# Add a condition to only run on main branch
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
+  # Add a check for main branch
+  check-branch:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - run: echo "Running on main branch"
+
   get-swift-help:
+    needs: check-branch  # Make this job dependent on check-branch
     runs-on: ubuntu-latest
     container:
       image: swift:latest
