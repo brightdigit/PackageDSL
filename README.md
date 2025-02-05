@@ -1,5 +1,20 @@
 # PackageDSL
 
+[![SwiftPM](https://img.shields.io/badge/SPM-Linux%20%7C%20iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-success?logo=swift)](https://swift.org)
+[![DocC](https://img.shields.io/badge/DocC-_?style=flat&logo=readthedocs&logoColor=FFFFFF&labelColor=F05138&color=FFFFFF&link=https%3A%2F%2Fswiftpackageindex.com%2Fbrightdigit%2FPackageDSL%2Fmain%2Fdocumentation%2Fpackagedsl)](https://swiftpackageindex.com/brightdigit/PackageDSL/main/documentation/packagedsl)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/brightdigit/PackageDSL?style=flat)
+![GitHub](https://img.shields.io/github/license/brightdigit/PackageDSL)
+![GitHub issues](https://img.shields.io/github/issues/brightdigit/PackageDSL)
+[![GitHub Workflow Status](https://github.com/brightdigit/PackageDSL/actions/workflows/lint.yml/badge.svg)](https://github.com/brightdigit/PackageDSL/actions/workflows/lint.yml)
+
+![Twitter Follow](https://img.shields.io/badge/Follow%20%40leogdion-_?style=flat&logo=X&color=666666)
+![Mastodon Follow](https://img.shields.io/mastodon/follow/109263136930561815?domain=c.im&style=flat)
+![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCnl3jF6GHAvlj1MZyb6Ka9g?style=flat)
+
+![GitHub Downloads (specific asset, latest release)](https://img.shields.io/github/downloads/brightdigit/PackageDSL/latest/package.sh?style=flat&logo=gnubash&label=Downloads&color=%234EAA25&link=https%3A%2F%2Fgithub.com%2Fbrightdigit%2FPackageDSL%2Freleases%2Fdownload%2Flatest%2Fpackage.sh)
+
+
 Simplify the management of your Package.swift file with a type-safe, modular DSL:
 
 ```swift
@@ -155,11 +170,11 @@ let package = Package(
 
 ## Installation
 
-1. Download the `package.sh` script from our [latest release](https://github.com/brightdigit/PackageDSL/releases/latest/download/package.sh)
+1. Download the `package.sh` script from our [latest release](https://github.com/brightdigit/PackageDSL/releases/download/latest/package.sh)
 
    Or using curl:
    ```bash
-   curl -LO https://github.com/brightdigit/PackageDSL/releases/latest/download/package.sh
+   curl -LO https://github.com/brightdigit/PackageDSL/releases/download/latest/package.sh
    ```
 
 2. Make the script executable:
@@ -244,6 +259,10 @@ struct BushelFactory: Target {
 }
 ```
 
+For more details check out the documentation on:
+
+* [FeatureFlags](https://swiftpackageindex.com/brightdigit/packagedsl/main/documentation/packagedsl#Feature-Flags)
+* [UnsafeFlags](https://swiftpackageindex.com/brightdigit/packagedsl/main/documentation/packagedsl#Unsafe-Flags)
 
 ### How about adding resources?
 
@@ -316,14 +335,3 @@ The DSL is used only at development time to generate your `Package.swift`. There
 ## Thanks
 
 * [joshdholtz](https://github.com/joshdholtz) for inspiration with [DeckUI](https://github.com/joshdholtz/DeckUI)
-
-## Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. File issues for bugs or feature requests
-2. Submit pull requests with improvements
-3. Help improve the documentation
-4. Share your experience using PackageDSL
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
