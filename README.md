@@ -331,14 +331,3 @@ The DSL is used only at development time to generate your `Package.swift`. There
 ## Thanks
 
 * [joshdholtz](https://github.com/joshdholtz) for inspiration with [DeckUI](https://github.com/joshdholtz/DeckUI)
-
-## Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. File issues for bugs or feature requests
-2. Submit pull requests with improvements
-3. Help improve the documentation
-4. Share your experience using PackageDSL
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
