@@ -1,7 +1,7 @@
 # PackageDSL
 
 [![SwiftPM](https://img.shields.io/badge/SPM-Linux%20%7C%20iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-success?logo=swift)](https://swift.org)
-![DocC](https://img.shields.io/badge/DocC-_?style=flat&logo=readthedocs&logoColor=FFFFFF&labelColor=F05138&color=FFFFFF&link=https%3A%2F%2Fswiftpackageindex.com%2Fbrightdigit%2FPackageDSL%2Fmain%2Fdocumentation%2Fpackagedsl)
+[![DocC](https://img.shields.io/badge/DocC-_?style=flat&logo=readthedocs&logoColor=FFFFFF&labelColor=F05138&color=FFFFFF&link=https%3A%2F%2Fswiftpackageindex.com%2Fbrightdigit%2FPackageDSL%2Fmain%2Fdocumentation%2Fpackagedsl)](https://swiftpackageindex.com/brightdigit/PackageDSL/main/documentation/packagedsl)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/brightdigit/PackageDSL?style=flat)
 ![GitHub](https://img.shields.io/github/license/brightdigit/PackageDSL)
@@ -259,6 +259,10 @@ struct BushelFactory: Target {
 }
 ```
 
+For more details check out the documentation on:
+
+* [FeatureFlags](https://swiftpackageindex.com/brightdigit/packagedsl/main/documentation/packagedsl#Feature-Flags)
+* [UnsafeFlags](https://swiftpackageindex.com/brightdigit/packagedsl/main/documentation/packagedsl#Unsafe-Flags)
 
 ### How about adding resources?
 
