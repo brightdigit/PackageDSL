@@ -140,6 +140,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``NoncopyableGenerics``
 - ``NonescapableTypes``
 - ``RegionBasedIsolation``
+- ``SendableCompletionHandlers``
 - ``VariadicGenerics``
 
 ### Unsafe Flags
