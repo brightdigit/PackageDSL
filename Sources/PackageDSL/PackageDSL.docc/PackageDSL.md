@@ -148,8 +148,10 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 
 - ``AccessNotesPath``
 - ``AliasModuleNamesInModuleInterface``
+- ``AllowNonResilientAccess``
 - ``AllowableClient``
 - ``AlwaysCompileOutputFiles``
+- ``AnalyzeRequestEvaluator``
 - ``AnalyzeRequirementMachine``
 - ``ApiDiffDataDir``
 - ``ApiDiffDataFile``
@@ -166,6 +168,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``BlocklistFile``
 - ``BridgingHeaderDirectoryForPrint``
 - ``BridgingHeaderPchKey``
+- ``BuildId``
 - ``BypassBatchModeChecks``
 - ``BypassResilienceChecks``
 - ``CacheCompileJob``
@@ -185,6 +188,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``ClangBuildSessionFile``
 - ``ClangHeaderExposeDecls``
 - ``ClangHeaderExposeModule``
+- ``ClangIncludeTreeFilelist``
 - ``ClangIncludeTreeRoot``
 - ``ClangScannerModuleCachePath``
 - ``ClangTarget``
@@ -193,6 +197,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``ColorDiagnostics``
 - ``CompareToBaselinePath``
 - ``CompileModuleFromInterface``
+- ``CompilerAssertions``
 - ``ConcurrencyModel``
 - ``ConditionalRuntimeRecords``
 - ``ConstGatherProtocolsFile``
@@ -216,6 +221,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DebugEmitInvalidSwiftinterfaceSyntax``
 - ``DebugForbidTypecheckPrefix``
 - ``DebugGenericSignatures``
+- ``DebugInfoForProfiling``
 - ``DebugInfoFormat``
 - ``DebugInfoStoreInvocation``
 - ``DebugInverseRequirements``
@@ -235,10 +241,13 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DirectClangCc1ModuleBuild``
 - ``DisableAccessControl``
 - ``DisableActorDataRaceChecks``
+- ``DisableAggressiveReg2mem``
 - ``DisableAliasModuleNamesInModuleInterface``
 - ``DisableAllAutolinking``
 - ``DisableArcOpts``
 - ``DisableAstVerifier``
+- ``DisableAsyncFramePointerAll``
+- ``DisableAsyncFramePushPopMetadata``
 - ``DisableAutolinkFramework``
 - ``DisableAutolinkFrameworks``
 - ``DisableAutolinkLibrary``
@@ -267,10 +276,13 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableDynamicActorIsolation``
 - ``DisableEmitGenericClassRoTList``
 - ``DisableExperimentalClangImporterDiagnostics``
+- ``DisableExperimentalFeature``
 - ``DisableExperimentalLifetimeDependenceInference``
 - ``DisableExperimentalOpenedExistentialTypes``
 - ``DisableExperimentalParserRoundTrip``
 - ``DisableExperimentalStringProcessing``
+- ``DisableFineModuleTracing``
+- ``DisableForceLoadSymbols``
 - ``DisableFragileRelativeProtocolTables``
 - ``DisableGenericMetadataPrespecialization``
 - ``DisableImplicitBacktracingModuleImport``
@@ -289,6 +301,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableLayoutStringValueWitnesses``
 - ``DisableLegacyTypeInfo``
 - ``DisableLifetimeDependenceDiagnostics``
+- ``DisableLlvmMergeFunctionsPass``
 - ``DisableLlvmOptzns``
 - ``DisableLlvmValueNames``
 - ``DisableLlvmVerify``
@@ -299,17 +312,20 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableNewLlvmPassManager``
 - ``DisableNewOperatorLookup``
 - ``DisableNonfrozenEnumExhaustivityDiagnostics``
+- ``DisableNoreturnPrediction``
 - ``DisableNskeyedarchiverDiagnostics``
 - ``DisableObjcAttrRequiresFoundationModule``
 - ``DisableObjcInterop``
 - ``DisableObjectiveCProtocolSymbolicReferences``
 - ``DisableOnlyOneDependencyFile``
+- ``DisableOssaCompleteLifetimes``
 - ``DisableOssaOpts``
+- ``DisableOssaVerifyComplete``
 - ``DisablePlaygroundTransform``
 - ``DisablePreallocatedInstantiationCaches``
 - ``DisablePreviousImplementationCallsInDynamicReplacements``
 - ``DisablePrintMissingImportsInModuleInterface``
-- ``DisablePrintPackageNameForNonPackageInterface``
+- ``DisableProfilingMarkerThunks``
 - ``DisableReadonlyStaticObjects``
 - ``DisableReflectionMetadata``
 - ``DisableReflectionNames``
@@ -324,6 +340,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableSilOwnershipVerifier``
 - ``DisableSilPartialApply``
 - ``DisableSilPerfOptzns``
+- ``DisableSplitColdCode``
 - ``DisableStackProtector``
 - ``DisableStandardSubstitutionsInReflectionMangling``
 - ``DisableSubstSilFunctionTypes``
@@ -332,8 +349,10 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableSwiftSpecificLlvmOptzns``
 - ``DisableTargetOsChecking``
 - ``DisableTestableAttrRequiresTestableModule``
+- ``DisableThrowsPrediction``
 - ``DisableTypeLayout``
 - ``DisableTypoCorrection``
+- ``DisableUpcomingFeature``
 - ``DisableVerifyExclusivity``
 - ``DisallowUseNewDriver``
 - ``DowngradeTypecheckInterfaceError``
@@ -360,7 +379,9 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DriverVerifyFineGrainedDependencyGraphAfterEveryImport``
 - ``DriverWarnUnusedOptions``
 - ``DumpApiPath``
+- ``DumpAstFormat``
 - ``DumpAst``
+- ``DumpAvailabilityScopes``
 - ``DumpClangDiagnostics``
 - ``DumpClangLookupTables``
 - ``DumpInterfaceHash``
@@ -372,7 +393,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DumpRequirementMachine``
 - ``DumpScopeMaps``
 - ``DumpTypeInfo``
-- ``DumpTypeRefinementContexts``
 - ``DumpTypeWitnessSystems``
 - ``DumpUsr``
 - ``DwarfVersion``
@@ -392,6 +412,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EmitDependencies``
 - ``EmitDigesterBaselinePath``
 - ``EmitDigesterBaseline``
+- ``EmitEmptyObjectFile``
 - ``EmitExecutable``
 - ``EmitExtensionBlockSymbols``
 - ``EmitFineGrainedDependencySourcefileDotFiles``
@@ -402,6 +423,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EmitLibrary``
 - ``EmitLoadedModuleTracePath``
 - ``EmitLoadedModuleTrace``
+- ``EmitLoweredSil``
 - ``EmitMacroExpansionFiles``
 - ``EmitMigratedFilePath``
 - ``EmitModuleDependenciesPath``
@@ -443,8 +465,11 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EmptyAbiDescriptor``
 - ``EnableAccessControl``
 - ``EnableActorDataRaceChecks``
+- ``EnableAggressiveReg2mem``
 - ``EnableAnonymousContextMangledNames``
 - ``EnableAstVerifier``
+- ``EnableAsyncFramePointerAll``
+- ``EnableAsyncFramePushPopMetadata``
 - ``EnableAutolinkingRuntimeCompatibilityBytecodeLayouts``
 - ``EnableBareSlashRegex``
 - ``EnableBatchMode``
@@ -502,6 +527,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EnableNewLlvmPassManager``
 - ``EnableNewOperatorLookup``
 - ``EnableNonfrozenEnumExhaustivityDiagnostics``
+- ``EnableNoreturnPrediction``
 - ``EnableNskeyedarchiverDiagnostics``
 - ``EnableObjcAttrRequiresFoundationModule``
 - ``EnableObjcInterop``
@@ -510,8 +536,11 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EnableOperatorDesignatedTypes``
 - ``EnableOssaCompleteLifetimes``
 - ``EnableOssaModules``
+- ``EnableOssaVerifyComplete``
 - ``EnablePackMetadataStackPromotion``
 - ``EnablePrivateImports``
+- ``EnableProfilingMarkerThunks``
+- ``EnableRecompilationToOssaModule``
 - ``EnableRelativeProtocolWitnessTables``
 - ``EnableRequirementMachineOpaqueArchetypes``
 - ``EnableResilience``
@@ -520,12 +549,14 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EnableSingleModuleLlvmEmission``
 - ``EnableSourceImport``
 - ``EnableSpecDevirt``
+- ``EnableSplitColdCode``
 - ``EnableStackProtector``
 - ``EnableSwift3ObjcInference``
 - ``EnableTargetOsChecking``
 - ``EnableTestableAttrRequiresTestableModule``
 - ``EnableTesting``
 - ``EnableThrowWithoutTry``
+- ``EnableThrowsPrediction``
 - ``EnableTypeLayout``
 - ``EnableUpcomingFeature``
 - ``EnableVerifyExclusivity``
@@ -536,7 +567,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``ExperimentalAllowNonResilientAccess``
 - ``ExperimentalCForeignReferenceTypes``
 - ``ExperimentalClangImporterDirectCc1Scan``
-- ``ExperimentalCxxStdlib``
 - ``ExperimentalEmitModuleSeparately``
 - ``ExperimentalForceWorkaroundBrokenModules``
 - ``ExperimentalHermeticSealAtLink``
@@ -548,13 +578,18 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``ExperimentalPerformanceAnnotations``
 - ``ExperimentalPlatformCCallingConvention``
 - ``ExperimentalPrintFullConvention``
+- ``ExperimentalSerializeDebugInfo``
 - ``ExperimentalSkipAllFunctionBodies``
+- ``ExperimentalSkipDeserializationChecksForPackageCmo``
 - ``ExperimentalSkipNonExportableDecls``
 - ``ExperimentalSkipNonInlinableFunctionBodiesWithoutTypes``
 - ``ExperimentalSkipNonInlinableFunctionBodies``
 - ``ExperimentalSpiImports``
 - ``ExperimentalSpiOnlyImports``
+- ``ExperimentalSwiftBasedClosureSpecialization``
+- ``ExplainModuleDependencyDetailed``
 - ``ExplainModuleDependency``
+- ``ExplicitAutoLinking``
 - ``ExplicitDependencyGraphFormat``
 - ``ExplicitInterfaceModuleBuild``
 - ``ExplicitModuleBuild``
@@ -566,6 +601,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``FileCompilationDir``
 - ``FilePrefixMap``
 - ``Filelist``
+- ``FineGrainedTimers``
 - ``FixitAll``
 - ``ForcePublicLinkage``
 - ``ForceStructTypeLayouts``
@@ -590,6 +626,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``ImportObjcHeader``
 - ``ImportPrescan``
 - ``ImportUnderlyingModule``
+- ``InProcessPluginServerPath``
 - ``IncludeSpiSymbols``
 - ``Incremental``
 - ``IndexFilePath``
@@ -603,10 +640,12 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``IndexUnitOutputPathFilelist``
 - ``IndexUnitOutputPath``
 - ``InputFileKey``
+- ``InterfaceCompilerVersion``
 - ``InternalizeAtLink``
 - ``Interpret``
 - ``J``
 - ``L``
+- ``LanguageMode``
 - ``LdPath``
 - ``Libc``
 - ``LibraryLevel``
@@ -614,6 +653,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``LoadDependencyScanCache``
 - ``LoadPluginExecutable``
 - ``LoadPluginLibrary``
+- ``LoadResolvedPlugin``
 - ``Locale``
 - ``LocalizationPath``
 - ``LtoLibrary``
@@ -640,6 +680,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``NoEmitModuleSeparatelyWmo``
 - ``NoEmitModuleSeparately``
 - ``NoLinkObjcRuntime``
+- ``NoParallelScan``
 - ``NoScannerModuleValidation``
 - ``NoSerializeDebuggingOptions``
 - ``NoStaticExecutable``
@@ -662,6 +703,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``Ounchecked``
 - ``OutputFileMap``
 - ``OutputFilelist``
+- ``PackageCmo``
 - ``PackageDescriptionVersion``
 - ``PackageName``
 - ``ParallelScan``
@@ -689,6 +731,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``PrintAstDecl``
 - ``PrintAst``
 - ``PrintClangStats``
+- ``PrintDiagnosticGroups``
 - ``PrintEducationalNotes``
 - ``PrintExplicitDependencyGraph``
 - ``PrintInstCounts``
@@ -696,13 +739,16 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``PrintPreprocessedExplicitDependencyGraph``
 - ``PrintStats``
 - ``PrintTargetInfo``
+- ``PrintZeroStats``
 - ``ProfileCoverageMapping``
 - ``ProfileGenerate``
+- ``ProfileSampleUse``
 - ``ProfileStatsEntities``
 - ``ProfileStatsEvents``
 - ``ProfileUse``
 - ``ProjectName``
 - ``PublicAutolinkLibrary``
+- ``PublicModuleName``
 - ``RaccessNote``
 - ``RcacheCompileJob``
 - ``RcrossImport``
@@ -784,6 +830,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``SwiftModuleFile``
 - ``SwiftVersion``
 - ``SymbolGraphMinimumAccessLevel``
+- ``Sysroot``
 - ``TargetCpu``
 - ``TargetFlag``
 - ``TargetMinInliningVersion``
@@ -841,14 +888,17 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``WarnLongFunctionBodies``
 - ``WarnOnEditorPlaceholder``
 - ``WarnOnPotentiallyUnavailableEnumCase``
+- ``WarnSoftDeprecated``
 - ``WarnSwift3ObjcInferenceComplete``
 - ``WarnSwift3ObjcInferenceMinimal``
 - ``WarningsAsErrors``
 - ``WeakLinkAtTarget``
+- ``Werror``
 - ``WholeModuleOptimization``
 - ``WindowsSdkRoot``
 - ``WindowsSdkVersion``
 - ``WorkingDirectory``
+- ``Wwarning``
 - ``Xcc``
 - ``XclangLinker``
 - ``Xfrontend``
@@ -859,6 +909,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 
 - ``AliasModuleNamesInModuleInterface``
 - ``AlwaysCompileOutputFiles``
+- ``AnalyzeRequestEvaluator``
 - ``AnalyzeRequirementMachine``
 - ``AutolinkLibrary``
 - ``BackupModuleInterfacePath``
@@ -879,6 +930,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``CheckedAsyncObjcBridging``
 - ``ClangHeaderExposeDecls``
 - ``ClangHeaderExposeModule``
+- ``ClangIncludeTreeFilelist``
 - ``ClangIncludeTreeRoot``
 - ``CodeCompleteCallPatternHeuristics``
 - ``CodeCompleteInitsInPostfixExpr``
@@ -911,10 +963,13 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DiagnosticsEditorMode``
 - ``DirectClangCc1ModuleBuild``
 - ``DisableAccessControl``
+- ``DisableAggressiveReg2mem``
 - ``DisableAliasModuleNamesInModuleInterface``
 - ``DisableAllAutolinking``
 - ``DisableArcOpts``
 - ``DisableAstVerifier``
+- ``DisableAsyncFramePointerAll``
+- ``DisableAsyncFramePushPopMetadata``
 - ``DisableAutolinkFramework``
 - ``DisableAutolinkFrameworks``
 - ``DisableAutolinkLibrary``
@@ -939,6 +994,8 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableExperimentalOpenedExistentialTypes``
 - ``DisableExperimentalParserRoundTrip``
 - ``DisableExperimentalStringProcessing``
+- ``DisableFineModuleTracing``
+- ``DisableForceLoadSymbols``
 - ``DisableFragileRelativeProtocolTables``
 - ``DisableGenericMetadataPrespecialization``
 - ``DisableImplicitBacktracingModuleImport``
@@ -956,6 +1013,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableLayoutStringValueWitnesses``
 - ``DisableLegacyTypeInfo``
 - ``DisableLifetimeDependenceDiagnostics``
+- ``DisableLlvmMergeFunctionsPass``
 - ``DisableLlvmOptzns``
 - ``DisableLlvmValueNames``
 - ``DisableLlvmVerify``
@@ -965,16 +1023,19 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableNewLlvmPassManager``
 - ``DisableNewOperatorLookup``
 - ``DisableNonfrozenEnumExhaustivityDiagnostics``
+- ``DisableNoreturnPrediction``
 - ``DisableNskeyedarchiverDiagnostics``
 - ``DisableObjcAttrRequiresFoundationModule``
 - ``DisableObjcInterop``
 - ``DisableObjectiveCProtocolSymbolicReferences``
+- ``DisableOssaCompleteLifetimes``
 - ``DisableOssaOpts``
+- ``DisableOssaVerifyComplete``
 - ``DisablePlaygroundTransform``
 - ``DisablePreallocatedInstantiationCaches``
 - ``DisablePreviousImplementationCallsInDynamicReplacements``
 - ``DisablePrintMissingImportsInModuleInterface``
-- ``DisablePrintPackageNameForNonPackageInterface``
+- ``DisableProfilingMarkerThunks``
 - ``DisableReadonlyStaticObjects``
 - ``DisableReflectionMetadata``
 - ``DisableReflectionNames``
@@ -988,6 +1049,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableSilOwnershipVerifier``
 - ``DisableSilPartialApply``
 - ``DisableSilPerfOptzns``
+- ``DisableSplitColdCode``
 - ``DisableStackProtector``
 - ``DisableStandardSubstitutionsInReflectionMangling``
 - ``DisableSubstSilFunctionTypes``
@@ -995,6 +1057,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableSwiftSpecificLlvmOptzns``
 - ``DisableTargetOsChecking``
 - ``DisableTestableAttrRequiresTestableModule``
+- ``DisableThrowsPrediction``
 - ``DisableTypeLayout``
 - ``DisableTypoCorrection``
 - ``DisableVerifyExclusivity``
@@ -1010,6 +1073,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EmitAbiDescriptorPath``
 - ``EmitClangHeaderPath``
 - ``EmitDependenciesPath``
+- ``EmitEmptyObjectFile``
 - ``EmitFixitsPath``
 - ``EmitMacroExpansionFiles``
 - ``EmitMigratedFilePath``
@@ -1026,8 +1090,11 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EmitVerboseSil``
 - ``EmptyAbiDescriptor``
 - ``EnableAccessControl``
+- ``EnableAggressiveReg2mem``
 - ``EnableAnonymousContextMangledNames``
 - ``EnableAstVerifier``
+- ``EnableAsyncFramePointerAll``
+- ``EnableAsyncFramePushPopMetadata``
 - ``EnableCollocateMetadataFunctions``
 - ``EnableColocateTypeDescriptors``
 - ``EnableCopyPropagation``
@@ -1072,6 +1139,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EnableNewLlvmPassManager``
 - ``EnableNewOperatorLookup``
 - ``EnableNonfrozenEnumExhaustivityDiagnostics``
+- ``EnableNoreturnPrediction``
 - ``EnableNskeyedarchiverDiagnostics``
 - ``EnableObjcAttrRequiresFoundationModule``
 - ``EnableObjcInterop``
@@ -1079,7 +1147,10 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EnableOperatorDesignatedTypes``
 - ``EnableOssaCompleteLifetimes``
 - ``EnableOssaModules``
+- ``EnableOssaVerifyComplete``
 - ``EnablePackMetadataStackPromotion``
+- ``EnableProfilingMarkerThunks``
+- ``EnableRecompilationToOssaModule``
 - ``EnableRelativeProtocolWitnessTables``
 - ``EnableRequirementMachineOpaqueArchetypes``
 - ``EnableResilience``
@@ -1088,11 +1159,13 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``EnableSingleModuleLlvmEmission``
 - ``EnableSourceImport``
 - ``EnableSpecDevirt``
+- ``EnableSplitColdCode``
 - ``EnableStackProtector``
 - ``EnableSwift3ObjcInference``
 - ``EnableTargetOsChecking``
 - ``EnableTestableAttrRequiresTestableModule``
 - ``EnableThrowWithoutTry``
+- ``EnableThrowsPrediction``
 - ``EnableTypeLayout``
 - ``EnableVerifyExclusivity``
 - ``EnableVolatileModules``
@@ -1104,9 +1177,11 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``ExperimentalPlatformCCallingConvention``
 - ``ExperimentalPrintFullConvention``
 - ``ExperimentalSkipAllFunctionBodies``
+- ``ExperimentalSkipDeserializationChecksForPackageCmo``
 - ``ExperimentalSkipNonExportableDecls``
 - ``ExperimentalSpiImports``
 - ``ExperimentalSpiOnlyImports``
+- ``ExperimentalSwiftBasedClosureSpecialization``
 - ``ExplicitInterfaceModuleBuild``
 - ``ExplicitSwiftModuleMapFile``
 - ``ExternalPassPipelineFilename``
@@ -1127,6 +1202,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``InputFileKey``
 - ``InternalizeAtLink``
 - ``Interpret``
+- ``LanguageMode``
 - ``LoadDependencyScanCache``
 - ``MergeModules``
 - ``ModuleCanImportVersion``
@@ -1136,6 +1212,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``NewDriverPath``
 - ``NoClangIncludeTree``
 - ``NoClangModuleBreadcrumbs``
+- ``NoParallelScan``
 - ``NoScannerModuleValidation``
 - ``NoSerializeDebuggingOptions``
 - ``OutputFilelist``
