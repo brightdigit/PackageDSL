@@ -1,6 +1,7 @@
-/// Passes the flag `-experimental-cxx-stdlib`
+/// Passes the flag `-profile-sample-use=<profile`
 ///
-public struct ExperimentalCxxStdlib: UnsafeFlag {
+/// Data>
+public struct ProfileSampleUse: UnsafeFlag {
   public let value: String
 
   public var unsafeFlagArguments: [String] {
