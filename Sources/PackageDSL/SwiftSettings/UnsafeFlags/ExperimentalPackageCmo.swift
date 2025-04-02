@@ -1,4 +1,4 @@
 /// Passes the flag `-experimental-package-cmo`
 ///
-/// Enable optimization to perform defalut CMO within a package boundary
+/// Deprecated; use -package-cmo instead
 public struct ExperimentalPackageCmo: UnsafeFlag {}
