@@ -1,4 +1,4 @@
 /// Passes the flag `-experimental-package-bypass-resilience`
 ///
-/// Enable optimization to bypass resilience within a package
+/// Deprecated; has no effect
 public struct ExperimentalPackageBypassResilience: UnsafeFlag {}
