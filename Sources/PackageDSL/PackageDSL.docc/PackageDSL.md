@@ -128,6 +128,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 
 - ``AccessLevelOnImport``
 - ``AsyncCallerExecution``
+- ``CoroutineAccessors``
 - ``DisableOutwardActorInference``
 - ``DynamicActorIsolation``
 - ``GlobalActorIsolatedTypesUsability``
