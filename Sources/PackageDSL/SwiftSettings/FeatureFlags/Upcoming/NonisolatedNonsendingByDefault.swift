@@ -12,10 +12,10 @@
 ///
 /// - SeeAlso: [Run nonisolated async functions on the caller's actor by default (SE-0461)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0461-async-function-isolation.md)
 ///
-public struct NonIsolatedAsyncInheritsIsolationFromContext: SwiftSettingFeature {
+public struct NonisolatedNonsendingByDefault: SwiftSettingFeature {
   // swiftlint:enable line_length
   /// The current state of the feature.
   public var featureState: FeatureState {
-    .experimental
+    .upcoming
   }
 }

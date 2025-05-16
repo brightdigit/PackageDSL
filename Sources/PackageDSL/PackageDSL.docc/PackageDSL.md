@@ -127,7 +127,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 ### Feature Flags
 
 - ``AccessLevelOnImport``
-- ``AsyncCallerExecution``
 - ``CoroutineAccessors``
 - ``DisableOutwardActorInference``
 - ``DynamicActorIsolation``
@@ -138,9 +137,9 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``IsolatedDefaultValues``
 - ``MemberImportVisibility``
 - ``NestedProtocols``
-- ``NonIsolatedAsyncInheritsIsolationFromContext``
 - ``NoncopyableGenerics``
 - ``NonescapableTypes``
+- ``NonisolatedNonsendingByDefault``
 - ``RegionBasedIsolation``
 - ``VariadicGenerics``
 
