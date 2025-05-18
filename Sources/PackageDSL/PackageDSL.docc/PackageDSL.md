@@ -134,7 +134,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``InferIsolatedConformances``
 - ``InferSendableFromCaptures``
 - ``InternalImportsByDefault``
-- ``IsolatedDefaultValues``
 - ``MemberImportVisibility``
 - ``NestedProtocols``
 - ``NoncopyableGenerics``
