@@ -131,7 +131,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``DisableOutwardActorInference``
 - ``DynamicActorIsolation``
 - ``GlobalActorIsolatedTypesUsability``
-- ``InferIsolatedConformances``
 - ``InferSendableFromCaptures``
 - ``InternalImportsByDefault``
 - ``IsolatedDefaultValues``
