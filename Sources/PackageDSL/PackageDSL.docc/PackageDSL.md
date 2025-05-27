@@ -130,6 +130,7 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 - ``CoroutineAccessors``
 - ``DisableOutwardActorInference``
 - ``DynamicActorIsolation``
+- ``ExtensibleAttribute``
 - ``GlobalActorIsolatedTypesUsability``
 - ``InferIsolatedConformances``
 - ``InferSendableFromCaptures``
