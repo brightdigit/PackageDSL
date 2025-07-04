@@ -126,23 +126,6 @@ For a real-world example, check out [BushelKit](https://github.com/brightdigit/B
 
 ### Feature Flags
 
-- ``AccessLevelOnImport``
-- ``CoroutineAccessors``
-- ``DisableOutwardActorInference``
-- ``DynamicActorIsolation``
-- ``ExtensibleAttribute``
-- ``GlobalActorIsolatedTypesUsability``
-- ``InferIsolatedConformances``
-- ``InferSendableFromCaptures``
-- ``InternalImportsByDefault``
-- ``IsolatedDefaultValues``
-- ``MemberImportVisibility``
-- ``NestedProtocols``
-- ``NoncopyableGenerics``
-- ``NonescapableTypes``
-- ``NonisolatedNonsendingByDefault``
-- ``RegionBasedIsolation``
-- ``VariadicGenerics``
 
 ### Unsafe Flags
 
