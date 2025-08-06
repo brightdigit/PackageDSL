@@ -6,7 +6,7 @@
 ///  This makes Swift `enum`s vastly
 /// more useful in public API of such libraries.
 ///
-/// - SeeAlso: [Extensible enums (SE-0487)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0487-extensible-enums.md)
+/// - SeeAlso: [Nonexhuastive enums (SE-0487)](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0487-extensible-enums.md)
 ///
 public struct ExtensibleAttribute: SwiftSettingFeature {
   // swiftlint:enable line_length
